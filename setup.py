@@ -16,5 +16,6 @@ setup(
     packages=['maca'],
     install_requires=required,
     long_description='See ' + 'https://github.com/czbiohub/maca',
-    license='MIT'
+    license='MIT',
+    entry_points={"console_scripts": ['maca = maca.cli:cli']}
 )
