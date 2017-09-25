@@ -1,11 +1,13 @@
 
 #!/usr/bin/env python
 import os
+import warnings
 from zipfile import ZipFile
 
 import click
 import pandas as pd
 
+# Suppress all warnings because pandas is annoying
 
 
 HTSEQ_ROWS_TO_DROP = ['EXP_ID',
@@ -81,7 +83,9 @@ def clean_and_zip(input_folder, cleaned_folder, zipped_folder, platename=None):
         htseq = pd.read_csv(csv, index_col=0)
         
         csv = os.path.join(input_folder, f'{platename}.log.csv')
-        mapping_stats = pd.read_csv(csv, index_col=0).dropna(how='all')
+        with warnings.catch_warnings():
+                warnings.simplefilter("ignore")
+                mapping_stats = pd.read_csv(csv, index_col=0).dropna(how='all')
         
         counts, metadata = clean_htseq_mapping_stats(htseq, mapping_stats)
         write_counts_metadata(counts, metadata, zipped_folder, platename, cleaned_folder)
@@ -94,7 +98,9 @@ def clean_and_zip(input_folder, cleaned_folder, zipped_folder, platename=None):
             htseq = pd.read_csv(csv, index_col=0)
 
             csv = os.path.join(input_folder, f'{platename}.log.csv')
-            mapping_stats = pd.read_csv(csv, index_col=0).dropna(how='all')
+            with warnings.catch_warnings():
+                    warnings.simplefilter("ignore")
+                    mapping_stats = pd.read_csv(csv, index_col=0).dropna(how='all')
 
             counts, metadata = clean_htseq_mapping_stats(htseq, mapping_stats)
 
