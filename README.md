@@ -32,3 +32,12 @@ $ maca clean_and_zip --platename MAA000932 --input-folder /data1/maca/gc_table_b
 Reading plate MAA000932...
         Wrote cleaned counts and metadata to ./zipped/MAA000932.zip
 ```
+
+### Example tab-delimited, zipped output to R
+
+Here's an example that outputs tab-delimited files and zips them in a format
+that R likes (no label in the first column)
+
+```
+$ maca clean_and_zip  --output-folder ../gc_table_by_plates_zipped/ --output-format tab --zipped --rstats
+```
