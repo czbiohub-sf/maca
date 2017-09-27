@@ -49,9 +49,8 @@ def clean_htseq_mapping_stats(htseq, mapping_stats):
     return counts, metadata
 
 
-def make_filename(prefix, folder, output_format):
-    filename = os.path.join(folder, prefix + '.' + output_format)
-    return filename
+def make_basename(prefix, output_format):
+    return prefix + '.' + output_format
 
 
 def read_csv(csv):
@@ -94,13 +93,11 @@ def write_counts_metadata(counts, metadata, folder, platename,
     if output_format == 'tsv' or output_format.startswith('tab'):
         kwargs['sep'] = '\t'
 
-    counts_prefix = f'{platename}.counts'
-    metadata_prefix = f'{platename}.metadata'
+    counts_basename = make_basename(f'{platename}.counts', output_format)
+    metadata_basename = make_basename(f'{platename}.metadata', output_format)
 
-    counts_filename = make_filename(counts_prefix, folder,
-                                    output_format)
-    metadata_filename = make_filename(metadata_prefix, folder,
-                                      output_format)
+    counts_filename = os.path.join(folder, counts_basename)
+    metadata_filename = os.path.join(folder, metadata_basename)
     
     if not zipped:
         counts.to_csv(counts_filename, **kwargs)
@@ -111,8 +108,8 @@ def write_counts_metadata(counts, metadata, folder, platename,
     if zipped:
         zipname = os.path.join(folder, f'{platename}.zip')
         with ZipFile(zipname, 'w') as z:
-            z.writestr(counts_prefix, counts.to_csv(**kwargs))
-            z.writestr(metadata_prefix, metadata.to_csv(**kwargs))
+            z.writestr(counts_basename, counts.to_csv(**kwargs))
+            z.writestr(metadata_basename, metadata.to_csv(**kwargs))
         print(f'\tWrote cleaned counts and metadata to {zipname}')
 
 
