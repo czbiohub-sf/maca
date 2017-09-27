@@ -84,9 +84,9 @@ def write_counts_metadata(counts, metadata, folder, platename,
     """
     if rstats:
         # Don't label the first column because R doesn't like that
-        kwargs.update('index_label', False)
+        kwargs['index_label'] = False
     if output_format == 'tsv' or output_format.startswith('tab'):
-        kwargs.update('sep', '\t')
+        kwargs['sep'] = '\t'
 
     counts_filename = make_filename(f'{platename}.counts', folder,
                                     output_format)
