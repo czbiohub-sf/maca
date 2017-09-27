@@ -109,7 +109,7 @@ def write_counts_metadata(counts, metadata, zipped_folder, platename,
               help='if provided, only use this platename (good for debugging)')
 @click.option('--output-format', default='csv',
               help="Type of file to create. Accepted values: 'csv', 'tsv'")
-@click.option('-r/--rstats', is_flag=True,
+@click.option('--rstats', '-r', is_flag=True,
               help='If added, then output to "R" statistical language format, '
                    'which does not have a column name in the first column')
 def clean_and_zip(input_folder, cleaned_folder, zipped_folder, platename=None,
