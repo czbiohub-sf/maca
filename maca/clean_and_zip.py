@@ -54,6 +54,12 @@ def make_filename(prefix, folder, output_format):
     return filename
 
 
+def read_csv(csv):
+    with warnings.catch_warnings():
+        warnings.simplefilter("ignore")
+        return pd.read_csv(csv, index_col=0)
+
+
 def write_counts_metadata(counts, metadata, folder, platename,
                           output_format='csv',
                           rstats=False, zipped=True,
@@ -132,13 +138,11 @@ def clean_and_zip(input_folder, output_folder, platename=None,
     if platename is not None:
         print(f'Reading plate {platename}...')
         csv = os.path.join(input_folder, f'{platename}.htseq-count.csv')
-        htseq = pd.read_csv(csv, index_col=0)
-        
+        htseq = read_csv(csv)
+
         csv = os.path.join(input_folder, f'{platename}.log.csv')
-        with warnings.catch_warnings():
-                warnings.simplefilter("ignore")
-                mapping_stats = pd.read_csv(csv, index_col=0).dropna(how='all')
-        
+        mapping_stats = read_csv(csv).dropna(how='all')
+
         counts, metadata = clean_htseq_mapping_stats(htseq, mapping_stats)
         write_counts_metadata(counts, metadata, output_folder, platename,
                               output_format, rstats, zipped)
@@ -148,13 +152,10 @@ def clean_and_zip(input_folder, output_folder, platename=None,
             platename = os.path.basename(csv).split('.')[0]
             print(f'Reading plate {platename}...')
             
-            htseq = pd.read_csv(csv, index_col=0)
+            htseq = read_csv(csv)
 
             csv = os.path.join(input_folder, f'{platename}.log.csv')
-            with warnings.catch_warnings():
-                    warnings.simplefilter("ignore")
-                    mapping_stats = pd.read_csv(csv, index_col=0).dropna(
-                        how='all')
+            mapping_stats = read_csv(csv).dropna(how='all')
 
             counts, metadata = clean_htseq_mapping_stats(htseq, mapping_stats)
 
