@@ -49,7 +49,7 @@ def clean_htseq_mapping_stats(htseq, mapping_stats):
     return counts, metadata
 
 
-def write(dataframe, filename, folder='./', output_format='csv', rstats=False,
+def write(dataframe, prefix, folder='./', output_format='csv', rstats=False,
           **kwargs):
     """Output dataframe contents to a file
     
@@ -58,7 +58,7 @@ def write(dataframe, filename, folder='./', output_format='csv', rstats=False,
     dataframe : pandas.DataFrame
         The data to write
     filename : str
-        Basename or relative path to write the folder to
+        Basename or relative path to write the folder to, without the extension
     folder : str
         Absolute path folder location
     output_format : 'csv' | 'tsv' | 'tab' | 'table'
@@ -75,28 +75,28 @@ def write(dataframe, filename, folder='./', output_format='csv', rstats=False,
     if output_format == 'tsv' or output_format.startswith('tab'):
         kwargs.update('sep', '\t')
 
-    combined_filename = os.path.join(folder, filename)
-    dataframe.to_csv(combined_filename)
+    filename = os.path.join(folder, prefix + '.' + output_format)
+    dataframe.to_csv(filename)
 
 
 def write_counts_metadata(counts, metadata, zipped_folder, platename,
                           cleaned_folder=None, output_format='csv',
                           rstats=False, **kwargs):
-    counts_csv = f'{platename}.counts.csv'
-    metadata_csv = f'{platename}.metadata.csv'
+    counts_prefix = f'{platename}.counts'
+    metadata_prefix = f'{platename}.metadata'
     
     if cleaned_folder is not None:
-        write(counts, counts_csv, cleaned_folder, output_format, rstats,
+        write(counts, counts_prefix, cleaned_folder, output_format, rstats,
               **kwargs)
-        write(metadata, metadata_csv, cleaned_folder, output_format, rstats,
+        write(metadata, metadata_prefix, cleaned_folder, output_format, rstats,
               **kwargs)
-        print(f'\tWrote {counts_csv} and {metadata_csv} to '
+        print(f'\tWrote {counts_prefix} and {metadata_prefix} to '
               f'{cleaned_folder}')
     
     zipname = os.path.join(zipped_folder, f'{platename}.zip')
     with ZipFile(zipname, 'w') as z:
-        z.writestr(counts_csv, counts.to_csv())
-        z.writestr(metadata_csv , metadata.to_csv())
+        z.writestr(counts_prefix, counts.to_csv())
+        z.writestr(metadata_prefix , metadata.to_csv())
     print(f'\tWrote cleaned counts and metadata to {zipname}')
 
 
