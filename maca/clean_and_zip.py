@@ -49,23 +49,36 @@ def clean_htseq_mapping_stats(htseq, mapping_stats):
     return counts, metadata
 
 
-def write(dataframe, prefix, folder='./', output_format='csv', rstats=False,
-          **kwargs):
-    """Output dataframe contents to a file
+def make_filename(prefix, folder, output_format):
+    filename = os.path.join(folder, prefix + '.' + output_format)
+    return filename
+
+
+def write_counts_metadata(counts, metadata, folder, platename,
+                          output_format='csv',
+                          rstats=False, zipped=True,
+                          **kwargs):
+    """Output counts and metadata contents to a file
     
     Parameters
     ----------
-    dataframe : pandas.DataFrame
-        The data to write
-    filename : str
-        Basename or relative path to write the folder to, without the extension
+    counts : pandas.DataFrame
+        Matrix of gene or transcript counts
+    metadata : pandas.DataFrame
+        Matrix of cell metadata
     folder : str
         Absolute path folder location
+    platename : str
+        Prefix to add to the counts and metadata filenames, e.g. if the prefix 
+        is 'MAA000901' then the files will be 'MAA000901.counts.csv' and 
+        'MAA000901.metadata.csv' 
     output_format : 'csv' | 'tsv' | 'tab' | 'table'
         Output format of the data. Default is "csv" and any of 'tsv', 'tab', 
         or 'table' will output tab-delimited files. 
     rstats : bool
         If True, removes the row label because R doesn't like that
+    zipped : bool
+        If true, creates a single zip file containing both counts and metadata
     kwargs 
         Any other keyword arguments accepted by pandas.DataFrame.to_csv
     """
@@ -75,29 +88,23 @@ def write(dataframe, prefix, folder='./', output_format='csv', rstats=False,
     if output_format == 'tsv' or output_format.startswith('tab'):
         kwargs.update('sep', '\t')
 
-    filename = os.path.join(folder, prefix + '.' + output_format)
-    dataframe.to_csv(filename)
-
-
-def write_counts_metadata(counts, metadata, zipped_folder, platename,
-                          cleaned_folder=None, output_format='csv',
-                          rstats=False, **kwargs):
-    counts_prefix = f'{platename}.counts'
-    metadata_prefix = f'{platename}.metadata'
+    counts_filename = make_filename(f'{platename}.counts', folder,
+                                    output_format)
+    metadata_filename = make_filename(f'{platename}.metadata', folder,
+                                      output_format)
     
-    if cleaned_folder is not None:
-        write(counts, counts_prefix, cleaned_folder, output_format, rstats,
-              **kwargs)
-        write(metadata, metadata_prefix, cleaned_folder, output_format, rstats,
-              **kwargs)
-        print(f'\tWrote {counts_prefix} and {metadata_prefix} to '
-              f'{cleaned_folder}')
-    
-    zipname = os.path.join(zipped_folder, f'{platename}.zip')
-    with ZipFile(zipname, 'w') as z:
-        z.writestr(counts_prefix, counts.to_csv())
-        z.writestr(metadata_prefix , metadata.to_csv())
-    print(f'\tWrote cleaned counts and metadata to {zipname}')
+    if not zipped:
+        counts.to_csv(counts_filename, **kwargs)
+        print('f\tWrote {counts_filename}')
+        metadata.to_csv(metadata_filename, **kwargs)
+        print('f\tWrote {metadata_filename}')
+
+    if zipped:
+        zipname = os.path.join(folder, f'{platename}.zip')
+        with ZipFile(zipname, 'w') as z:
+            z.writestr(counts_filename, counts.to_csv(**kwargs))
+            z.writestr(metadata_filename, metadata.to_csv(**kwargs))
+        print(f'\tWrote cleaned counts and metadata to {zipname}')
 
 
 @click.command()
@@ -112,9 +119,11 @@ def write_counts_metadata(counts, metadata, zipped_folder, platename,
 @click.option('--rstats', '-r', is_flag=True,
               help='If added, then output to "R" statistical language format, '
                    'which does not have a column name in the first column')
+@click.option('--zipped', is_flag=True,
+              help="If added, make a zip file containing both the counts and "
+                   "metadata")
 def clean_and_zip(input_folder, cleaned_folder, zipped_folder, platename=None,
-                  output_format='csv', rstats=False):
-    
+                  output_format='csv', rstats=False, zipped=False):
     if cleaned_folder is not None and not os.path.exists(cleaned_folder):
         os.mkdir(cleaned_folder)
         
@@ -133,7 +142,7 @@ def clean_and_zip(input_folder, cleaned_folder, zipped_folder, platename=None,
         
         counts, metadata = clean_htseq_mapping_stats(htseq, mapping_stats)
         write_counts_metadata(counts, metadata, zipped_folder, platename,
-                              cleaned_folder, output_format, rstats)
+                              cleaned_folder, output_format, rstats, zipped)
     
     else:
         for csv in glob.iglob(os.path.join(input_folder, '*.htseq-count.csv')):
@@ -151,7 +160,8 @@ def clean_and_zip(input_folder, cleaned_folder, zipped_folder, platename=None,
             counts, metadata = clean_htseq_mapping_stats(htseq, mapping_stats)
 
             write_counts_metadata(counts, metadata, zipped_folder,
-                                  cleaned_folder, output_format, rstats)
+                                  cleaned_folder, output_format, rstats,
+                                  zipped)
 
             
 if __name__ == '__main__':
