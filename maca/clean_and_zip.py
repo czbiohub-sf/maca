@@ -109,9 +109,8 @@ def write_counts_metadata(counts, metadata, folder, platename,
 
 @click.command()
 @click.option('--input-folder', default='./')
-@click.option('--cleaned-folder', default=None, 
-              help='If provided, write the cleaned csvs to this folder')
-@click.option('--zipped-folder', default='./zipped')
+@click.option('--output-folder', default='./',
+              help='Write the cleaned data to this folder')
 @click.option('--platename', default=None,
               help='if provided, only use this platename (good for debugging)')
 @click.option('--output-format', default='csv',
@@ -122,14 +121,11 @@ def write_counts_metadata(counts, metadata, folder, platename,
 @click.option('--zipped', is_flag=True,
               help="If added, make a zip file containing both the counts and "
                    "metadata")
-def clean_and_zip(input_folder, cleaned_folder, zipped_folder, platename=None,
+def clean_and_zip(input_folder, output_folder, platename=None,
                   output_format='csv', rstats=False, zipped=False):
-    if cleaned_folder is not None and not os.path.exists(cleaned_folder):
-        os.mkdir(cleaned_folder)
-        
-    if not os.path.exists(zipped_folder):
-        os.mkdir(zipped_folder)
-    
+    if output_folder is not None and not os.path.exists(output_folder):
+        os.mkdir(output_folder)
+
     if platename is not None:
         print(f'Reading plate {platename}...')
         csv = os.path.join(input_folder, f'{platename}.htseq-count.csv')
@@ -141,8 +137,8 @@ def clean_and_zip(input_folder, cleaned_folder, zipped_folder, platename=None,
                 mapping_stats = pd.read_csv(csv, index_col=0).dropna(how='all')
         
         counts, metadata = clean_htseq_mapping_stats(htseq, mapping_stats)
-        write_counts_metadata(counts, metadata, zipped_folder, platename,
-                              cleaned_folder, output_format, rstats, zipped)
+        write_counts_metadata(counts, metadata, output_folder, platename,
+                              output_format, rstats, zipped)
     
     else:
         for csv in glob.iglob(os.path.join(input_folder, '*.htseq-count.csv')):
@@ -159,9 +155,8 @@ def clean_and_zip(input_folder, cleaned_folder, zipped_folder, platename=None,
 
             counts, metadata = clean_htseq_mapping_stats(htseq, mapping_stats)
 
-            write_counts_metadata(counts, metadata, zipped_folder,
-                                  cleaned_folder, output_format, rstats,
-                                  zipped)
+            write_counts_metadata(counts, metadata, output_folder,
+                                  output_format, rstats, zipped)
 
             
 if __name__ == '__main__':
