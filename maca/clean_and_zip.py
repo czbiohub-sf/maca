@@ -156,7 +156,7 @@ def clean_and_zip(input_folder, output_folder, platename=None,
 
             counts, metadata = clean_htseq_mapping_stats(htseq, mapping_stats)
 
-            write_counts_metadata(counts, metadata, output_folder,
+            write_counts_metadata(counts, metadata, output_folder, platename,
                                   output_format, rstats, zipped)
 
             
