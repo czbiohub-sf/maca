@@ -88,9 +88,12 @@ def write_counts_metadata(counts, metadata, folder, platename,
     if output_format == 'tsv' or output_format.startswith('tab'):
         kwargs['sep'] = '\t'
 
-    counts_filename = make_filename(f'{platename}.counts', folder,
+    counts_prefix = f'{platename}.counts'
+    metadata_prefix = f'{platename}.metadata'
+
+    counts_filename = make_filename(counts_prefix, folder,
                                     output_format)
-    metadata_filename = make_filename(f'{platename}.metadata', folder,
+    metadata_filename = make_filename(metadata_prefix, folder,
                                       output_format)
     
     if not zipped:
@@ -102,8 +105,8 @@ def write_counts_metadata(counts, metadata, folder, platename,
     if zipped:
         zipname = os.path.join(folder, f'{platename}.zip')
         with ZipFile(zipname, 'w') as z:
-            z.writestr(counts_filename, counts.to_csv(**kwargs))
-            z.writestr(metadata_filename, metadata.to_csv(**kwargs))
+            z.writestr(counts_prefix, counts.to_csv(**kwargs))
+            z.writestr(metadata_prefix, metadata.to_csv(**kwargs))
         print(f'\tWrote cleaned counts and metadata to {zipname}')
 
 
