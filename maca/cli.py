@@ -1,7 +1,7 @@
 import click
 
 settings = dict(help_option_names=['-h', '--help'])
-from .make_zipped_csvs import clean_and_zip
+from .clean_and_zip import clean_and_zip
 
 @click.group(options_metavar='', subcommand_metavar='<command>', context_settings=settings)
 def cli():
