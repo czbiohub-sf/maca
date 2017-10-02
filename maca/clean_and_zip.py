@@ -211,7 +211,3 @@ def clean_and_zip(input_folder, output_folder, platename=None,
             write_counts_metadata(counts, metadata, output_folder, platename,
                                   output_format, rstats, zipped)
 
-            
-if __name__ == '__main__':
-    clean_and_zip()
-
