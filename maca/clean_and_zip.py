@@ -78,6 +78,7 @@ def read_csv(csv, cell_dimension=CELL_DIMENSION):
         table = pd.read_csv(csv, index_col=0)
 
     # Transpose the table if cells are on the columns and not the rows
+    import pdb; pdb.set_trace()
     if col and not row:
         table = table.T
 
