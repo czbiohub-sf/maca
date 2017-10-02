@@ -1,6 +1,6 @@
 import click
 
-from .clean_and_zip import clean_and_zip
+from maca.clean_and_zip import clean_and_zip
 
 
 settings = dict(help_option_names=['-h', '--help'])
