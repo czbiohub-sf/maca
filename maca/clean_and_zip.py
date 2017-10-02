@@ -155,14 +155,14 @@ def write_counts_metadata(counts, metadata, folder, platename,
               help="If added, make a zip file containing both the counts and "
                    "metadata")
 @click.option('--counts-suffix', default=COUNTS_SUFFIX,
-              default="String at the end of the filename that indicates it is "
+              help="String at the end of the filename that indicates it is "
                       "a counts matrix, e.g. integers of read counts mapping "
                       "to genes for each cell. Must exactly match the end of "
                       "the file after a plate name, e.g. if there is a period "
                       "separating the plate name and this suffix, the suffix "
                       "should contian the period")
 @click.option('--metadata-suffix', default=METADATA_SUFFIX,
-              default="String at the end of the filename that indicates it is "
+              help="String at the end of the filename that indicates it is "
                       "a cell metadata file, e.g. number of reads per cell or "
                       "percent mapped reads. Must exactly match the end of the"
                       " file after a plate name, e.g. if there is a period "
