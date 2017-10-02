@@ -197,7 +197,7 @@ def clean_and_zip(input_folder, output_folder, platename=None,
                               output_format, rstats, zipped)
     
     else:
-        for csv in glob.iglob(os.path.join(input_folder, '*{counts_suffix}')):
+        for csv in glob.iglob(os.path.join(input_folder, f'*{counts_suffix}')):
             platename = os.path.basename(csv).split('.')[0]
             print(f'Reading plate {platename}...')
             
