@@ -180,6 +180,7 @@ def clean_and_zip(input_folder, output_folder, platename=None,
     
     Always outputs features-by-cell matrices
     """
+    import pdb; pdb.set_trace()
     if output_folder is not None and not os.path.exists(output_folder):
         os.mkdir(output_folder)
 
