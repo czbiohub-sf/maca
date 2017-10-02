@@ -47,7 +47,7 @@ def clean_htseq_mapping_stats(htseq, mapping_stats):
     mapping_stats.index = mapping_stats.index.map(lambda x: x.strip())
 
     # Remove "_S\d+" from the ends of the columns
-    mapping_stats.columns = mapping_stats.columns.str.replace('_S\d+', '')
+    # mapping_stats.columns = mapping_stats.columns.str.replace('_S\d+', '')
 
     # metadata = pd.concat([mapping_stats, htseq.loc[HTSEQ_METADATA_ROWS]])
     # metadata = metadata.dropna(how='all')
