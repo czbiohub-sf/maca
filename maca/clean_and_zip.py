@@ -41,7 +41,6 @@ def clean_htseq_mapping_stats(htseq, mapping_stats):
     mapping_stats : pandas.DataFrame
         A features-by-cells concatenated output from STAR aligner
     """
-    import pdb; pdb.set_trace()
     counts = htseq.loc[htseq.index.difference(HTSEQ_ROWS_TO_DROP)]
     counts = counts.apply(pd.to_numeric)
     
