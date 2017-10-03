@@ -4,7 +4,6 @@ MAA000884,Pancreas,Endocrine,3_10_M,3,M,10,Viable,460646.0,85.99000000000001,htt
 MAA000583,Colon,Distal,3_9_M,3,M,9,Multiple,393972.5,83.465,https://s3.amazonaws.com/czbiohub-maca/gc_table_by_plates_zipped//data1/maca/gc_table_by_plates_zipped/MAA000583.zip
 MAA000902,Brain,Striatum,3_11_M,3,M,11,Neurons,203518.0,73.61,https://s3.amazonaws.com/czbiohub-maca/gc_table_by_plates_zipped//data1/maca/gc_table_by_plates_zipped/MAA000902.zip
 MAA000560,Brain,Cortex,3_10_M,3,M,10,Neurons,624161.5,85.215,https://s3.amazonaws.com/czbiohub-maca/gc_table_by_plates_zipped//data1/maca/gc_table_by_plates_zipped/MAA000560.zip
-MAA000107,Colon,Proximal,30_2_M,30,M,2,Multiple,1243890.0,71.08,https://s3.amazonaws.com/czbiohub-maca/gc_table_by_plates_zipped//data1/maca/gc_table_by_plates_zipped/MAA000107.zip
 MAA000609,Thymus,,3_8_M,3,M,8,Multiple,293448.0,85.445,https://s3.amazonaws.com/czbiohub-maca/gc_table_by_plates_zipped//data1/maca/gc_table_by_plates_zipped/MAA000609.zip
 MAA000926,Brain,Cortex,3_9_M,3,M,9,Neurons,306063.5,84.97,https://s3.amazonaws.com/czbiohub-maca/gc_table_by_plates_zipped//data1/maca/gc_table_by_plates_zipped/MAA000926.zip
 MAA000779,Spleen,,3_11_M,3,M,11,Viable,481670.0,81.245,https://s3.amazonaws.com/czbiohub-maca/gc_table_by_plates_zipped//data1/maca/gc_table_by_plates_zipped/MAA000779.zip
@@ -101,7 +100,6 @@ B001960,Fat,BAT,3_56_F,3,F,56,Multiple,517719.5,84.945,https://s3.amazonaws.com/
 MAA001871,Brain,Cerebellum,3_39_F,3,F,39,Microglia,520739.0,78.91,https://s3.amazonaws.com/czbiohub-maca/gc_table_by_plates_zipped//data1/maca/gc_table_by_plates_zipped/MAA001871.zip
 MAA000435,Skin,Anagen,3_10_M,3,M,10,Multiple,646485.0,85.73,https://s3.amazonaws.com/czbiohub-maca/gc_table_by_plates_zipped//data1/maca/gc_table_by_plates_zipped/MAA000435.zip
 D045140,Marrow,Granulocytes,3_38_F,3,F,38,Multiple,619834.5,87.60499999999999,https://s3.amazonaws.com/czbiohub-maca/gc_table_by_plates_zipped//data1/maca/gc_table_by_plates_zipped/D045140.zip
-MAA000093,Brain,Brainstem,24_1_M,24,M,1,Neurons,955893.0,86.64,https://s3.amazonaws.com/czbiohub-maca/gc_table_by_plates_zipped//data1/maca/gc_table_by_plates_zipped/MAA000093.zip
 D042474,Trachea,,3_8_M,3,M,8,Multiple,8436.0,80.72,https://s3.amazonaws.com/czbiohub-maca/gc_table_by_plates_zipped//data1/maca/gc_table_by_plates_zipped/D042474.zip
 MAA000920,Heart,LA,3_11_M,3,M,11,Viable,503603.0,83.82,https://s3.amazonaws.com/czbiohub-maca/gc_table_by_plates_zipped//data1/maca/gc_table_by_plates_zipped/MAA000920.zip
 D042475,Trachea,,3_9_M,3,M,9,Multiple,3299.0,78.97,https://s3.amazonaws.com/czbiohub-maca/gc_table_by_plates_zipped//data1/maca/gc_table_by_plates_zipped/D042475.zip
@@ -126,21 +124,17 @@ MAA001847,Lung,EPCAM,3_39_F,3,F,39,Multiple,436350.5,86.345,https://s3.amazonaws
 MAA000399,Heart,RV,3_9_M,3,M,9,Viable,340897.5,81.095,https://s3.amazonaws.com/czbiohub-maca/gc_table_by_plates_zipped//data1/maca/gc_table_by_plates_zipped/MAA000399.zip
 MAA000605,Brain,Cerebellum,3_10_M,3,M,10,Microglia,254245.0,83.435,https://s3.amazonaws.com/czbiohub-maca/gc_table_by_plates_zipped//data1/maca/gc_table_by_plates_zipped/MAA000605.zip
 D041894,Tongue,,3_9_M,3,M,9,Multiple,488665.0,87.18,https://s3.amazonaws.com/czbiohub-maca/gc_table_by_plates_zipped//data1/maca/gc_table_by_plates_zipped/D041894.zip
-MAA100097,Heart,LA/RA,3_38_F/3_39_F,,,,cardiomyocytes,484462.0,77.62,https://s3.amazonaws.com/czbiohub-maca/gc_table_by_plates_zipped//data1/maca/gc_table_by_plates_zipped/MAA100097.zip
 MAA000848,Marrow,KLS,3_10_M,3,M,10,Multiple,487540.0,84.61500000000001,https://s3.amazonaws.com/czbiohub-maca/gc_table_by_plates_zipped//data1/maca/gc_table_by_plates_zipped/MAA000848.zip
 B000167,Mammary_Gland,Mammary_Gland,3_56_F,3,F,56,Multiple,378911.0,80.25,https://s3.amazonaws.com/czbiohub-maca/gc_table_by_plates_zipped//data1/maca/gc_table_by_plates_zipped/B000167.zip
 B002437,Mammary_Gland,Mammary_Gland,3_39_F,3,F,39,Multiple,365724.5,84.92500000000001,https://s3.amazonaws.com/czbiohub-maca/gc_table_by_plates_zipped//data1/maca/gc_table_by_plates_zipped/B002437.zip
 MAA000752,Kidney,,3_10_M,3,M,10,Viable,403065.0,83.14,https://s3.amazonaws.com/czbiohub-maca/gc_table_by_plates_zipped//data1/maca/gc_table_by_plates_zipped/MAA000752.zip
 B002309,Mammary_Gland,Mammary_Gland,3_57_F,3,F,57,Multiple,542188.0,85.36500000000001,https://s3.amazonaws.com/czbiohub-maca/gc_table_by_plates_zipped//data1/maca/gc_table_by_plates_zipped/B002309.zip
 B003275,Brain,Hippocampus,3_38_F,3,F,38,Neurons,328005.5,84.75999999999999,https://s3.amazonaws.com/czbiohub-maca/gc_table_by_plates_zipped//data1/maca/gc_table_by_plates_zipped/B003275.zip
-MAA000226,Marrow,T-cells,30_2_M,30,M,2,Sytox-CD2+CD90mid/hi?,1118778.0,85.22,https://s3.amazonaws.com/czbiohub-maca/gc_table_by_plates_zipped//data1/maca/gc_table_by_plates_zipped/MAA000226.zip
 MAA001844,Marrow,KLS,3_38_F,3,F,38,Multiple,642326.5,85.635,https://s3.amazonaws.com/czbiohub-maca/gc_table_by_plates_zipped//data1/maca/gc_table_by_plates_zipped/MAA001844.zip
 B003728,Brain,Striatum,3_56_F,3,F,56,Neurons,199112.0,67.315,https://s3.amazonaws.com/czbiohub-maca/gc_table_by_plates_zipped//data1/maca/gc_table_by_plates_zipped/B003728.zip
 MAA001887,Marrow,KLS,3_39_F,3,F,39,Multiple,546599.0,79.64,https://s3.amazonaws.com/czbiohub-maca/gc_table_by_plates_zipped//data1/maca/gc_table_by_plates_zipped/MAA001887.zip
-MAA000205,Brain,Striatum,30_2_M,30,M,2,Neurons,930768.0,85.91,https://s3.amazonaws.com/czbiohub-maca/gc_table_by_plates_zipped//data1/maca/gc_table_by_plates_zipped/MAA000205.zip
 MAA000578,Brain,Cerebellum,3_10_M,3,M,10,Neurons,15734.5,75.92,https://s3.amazonaws.com/czbiohub-maca/gc_table_by_plates_zipped//data1/maca/gc_table_by_plates_zipped/MAA000578.zip
 D042193,Marrow,T-cells,3_8_M,3,M,8,Multiple,19818.0,80.57499999999999,https://s3.amazonaws.com/czbiohub-maca/gc_table_by_plates_zipped//data1/maca/gc_table_by_plates_zipped/D042193.zip
-MAA100037,Heart,?,3_10_M/3_11_M,,,,cardiomyocytes,377728.5,80.16499999999999,https://s3.amazonaws.com/czbiohub-maca/gc_table_by_plates_zipped//data1/maca/gc_table_by_plates_zipped/MAA100037.zip
 MAA001868,Pancreas,Exocrine,3_38_F,3,F,38,Viable,446699.5,80.175,https://s3.amazonaws.com/czbiohub-maca/gc_table_by_plates_zipped//data1/maca/gc_table_by_plates_zipped/MAA001868.zip
 MAA000914,Fat,MAT,3_9_M,3,M,9,Multiple,209477.5,68.065,https://s3.amazonaws.com/czbiohub-maca/gc_table_by_plates_zipped//data1/maca/gc_table_by_plates_zipped/MAA000914.zip
 MAA000906,Heart,Aorta,3_11_M,3,M,11,Viable,333012.5,81.505,https://s3.amazonaws.com/czbiohub-maca/gc_table_by_plates_zipped//data1/maca/gc_table_by_plates_zipped/MAA000906.zip
@@ -158,16 +152,13 @@ D042479,Marrow,B-cells,3_8_M,3,M,8,Multiple,29239.0,81.185,https://s3.amazonaws.
 MAA000919,Heart,LA,3_10_M,3,M,10,Viable,315280.0,81.325,https://s3.amazonaws.com/czbiohub-maca/gc_table_by_plates_zipped//data1/maca/gc_table_by_plates_zipped/MAA000919.zip
 B000826,Brain,Cortex,3_39_F,3,F,39,Microglia,388555.5,87.325,https://s3.amazonaws.com/czbiohub-maca/gc_table_by_plates_zipped//data1/maca/gc_table_by_plates_zipped/B000826.zip
 MAA001872,Colon,Proximal,3_39_F,3,F,39,Multiple,567945.0,80.125,https://s3.amazonaws.com/czbiohub-maca/gc_table_by_plates_zipped//data1/maca/gc_table_by_plates_zipped/MAA001872.zip
-MAA000099,Brain,Brainstem,24_1_M,24,M,1,Neurons,794853.0,87.64,https://s3.amazonaws.com/czbiohub-maca/gc_table_by_plates_zipped//data1/maca/gc_table_by_plates_zipped/MAA000099.zip
 MAA000589,Heart,LV,3_9_M,3,M,9,Viable,382930.5,81.27,https://s3.amazonaws.com/czbiohub-maca/gc_table_by_plates_zipped//data1/maca/gc_table_by_plates_zipped/MAA000589.zip
 MAA001854,Brain,Cerebellum,3_38_F,3,F,38,Neurons,334686.5,86.405,https://s3.amazonaws.com/czbiohub-maca/gc_table_by_plates_zipped//data1/maca/gc_table_by_plates_zipped/MAA001854.zip
 MAA000595,Heart,Aorta,3_9_M,3,M,9,Viable,443525.5,71.845,https://s3.amazonaws.com/czbiohub-maca/gc_table_by_plates_zipped//data1/maca/gc_table_by_plates_zipped/MAA000595.zip
 D042185,Muscle,ForelimbandHindlimb,3_9_M,3,M,9,Multiple,599391.5,86.505,https://s3.amazonaws.com/czbiohub-maca/gc_table_by_plates_zipped//data1/maca/gc_table_by_plates_zipped/D042185.zip
 MAA000530,Lung,,3_8_M,3,M,8,Multiple,559716.0,86.785,https://s3.amazonaws.com/czbiohub-maca/gc_table_by_plates_zipped//data1/maca/gc_table_by_plates_zipped/MAA000530.zip
-MAA000228,Brain,Cortex,30_2_M,30,M,2,Neurons,1101670.0,86.42,https://s3.amazonaws.com/czbiohub-maca/gc_table_by_plates_zipped//data1/maca/gc_table_by_plates_zipped/MAA000228.zip
 MAA001861,Pancreas,Exocrine,3_39_F,3,F,39,Viable,462713.5,84.84,https://s3.amazonaws.com/czbiohub-maca/gc_table_by_plates_zipped//data1/maca/gc_table_by_plates_zipped/MAA001861.zip
 D042467,Marrow,T-cells,3_9_M,3,M,9,Multiple,49385.0,82.13499999999999,https://s3.amazonaws.com/czbiohub-maca/gc_table_by_plates_zipped//data1/maca/gc_table_by_plates_zipped/D042467.zip
-MAA000199,Pancreas,Endocrine,30_2_M,30,M,2,Viable,852805.0,79.95,https://s3.amazonaws.com/czbiohub-maca/gc_table_by_plates_zipped//data1/maca/gc_table_by_plates_zipped/MAA000199.zip
 MAA000487,Bladder,,3_10_M,3,M,10,Multiple,486860.5,84.9,https://s3.amazonaws.com/czbiohub-maca/gc_table_by_plates_zipped//data1/maca/gc_table_by_plates_zipped/MAA000487.zip
 B003277,Brain,Hippocampus,3_39_F,3,F,39,Neurons,421406.5,80.735,https://s3.amazonaws.com/czbiohub-maca/gc_table_by_plates_zipped//data1/maca/gc_table_by_plates_zipped/B003277.zip
 B003291,Thymus,Flowthrough,3_39_F,3,F,39,Multiple,603098.0,88.34,https://s3.amazonaws.com/czbiohub-maca/gc_table_by_plates_zipped//data1/maca/gc_table_by_plates_zipped/B003291.zip
@@ -175,9 +166,7 @@ MAA000550,Brain,Hippocampus,3_10_M,3,M,10,Neurons,3859.5,73.695,https://s3.amazo
 MAA000873,Fat,MAT,3_10_M,3,M,10,Multiple,408283.5,80.445,https://s3.amazonaws.com/czbiohub-maca/gc_table_by_plates_zipped//data1/maca/gc_table_by_plates_zipped/MAA000873.zip
 B000971,Spleen,,3_39_F,3,F,39,Viable,622976.5,85.09,https://s3.amazonaws.com/czbiohub-maca/gc_table_by_plates_zipped//data1/maca/gc_table_by_plates_zipped/B000971.zip
 MAA001895,Brain,Cortex,3_38_F,3,F,38,Neurons,241857.5,85.715,https://s3.amazonaws.com/czbiohub-maca/gc_table_by_plates_zipped//data1/maca/gc_table_by_plates_zipped/MAA001895.zip
-MAA000140,Heart,RV,30_2_M,30,M,2,Viable,801900.0,82.465,https://s3.amazonaws.com/czbiohub-maca/gc_table_by_plates_zipped//data1/maca/gc_table_by_plates_zipped/MAA000140.zip
 MAA000870,Colon,Distal,3_10_M,3,M,10,Multiple,479086.5,79.455,https://s3.amazonaws.com/czbiohub-maca/gc_table_by_plates_zipped//data1/maca/gc_table_by_plates_zipped/MAA000870.zip
-MAA000144,Kidney,,30_2_M,30,M,2,Viable,819552.5,83.055,https://s3.amazonaws.com/czbiohub-maca/gc_table_by_plates_zipped//data1/maca/gc_table_by_plates_zipped/MAA000144.zip
 B000634,Heart,LA,3_56_F,3,F,56,Viable,501895.0,85.525,https://s3.amazonaws.com/czbiohub-maca/gc_table_by_plates_zipped//data1/maca/gc_table_by_plates_zipped/B000634.zip
 MAA000908,Heart,Aorta,3_10_M,3,M,10,Viable,162691.0,70.685,https://s3.amazonaws.com/czbiohub-maca/gc_table_by_plates_zipped//data1/maca/gc_table_by_plates_zipped/MAA000908.zip
 B003283,Skin,,3_38_F,3,F,38,Multiple,551779.5,86.88499999999999,https://s3.amazonaws.com/czbiohub-maca/gc_table_by_plates_zipped//data1/maca/gc_table_by_plates_zipped/B003283.zip
@@ -196,7 +185,6 @@ MAA001539,Colon,Distal,3_56_F,3,F,56,Multiple,488192.0,82.31,https://s3.amazonaw
 MAA001862,Pancreas,Endocrine,3_39_F,3,F,39,Viable,543441.5,87.025,https://s3.amazonaws.com/czbiohub-maca/gc_table_by_plates_zipped//data1/maca/gc_table_by_plates_zipped/MAA001862.zip
 MAA000880,Thymus,,3_11_M,3,M,11,Multiple,468451.0,78.995,https://s3.amazonaws.com/czbiohub-maca/gc_table_by_plates_zipped//data1/maca/gc_table_by_plates_zipped/MAA000880.zip
 D042105,Muscle,Diaphragm,3_11_M,3,M,11,Multiple,556269.0,86.32499999999999,https://s3.amazonaws.com/czbiohub-maca/gc_table_by_plates_zipped//data1/maca/gc_table_by_plates_zipped/D042105.zip
-MAA000145,Spleen,,30_2_M,30,M,2,Viable,1074727.0,73.38,https://s3.amazonaws.com/czbiohub-maca/gc_table_by_plates_zipped//data1/maca/gc_table_by_plates_zipped/MAA000145.zip
 B001688,Brain,Hippocampus,3_38_F,3,F,38,Neurons,525252.5,90.66,https://s3.amazonaws.com/czbiohub-maca/gc_table_by_plates_zipped//data1/maca/gc_table_by_plates_zipped/B001688.zip
 B000126,Skin,,3_39_F,3,F,39,Multiple,425639.5,86.56,https://s3.amazonaws.com/czbiohub-maca/gc_table_by_plates_zipped//data1/maca/gc_table_by_plates_zipped/B000126.zip
 B003284,Thymus,Epithelium,3_39_F,3,F,39,Multiple,338779.5,85.60499999999999,https://s3.amazonaws.com/czbiohub-maca/gc_table_by_plates_zipped//data1/maca/gc_table_by_plates_zipped/B003284.zip
@@ -204,10 +192,7 @@ MAA100140,Liver,Hepatocytes,3_57_F,3,F,57,,228372.0,84.49000000000001,https://s3
 B002427,Heart,LA,3_39_F,3,F,39,Viable,564774.5,89.37,https://s3.amazonaws.com/czbiohub-maca/gc_table_by_plates_zipped//data1/maca/gc_table_by_plates_zipped/B002427.zip
 B002423,Heart,RV,3_39_F,3,F,39,Viable,560943.0,87.015,https://s3.amazonaws.com/czbiohub-maca/gc_table_by_plates_zipped//data1/maca/gc_table_by_plates_zipped/B002423.zip
 MAA000603,Brain,Hippocampus,3_10_M,3,M,10,Microglia,458410.0,85.02000000000001,https://s3.amazonaws.com/czbiohub-maca/gc_table_by_plates_zipped//data1/maca/gc_table_by_plates_zipped/MAA000603.zip
-MAA000077,Mammary_Gland,Mammary_Gland,24_1_M,24,M,1,MRUs(F),857249.0,87.2,https://s3.amazonaws.com/czbiohub-maca/gc_table_by_plates_zipped//data1/maca/gc_table_by_plates_zipped/MAA000077.zip
 B002765,Muscle,ForelimbandHindlimb,3_38_F,3,F,38,"CD31+, CD45+, CD31-CD45-Sca1+, CD31-CD45-Sca1-VCAM1+",532520.5,84.73,https://s3.amazonaws.com/czbiohub-maca/gc_table_by_plates_zipped//data1/maca/gc_table_by_plates_zipped/B002765.zip
-MAA100096,Heart,?,3_38_F/3_39_F,,,,cardiomyocytes,145481.5,75.62,https://s3.amazonaws.com/czbiohub-maca/gc_table_by_plates_zipped//data1/maca/gc_table_by_plates_zipped/MAA100096.zip
-MAA000072,Heart,LV,24_1_M,24,M,1,Viable,786863.0,51.31,https://s3.amazonaws.com/czbiohub-maca/gc_table_by_plates_zipped//data1/maca/gc_table_by_plates_zipped/MAA000072.zip
 D042253,Bladder,,3_9_M,3,M,9,Multiple,10713.5,81.125,https://s3.amazonaws.com/czbiohub-maca/gc_table_by_plates_zipped//data1/maca/gc_table_by_plates_zipped/D042253.zip
 MAA100040,Liver,Hepatocytes,3_11_M,3,M,11,,370448.5,77.995,https://s3.amazonaws.com/czbiohub-maca/gc_table_by_plates_zipped//data1/maca/gc_table_by_plates_zipped/MAA100040.zip
 B001717,Kidney,,3_38_F,3,F,38,Viable,399109.5,79.50999999999999,https://s3.amazonaws.com/czbiohub-maca/gc_table_by_plates_zipped//data1/maca/gc_table_by_plates_zipped/B001717.zip
@@ -243,7 +228,6 @@ MAA000439,Fat,GAT,3_10_M,3,M,10,Multiple,554794.5,85.8,https://s3.amazonaws.com/
 MAA000925,Brain,Striatum,3_9_M,3,M,9,Neurons,317158.5,83.445,https://s3.amazonaws.com/czbiohub-maca/gc_table_by_plates_zipped//data1/maca/gc_table_by_plates_zipped/MAA000925.zip
 MAA000617,Brain,Striatum,3_10_M,3,M,10,Microglia,264132.0,84.245,https://s3.amazonaws.com/czbiohub-maca/gc_table_by_plates_zipped//data1/maca/gc_table_by_plates_zipped/MAA000617.zip
 MAA000559,Spleen,,3_8_M,3,M,8,Viable,9900.5,72.465,https://s3.amazonaws.com/czbiohub-maca/gc_table_by_plates_zipped//data1/maca/gc_table_by_plates_zipped/MAA000559.zip
-MAA000094,Brain,Hippocampus,24_1_M,24,M,1,Neurons,1202664.0,87.37,https://s3.amazonaws.com/czbiohub-maca/gc_table_by_plates_zipped//data1/maca/gc_table_by_plates_zipped/MAA000094.zip
 B003279,Brain,Cerebellum,3_38_F,3,F,38,Microglia,584398.0,83.93,https://s3.amazonaws.com/czbiohub-maca/gc_table_by_plates_zipped//data1/maca/gc_table_by_plates_zipped/B003279.zip
 MAA100039,Liver,Hepatocytes,3_11_M,3,M,11,,432392.5,81.945,https://s3.amazonaws.com/czbiohub-maca/gc_table_by_plates_zipped//data1/maca/gc_table_by_plates_zipped/MAA100039.zip
 B001216,Fat,BAT,3_38_F,3,F,38,Multiple,678579.0,82.0,https://s3.amazonaws.com/czbiohub-maca/gc_table_by_plates_zipped//data1/maca/gc_table_by_plates_zipped/B001216.zip
