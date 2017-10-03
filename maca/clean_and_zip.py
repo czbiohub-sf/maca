@@ -12,6 +12,7 @@ import pandas as pd
 
 
 HTSEQ_ROWS_TO_DROP = ['EXP_ID',
+                      'TAXON',
  'WELL_MAPPING',
  '__alignment_not_unique',
  '__ambiguous',
