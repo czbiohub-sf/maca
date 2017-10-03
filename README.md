@@ -41,3 +41,13 @@ that R likes (no label in the first column)
 ```
 $ maca clean_and_zip  --output-folder ../gc_table_by_plates_zipped/ --output-format tab --zipped --rstats
 ```
+
+### Example reading cell-by-feature files
+
+
+Here's an example that reads cell-by-feature files and outputs zipped
+feature-by-cell files in a format that R likes (no label in first column)
+
+```
+$ maca clean_and_zip  --output-folder ../gc_table_by_plates_zipped/ --output-format tab --zipped --rstats --cell-dimension row --counts-suffix .htseq-count-by-cell.csv --metadata-suffix .log-by-cell.csv ./ 
+```
