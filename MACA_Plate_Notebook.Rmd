@@ -168,7 +168,7 @@ DotPlot(tiss, genes.plot = cluster0_markers[1:10])
 
 
 ```{r}
-tiss = BuildClusterTree(tiss)
+tiss = BuildClusterTree(tiss, pcs.use=1:20, do.plot = True, do.reorder=True, reorder.numeric=True)
 # DOn't need the next line because BuildClusterTree makes the plot already
 # PlotClusterTree(tiss)
 ```
