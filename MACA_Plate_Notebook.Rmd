@@ -165,3 +165,18 @@ cluster0_markers = filter(tiss.markers, cluster == 0)$gene
 
 DotPlot(tiss, genes.plot = cluster0_markers[1:10])
 ```
+
+
+```{r}
+tiss = BuildClusterTree(tiss)
+# DOn't need the next line because BuildClusterTree makes the plot already
+# PlotClusterTree(tiss)
+```
+
+
+```{r}
+# Get markers for a particular cluster
+cluster0_markers = filter(tiss.markers, cluster == 0)$gene
+
+DotPlot(tiss, genes.plot = cluster0_markers[1:10], group.by = 'cluster')
+```
