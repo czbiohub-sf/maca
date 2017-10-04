@@ -3,10 +3,14 @@ title: "MACA Notebook"
 output: html_notebook
 ---
 
+Enter the directory of the maca folder on your drive and the name of the tissue you want to analyze.
+
 ```{r}
-rootdir = "~/code/maca/"
+rootdir = "~/src/maca/"
+tissue = "Liver"
 ```
 
+Load the requisite packages and some additional helper functions.
 
 ```{r}
 library(Seurat)
@@ -33,8 +37,10 @@ Check for available files.
  head(metadata)
 ```
 
+Load the plate data.
+
 ```{r}
-tissue_plates = filter(metadata, tissue == "Pancreas" & mouse.age ==3)[,c('plate.barcode','tissue','subtissue','mouse.sex')]
+tissue_plates = filter(metadata, tissue == tissue & mouse.age ==3)[,c('plate.barcode','tissue','subtissue','mouse.sex')]
 tissue_counts = paste0(tissue_plates$plate.barcode, '.counts.tab')
 
 remove_erccs = function(counts){
@@ -47,7 +53,7 @@ remove_erccs = function(counts){
 raw.data = read.csv(file = paste0(rootdir,"data/", tissue_counts[1]) ,sep='\t')
 data.no.erccs = remove_erccs(raw.data)
 
-tiss <- CreateSeuratObject(raw.data = data.no.erccs, project = "Pancreas", 
+tiss <- CreateSeuratObject(raw.data = data.no.erccs, project = tissue, 
                     min.cells = 5, min.genes = 5)
 
 for (file in count_files[2:length(tissue_counts)]){
@@ -55,32 +61,13 @@ for (file in count_files[2:length(tissue_counts)]){
   data.no.erccs = remove_erccs(raw.data)
   tiss <- AddSamples(object = tiss, new.data = data.no.erccs, 
                      add.cell.id = file, do.normalize = FALSE,min.cells = 5, min.genes = 5)
+
+# Change default name for sums of counts from nUMI to nReads
+colnames(tiss@meta.data)[colnames(tiss@meta.data) == 'nUMI'] <- 'nReads'
 }
 ```
 
-
-# ```{r}
-# for (plate in filter(metadata, tissue == "Pancreas" & mouse.age == 3)$plate.barcode){
-#   raw.data <- read.
-#   liver <- CreateSeuratObject(raw.data = liver_P7_0.data, project = "liver", 
-#                     min.cells = 5, min.genes = 5)
-#   print(plate)
-# }
-# ```
-
-
-# ```{r}
-# raw.data <- read.csv(file = "~/Downloads/MAA000574/MAA000574.counts.tab",sep='\t')
-# ```
-
-
-
-# ```{r}
-# tiss <- CreateSeuratObject(raw.data = raw.data, project = "pancreas", 
-#                     min.cells = 5, min.genes = 5)
-# ```
-
-Calculate percent ribosomal genes and set genes to ignore, like highly-abundant lincRNAs Malat1 and Rn45s.
+Calculate percent ribosomal genes.
 
 ```{r}
 ribo.genes <- grep(pattern = "^Rp[sl][[:digit:]]", x = rownames(x = tiss@data), value = TRUE)
@@ -89,24 +76,16 @@ percent.ribo <- Matrix::colSums(tiss@raw.data[ribo.genes, ])/Matrix::colSums(tis
 
 tiss <- AddMetaData(object = tiss, metadata = percent.ribo, col.name = "percent.ribo")
 
-exclude.genes = c(ribo.genes,"Malat1","Rn45s")
 ```
 
-
+Normalize the data, then regress out correlation with total reads
 ```{r}
 tiss <- NormalizeData(object = tiss)
-tiss <- ScaleData(object = tiss)
+tiss <- ScaleData(object = tiss, vars.to.regress = c("nReads", "percent.ribo","Rn45s"))
 tiss <- FindVariableGenes(object = tiss, do.plot = TRUE)
 ```
 
 
-
-# ```{r}
-# tiss <- NormalizeData(object = tiss, normalization.method = "LogNormalize",
-#     scale.factor = 10000)
-# tiss <- ScaleData(object = tiss, vars.to.regress = c("nUMI", "percent.ribo"))
-# tiss <- FindVariableGenes(object = tiss, do.plot = TRUE)
-# ```
 Run Principal Component Analysis.
 ```{r}
 tiss <- RunPCA(object = tiss, pc.genes = tiss@var.genes, do.print = TRUE, pcs.print = 1:5, 
@@ -134,7 +113,7 @@ tiss <- FindClusters(object = tiss, reduction.type = "pca", dims.use = 1:20,
 
 
 ```{r}
-tiss <- RunTSNE(object = tiss, dims.use = 1:20, seed.use = 10)
+tiss <- RunTSNE(object = tiss, dims.use = 1:20, seed.use = 10, check_duplicates = F)
 ```
 
 ```{r}
@@ -143,19 +122,25 @@ TSNEPlot(object = tiss)
 ```
 
 ```{r}
-tiss.markers <- FindAllMarkers(object = tiss, only.pos = TRUE, min.pct = 0.25, 
-    thresh.use = 0.25)
-tiss.markers %>% group_by(cluster) %>% top_n(4, avg_diff)
-```
-```{r}
-genes_to_check = c('Ins1', 'Ins2', 'Gcg')
+genes_to_check = c('Alb', 'Glul', 'Cyp2f2')
 
 FeaturePlot(tiss, genes_to_check, pt.size = 1)
 ```
 
+Find differentially expressed markers.
+```{r}
+tiss.markers <- FindAllMarkers(object = tiss, only.pos = TRUE, min.pct = 0.25, 
+    thresh.use = 0.25)
+```
+
+Display top 4 markers per cluster.
+```{r}
+tiss.markers %>% group_by(cluster) %>% top_n(4, avg_diff)
+```
+
 
 ```{r}
-vlnPlot(tiss, genes_to_check)
+VlnPlot(tiss, genes_to_check)
 ```
 
 
@@ -163,19 +148,16 @@ vlnPlot(tiss, genes_to_check)
 # Get markers for a particular cluster
 cluster0_markers = filter(tiss.markers, cluster == 0)$gene
 
-DotPlot(tiss, genes.plot = cluster0_markers[1:10])
+DotPlot(tiss, genes.plot = cluster0_markers[1:7], plot.legend = T)
 ```
 
 
 ```{r}
-tiss = BuildClusterTree(tiss, pcs.use=1:11, do.plot = True, do.reorder=True, reorder.numeric=True)
-# DOn't need the next line because BuildClusterTree makes the plot already
-# PlotClusterTree(tiss)
+tiss = BuildClusterTree(tiss)
 ```
 
-
+Get markers for a particular cluster
 ```{r}
-# Get markers for a particular cluster
 cluster_markers = filter(tiss.markers, cluster == 4)$gene
 
 DotPlot(tiss, genes.plot = cluster_markers[1:10])
