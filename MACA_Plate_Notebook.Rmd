@@ -152,3 +152,8 @@ genes_to_check = c('Ins1', 'Ins2', 'Gcg')
 
 FeaturePlot(tiss, genes_to_check, pt.size = 1)
 ```
+
+
+```{r}
+vlnPlot(tiss, genes_to_check)
+```
