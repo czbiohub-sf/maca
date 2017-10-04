@@ -28,8 +28,8 @@ head(metadata)
 
 Check for available files.
 ```{r}
- count_files = list.files(paste0(rootdir, "data/"), pattern = "*counts.tab",recursive = TRUE)
- metadata_files = list.files(paste0(rootdir, "data/"), pattern = "*metadata.tab",recursive = TRUE)
+ count_files = list.files(paste0(rootdir, "data/"), pattern = "*counts.tab",recursive = FALSE)
+ metadata_files = list.files(paste0(rootdir, "data/"), pattern = "*metadata.tab",recursive = FALSE)
 
  downloaded_plates = lapply(count_files, function(x) strsplit(x,"[./]")[[1]][1])
 
@@ -66,6 +66,8 @@ for (file in count_files[2:length(tissue_counts)]){
 colnames(tiss@meta.data)[colnames(tiss@meta.data) == 'nUMI'] <- 'nReads'
 }
 ```
+
+
 
 Calculate percent ribosomal genes.
 
