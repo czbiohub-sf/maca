@@ -157,3 +157,11 @@ FeaturePlot(tiss, genes_to_check, pt.size = 1)
 ```{r}
 vlnPlot(tiss, genes_to_check)
 ```
+
+
+```{r}
+# Get markers for a particular cluster
+cluster0_markers = filter(tiss.markers, cluster == 0)$gene
+
+DotPlot(tiss, genes.plot = cluster0_markers[1:10])
+```
