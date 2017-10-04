@@ -7,7 +7,7 @@ Enter the directory of the maca folder on your drive and the name of the tissue 
 
 ```{r}
 rootdir = "~/src/maca/"
-tissue = "Liver"
+tissue_of_interest = "Liver"
 ```
 
 Load the requisite packages and some additional helper functions.
@@ -40,7 +40,7 @@ Check for available files.
 Load the plate data.
 
 ```{r}
-tissue_plates = filter(metadata, tissue == tissue & mouse.age ==3)[,c('plate.barcode','tissue','subtissue','mouse.sex')]
+tissue_plates = filter(metadata, tissue == tissue_of_interest & mouse.age == 3)[,c('plate.barcode','tissue','subtissue','mouse.sex')]
 tissue_counts = paste0(tissue_plates$plate.barcode, '.counts.tab')
 
 remove_erccs = function(counts){
@@ -53,14 +53,14 @@ remove_erccs = function(counts){
 raw.data = read.csv(file = paste0(rootdir,"data/", tissue_counts[1]) ,sep='\t')
 data.no.erccs = remove_erccs(raw.data)
 
-tiss <- CreateSeuratObject(raw.data = data.no.erccs, project = tissue, 
+tiss <- CreateSeuratObject(raw.data = data.no.erccs, project = tissue_of_interest, 
                     min.cells = 5, min.genes = 5)
 
 for (file in count_files[2:length(tissue_counts)]){
   raw.data = read.csv(file = paste0(rootdir,"data/", file), sep='\t')
   data.no.erccs = remove_erccs(raw.data)
   tiss <- AddSamples(object = tiss, new.data = data.no.erccs, 
-                     add.cell.id = file, do.normalize = FALSE,min.cells = 5, min.genes = 5)
+                     add.cell.id = file, do.normalize = FALSE, min.cells = 5, min.genes = 5)
 
 }
 
