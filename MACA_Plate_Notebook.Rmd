@@ -168,7 +168,7 @@ DotPlot(tiss, genes.plot = cluster0_markers[1:10])
 
 
 ```{r}
-tiss = BuildClusterTree(tiss, pcs.use=1:20, do.plot = True, do.reorder=True, reorder.numeric=True)
+tiss = BuildClusterTree(tiss, pcs.use=1:11, do.plot = True, do.reorder=True, reorder.numeric=True)
 # DOn't need the next line because BuildClusterTree makes the plot already
 # PlotClusterTree(tiss)
 ```
@@ -176,7 +176,7 @@ tiss = BuildClusterTree(tiss, pcs.use=1:20, do.plot = True, do.reorder=True, reo
 
 ```{r}
 # Get markers for a particular cluster
-cluster0_markers = filter(tiss.markers, cluster == 0)$gene
+cluster_markers = filter(tiss.markers, cluster == 4)$gene
 
-DotPlot(tiss, genes.plot = cluster0_markers[1:10], group.by = 'cluster')
+DotPlot(tiss, genes.plot = cluster_markers[1:10])
 ```
