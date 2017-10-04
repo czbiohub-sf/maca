@@ -37,40 +37,44 @@ Check for available files.
 tissue_plates = filter(metadata, tissue == "Pancreas" & mouse.age ==3)[,c('plate.barcode','tissue','subtissue','mouse.sex')]
 tissue_counts = paste0(tissue_plates$plate.barcode, '.counts.tab')
 
-raw.data = read.csv(file = paste0(rootdir,"data/", tissue_counts[1]) ,sep='\t')
+remove_erccs = function(counts){
+  erccs <- grep(pattern = "^ERCC-", x = rownames(x = counts), value = TRUE)
+  percent.ercc <- Matrix::colSums(counts[erccs, ])/Matrix::colSums(counts)
+  ercc.index <- grep(pattern = "^ERCC-", x = rownames(x = counts), value = FALSE)
+  counts <- counts[-ercc.index,]
+}
 
-tiss <- CreateSeuratObject(raw.data = raw.data, project = "Pancreas", 
+raw.data = read.csv(file = paste0(rootdir,"data/", tissue_counts[1]) ,sep='\t')
+data.no.erccs = remove_erccs(raw.data)
+
+tiss <- CreateSeuratObject(raw.data = data.no.erccs, project = "Pancreas", 
                     min.cells = 5, min.genes = 5)
 
 for (file in count_files[2:length(tissue_counts)]){
   raw.data = read.csv(file = paste0(rootdir,"data/", file), sep='\t')
-  tiss <- AddSamples(object = tiss, new.data = raw.data, add.cell.id = file, do.normalize = FALSE,min.cells = 5, min.genes = 5)
+  data.no.erccs = remove_erccs(raw.data)
+  tiss <- AddSamples(object = tiss, new.data = data.no.erccs, 
+                     add.cell.id = file, do.normalize = FALSE,min.cells = 5, min.genes = 5)
 }
 ```
 
 
+# ```{r}
+# for (plate in filter(metadata, tissue == "Pancreas" & mouse.age == 3)$plate.barcode){
+#   raw.data <- read.
+#   liver <- CreateSeuratObject(raw.data = liver_P7_0.data, project = "liver", 
+#                     min.cells = 5, min.genes = 5)
+#   print(plate)
+# }
+# ```
+
+
+# ```{r}
+# raw.data <- read.csv(file = "~/Downloads/MAA000574/MAA000574.counts.tab",sep='\t')
+# ```
+
 ```{r}
-for (plate in filter(metadata, tissue == "Pancreas" & mouse.age == 3)$plate.barcode){
-  raw.data <- read.
-  liver <- CreateSeuratObject(raw.data = liver_P7_0.data, project = "liver", 
-                    min.cells = 5, min.genes = 5)
-  print(plate)
-}
-```
 
-
-```{r}
-raw.data <- read.csv(file = "~/Downloads/MAA000574/MAA000574.counts.tab",sep='\t')
-```
-
-```{r}
-erccs <- grep(pattern = "^ERCC-", x = rownames(x = raw.data), value = TRUE)
-
-percent.ercc <- Matrix::colSums(raw.data[erccs, ])/Matrix::colSums(raw.data)
-
-ercc.index <- grep(pattern = "^ERCC-", x = rownames(x = raw.data), value = FALSE)
-
-raw.data <- raw.data[-ercc.index,]
 ```
 
 
