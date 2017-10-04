@@ -62,9 +62,10 @@ for (file in count_files[2:length(tissue_counts)]){
   tiss <- AddSamples(object = tiss, new.data = data.no.erccs, 
                      add.cell.id = file, do.normalize = FALSE,min.cells = 5, min.genes = 5)
 
+}
+
 # Change default name for sums of counts from nUMI to nReads
 colnames(tiss@meta.data)[colnames(tiss@meta.data) == 'nUMI'] <- 'nReads'
-}
 ```
 
 
