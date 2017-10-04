@@ -73,19 +73,16 @@ for (file in count_files[2:length(tissue_counts)]){
 # raw.data <- read.csv(file = "~/Downloads/MAA000574/MAA000574.counts.tab",sep='\t')
 # ```
 
-```{r}
-
-```
 
 
-```{r}
-tiss <- CreateSeuratObject(raw.data = raw.data, project = "pancreas", 
-                    min.cells = 5, min.genes = 5)
-```
+# ```{r}
+# tiss <- CreateSeuratObject(raw.data = raw.data, project = "pancreas", 
+#                     min.cells = 5, min.genes = 5)
+# ```
 
+Calculate percent ribosomal genes and set genes to ignore, like highly-abundant lincRNAs Malat1 and Rn45s.
 
 ```{r}
-
 ribo.genes <- grep(pattern = "^Rp[sl][[:digit:]]", x = rownames(x = tiss@data), value = TRUE)
 
 percent.ribo <- Matrix::colSums(tiss@raw.data[ribo.genes, ])/Matrix::colSums(tiss@raw.data)
@@ -97,17 +94,20 @@ exclude.genes = c(ribo.genes,"Malat1","Rn45s")
 
 
 ```{r}
-
 tiss <- NormalizeData(object = tiss)
 tiss <- ScaleData(object = tiss)
 tiss <- FindVariableGenes(object = tiss, do.plot = TRUE)
 ```
 
-```{r}
-tiss <- NormalizeData(object = tiss, normalization.method = "LogNormalize",
-    scale.factor = 10000)
-tiss <- ScaleData(object = tiss, vars.to.regress = c("nUMI"))
-```
+
+
+# ```{r}
+# tiss <- NormalizeData(object = tiss, normalization.method = "LogNormalize",
+#     scale.factor = 10000)
+# tiss <- ScaleData(object = tiss, vars.to.regress = c("nUMI", "percent.ribo"))
+# tiss <- FindVariableGenes(object = tiss, do.plot = TRUE)
+# ```
+Run Principal Component Analysis.
 ```{r}
 tiss <- RunPCA(object = tiss, pc.genes = tiss@var.genes, do.print = TRUE, pcs.print = 1:5, 
     genes.print = 5)
@@ -135,7 +135,6 @@ tiss <- FindClusters(object = tiss, reduction.type = "pca", dims.use = 1:20,
 
 ```{r}
 tiss <- RunTSNE(object = tiss, dims.use = 1:20, seed.use = 10)
-
 ```
 
 ```{r}
@@ -147,4 +146,9 @@ TSNEPlot(object = tiss)
 tiss.markers <- FindAllMarkers(object = tiss, only.pos = TRUE, min.pct = 0.25, 
     thresh.use = 0.25)
 tiss.markers %>% group_by(cluster) %>% top_n(4, avg_diff)
+```
+```{r}
+genes_to_check = c('Ins1', 'Ins2', 'Gcg')
+
+FeaturePlot(tiss, genes_to_check, pt.size = 1)
 ```
