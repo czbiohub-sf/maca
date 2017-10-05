@@ -61,7 +61,7 @@ if(length(tissue_counts) > 1){
     raw.data = read.csv(file = paste0(rootdir,"data/", file), sep='\t')
     data.no.erccs = remove_erccs(raw.data)
     tiss <- AddSamples(object = tiss, new.data = data.no.erccs, 
-                       add.cell.id = file, do.normalize = FALSE, min.cells = 5, min.genes = 5)
+                       do.normalize = FALSE, min.cells = 5, min.genes = 5)
   
   }
 }
