@@ -21,55 +21,61 @@ library(Matrix)
 Load the plate metadata.
 
 ```{r}
-metadata <- read.csv(file = paste0(rootdir, "metadata/MACA_Metadata.csv"), sep=",", header = TRUE)
-colnames(metadata)[1] <- "plate.barcode"
-head(metadata)
+plate_metadata <- read.csv(file = paste0(rootdir, "metadata/MACA_Metadata.csv"), sep=",", header = TRUE)
+colnames(plate_metadata)[1] <- "plate.barcode"
+head(plate_metadata)
 ```
 
 Check for available files.
 ```{r}
  count_files = list.files(paste0(rootdir, "data/"), pattern = "*counts.tab",recursive = FALSE)
- metadata_files = list.files(paste0(rootdir, "data/"), pattern = "*metadata.tab",recursive = FALSE)
 
  downloaded_plates = lapply(count_files, function(x) strsplit(x,"[./]")[[1]][1])
 
- metadata = metadata[metadata$plate.barcode %in% downloaded_plates,]
- head(metadata)
+ plate_metadata = plate_metadata[plate_metadata$plate.barcode %in% downloaded_plates,]
+ head(plate_metadata)
 ```
 
 Load the plate data.
 
 ```{r}
-tissue_plates = filter(metadata, tissue == tissue_of_interest & mouse.age == 3)[,c('plate.barcode','tissue','subtissue','mouse.sex')]
-tissue_counts = paste0(tissue_plates$plate.barcode, '.counts.tab')
+tissue_plates = filter(plate_metadata, tissue == tissue_of_interest & mouse.age == 3)[,c('plate.barcode','tissue','subtissue','mouse.sex')]
 
-remove_erccs = function(counts){
-  erccs <- grep(pattern = "^ERCC-", x = rownames(x = counts), value = TRUE)
-  percent.ercc <- Matrix::colSums(counts[erccs, ])/Matrix::colSums(counts)
-  ercc.index <- grep(pattern = "^ERCC-", x = rownames(x = counts), value = FALSE)
-  counts <- counts[-ercc.index,]
+#Load the gene names and set the metadata columns by opening the first file
+
+raw.data = read.csv(file = paste0(rootdir,"data/", tissue_plates$plate.barcode[1], '.counts.tab') ,sep='\t')
+raw.data = data.frame(row.names = rownames(raw.data))
+meta.data = plate_metadata[1,][-1,]
+
+for(i in 1:nrow(tissue_plates)){
+  new.data = read.csv(file = paste0(rootdir,"data/", tissue_plates$plate.barcode[i], '.counts.tab') ,sep='\t')
+  new.metadata = data.frame(row.names = colnames(new.data))
+  new.metadata['plate.barcode'] = tissue_plates$plate.barcode[i]
+  
+  raw.data = cbind(raw.data, new.data)
+  meta.data = rbind(meta.data, new.metadata)
 }
+rnames = row.names(meta.data)
+meta.data <- merge(meta.data, plate_metadata)
+row.names(meta.data) <- rnames
+```
 
-raw.data = read.csv(file = paste0(rootdir,"data/", tissue_counts[1]) ,sep='\t')
-data.no.erccs = remove_erccs(raw.data)
 
-tiss <- CreateSeuratObject(raw.data = data.no.erccs, project = tissue_of_interest, 
+```{r}
+
+erccs <- grep(pattern = "^ERCC-", x = rownames(x = raw.data), value = TRUE)
+percent.ercc <- Matrix::colSums(raw.data[erccs, ])/Matrix::colSums(raw.data)
+ercc.index <- grep(pattern = "^ERCC-", x = rownames(x = raw.data), value = FALSE)
+raw.data <- raw.data[-ercc.index,]
+
+tiss <- CreateSeuratObject(raw.data = raw.data, project = tissue_of_interest, 
                     min.cells = 5, min.genes = 5)
 
-if(length(tissue_counts) > 1){
-  for (file in tissue_counts[2:length(tissue_counts)]){
-    raw.data = read.csv(file = paste0(rootdir,"data/", file), sep='\t')
-    data.no.erccs = remove_erccs(raw.data)
-    tiss <- AddSamples(object = tiss, new.data = data.no.erccs, 
-                       do.normalize = FALSE, min.cells = 5, min.genes = 5)
-  
-  }
-}
-
+tiss <- AddMetaData(object = tiss, meta.data)
+tiss <- AddMetaData(object = tiss, percent.ercc, col.name = "percent.ercc")
 # Change default name for sums of counts from nUMI to nReads
 colnames(tiss@meta.data)[colnames(tiss@meta.data) == 'nUMI'] <- 'nReads'
 ```
-
 
 
 Calculate percent ribosomal genes.
@@ -145,6 +151,7 @@ tiss.markers %>% group_by(cluster) %>% top_n(4, avg_diff)
 
 
 ```{r}
+# To change the y-axis to show raw counts, add use.raw = T.
 VlnPlot(tiss, genes_to_check)
 ```
 
