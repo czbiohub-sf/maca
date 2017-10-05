@@ -56,12 +56,14 @@ data.no.erccs = remove_erccs(raw.data)
 tiss <- CreateSeuratObject(raw.data = data.no.erccs, project = tissue_of_interest, 
                     min.cells = 5, min.genes = 5)
 
-for (file in count_files[2:length(tissue_counts)]){
-  raw.data = read.csv(file = paste0(rootdir,"data/", file), sep='\t')
-  data.no.erccs = remove_erccs(raw.data)
-  tiss <- AddSamples(object = tiss, new.data = data.no.erccs, 
-                     add.cell.id = file, do.normalize = FALSE, min.cells = 5, min.genes = 5)
-
+if(length(tissue_counts) > 1){
+  for (file in tissue_counts[2:length(tissue_counts)]){
+    raw.data = read.csv(file = paste0(rootdir,"data/", file), sep='\t')
+    data.no.erccs = remove_erccs(raw.data)
+    tiss <- AddSamples(object = tiss, new.data = data.no.erccs, 
+                       add.cell.id = file, do.normalize = FALSE, min.cells = 5, min.genes = 5)
+  
+  }
 }
 
 # Change default name for sums of counts from nUMI to nReads
