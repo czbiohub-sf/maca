@@ -1,10 +1,10 @@
 library(R.utils)
 library(dplyr)
 
-tissue_to_download <- 'Heart'
+tissue_to_download <- 'Pancreas'
 
 download_url <- "https://s3.amazonaws.com/czbiohub-maca/gc_table_by_plates_zipped"
-rootdir <- "~/projects/maca"
+rootdir <- "~/src/maca"
 
 metadata <- read.csv(file = paste(rootdir, "metadata/MACA_Metadata.csv", sep='/'), sep=",", header = TRUE)
 colnames(metadata)[1] <- "plate.barcode"
