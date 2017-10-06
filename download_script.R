@@ -1,15 +1,21 @@
 library(R.utils)
 library(dplyr)
 
+# change this to the tissue you want to download
 tissue_to_download <- 'Heart'
-
-download_url <- "https://s3.amazonaws.com/czbiohub-maca/gc_table_by_plates_zipped"
+# change this to the location of your data (same as the MACA_Plate_Notebook location)
 rootdir <- "~/projects/maca"
 
+
+
+# don't change this one
+download_url <- "https://s3.amazonaws.com/czbiohub-maca/gc_table_by_plates_zipped"
+
+# read the metadata to get the plates we want
 metadata <- read.csv(file = paste(rootdir, "metadata/MACA_Metadata.csv", sep='/'), sep=",", header = TRUE)
 colnames(metadata)[1] <- "plate.barcode"
-
 tissue_plates = filter(metadata, tissue == tissue_to_download & mouse.age == 3)[, 'plate.barcode']
+
 
 for (plate in tissue_plates) {
   res <- try(dwl.status <- download.file(url=sprintf("%s/%s.zip", download_url, plate),
