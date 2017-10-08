@@ -7,7 +7,7 @@ Enter the directory of the maca folder on your drive and the name of the tissue 
 
 ```{r}
 rootdir = "~/src/maca/"
-tissue_of_interest = "Liver"
+tissue_of_interest = "Pancreas"
 ```
 
 Load the requisite packages and some additional helper functions.
@@ -106,7 +106,7 @@ Normalize the data, then regress out correlation with total reads
 ```{r}
 tiss <- NormalizeData(object = tiss)
 tiss <- ScaleData(object = tiss, vars.to.regress = c("nReads", "percent.ribo","Rn45s"))
-tiss <- FindVariableGenes(object = tiss, do.plot = TRUE)
+tiss <- FindVariableGenes(object = tiss, do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.5)
 ```
 
 
@@ -142,12 +142,12 @@ tiss <- RunTSNE(object = tiss, dims.use = 1:20, seed.use = 10, check_duplicates 
 
 ```{r}
 # note that you can set do.label=T to help label individual clusters
-TSNEPlot(object = tiss)
+TSNEPlot(object = tiss, do.label = T)
 ```
 
 Check expression of genes of interset.
 ```{r}
-genes_to_check = c('Alb', 'Glul', 'Cyp2f2')
+genes_to_check = c('Ins1', 'Gcg', 'Ppy', 'Sst')
 
 FeaturePlot(tiss, genes_to_check, pt.size = 1)
 ```
@@ -192,4 +192,66 @@ Get markers for a particular cluster
 cluster_markers = filter(tiss.markers, cluster == 4)$gene
 
 DotPlot(tiss, genes.plot = cluster_markers[1:10])
+```
+
+
+## Subset and iterate
+
+We can repeat the above analysis on a subset of genes, defined using cluster IDs or expression or some other metadata. This is a good way to drill down and find substructure.
+
+```{r}
+# Get subtissue, eg, the endocrine clusters
+subtiss <- SubsetData(object = tiss, ident.use = c(0, 1, 12),
+  do.center = F, do.scale = F)
+
+subtiss <- NormalizeData(object = subtiss)
+subtiss@scale.data = subtiss@data
+#subtiss <- ScaleData(object = subtiss)
+#subtiss <- ScaleData(object = subtiss, vars.to.regress = c("nReads", "percent.ribo","Rn45s"))
+```
+
+
+
+```{r}
+subtiss <- FindVariableGenes(object = subtiss, do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.5)
+subtiss <- RunPCA(object = subtiss, pcs.compute = 20)
+
+subtiss <- ProjectPCA(object = subtiss, do.print = FALSE)
+```
+
+
+```{r}
+PCElbowPlot(object = subtiss)
+```
+
+```{r}
+PCHeatmap(object = subtiss, pc.use = 1:6, cells.use = 500, do.balanced = TRUE, label.columns = FALSE, num.genes = 12)
+```
+
+
+```{r}
+subtiss <- FindClusters(object = subtiss, reduction.type = "pca", dims.use = 1:20, 
+    resolution = 1.0, print.output = 0, save.SNN = TRUE, force.recalc = T)
+```
+
+
+```{r}
+subtiss <- RunTSNE(object = subtiss, dims.use = 1:20, seed.use = 10, check_duplicates = F)
+```
+
+```{r}
+# note that you can set do.label=T to help label individual clusters
+TSNEPlot(object = subtiss, do.label = T)
+```
+
+Check expression of genes of interset.
+```{r}
+genes_to_check = c('Ins1', 'Gcg', 'Ppy', 'Sst')
+
+FeaturePlot(subtiss, genes_to_check, pt.size = 1)
+```
+
+
+```{r}
+GenePlot(subtiss, 'Ins1', 'Gcg', use.raw = T)
 ```

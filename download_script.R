@@ -6,8 +6,6 @@ tissue_to_download <- 'Heart'
 # change this to the location of your data (same as the MACA_Plate_Notebook location)
 rootdir <- "~/projects/maca"
 
-
-
 # don't change this one
 download_url <- "https://s3.amazonaws.com/czbiohub-maca/gc_table_by_plates_zipped"
 
