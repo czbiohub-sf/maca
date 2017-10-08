@@ -1,53 +1,43 @@
 # maca
-Command line utilities for RNA-sequencing data
+Scripts for analyzing and annotating data from the MACA project.
 
 ## Installation
 
+### Installation via zip file
+
+Click on the button labeled "Clone or download" and select "Download ZIP". Unzip the archive and you should be able to open  `MACA_Plate_Notebook.Rmd` in RStudio.
+
+### Installation from GitHub
+
+If you have git installed and you feel adventerous, you can install this repository using the command:
+
 ```
 git clone https://github.com/czbiohub/maca
+```
+
+From then on you can download updates using `git pull origin master`. This might overwrite modifications you have made to your local copy, so we recommend making a copy of the scripts you are using.
+
+The following commands are only necessary for installing the Python scripts in this repository&mdash;they are not needed for using Seurat.
+
+```
 cd maca
 pip install -e .
 ```
 
+## Requirements
+
+Analysis requires [R 3.4](https://cran.cnr.berkeley.edu/), the [Java JDK](http://www.oracle.com/technetwork/java/javase/downloads/index.html), and the Seurat package. We also recommend installing [RStudio](https://www.rstudio.com/) for a nicer interface to R. Once you have installed R you can install Seurat using the command:
+
+```
+install.packages('Seurat')
+```
+
 ## Usage
-So far, there is only one command, `clean_and_zip`:
 
-```
-$ maca clean_and_zip --help
-Usage: maca clean_and_zip [OPTIONS]
+### Downloading data
 
-Options:
-  --input-folder TEXT
-  --cleaned-folder TEXT  If provided, write the cleaned csvs to this folder
-  --zipped-folder TEXT
-  --platename TEXT       if provided, only use this platename (good for
-                         debugging)
-  -h, --help             Show this message and exit.
-```
+Open `download_script.R` and modify the variable `tissue_to_download` to the tissue you are interested in. You can find the list of tissue names in `metadata/MACA_Metadata.csv`. Also change the value of `root_dir` to the location that you downloaded this repository. Run this script to download and unzip all of the available 3-month plate data for the tissue of interest.  
 
-Here's an example usage:
+### Analyzing data
 
-```
-$ maca clean_and_zip --platename MAA000932 --input-folder /data1/maca/gc_table_by_plates/ --cleaned-folder ./cleaned
-Reading plate MAA000932...
-        Wrote cleaned counts and metadata to ./zipped/MAA000932.zip
-```
-
-### Example tab-delimited, zipped output to R
-
-Here's an example that outputs tab-delimited files and zips them in a format
-that R likes (no label in the first column)
-
-```
-$ maca clean_and_zip  --output-folder ../gc_table_by_plates_zipped/ --output-format tab --zipped --rstats
-```
-
-### Example reading cell-by-feature files
-
-
-Here's an example that reads cell-by-feature files and outputs zipped
-feature-by-cell files in a format that R likes (no label in first column)
-
-```
-$ maca clean_and_zip  --output-folder ../gc_table_by_plates_zipped/ --output-format tab --zipped --rstats --cell-dimension row --counts-suffix .htseq-count-by-cell.csv --metadata-suffix .log-by-cell.csv ./ 
-```
+Open `MACA_Plate_Notebook.Rmd` in RStudio, modify `rootdir` and `tissue_of_interest` as before, and step through the instructions. If you encounter problems, you can email the MACA mailing list, [open an issue on GitHub](https://github.com/czbiohub/maca/issues/new), or ask the Slack channel.  
