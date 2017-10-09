@@ -205,9 +205,7 @@ subtiss <- SubsetData(object = tiss, ident.use = c(0, 1, 12),
   do.center = F, do.scale = F)
 
 subtiss <- NormalizeData(object = subtiss)
-subtiss@scale.data = subtiss@data
-#subtiss <- ScaleData(object = subtiss)
-#subtiss <- ScaleData(object = subtiss, vars.to.regress = c("nReads", "percent.ribo","Rn45s"))
+subtiss <- ScaleData(object = subtiss, vars.to.regress = c("nReads", "percent.ribo","Rn45s"))
 ```
 
 
@@ -215,7 +213,6 @@ subtiss@scale.data = subtiss@data
 ```{r}
 subtiss <- FindVariableGenes(object = subtiss, do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.5)
 subtiss <- RunPCA(object = subtiss, pcs.compute = 20)
-
 subtiss <- ProjectPCA(object = subtiss, do.print = FALSE)
 ```
 
@@ -225,13 +222,15 @@ PCElbowPlot(object = subtiss)
 ```
 
 ```{r}
-PCHeatmap(object = subtiss, pc.use = 1:6, cells.use = 500, do.balanced = TRUE, label.columns = FALSE, num.genes = 12)
+# If this fails for your subset, it may be that cells.use is more cells than you have left! Try reducing it.
+PCHeatmap(object = subtiss, pc.use = 1:6, cells.use = 250, do.balanced = TRUE, label.columns = FALSE, num.genes = 12)
 ```
 
-
+You may want to play with different resolutions. If the subset is small and you are still getting big clusters, try decreasing k.param to 10 or so.
 ```{r}
+# You may want to play with different resolutions 
 subtiss <- FindClusters(object = subtiss, reduction.type = "pca", dims.use = 1:20, 
-    resolution = 1.0, print.output = 0, save.SNN = TRUE, force.recalc = T)
+    resolution = 1.0, print.output = 0, save.SNN = TRUE, force.recalc = T, k.param = 20)
 ```
 
 
