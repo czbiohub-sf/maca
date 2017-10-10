@@ -56,7 +56,7 @@ for(i in 1:nrow(tissue_plates)){
   meta.data = rbind(meta.data, new.metadata)
 }
 rnames = row.names(meta.data)
-meta.data <- merge(meta.data, plate_metadata)
+meta.data <- merge(meta.data, plate_metadata, sort = F)
 row.names(meta.data) <- rnames
 ```
 
