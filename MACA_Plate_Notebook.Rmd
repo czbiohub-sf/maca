@@ -18,22 +18,15 @@ library(dplyr)
 library(Matrix)
 ```
 
-Load the plate metadata.
+Load the plate metadata. Check which plates have been downloaded.
 
 ```{r}
 plate_metadata <- read.csv(file = paste0(rootdir, "metadata/MACA_Metadata.csv"), sep=",", header = TRUE)
 colnames(plate_metadata)[1] <- "plate.barcode"
-head(plate_metadata)
-```
 
-Check for available files.
-```{r}
- count_files = list.files(paste0(rootdir, "data/"), pattern = "*counts.tab",recursive = FALSE)
-
- downloaded_plates = lapply(count_files, function(x) strsplit(x,"[./]")[[1]][1])
-
- plate_metadata = plate_metadata[plate_metadata$plate.barcode %in% downloaded_plates,]
- head(plate_metadata)
+count_files = list.files(paste0(rootdir, "data/"), pattern = "*counts.tab",recursive = FALSE)
+downloaded_plates = lapply(count_files, function(x) strsplit(x,"[./]")[[1]][1])
+plate_metadata = plate_metadata[plate_metadata$plate.barcode %in% downloaded_plates,]
 ```
 
 Load the plate data.
@@ -60,14 +53,15 @@ meta.data <- merge(meta.data, plate_metadata, sort = F)
 row.names(meta.data) <- rnames
 ```
 
-
+Process the raw data and load it into the Seurat object.
 ```{r}
-
+# Find ERCC's, compute the percent ERCC, and drop them from the raw data.
 erccs <- grep(pattern = "^ERCC-", x = rownames(x = raw.data), value = TRUE)
 percent.ercc <- Matrix::colSums(raw.data[erccs, ])/Matrix::colSums(raw.data)
 ercc.index <- grep(pattern = "^ERCC-", x = rownames(x = raw.data), value = FALSE)
 raw.data <- raw.data[-ercc.index,]
 
+# Create the Seurat object with all the data
 tiss <- CreateSeuratObject(raw.data = raw.data, project = tissue_of_interest, 
                     min.cells = 5, min.genes = 5)
 
@@ -82,16 +76,14 @@ Calculate percent ribosomal genes.
 
 ```{r}
 ribo.genes <- grep(pattern = "^Rp[sl][[:digit:]]", x = rownames(x = tiss@data), value = TRUE)
-
 percent.ribo <- Matrix::colSums(tiss@raw.data[ribo.genes, ])/Matrix::colSums(tiss@raw.data)
-
 tiss <- AddMetaData(object = tiss, metadata = percent.ribo, col.name = "percent.ribo")
 ```
 
 A sanity check: reads vs genes.
 
 ```{r}
-GenePlot(object = tiss, gene1 = "nReads", gene2 = "nGene")
+GenePlot(object = tiss, gene1 = "nReads", gene2 = "nGene", use.raw=T)
 ```
 
 Filter out cells with few reads and few genes.
@@ -112,11 +104,7 @@ tiss <- FindVariableGenes(object = tiss, do.plot = TRUE, x.high.cutoff = Inf, y.
 
 Run Principal Component Analysis.
 ```{r}
-tiss <- RunPCA(object = tiss, pc.genes = tiss@var.genes, do.print = TRUE, pcs.print = 1:5, 
-    genes.print = 5)
-```
-
-```{r}
+tiss <- RunPCA(object = tiss, do.print = FALSE)
 tiss <- ProjectPCA(object = tiss, do.print = FALSE)
 ```
 
@@ -131,13 +119,13 @@ PCElbowPlot(object = tiss)
 
 
 ```{r}
-tiss <- FindClusters(object = tiss, reduction.type = "pca", dims.use = 1:20, 
-    resolution = 1.0, print.output = 0, save.SNN = TRUE)
+tiss <- FindClusters(object = tiss, reduction.type = "pca", dims.use = 1:10, 
+    resolution = 0.5, print.output = 0, save.SNN = TRUE)
 ```
 
 
 ```{r}
-tiss <- RunTSNE(object = tiss, dims.use = 1:20, seed.use = 10, check_duplicates = F)
+tiss <- RunTSNE(object = tiss, dims.use = 1:10, seed.use = 10, check_duplicates = F)
 ```
 
 ```{r}
@@ -146,32 +134,84 @@ TSNEPlot(object = tiss, do.label = T)
 ```
 
 Check expression of genes of interset.
-```{r}
-genes_to_check = c('Ins1', 'Gcg', 'Ppy', 'Sst')
+```{r, echo=FALSE, fig.height=8, fig.width=12}
+genes_to_check = c('Ins1', 'Gcg', 'Ppy', 'Sst', 'Chga', 'Krt19', 'Amy2b', 'Pecam1', 'Pdgfra', 'Ptprc', 'Ghrl')
+#genes_to_check = c('Alb', 'Cyp2f2', 'Cyp2e1', 'Hamp')
 
 FeaturePlot(tiss, genes_to_check, pt.size = 1)
 ```
+
+Dotplots let you see the intensity of exppression and the fraction of cells expressing for each of your genes of interest.
+
+```{r, echo=FALSE, fig.height=4, fig.width=8}
+# To change the y-axis to show raw counts, add use.raw = T.
+DotPlot(tiss, genes_to_check, plot.legend = T)
+```
+
+How big are the clusters?
+```{r}
+table(tiss@ident)
+```
+
+## Assigning cell type identity to clusters
+
+At a coarse level, we can use canonical markers to match the unbiased clustering to known cell types:
+
+0: alpha
+1: beta
+2: beta
+3: exocrine
+4: duct
+5: delta
+6: gamma
+7: endothelial
+8: immune
+9: stellate
+
+```{r}
+# stash current cluster IDs
+pbmc <- StashIdent(object = tiss, save.name = "ClusterNumbers")
+
+# enumerate current cluster IDs and the labels for them
+current.cluster.ids <- c(0, 1, 2, 3, 4, 5, 6, 7, 8, 9)
+new.cluster.ids <- c("Alpha cells", "Beta cells", "Beta cells", "Exocrine cells", "Duct cells", "Delta cells", "Gamma cells", "Endothelial cells", "Immune cells", "Stellate cells")
+tiss@ident <- plyr::mapvalues(x = tiss@ident, from = current.cluster.ids, to = new.cluster.ids)
+TSNEPlot(object = tiss, do.label = TRUE, pt.size = 0.5)
+```
+
+
+### Checking for batch effects
+
 
 Color by metadata, like plate barcode, to check for batch effects.
 ```{r}
 TSNEPlot(object = tiss, do.return = TRUE, group.by = "plate.barcode")
 ```
 
-Find differentially expressed markers.
+# SPYROS: how do we show a cluster by plate table?
+
+table(as.character(tiss@meta.data$Annotation), as.character(tiss@meta.data$plate.barcode))
+
+
+### Finding differential expression between clusters
+
+Find differentially expressed markers between two clusters. This may take some time.
+
 ```{r}
-tiss.markers <- FindAllMarkers(object = tiss, only.pos = TRUE, min.pct = 0.25, 
-    thresh.use = 0.25)
+intra_beta.markers <- FindMarkers(tiss, ident.1 = 1, ident.2 = 2, test.use='roc', min.diff.pct = 0.1)
+```
+```{r}
+print(x = head(x= intra_beta.markers, n = 10))
+```
+
+Find differentially expressed markers between all pairs of clusters. This may take some time.
+```{r}
+# tiss.markers <- FindAllMarkers(object = tiss, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
 ```
 
 Display top 4 markers per cluster.
 ```{r}
 tiss.markers %>% group_by(cluster) %>% top_n(4, avg_diff)
-```
-
-
-```{r}
-# To change the y-axis to show raw counts, add use.raw = T.
-VlnPlot(tiss, genes_to_check)
 ```
 
 
@@ -183,35 +223,19 @@ DotPlot(tiss, genes.plot = cluster0_markers[1:7], plot.legend = T)
 ```
 
 
-```{r}
-tiss = BuildClusterTree(tiss)
-```
-
-Get markers for a particular cluster
-```{r}
-cluster_markers = filter(tiss.markers, cluster == 4)$gene
-
-DotPlot(tiss, genes.plot = cluster_markers[1:10])
-```
-
-
 ## Subset and iterate
 
 We can repeat the above analysis on a subset of genes, defined using cluster IDs or expression or some other metadata. This is a good way to drill down and find substructure.
 
 ```{r}
-# Get subtissue, eg, the endocrine clusters
-subtiss <- SubsetData(object = tiss, ident.use = c(0, 1, 12),
-  do.center = F, do.scale = F)
+# Get subtissue, eg, the exocrine clusters
+subtiss <- SubsetData(object = tiss, ident.use = 'Exocrine cells', do.center = F, do.scale = F)
 
 subtiss <- NormalizeData(object = subtiss)
 subtiss <- ScaleData(object = subtiss, vars.to.regress = c("nReads", "percent.ribo","Rn45s"))
 ```
-
-
-
 ```{r}
-subtiss <- FindVariableGenes(object = subtiss, do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.5)
+subtiss <- FindVariableGenes(object = subtiss, do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.8)
 subtiss <- RunPCA(object = subtiss, pcs.compute = 20)
 subtiss <- ProjectPCA(object = subtiss, do.print = FALSE)
 ```
@@ -223,34 +247,43 @@ PCElbowPlot(object = subtiss)
 
 ```{r}
 # If this fails for your subset, it may be that cells.use is more cells than you have left! Try reducing it.
-PCHeatmap(object = subtiss, pc.use = 1:6, cells.use = 250, do.balanced = TRUE, label.columns = FALSE, num.genes = 12)
+PCHeatmap(object = subtiss, pc.use = 1:3, cells.use = 250, do.balanced = TRUE, label.columns = FALSE, num.genes = 12)
 ```
 
 You may want to play with different resolutions. If the subset is small and you are still getting big clusters, try decreasing k.param to 10 or so.
 ```{r}
 # You may want to play with different resolutions 
 subtiss <- FindClusters(object = subtiss, reduction.type = "pca", dims.use = 1:20, 
-    resolution = 1.0, print.output = 0, save.SNN = TRUE, force.recalc = T, k.param = 20)
+    resolution = 1.0, print.output = 0, save.SNN = TRUE, force.recalc = T, k.param = 15)
 ```
 
 
 ```{r}
-subtiss <- RunTSNE(object = subtiss, dims.use = 1:20, seed.use = 10, check_duplicates = F)
+subtiss <- RunTSNE(object = subtiss, dims.use = 1:10, seed.use = 10, check_duplicates = F)
 ```
 
 ```{r}
 # note that you can set do.label=T to help label individual clusters
 TSNEPlot(object = subtiss, do.label = T)
+#TSNEPlot(object = subtiss, do.return = TRUE, group.by = "plate.barcode")
+
+```
+
+Drill down with new markers.
+
+```{r}
+subtiss.markers <- FindAllMarkers(object = subtiss, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
+```
+
+```{r}
+subtiss.markers %>% group_by(cluster) %>% top_n(6, avg_diff)
 ```
 
 Check expression of genes of interset.
 ```{r}
-genes_to_check = c('Ins1', 'Gcg', 'Ppy', 'Sst')
+genes_to_check = c('Btg2','Sgk1','Jun','Srsf2')
 
 FeaturePlot(subtiss, genes_to_check, pt.size = 1)
 ```
 
-
-```{r}
-GenePlot(subtiss, 'Ins1', 'Gcg', use.raw = T)
-```
+# SPYROS do subtype labelling here, can be silly. Then export.
