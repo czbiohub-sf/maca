@@ -170,13 +170,14 @@ At a coarse level, we can use canonical markers to match the unbiased clustering
 
 ```{r}
 # stash current cluster IDs
-pbmc <- StashIdent(object = tiss, save.name = "ClusterNumbers")
+tiss <- StashIdent(object = tiss, save.name = "ClusterNumbers")
 
 # enumerate current cluster IDs and the labels for them
 current.cluster.ids <- c(0, 1, 2, 3, 4, 5, 6, 7, 8, 9)
 new.cluster.ids <- c("Alpha cells", "Beta cells", "Beta cells", "Exocrine cells", "Duct cells", "Delta cells", "Gamma cells", "Endothelial cells", "Immune cells", "Stellate cells")
 tiss@ident <- plyr::mapvalues(x = tiss@ident, from = current.cluster.ids, to = new.cluster.ids)
 TSNEPlot(object = tiss, do.label = TRUE, pt.size = 0.5)
+
 ```
 
 
@@ -190,7 +191,9 @@ TSNEPlot(object = tiss, do.return = TRUE, group.by = "plate.barcode")
 
 # SPYROS: how do we show a cluster by plate table?
 
-table(as.character(tiss@meta.data$Annotation), as.character(tiss@meta.data$plate.barcode))
+```{r}
+table(as.character(tiss@ident), as.character(tiss@meta.data$plate.barcode))
+```
 
 
 ### Finding differential expression between clusters
