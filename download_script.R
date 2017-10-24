@@ -4,7 +4,7 @@ library(dplyr)
 # change this to the tissue you want to download
 tissue_to_download <- 'Pancreas'
 # change this to the location of your data (same as the MACA_Plate_Notebook location)
-rootdir <- "~/src/maca"
+rootdir <- "~/projects/maca"
 plate_data_dir = paste0(rootdir, '/data/plates')
 dir.create(plate_data_dir)
 
@@ -22,6 +22,10 @@ if(tissue_to_download == 'All'){
   tissue_plates = filter(metadata, tissue == tissue_to_download & mouse.age == 3)[, 'plate.barcode']
 }
 
+# suppress warning messages for samples that havent been sequenced
+oldw <- getOption("warn")
+options(warn = -1)
+
 for (plate in tissue_plates) {
   res <- try(dwl.status <- download.file(url=sprintf("%s/%s.zip", download_url, plate),
                                          destfile=file.path(plate_data_dir, sprintf("%s.zip", plate))),
@@ -35,3 +39,6 @@ for (plate in tissue_plates) {
     }
   }
 }
+
+options(warn = oldw)
+
