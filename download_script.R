@@ -4,7 +4,7 @@ library(dplyr)
 # change this to the tissue you want to download
 tissue_to_download <- 'Pancreas'
 # change this to the location of your data (same as the MACA_Plate_Notebook location)
-rootdir <- "~/projects/maca"
+rootdir <- "~/src/maca"
 plate_data_dir = paste0(rootdir, '/data/plates')
 dir.create(plate_data_dir)
 
