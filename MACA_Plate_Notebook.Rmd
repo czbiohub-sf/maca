@@ -6,7 +6,7 @@ output: html_notebook
 Enter the directory of the maca folder on your drive and the name of the tissue you want to analyze.
 
 ```{r}
-rootdir = "~/src/maca/"
+rootdir = "~/src/maca"
 tissue_of_interest = "Pancreas"
 ```
 
@@ -21,12 +21,15 @@ library(Matrix)
 Load the plate metadata. Check which plates have been downloaded.
 
 ```{r}
-plate_metadata <- read.csv(file = paste0(rootdir, "metadata/MACA_Metadata.csv"), sep=",", header = TRUE)
+plate_metadata <- read.csv(file = paste0(rootdir, "/metadata/MACA_Metadata.csv"), sep=",", header = TRUE)
 colnames(plate_metadata)[1] <- "plate.barcode"
 
-count_files = list.files(paste0(rootdir, "data/"), pattern = "*counts.tab",recursive = FALSE)
+count_files = list.files(paste0(rootdir, "/data/plates"), pattern = "*counts.tab",recursive = FALSE)
 downloaded_plates = lapply(count_files, function(x) strsplit(x,"[./]")[[1]][1])
 plate_metadata = plate_metadata[plate_metadata$plate.barcode %in% downloaded_plates,]
+
+save_dir = paste0(rootdir, '/save')
+dir.create(save_dir)
 ```
 
 Load the plate data.
@@ -36,12 +39,12 @@ tissue_plates = filter(plate_metadata, tissue == tissue_of_interest & mouse.age 
 
 #Load the gene names and set the metadata columns by opening the first file
 
-raw.data = read.csv(file = paste0(rootdir,"data/", tissue_plates$plate.barcode[1], '.counts.tab') ,sep='\t')
+raw.data = read.csv(file = paste0(rootdir,"/data/plates/", tissue_plates$plate.barcode[1], '.counts.tab') ,sep='\t')
 raw.data = data.frame(row.names = rownames(raw.data))
 meta.data = plate_metadata[1,][-1,]
 
 for(i in 1:nrow(tissue_plates)){
-  new.data = read.csv(file = paste0(rootdir,"data/", tissue_plates$plate.barcode[i], '.counts.tab') ,sep='\t')
+  new.data = read.csv(file = paste0(rootdir,"/data/plates/", tissue_plates$plate.barcode[i], '.counts.tab') ,sep='\t')
   new.metadata = data.frame(row.names = colnames(new.data))
   new.metadata['plate.barcode'] = tissue_plates$plate.barcode[i]
   
@@ -54,6 +57,7 @@ row.names(meta.data) <- rnames
 ```
 
 Process the raw data and load it into the Seurat object.
+
 ```{r}
 # Find ERCC's, compute the percent ERCC, and drop them from the raw data.
 erccs <- grep(pattern = "^ERCC-", x = rownames(x = raw.data), value = TRUE)
@@ -69,6 +73,10 @@ tiss <- AddMetaData(object = tiss, meta.data)
 tiss <- AddMetaData(object = tiss, percent.ercc, col.name = "percent.ercc")
 # Change default name for sums of counts from nUMI to nReads
 colnames(tiss@meta.data)[colnames(tiss@meta.data) == 'nUMI'] <- 'nReads'
+
+# Create metadata columns for annotations and subannotations
+tiss@meta.data[,'annotation'] <- NA
+tiss@meta.data[,'subannotation'] <- NA
 ```
 
 
@@ -80,7 +88,7 @@ percent.ribo <- Matrix::colSums(tiss@raw.data[ribo.genes, ])/Matrix::colSums(tis
 tiss <- AddMetaData(object = tiss, metadata = percent.ribo, col.name = "percent.ribo")
 ```
 
-A sanity check: reads vs genes.
+A sanity check: genes per cell vs reads per cell.
 
 ```{r}
 GenePlot(object = tiss, gene1 = "nReads", gene2 = "nGene", use.raw=T)
@@ -108,24 +116,39 @@ tiss <- RunPCA(object = tiss, do.print = FALSE)
 tiss <- ProjectPCA(object = tiss, do.print = FALSE)
 ```
 
-
 ```{r, echo=FALSE, fig.height=4, fig.width=8}
-PCHeatmap(object = tiss, pc.use = 1:3, cells.use = 500, do.balanced = TRUE, label.columns = FALSE, num.genes = 12)
+PCHeatmap(object = tiss, pc.use = 1:3, cells.use = 500, do.balanced = TRUE, label.columns = FALSE, num.genes = 8)
 ```
+
+Later on (in FindClusters and TSNE) you will pick a number of principal components to use. This has the effect of keeping the major directions of variation in the data and, ideally, supressing noise. There is no correct answer to the number to use, but a decent rule of thumb is to go until the plot plateaus.
 
 ```{r}
 PCElbowPlot(object = tiss)
 ```
 
-
+Choose the number of principal components to use.
 ```{r}
-tiss <- FindClusters(object = tiss, reduction.type = "pca", dims.use = 1:10, 
-    resolution = 0.5, print.output = 0, save.SNN = TRUE)
+# Set number of principal components. 
+n.pcs = 10
 ```
 
 
+The clustering is performed based on a nearest neighbors graph. Cells that have similar expression will be joined together. The Louvain algorithm looks for groups of cells with high modularity--more connections within the group than between groups. The resolution parameter determines the scale...higher resolution will give more clusters, lower resolution will give fewer.
+
+For the top-level clustering, aim to under-cluster instead of over-cluster. It will be easy to subset groups and further analyze them below.
+
 ```{r}
-tiss <- RunTSNE(object = tiss, dims.use = 1:10, seed.use = 10, check_duplicates = F)
+# Set resolution 
+res.used <- 0.5
+
+tiss <- FindClusters(object = tiss, reduction.type = "pca", dims.use = 1:n.pcs, 
+    resolution = res.used, print.output = 0, save.SNN = TRUE)
+```
+
+To visualize 
+```{r}
+# If cells are too spread out, you can raise the perplexity. If you have few cells, try a lower perplexity (but never less than 10).
+tiss <- RunTSNE(object = tiss, dims.use = 1:n.pcs, seed.use = 10, perplexity=30)
 ```
 
 ```{r}
@@ -134,11 +157,12 @@ TSNEPlot(object = tiss, do.label = T)
 ```
 
 Check expression of genes of interset.
-```{r, echo=FALSE, fig.height=8, fig.width=12}
+
+```{r, echo=FALSE, fig.height=12, fig.width=8}
 genes_to_check = c('Ins1', 'Gcg', 'Ppy', 'Sst', 'Chga', 'Krt19', 'Amy2b', 'Pecam1', 'Pdgfra', 'Ptprc', 'Ghrl')
 #genes_to_check = c('Alb', 'Cyp2f2', 'Cyp2e1', 'Hamp')
 
-FeaturePlot(tiss, genes_to_check, pt.size = 1)
+FeaturePlot(tiss, genes_to_check, pt.size = 1, nCol = 3)
 ```
 
 Dotplots let you see the intensity of exppression and the fraction of cells expressing for each of your genes of interest.
@@ -151,6 +175,26 @@ DotPlot(tiss, genes_to_check, plot.legend = T)
 How big are the clusters?
 ```{r}
 table(tiss@ident)
+```
+
+Which markers identify a specific cluster?
+
+```{r}
+clust.markers <- FindMarkers(object = tiss, ident.1 = 0, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
+```
+
+```{r}
+print(x = head(x= clust.markers, n = 10))
+```
+
+You can also compute all markers for all clusters at once. This may take some time.
+```{r}
+#tiss.markers <- FindAllMarkers(object = tiss, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
+```
+
+Display the top markers you computed above.
+```{r}
+#tiss.markers %>% group_by(cluster) %>% top_n(5, avg_diff)
 ```
 
 ## Assigning cell type identity to clusters
@@ -170,18 +214,19 @@ At a coarse level, we can use canonical markers to match the unbiased clustering
 
 ```{r}
 # stash current cluster IDs
-tiss <- StashIdent(object = tiss, save.name = "ClusterNumbers")
+tiss <- StashIdent(object = tiss, save.name = "cluster.ids")
 
 # enumerate current cluster IDs and the labels for them
-current.cluster.ids <- c(0, 1, 2, 3, 4, 5, 6, 7, 8, 9)
-new.cluster.ids <- c("Alpha cells", "Beta cells", "Beta cells", "Exocrine cells", "Duct cells", "Delta cells", "Gamma cells", "Endothelial cells", "Immune cells", "Stellate cells")
-tiss@ident <- plyr::mapvalues(x = tiss@ident, from = current.cluster.ids, to = new.cluster.ids)
-TSNEPlot(object = tiss, do.label = TRUE, pt.size = 0.5)
+cluster.ids <- c(0, 1, 2, 3, 4, 5, 6, 7, 8, 9)
+annotation <- c("alpha cells", "beta cells", "beta cells", "exocrine cells", "duct cells", "delta cells", "gamma cells", "endothelial cells", "immune cells", "stellate cells")
 
+tiss@meta.data[,'annotation'] <- plyr::mapvalues(x = tiss@meta.data$cluster.ids, from = cluster.ids, to = annotation)
+
+TSNEPlot(object = tiss, do.label = TRUE, pt.size = 0.5, group.by='annotation')
 ```
 
 
-### Checking for batch effects
+## Checking for batch effects
 
 
 Color by metadata, like plate barcode, to check for batch effects.
@@ -195,48 +240,41 @@ Print a table showing the count of cells in each identity category from each pla
 table(as.character(tiss@ident), as.character(tiss@meta.data$plate.barcode))
 ```
 
-
-### Finding differential expression between clusters
-
-Find differentially expressed markers between two clusters. This may take some time.
+### Save the R object so 1. you can reload without recomputing and 2. anyone else can reproduce your figures.
 
 ```{r}
-intra_beta.markers <- FindMarkers(tiss, ident.1 = 1, ident.2 = 2, test.use='roc', min.diff.pct = 0.1)
-```
-```{r}
-print(x = head(x= intra_beta.markers, n = 10))
+save(tiss, file=paste0(save_dir,"/",tissue_of_interest, "_seurat_tiss.Robj"))
 ```
 
-Find differentially expressed markers between all pairs of clusters. This may take some time.
 ```{r}
-# tiss.markers <- FindAllMarkers(object = tiss, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
-```
-
-Display top 4 markers per cluster.
-```{r}
-tiss.markers %>% group_by(cluster) %>% top_n(4, avg_diff)
+# To reload a saved object
+# load(file=paste0(rootdir,"/",tissue_of_interest, "_seurat_tiss.Robj")
 ```
 
 
-```{r}
-# Get markers for a particular cluster
-cluster0_markers = filter(tiss.markers, cluster == 0)$gene
+# Subset and iterate
 
-DotPlot(tiss, genes.plot = cluster0_markers[1:7], plot.legend = T)
+We can repeat the above analysis on a subset of cells, defined using cluster IDs or some other metadata. This is a good way to drill down and find substructure.
+
+## First subset
+
+```{r}
+# Subset data based on cluster id
+subtiss <- SubsetData(object = tiss, ident.use = c(3), do.center = F, do.scale = F, cells.use = )
+
+# To subset data based on annotation or other metadata, you can explicitly pass cell names
+
+# anno = 'exocrine cells'
+# cells.to.use = tiss@cell.names[which(tiss@meta.data$annotation == anno)]
+# subtiss <- SubsetData(object = tiss, cells.use = cells.to.use, do.center = F, do.scale = F)
+
 ```
 
-
-## Subset and iterate
-
-We can repeat the above analysis on a subset of genes, defined using cluster IDs or expression or some other metadata. This is a good way to drill down and find substructure.
-
 ```{r}
-# Get subtissue, eg, the exocrine clusters
-subtiss <- SubsetData(object = tiss, ident.use = 'Exocrine cells', do.center = F, do.scale = F)
-
 subtiss <- NormalizeData(object = subtiss)
 subtiss <- ScaleData(object = subtiss, vars.to.regress = c("nReads", "percent.ribo","Rn45s"))
 ```
+
 ```{r}
 subtiss <- FindVariableGenes(object = subtiss, do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.8)
 subtiss <- RunPCA(object = subtiss, pcs.compute = 20)
@@ -244,8 +282,10 @@ subtiss <- ProjectPCA(object = subtiss, do.print = FALSE)
 ```
 
 
+Run Principal Component Analysis.
 ```{r}
-PCElbowPlot(object = subtiss)
+subtiss <- RunPCA(object = subtiss, do.print = FALSE)
+subtiss <- ProjectPCA(object = subtiss, do.print = FALSE)
 ```
 
 ```{r}
@@ -253,26 +293,39 @@ PCElbowPlot(object = subtiss)
 PCHeatmap(object = subtiss, pc.use = 1:3, cells.use = 250, do.balanced = TRUE, label.columns = FALSE, num.genes = 12)
 ```
 
-You may want to play with different resolutions. If the subset is small and you are still getting big clusters, try decreasing k.param to 10 or so.
+Later on (in FindClusters and TSNE) you will pick a number of principal components to use. This has the effect of keeping the major directions of variation in the data and, ideally, supressing noise. There is no correct answer to the number to use, but a decent rule of thumb is to go until the plot plateaus.
+
 ```{r}
-# You may want to play with different resolutions 
-subtiss <- FindClusters(object = subtiss, reduction.type = "pca", dims.use = 1:20, 
-    resolution = 1.0, print.output = 0, save.SNN = TRUE, force.recalc = T, k.param = 15)
+PCElbowPlot(object = subtiss)
+```
+
+Choose the number of principal components to use.
+```{r}
+# Set number of principal components. 
+sub.n.pcs = 5
 ```
 
 
+The clustering is performed based on a nearest neighbors graph. Cells that have similar expression will be joined together. The Louvain algorithm looks for groups of cells with high modularity--more connections within the group than between groups. The resolution parameter determines the scale...higher resolution will give more clusters, lower resolution will give fewer.
+
 ```{r}
-subtiss <- RunTSNE(object = subtiss, dims.use = 1:10, seed.use = 10, check_duplicates = F)
+# Set resolution 
+sub.res.used <- 1
+
+subtiss <- FindClusters(object = subtiss, reduction.type = "pca", dims.use = 1:sub.n.pcs, 
+    resolution = sub.res.used, print.output = 0, save.SNN = TRUE)
+```
+
+To visualize 
+```{r}
+# If cells are too spread out, you can raise the perplexity. If you have few cells, try a lower perplexity (but never less than 10).
+subtiss <- RunTSNE(object = subtiss, dims.use = 1:sub.n.pcs, seed.use = 10, perplexity=20)
 ```
 
 ```{r}
 # note that you can set do.label=T to help label individual clusters
 TSNEPlot(object = subtiss, do.label = T)
-#TSNEPlot(object = subtiss, do.return = TRUE, group.by = "plate.barcode")
-
 ```
-
-Drill down with new markers.
 
 ```{r}
 subtiss.markers <- FindAllMarkers(object = subtiss, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
@@ -289,4 +342,64 @@ genes_to_check = c('Btg2','Sgk1','Jun','Srsf2')
 FeaturePlot(subtiss, genes_to_check, pt.size = 1)
 ```
 
-# SPYROS do subtype labelling here, can be silly. Then export.
+Dotplots let you see the intensity of exppression and the fraction of cells expressing for each of your genes of interest.
+
+```{r}
+# To change the y-axis to show raw counts, add use.raw = T.
+DotPlot(subtiss, genes_to_check, plot.legend = T)
+```
+
+How big are the clusters?
+```{r}
+table(subtiss@ident)
+```
+
+## Checking for batch effects
+
+Color by metadata, like plate barcode, to check for batch effects.
+```{r}
+TSNEPlot(object = subtiss, do.return = TRUE, group.by = "plate.barcode")
+```
+
+Print a table showing the count of cells in each identity category from each plate.
+
+```{r}
+table(as.character(subtiss@ident), as.character(subtiss@meta.data$plate.barcode))
+```
+
+
+
+### Assigning subannotations
+
+For the subsets, we produce subannotations. These will be written back as metadata in the original object, so we can see all subannotations together.
+
+If some of the clusters you find in the subset deserve additional annotation, you can add that right here. Use NA for clusters for which no subannotation is needed.
+
+```{r}
+subcluster.ids <- c(0, 1, 2)
+subannotation <- c("Jun-negative","Jun-positive", NA)
+
+subtiss@meta.data[,'subannotation'] <- plyr::mapvalues(x = subtiss@ident, from = subcluster.ids, to = subannotation)
+
+tiss@meta.data[subtiss@cell.names,'subannotation'] <- as.character(subtiss@meta.data$subannotation)
+
+TSNEPlot(object = subtiss, do.label = TRUE, pt.size = 0.5, group.by='subannotation')
+```
+
+When you save the subtissue, please give it a name.
+
+```{r}
+subtiss.name = 'exocrine_pancreas'
+save(subtiss, file=paste0(save_dir,"/",subtiss.name, "_seurat_subtiss.Robj"))
+```
+
+# Export the final metadata
+
+So that Biohub can easily combine all your annotations, please export them as a simple csv.
+
+```{r}
+write.csv(tiss@meta.data[,c('annotation','subannotation')],file =paste0(save_dir,"/", tissue_of_interest,"_metadata.csv"))
+```
+
+
+
