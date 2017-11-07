@@ -104,7 +104,7 @@ Filter out cells with few reads and few genes.
 
 ```{r}
 tiss <- FilterCells(object = tiss, subset.names = c("nGene", "nUMI"), 
-    low.thresholds = c(500, 1000), high.thresholds = c(25000, 2000000))
+    low.thresholds = c(500, 1000), high.thresholds = c(25000, 5000000))
 ```
 
 
@@ -405,7 +405,7 @@ save(subtiss, file=paste0(save_dir,"/","10x_",subtiss.name, "_seurat_subtiss.Rob
 So that Biohub can easily combine all your annotations, please export them as a simple csv.
 
 ```{r}
-write.csv(tiss@meta.data[,c('annotation','subannotation')],file =paste0(save_dir,"/", tissue_of_interest,"_metadata.csv"))
+write.csv(tiss@meta.data[,c('annotation','subannotation')],file =paste0(save_dir,"/", "10x_", tissue_of_interest,"_annotation.csv"))
 ```
 
 
