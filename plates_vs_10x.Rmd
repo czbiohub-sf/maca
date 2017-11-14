@@ -1,0 +1,140 @@
+---
+title: "10x vs Plate"
+output: html_notebook
+---
+
+```{r}
+install.packages("tidyverse")
+library(tidyverse)
+library(stringr)
+
+Sys.setenv(R_MAX_NUM_DLLS=150)
+```
+
+
+```{r}
+#load("~/maca/save/All_seurat_tiss.Robj")
+#load("~/maca/save/10x_All_seurat_tiss.Robj")
+```
+
+Extract just the metadata from plates and tenx cells.
+```{r}
+just_plates = as_tibble(tiss@meta.data[c('tissue', 'subtissue', 'percent.ribo', 'nGene', 'plate.barcode')])
+just_plates <- rownames_to_column(just_plates, "cell")
+just_plates['method'] <- 'plate'
+just_plates <- rename(just_plates, run = plate.barcode)
+
+just_tenx = as_tibble(tissX@meta.data[c('tissue', 'percent.ribo', 'nGene','channel')])
+just_tenx <- rownames_to_column(just_tenx, "cell")
+just_tenx['method'] <- '10x'
+just_tenx <- rename(just_tenx, run = channel)
+
+df <- bind_rows(just_plates, just_tenx)
+```
+
+```{r}
+df <- df %>% mutate(tissue = fct_recode(tissue,
+    "Mammary" = "Mammary_Gland"))
+df %>% count(tissue)
+```
+
+
+```{r}
+common_tissues <- c("Bladder", "Heart", "Kidney", "Liver","Lung","Mammary","Marrow","Muscle",
+                         "Spleen", "Tongue", "Thymus")
+```
+
+
+How do the number of genes detected vary across tissues and methods?
+
+```{r, fig.width = 8, fig.height = 20}
+filter(df, tissue %in% common_tissues) %>% ggplot(aes(nGene, ..density..,colour = method)) + 
+  geom_freqpoly(binwidth = 300) +
+  facet_wrap(~ tissue, nrow = 8, scales = "free_x")
+```
+
+Is this an artifact of the channel used?
+
+```{r}
+medians <- df %>% group_by(method, tissue, run) %>% summarize(median_genes = median(nGene), n_cells = n()) 
+```
+
+```{r}
+medians %>% filter(method == '10x') %>% ggplot(aes(x = median_genes, y = n_cells, color = tissue)) + geom_point()  +
+    scale_color_brewer(palette="Spectral")
+```
+
+
+How about percent ribo?
+
+```{r, fig.width = 8, fig.height = 20}
+filter(df, tissue %in% common_tissues) %>% ggplot(aes(percent.ribo, ..density..,colour = method)) + 
+  geom_freqpoly(binwidth = 0.01) +
+  facet_wrap(~ tissue, nrow = 8, scales = "free_x")
+```
+
+```{r}
+filter(df, tissue == 'Liver') %>% ggplot(aes(nGene, ..density..,colour = method)) + 
+  geom_freqpoly(binwidth = 100)
+```
+
+
+# Dynamic Range
+
+Get a few cells from each method with values in a certain range.
+```{r}
+subset.size <- 2
+
+cell.subset <- filter(df, tissue == 'Heart', nGene > 2900, nGene < 3100) %>% 
+    group_by(method) %>% 
+    sample_n(subset.size) %>%
+    pull(cell)
+```
+
+```{r, fig.width = 4, fig.height = 8}
+par(mfrow=c(2,1))
+
+expr <- tissX@data[,cell.subset[1]]
+expr <- expr[expr > 0]
+plot(sort(expr), ylab = "log expression", xlab = "gene index", col = "red")
+title(main = "Heart 10x cell")
+
+expr <- tiss@data[,cell.subset[3]]
+expr <- expr[expr > 0]
+plot(sort(expr), ylab = "log expression", xlab = "gene index", col = "green")
+title(main = "Heart plateseq cell")
+```
+
+
+# Average Cells
+
+Even in tissues where 10x and plate have a similar number of nonzero genes, there is greater dynamic range in the plates.
+
+```{r}
+filter(df, tissue %in% c("Bladder", "Heart", "Kidney", "Liver","Lung","Mammary","Marrow","Muscle",
+                         "Spleen", "Tongue")) %>% ggplot(aes(nGene, ..density..,colour = method)) + 
+  geom_freqpoly(binwidth = 300) +
+  facet_wrap(~ tissue, nrow = 8, scales = "free_x")
+```
+
+```{r}
+table(tiss@meta.data$annotation)
+```
+
+
+```{r}
+cells.to.use = rownames(filter(tiss@meta.data, annotation == 'goblet_cell'))
+```
+
+
+```{r}
+library(plyr)
+```
+
+
+Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Cmd+Option+I*.
+
+When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Cmd+Shift+K* to preview the HTML file). 
+
+The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
+
