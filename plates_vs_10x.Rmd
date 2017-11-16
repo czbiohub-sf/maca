@@ -4,27 +4,38 @@ output: html_notebook
 ---
 
 ```{r}
-install.packages("tidyverse")
+#install.packages("tidyverse")
 library(tidyverse)
 library(stringr)
+library(Seurat)
 
 Sys.setenv(R_MAX_NUM_DLLS=150)
 ```
 
 
 ```{r}
-#load("~/maca/save/All_seurat_tiss.Robj")
-#load("~/maca/save/10x_All_seurat_tiss.Robj")
+load("~/maca/save/All_seurat_tiss.Robj")
+load("~/maca/save/10x_All_seurat_tiss.Robj")
 ```
+
+Add in percent Rn54s.
+```{r}
+percent.Rn45s <- Matrix::colSums(tiss@raw.data[c('Rn45s'), ])/Matrix::colSums(tiss@raw.data)
+tiss <- AddMetaData(object = tiss, metadata = percent.Rn45s, col.name = "percent.Rn45s")
+
+percent.Rn45s <- tissX@raw.data[c('Rn45s'), ]/Matrix::colSums(tissX@raw.data)
+tissX <- AddMetaData(object = tissX, metadata = percent.Rn45s, col.name = "percent.Rn45s")
+```
+
 
 Extract just the metadata from plates and tenx cells.
 ```{r}
-just_plates = as_tibble(tiss@meta.data[c('tissue', 'subtissue', 'percent.ribo', 'nGene', 'plate.barcode')])
+just_plates = as_tibble(tiss@meta.data[c('tissue', 'subtissue', 'percent.ribo', 'percent.Rn45s','nGene', 'plate.barcode')])
 just_plates <- rownames_to_column(just_plates, "cell")
 just_plates['method'] <- 'plate'
 just_plates <- rename(just_plates, run = plate.barcode)
 
-just_tenx = as_tibble(tissX@meta.data[c('tissue', 'percent.ribo', 'nGene','channel')])
+just_tenx = as_tibble(tissX@meta.data[c('tissue', 'percent.ribo', 'nGene','channel', 'percent.Rn45s')])
 just_tenx <- rownames_to_column(just_tenx, "cell")
 just_tenx['method'] <- '10x'
 just_tenx <- rename(just_tenx, run = channel)
@@ -67,17 +78,32 @@ medians %>% filter(method == '10x') %>% ggplot(aes(x = median_genes, y = n_cells
 
 How about percent ribo?
 
+
 ```{r, fig.width = 8, fig.height = 20}
 filter(df, tissue %in% common_tissues) %>% ggplot(aes(percent.ribo, ..density..,colour = method)) + 
   geom_freqpoly(binwidth = 0.01) +
   facet_wrap(~ tissue, nrow = 8, scales = "free_x")
 ```
 
+
+What about Rn45s? It's dramatically different between 10X and plateseq.
+
 ```{r}
-filter(df, tissue == 'Liver') %>% ggplot(aes(nGene, ..density..,colour = method)) + 
-  geom_freqpoly(binwidth = 100)
+median_Rn45s <- df %>% group_by(method, tissue, run) %>% summarize(median_Rn45s = median(percent.Rn45s), 
+                                                                   median_ribo = median(percent.ribo),
+                                                                   n_cells = n()) 
 ```
 
+```{r}
+median_Rn45s %>% filter(tissue %in% common_tissues,) %>% ggplot(aes(x = median_Rn45s, y = median_ribo, color = tissue, shape = method)) + geom_point()  +
+    scale_color_brewer(palette="Spectral")
+```
+
+```{r, fig.width = 8, fig.height = 20}
+filter(df, tissue %in% common_tissues, method == 'plate') %>% ggplot(aes(percent.Rn45s,..density..,colour = tissue)) + 
+  geom_freqpoly(binwidth = 0.01) +
+  facet_wrap(~ tissue, nrow = 8, scales = "free_x")
+```
 
 # Dynamic Range
 
@@ -106,35 +132,28 @@ title(main = "Heart plateseq cell")
 ```
 
 
+```{r, fig.width = 4, fig.height = 8}
+par(mfrow=c(2,1))
+
+expr <- tissX@raw.data[,cell.subset[1]]
+expr <- expr[expr > 0]
+plot(sort(expr), ylab = "expression", xlab = "gene index", col = "red", log = 'y')
+title(main = "Heart 10x cell")
+
+expr <- tiss@raw.data[,cell.subset[3]]
+expr <- expr[expr > 0]
+plot(sort(expr), ylab = "expression", xlab = "gene index", col = "green", log = 'y')
+title(main = "Heart plateseq cell")
+```
+
+
 # Average Cells
 
-Even in tissues where 10x and plate have a similar number of nonzero genes, there is greater dynamic range in the plates.
+How does the 'average hepatocyte' compare between the two datasets? For number of genes expressed, say, or the plot of one against the other.
 
 ```{r}
-filter(df, tissue %in% c("Bladder", "Heart", "Kidney", "Liver","Lung","Mammary","Marrow","Muscle",
-                         "Spleen", "Tongue")) %>% ggplot(aes(nGene, ..density..,colour = method)) + 
-  geom_freqpoly(binwidth = 300) +
-  facet_wrap(~ tissue, nrow = 8, scales = "free_x")
+zonated = c('Glul', 'Cyp2e1','Cyp2f2','Cps1', 'Rps12', 'Ass1')
+table(tissX@meta.data$tissue)
 ```
 
-```{r}
-table(tiss@meta.data$annotation)
-```
-
-
-```{r}
-cells.to.use = rownames(filter(tiss@meta.data, annotation == 'goblet_cell'))
-```
-
-
-```{r}
-library(plyr)
-```
-
-
-Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Cmd+Option+I*.
-
-When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Cmd+Shift+K* to preview the HTML file). 
-
-The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
 
