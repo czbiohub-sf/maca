@@ -11,8 +11,8 @@ Bladder,mesenchymal_cells,b2,156
 Brain_FACS_neurons,astrocytes,berg_glia,30
 Brain_FACS_neurons,astrocytes,cerebral_astrocytes,403
 Brain_FACS_neurons,astrocytes,myelinating_oligodendrocytes,11
-Brain_FACS_neurons,endothelial,vascular,625
-Brain_FACS_neurons,endothelial,vsmcs,14
+Brain_FACS_neurons,endothelial_cells,vascular,625
+Brain_FACS_neurons,endothelial_cells,vsmcs,14
 Brain_FACS_neurons,neurons,doublet,2
 Brain_FACS_neurons,neurons,excitatory,73
 Brain_FACS_neurons,neurons,inhibitory,98
@@ -77,7 +77,7 @@ Muscle,endothelial_cells,jun-positive,51
 Pancreas,alpha_cells,female,159
 Pancreas,alpha_cells,male,128
 Pancreas,alpha_cells,pp,39
-Pancreas,immune_cells,exocrine?,24
+Pancreas,immune_cells,exocrine,24
 Pancreas,immune_cells,immune,21
 Skin,basal_cells,interfollicular_epidermis,402
 Skin,intermediate_cells,interfollicular_epidermis,259
@@ -86,11 +86,13 @@ Spleen,b_cells,follicular,1085
 Spleen,b_cells,marginal_zone,153
 Spleen,t_cells,cd4+,273
 Spleen,t_cells,cd8+,81
-Thymus,t_cell,double_negative1,32
+Thymus,t_cell,double_negative4,92
+Thymus,t_cell,double_positive,44
 Thymus,t_cell,double_positive_favoring_cd8_differentation,314
 Thymus,t_cell,double_positive_favoring_cd8_differentiation,323
 Thymus,t_cell,double_positive_rapidly_dividing_favoring_cd8_differenation,103
-Thymus,t_cell,mix_of_double_negative4_double_positive_immaturesingle_positives,478
+Thymus,t_cell,immature_single_positive_cd4,280
+Thymus,t_cell,immature_single_positive_cd8,62
 Tongue,basal_cells,10,4
 Tongue,basal_cells,2,61
 Tongue,basal_cells,3,51
