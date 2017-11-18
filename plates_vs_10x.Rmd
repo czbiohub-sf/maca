@@ -31,7 +31,6 @@ percent.Rn45s <- tissX@raw.data[c('Rn45s'), ]/Matrix::colSums(tissX@raw.data)
 tissX <- AddMetaData(object = tissX, metadata = percent.Rn45s, col.name = "percent.Rn45s")
 ```
 
-
 Extract just the metadata from plates and tenx cells.
 ```{r}
 just_plates = as_tibble(tiss@meta.data[c('tissue', 'subtissue', 'percent.ribo', 'percent.Rn45s','nGene', 'plate.barcode')])
