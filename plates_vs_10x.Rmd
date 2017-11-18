@@ -16,6 +16,10 @@ Sys.setenv(R_MAX_NUM_DLLS=150)
 ```{r}
 load("~/maca/save/All_seurat_tiss.Robj")
 load("~/maca/save/10x_All_seurat_tiss.Robj")
+
+tiss@meta.data['cell'] <- rownames(tiss@meta.data)
+tissX@meta.data['cell'] <- rownames(tissX@meta.data)
+
 ```
 
 Add in percent Rn54s.
@@ -149,11 +153,10 @@ title(main = "Heart plateseq cell")
 
 # Average Cells
 
-How does the 'average hepatocyte' compare between the two datasets? For number of genes expressed, say, or the plot of one against the other.
-
 ```{r}
-zonated = c('Glul', 'Cyp2e1','Cyp2f2','Cps1', 'Rps12', 'Ass1')
-table(tissX@meta.data$tissue)
+plates_marrow_meta = filter(tiss@meta.data, tissue == "Marrow")
+tenx_marrow_meta = filter(tissX@meta.data, tissue == "Marrow")
 ```
+
 
 
