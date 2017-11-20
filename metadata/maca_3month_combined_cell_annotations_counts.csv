@@ -30,7 +30,7 @@ granulocytes,789
 hematopoietic_cells,17
 hematopoietic_stem_cell,1291
 hepatocytes,417
-immune_cells,769
+immune_cells,800
 inner_bulge,824
 interfollicular_epidermis,847
 luminal_cells,688
@@ -45,10 +45,11 @@ muscle_cells,27
 muscle_stem_cells,546
 myeloid_cells,527
 natural_killer_cells,165
+neural_progenitor_cells,36
 neuroendocrine_cells,2
 neurons,196
 neutrophils,820
-npcs,144
+non-parenchymal_cells,108
 oligodendrocytes,1175
 opcs,202
 outer_bulge,547
@@ -69,4 +70,3 @@ tubule,194
 tuft_cells,45
 undifferentiated_cells,904
 unknown,176
-unknown_immune_is,31

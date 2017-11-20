@@ -20,10 +20,10 @@ Brain_FACS_neurons,astrocytes,cerebral_astrocytes,403
 Brain_FACS_neurons,astrocytes,myelinating_oligodendrocytes,11
 Brain_FACS_neurons,endothelial_cells,vascular,625
 Brain_FACS_neurons,endothelial_cells,vsmcs,14
+Brain_FACS_neurons,neural_progenitor_cells,.,36
 Brain_FACS_neurons,neurons,excitatory,73
 Brain_FACS_neurons,neurons,inhibitory,98
 Brain_FACS_neurons,neurons,undetermined,25
-Brain_FACS_neurons,npcs,.,36
 Brain_FACS_neurons,oligodendrocytes,.,1175
 Brain_FACS_neurons,opcs,.,202
 Brain_FACS_neurons,pericytes,.,132
@@ -72,7 +72,7 @@ Liver,endothelial_cells,.,180
 Liver,hepatocytes,midlobular,126
 Liver,hepatocytes,pericentral,158
 Liver,hepatocytes,periportal,133
-Liver,npcs,.,108
+Liver,non-parenchymal_cells,.,108
 Lung,alveolar_epithelial_cells,type_i,2
 Lung,alveolar_epithelial_cells,type_ii,94
 Lung,b_cells,.,55
@@ -84,6 +84,7 @@ Lung,endothelial_cells,type_ii,124
 Lung,endothelial_cells,type_iii,67
 Lung,endothelial_cells,type_iv,101
 Lung,epithelial_cells,.,9
+Lung,immune_cells,.,31
 Lung,macrophages,alveolar,13
 Lung,macrophages,interstitial,56
 Lung,mesothelial_cells,.,2
@@ -96,7 +97,6 @@ Lung,stromal_cells,type_iii,47
 Lung,stromal_cells,type_iv,42
 Lung,stromal_cells,type_v,25
 Lung,t_cells,.,55
-Lung,unknown_immune_is,.,31
 Mammary_Gland,basal_cells,.,37
 Mammary_Gland,basal_cells,1,318
 Mammary_Gland,basal_cells,2,233
