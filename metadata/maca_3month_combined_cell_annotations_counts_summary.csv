@@ -83,13 +83,13 @@ Lung,endothelial_cells,type_i,446
 Lung,endothelial_cells,type_ii,124
 Lung,endothelial_cells,type_iii,67
 Lung,endothelial_cells,type_iv,101
+Lung,epithelial_cells,.,9
 Lung,macrophages,alveolar,13
 Lung,macrophages,interstitial,56
 Lung,mesothelial_cells,.,2
 Lung,monocytes,.,65
 Lung,natural_killer_cells,.,36
 Lung,neuroendocrine_cells,.,2
-Lung,remaining_epithelial_cells,.,9
 Lung,stromal_cells,type_i,142
 Lung,stromal_cells,type_ii,110
 Lung,stromal_cells,type_iii,47

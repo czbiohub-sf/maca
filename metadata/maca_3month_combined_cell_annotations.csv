@@ -23626,7 +23626,7 @@ H1.MAA000526.3_9_M.1.1,mesothelial_cells,,,Lung
 L11.MAA000526.3_9_M.1.1,stromal_cells,,type_ii,Lung
 I12.MAA000526.3_9_M.1.1,stromal_cells,,type_iii,Lung
 K3.MAA000526.3_9_M.1.1,alveolar_epithelial_cells,,type_ii,Lung
-N4.MAA000526.3_9_M.1.1,remaining_epithelial_cells,,,Lung
+N4.MAA000526.3_9_M.1.1,epithelial_cells,,,Lung
 O13.MAA000526.3_9_M.1.1,stromal_cells,,type_iii,Lung
 P20.MAA000526.3_9_M.1.1,monocytes,,,Lung
 L12.MAA000526.3_9_M.1.1,stromal_cells,,type_ii,Lung
@@ -23991,7 +23991,7 @@ F8.MAA000530.3_8_M.1.1,endothelial_cells,,type_iii,Lung
 G18.MAA000530.3_8_M.1.1,endothelial_cells,,type_iii,Lung
 N13.MAA000530.3_8_M.1.1,stromal_cells,,type_ii,Lung
 O19.MAA000530.3_8_M.1.1,dendritic_cells,,,Lung
-E4.MAA000530.3_8_M.1.1,remaining_epithelial_cells,,,Lung
+E4.MAA000530.3_8_M.1.1,epithelial_cells,,,Lung
 F9.MAA000530.3_8_M.1.1,endothelial_cells,,type_ii,Lung
 G19.MAA000530.3_8_M.1.1,monocytes,,,Lung
 C22.MAA000530.3_8_M.1.1,monocytes,,,Lung
@@ -24273,7 +24273,7 @@ G2.MAA000891.3_10_M.1.1,endothelial_cells,,type_i,Lung
 I13.MAA000891.3_10_M.1.1,stromal_cells,,type_ii,Lung
 L1.MAA000891.3_10_M.1.1,stromal_cells,,type_v,Lung
 N2.MAA000891.3_10_M.1.1,stromal_cells,,type_i,Lung
-B9.MAA001847.3_39_F.1.1,remaining_epithelial_cells,,,Lung
+B9.MAA001847.3_39_F.1.1,epithelial_cells,,,Lung
 D9.MAA001847.3_39_F.1.1,alveolar_epithelial_cells,,type_ii,Lung
 B16.MAA001847.3_39_F.1.1,stromal_cells,,type_i,Lung
 D10.MAA001847.3_39_F.1.1,stromal_cells,,type_i,Lung
@@ -24340,7 +24340,7 @@ I21.MAA001847.3_39_F.1.1,natural_killer_cells,,,Lung
 K16.MAA001847.3_39_F.1.1,stromal_cells,,type_i,Lung
 M15.MAA001847.3_39_F.1.1,stromal_cells,,type_i,Lung
 O1.MAA001847.3_39_F.1.1,alveolar_epithelial_cells,,type_ii,Lung
-P8.MAA001847.3_39_F.1.1,remaining_epithelial_cells,,,Lung
+P8.MAA001847.3_39_F.1.1,epithelial_cells,,,Lung
 F15.MAA001847.3_39_F.1.1,stromal_cells,,type_i,Lung
 H8.MAA001847.3_39_F.1.1,macrophages,,alveolar,Lung
 I22.MAA001847.3_39_F.1.1,t_cells,,,Lung
@@ -24357,7 +24357,7 @@ K20.MAA001847.3_39_F.1.1,unknown_immune_is,,,Lung
 M18.MAA001847.3_39_F.1.1,stromal_cells,,type_i,Lung
 O3.MAA001847.3_39_F.1.1,alveolar_epithelial_cells,,type_ii,Lung
 P10.MAA001847.3_39_F.1.1,stromal_cells,,type_i,Lung
-G1.MAA001847.3_39_F.1.1,remaining_epithelial_cells,,,Lung
+G1.MAA001847.3_39_F.1.1,epithelial_cells,,,Lung
 H13.MAA001847.3_39_F.1.1,stromal_cells,,type_i,Lung
 J2.MAA001847.3_39_F.1.1,b_cells,,,Lung
 K21.MAA001847.3_39_F.1.1,monocytes,,,Lung
@@ -24365,7 +24365,7 @@ M19.MAA001847.3_39_F.1.1,b_cells,,,Lung
 O4.MAA001847.3_39_F.1.1,alveolar_epithelial_cells,,type_ii,Lung
 G3.MAA001847.3_39_F.1.1,macrophages,,interstitial,Lung
 H14.MAA001847.3_39_F.1.1,stromal_cells,,type_i,Lung
-J4.MAA001847.3_39_F.1.1,remaining_epithelial_cells,,,Lung
+J4.MAA001847.3_39_F.1.1,epithelial_cells,,,Lung
 L4.MAA001847.3_39_F.1.1,alveolar_epithelial_cells,,type_ii,Lung
 M20.MAA001847.3_39_F.1.1,endothelial_cells,,type_i,Lung
 O5.MAA001847.3_39_F.1.1,macrophages,,alveolar,Lung
@@ -24507,7 +24507,7 @@ C4.MAA001889.3_38_F.1.1,b_cells,,,Lung
 B4.MAA001889.3_38_F.1.1,endothelial_cells,,type_i,Lung
 H5.MAA001889.3_38_F.1.1,monocytes,,,Lung
 I9.MAA001889.3_38_F.1.1,unknown_immune_is,,,Lung
-K17.MAA001889.3_38_F.1.1,remaining_epithelial_cells,,,Lung
+K17.MAA001889.3_38_F.1.1,epithelial_cells,,,Lung
 F22.MAA001889.3_38_F.1.1,stromal_cells,,type_i,Lung
 H6.MAA001889.3_38_F.1.1,stromal_cells,,type_i,Lung
 I10.MAA001889.3_38_F.1.1,alveolar_epithelial_cells,,type_ii,Lung
@@ -24555,7 +24555,7 @@ P18.MAA001889.3_38_F.1.1,stromal_cells,,type_i,Lung
 N8.MAA001889.3_38_F.1.1,natural_killer_cells,,,Lung
 P17.MAA001889.3_38_F.1.1,macrophages,,interstitial,Lung
 H12.MAA001889.3_38_F.1.1,alveolar_epithelial_cells,,type_ii,Lung
-I16.MAA001889.3_38_F.1.1,remaining_epithelial_cells,,,Lung
+I16.MAA001889.3_38_F.1.1,epithelial_cells,,,Lung
 L3.MAA001889.3_38_F.1.1,endothelial_cells,,type_i,Lung
 M8.MAA001889.3_38_F.1.1,monocytes,,,Lung
 N10.MAA001889.3_38_F.1.1,endothelial_cells,,type_i,Lung
@@ -24584,7 +24584,7 @@ K5.MAA001889.3_38_F.1.1,stromal_cells,,type_i,Lung
 L8.MAA001889.3_38_F.1.1,endothelial_cells,,type_i,Lung
 N15.MAA001889.3_38_F.1.1,macrophages,,interstitial,Lung
 O20.MAA001889.3_38_F.1.1,stromal_cells,,type_i,Lung
-M14.MAA001889.3_38_F.1.1,remaining_epithelial_cells,,,Lung
+M14.MAA001889.3_38_F.1.1,epithelial_cells,,,Lung
 N16.MAA001889.3_38_F.1.1,macrophages,,interstitial,Lung
 P1.MAA001889.3_38_F.1.1,natural_killer_cells,,,Lung
 E7.MAA001889.3_38_F.1.1,b_cells,,,Lung

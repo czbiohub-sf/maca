@@ -18,7 +18,7 @@ dendritic_cells,69
 duct_cells,131
 endothelial_cells,3967
 enterocytes,782
-epithelial_cells,166
+epithelial_cells,175
 exocrine_cells,177
 extracellular_matrix,162
 fenestrated_capillaries,69
@@ -57,7 +57,6 @@ pp_cells,68
 proliferating,192
 proliferating_cells,45
 red_blood_cells,11
-remaining_epithelial_cells,9
 satellite_cells,442
 smooth_muscle_cells,218
 stellate_cells,29
