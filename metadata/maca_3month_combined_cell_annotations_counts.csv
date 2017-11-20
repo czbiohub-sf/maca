@@ -1,3 +1,4 @@
+annotation,n_cells
 adipocytes,54
 alpha_cells,326
 alveolar_epithelial_cells,96
@@ -26,7 +27,7 @@ fibroblasts,2117
 filliform_keratinocytes,181
 goblet_cells,814
 granulocytes,789
-hematopoetic_cells,17
+hematopoietic_cells,17
 hematopoietic_stem_cell,1291
 hepatocytes,417
 immune_cells,769
@@ -55,7 +56,6 @@ pericytes,132
 pp_cells,68
 proliferating,192
 proliferating_cells,45
-proximal_tubule_cells_2,52
 red_blood_cells,11
 remaining_epithelial_cells,9
 satellite_cells,442
@@ -64,10 +64,9 @@ stellate_cells,29
 stratified_or_differentiating,345
 stromal_cells,1374
 stromal_mesenchymal_stem_cell,33
-t_cell,1250
-t_cells,1137
+t_cells,2387
 thick_ascending_tubule_cells,67
-tubule,142
+tubule,194
 tuft_cells,45
 undifferentiated_cells,904
 unknown,176
