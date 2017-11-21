@@ -1,0 +1,289 @@
+---
+title: "10x vs Plate"
+output: html_notebook
+---
+
+```{r}
+#install.packages("tidyverse")
+library(tidyverse)
+library(stringr)
+library(Seurat)
+
+Sys.setenv(R_MAX_NUM_DLLS=150)
+```
+
+
+```{r}
+load("~/maca/save/All_seurat_tiss.Robj")
+load("~/maca/save/10x_All_seurat_tiss.Robj")
+
+tiss@meta.data['cell'] <- rownames(tiss@meta.data)
+tissX@meta.data['cell'] <- rownames(tissX@meta.data)
+
+```
+
+Add in percent Rn54s.
+```{r}
+percent.Rn45s <- Matrix::colSums(tiss@raw.data[c('Rn45s'), ])/Matrix::colSums(tiss@raw.data)
+tiss <- AddMetaData(object = tiss, metadata = percent.Rn45s, col.name = "percent.Rn45s")
+
+percent.Rn45s <- tissX@raw.data[c('Rn45s'), ]/Matrix::colSums(tissX@raw.data)
+tissX <- AddMetaData(object = tissX, metadata = percent.Rn45s, col.name = "percent.Rn45s")
+```
+
+```{r}
+tissX@meta.data$nUMI
+```
+
+
+
+Extract just the metadata from plates and tenx cells.
+```{r}
+just_plates = as_tibble(tiss@meta.data[c('tissue', 'subtissue', 'percent.ribo', 'percent.Rn45s','nGene', 'plate.barcode', 'nReads')])
+just_plates <- rownames_to_column(just_plates, "cell")
+just_plates['method'] <- 'plate'
+just_plates <- rename(just_plates, run = plate.barcode)
+just_plates <- rename(just_plates, nMolecules = nReads)
+
+just_tenx = as_tibble(tissX@meta.data[c('tissue', 'percent.ribo', 'nGene','channel', 'percent.Rn45s', 'nUMI')])
+just_tenx <- rownames_to_column(just_tenx, "cell")
+just_tenx <- rename(just_tenx, nMolecules = nUMI)
+
+just_tenx['method'] <- '10x'
+just_tenx <- rename(just_tenx, run = channel)
+
+df <- bind_rows(just_plates, just_tenx)
+```
+
+```{r}
+df <- df %>% mutate(tissue = fct_recode(tissue,
+    "Mammary" = "Mammary_Gland"))
+df %>% count(tissue)
+```
+
+```{r, fig.width = 8, fig.height = 20}
+filter(df, tissue %in% common_tissues) %>% ggplot(aes(nGene, ..density..,colour = method)) + 
+  geom_freqpoly(binwidth = 300) +
+  facet_wrap(~ tissue, ncol = 3)
+```
+
+
+```{r}
+common_tissues <- c("Bladder", "Heart", "Kidney", "Liver","Lung","Mammary","Marrow","Muscle",
+                         "Spleen", "Tongue", "Thymus")
+```
+
+
+How do the number of genes detected vary across tissues and methods?
+
+```{r, fig.width = 8, fig.height = 20}
+filter(df, tissue %in% common_tissues) %>% ggplot(aes(nGene, ..density..,colour = method)) + 
+  geom_freqpoly(binwidth = 300) +
+  facet_wrap(~ tissue, nrow = 8, scales = "free_x")
+```
+
+Is this an artifact of the channel used?
+
+```{r}
+medians <- df %>% group_by(method, tissue, run) %>% summarize(median_genes = median(nGene), n_cells = n()) 
+```
+
+```{r}
+medians %>% filter(method == '10x') %>% ggplot(aes(x = median_genes, y = n_cells, color = tissue)) + geom_point()  +
+    scale_color_brewer(palette="Spectral")
+```
+
+
+How about percent ribo?
+
+
+```{r, fig.width = 8, fig.height = 20}
+filter(df, tissue %in% common_tissues) %>% ggplot(aes(percent.ribo, ..density..,colour = method)) + 
+  geom_freqpoly(binwidth = 0.01) +
+  facet_wrap(~ tissue, nrow = 8, scales = "free_x")
+```
+
+
+What about Rn45s? It's dramatically different between 10X and plateseq.
+
+```{r}
+median_Rn45s <- df %>% group_by(method, tissue, run) %>% summarize(median_Rn45s = median(percent.Rn45s), 
+                                                                   median_ribo = median(percent.ribo),
+                                                                   n_cells = n()) 
+```
+
+```{r}
+median_Rn45s %>% filter(tissue %in% common_tissues,) %>% ggplot(aes(x = median_Rn45s, y = median_ribo, color = tissue, shape = method)) + geom_point()  +
+    scale_color_brewer(palette="Spectral")
+```
+
+```{r, fig.width = 8, fig.height = 20}
+filter(df, tissue %in% common_tissues, method == 'plate') %>% ggplot(aes(percent.Rn45s,..density..,colour = tissue)) + 
+  geom_freqpoly(binwidth = 0.01) +
+  facet_wrap(~ tissue, nrow = 8, scales = "free_x")
+```
+
+# Dynamic Range
+
+Get a few cells from each method with values in a certain range.
+```{r}
+subset.size <- 2
+
+cell.subset <- filter(df, tissue == 'Heart', nGene > 2900, nGene < 3100) %>% 
+    group_by(method) %>% 
+    sample_n(subset.size) %>%
+    pull(cell)
+```
+
+```{r, fig.width = 4, fig.height = 8}
+par(mfrow=c(2,1))
+
+expr <- tissX@data[,cell.subset[1]]
+expr <- expr[expr > 0]
+plot(sort(expr), ylab = "log expression", xlab = "gene index", col = "red")
+title(main = "Heart 10x cell")
+
+expr <- tiss@data[,cell.subset[3]]
+expr <- expr[expr > 0]
+plot(sort(expr), ylab = "log expression", xlab = "gene index", col = "green")
+title(main = "Heart plateseq cell")
+```
+
+
+```{r, fig.width = 4, fig.height = 8}
+par(mfrow=c(2,1))
+
+expr <- tissX@raw.data[,cell.subset[1]]
+expr <- expr[expr > 0]
+plot(sort(expr), ylab = "expression", xlab = "gene index", col = "red", log = 'y')
+title(main = "Heart 10x cell")
+
+expr <- tiss@raw.data[,cell.subset[3]]
+expr <- expr[expr > 0]
+plot(sort(expr), ylab = "expression", xlab = "gene index", col = "green", log = 'y')
+title(main = "Heart plateseq cell")
+```
+
+
+# Comparing the Average Thymus cell
+
+```{r}
+
+tissue_pct <- function(seurat_obj, tissue){
+  cells = rownames(seurat_obj@meta.data[seurat_obj@meta.data$tissue == tissue,])
+  expr = seurat_obj@data[,cells]
+  pct = Matrix::rowMeans(expr > 0)
+  pct
+} 
+
+```
+
+```{r}
+
+tissue_avg <- function(seurat_obj, tissue){
+  cells = rownames(seurat_obj@meta.data[seurat_obj@meta.data$tissue == tissue,])
+  expr = seurat_obj@raw.data[,cells]
+  avg = Matrix::rowMeans(expr)
+  avg
+} 
+
+```
+
+```{r}
+tissue_of_interest = "Spleen"
+plate_pct = tissue_pct(tiss, tissue_of_interest)
+tenx_pct = tissue_pct(tissX, tissue_of_interest)
+
+pct1 = as_data_frame(tenx_pct)
+pct1['gene'] <- names(tenx_pct)
+pct1['method'] <- 'tenx'
+pct1 <- filter(pct1, value > 0.01)
+
+pct2 = as_data_frame(plate_pct)
+pct2['gene'] <- names(plate_pct)
+pct2['method'] <- 'plate'
+pct2 <- filter(pct2, value > 0.01)
+
+pct <- bind_rows(pct1, pct2)
+```
+
+```{r}
+tissue_avg(tiss, "Liver")['D14Ertd449e']
+```
+
+```{r}
+df = as_data_frame(tiss@meta.data)
+df['cell'] <- rownames(tiss@meta.data)
+
+df['tSNE_1'] <- tiss@dr$tsne@cell.embeddings[,'tSNE_1']
+df['tSNE_2'] <- tiss@dr$tsne@cell.embeddings[,'tSNE_2']
+df['order'] <- 
+```
+
+```{r}
+sample(1:10, )
+```
+
+
+```{r}
+
+set.seed(001) # just to make it reproducible
+sample(V)
+
+df %>% ggplot(aes(tSNE_1, tSNE_2, col=tissue)) + geom_point(size=0.5, alpha = 0.5) + guides(col = guide_legend(override.aes = list(size=2)))
+```
+
+```{r}
+pct %>% spread(key = method, value = value, fill = 0) %>% filter((tenx > 0.5 & plate < 0.1))
+```
+
+```{r}
+pct %>% spread(key = method, value = value, fill = 0) %>% filter((tenx > 0.5 & plate < 0.1))
+```
+
+```{r}
+pct %>% spread(key = method, value = value, fill = 0) %>% 
+  ggplot(aes_string("plate", "tenx")) + geom_point(alpha = 0.3) + geom_abline(slope=1, intercept=0) + geom_smooth()
+```
+
+```{r}
+pct %>% spread(key = method, value = value, fill = 0) %>% filter(plate > 0.10) %>% ggplot(aes(tenx, ..density..)) + geom_freqpoly()
+
+#ggplot(aes_string("plate", "tenx")) + geom_point(alpha = 0.3) + geom_abline(slope=1, intercept=0) + geom_smooth()
+```
+
+```{r}
+pct %>% spread(key = method, value = value, fill = 0) %>% filter(tenx > 0.10) %>% ggplot(aes(plate, ..density..)) + geom_freqpoly()
+
+#ggplot(aes_string("plate", "tenx")) + geom_point(alpha = 0.3) + geom_abline(slope=1, intercept=0) + geom_smooth()
+```
+
+
+
+```{r}
+pct %>% spread(key = method, value = value, fill = 0) %>% filter(tenx > 0.1 | plate > 0.1) %>% ggplot(aes_string("plate", "tenx")) + geom_hex()
+```
+
+```{r}
+pct %>% select(value < 0.05)
+```
+
+
+Present in one, absent in the other.
+
+
+How many tenx cells do you need to get a plate cell?
+
+
+
+```{r}
+pct %>% filter(value < 0.05) %>% spread(key = method, value = value, fill = 0) %>% ggplot(aes_string("plate", "tenx")) + geom_point()
+```
+
+
+
+Number of genes above a certain threshold of cells expressing. This could be made into a plot for a given cell type. A histogrammy version of starry night.
+```{r}
+pct %>% filter(value > 0.05) %>% group_by(method) %>% count()
+```
+
