@@ -8,6 +8,7 @@ SUBANNOTATION = 'subannotation'
 def clean_labels(x):
     try:
         return x.lower()\
+            .strip('0123456789')\
             .strip()\
             .strip('()-_?')\
             .replace('/', ' or ')\
@@ -30,7 +31,10 @@ def clean_annotation(df, tissue):
     # --- Aorta ---
     if tissue == "Aorta":
         df[ANNOTATION] = df[ANNOTATION].str.replace('hematopoetic',
-                                                    'hematopoietic_cells')
+                                                    'hematopoietic')
+        rows = df[ANNOTATION] == 'heterogenous group of cells'
+        df.loc[rows, ANNOTATION] = df.loc[rows, SUBANNOTATION]
+        df.loc[rows, SUBANNOTATION] = np.nan
 
     # --- Bladder ---
     if tissue == 'Bladder':
@@ -46,8 +50,10 @@ def clean_annotation(df, tissue):
         df[ANNOTATION] = df[ANNOTATION].str.replace(
             'endothelial', 'endothelial_cells')
         df[ANNOTATION] = df[ANNOTATION].str.replace(
+            'NPC', 'neural_progenitor_cell')
+        df[SUBANNOTATION] = df[SUBANNOTATION].str.replace(
             'Berg.Glia', 'Bergmann_glia')
-        df[ANNOTATION] = df[ANNOTATION].str.replace(
+        df[SUBANNOTATION] = df[SUBANNOTATION].str.replace(
             'doublet', 'undetermined')
 
     # --- Colon ---
@@ -76,14 +82,17 @@ def clean_annotation(df, tissue):
                                                     'immune cells')
         df = df.annotation.str.extract(pattern)
         df[SUBANNOTATION] = df.subannotation.replace('', np.nan)
+        df[SUBANNOTATION] = df.subannotation.replace('12', np.nan)
 
     # --- Fat ---
     elif tissue == 'Fat':
         df[ANNOTATION] = df[ANNOTATION].str.replace('-', ' ')
         df[ANNOTATION] = df[ANNOTATION].str.replace('Mono/macro/DCs',
                                                         'Myeloid cells')
-        df[ANNOTATION] = df[ANNOTATION].str.replace('NK cells',
-                                                        'natural killer cells')
+
+        rows = df[ANNOTATION].str.contains('NK')
+        df.loc[rows, ANNOTATION] = 't_cells'
+        df.loc[rows, SUBANNOTATION] = 'natural killer cells'
 
         # Epithelial, endothelial --> endothelial_cells, epithelial_cells
         df[ANNOTATION] = df[ANNOTATION].str.replace(
@@ -134,19 +143,29 @@ def clean_annotation(df, tissue):
         # Remove newlines
         df[SUBANNOTATION] = df[SUBANNOTATION].str.replace(
             'Female', '').str.replace('Male', '')
+        df[ANNOTATION] = df[ANNOTATION].str.replace(
+            'NPC', 'non-parenchymal cell')
 
     # --- Lung ---
     elif tissue == "Lung":
+        # print(sorted(df[ANNOTATION].unique()))
 
         df[ANNOTATION] = df[ANNOTATION].str.replace(
             'Aveolar', 'Alveolar')
+
+        rows = df[ANNOTATION].str.contains('Alveolar Epithelial')
+        df.loc[rows, ANNOTATION] = 'epithelial_cells'
+        df.loc[rows, SUBANNOTATION] = 'alveolar'
+
         # Remove newlines
         df[ANNOTATION] = df[ANNOTATION].str.replace('\n', '')
-        df[SUBANNOTATION] = df.annotation.str.extract(
-            r'(Type [IV]+)').str.strip()
-        df[ANNOTATION] = df.annotation.str.replace('( Type [IV]+)',
-                                                     '').str.strip().map(
+        # df[SUBANNOTATION] = df.annotation.str.extract(
+        #     r'(Type [IV]+)').str.strip()
+        df[ANNOTATION] = df.annotation.str.replace(
+            '( Type [IV]+)', '').str.strip().map(
             lambda x: x if x.endswith('s') else x + 's')
+
+        df[ANNOTATION] = df[ANNOTATION].str.replace('Remaining ', '')
 
         rows = df[ANNOTATION] == 'Alveolar Macrophages'
         df.loc[rows, ANNOTATION] = 'macrophages'
@@ -156,9 +175,13 @@ def clean_annotation(df, tissue):
         df.loc[rows, ANNOTATION] = 'macrophages'
         df.loc[rows, SUBANNOTATION] = 'interstitial'
 
-        rows = df[ANNOTATION] == 'Unknown Immune I'
+        rows = df[ANNOTATION] == 'Unknown Immune Is'
         df.loc[rows, ANNOTATION] = 'immune_cells'
-        df.loc[rows, SUBANNOTATION] = 'unknown'
+        df.loc[rows, SUBANNOTATION] = np.nan
+
+        rows = df[ANNOTATION].str.contains('Natural Killer')
+        df.loc[rows, ANNOTATION] = 't_cells'
+        df.loc[rows, SUBANNOTATION] = 'natural_killer_cells'
 
     # -- Mammary ---
     elif tissue == "Mammary_Gland":
@@ -301,4 +324,5 @@ def clean_annotation(df, tissue):
     df[ANNOTATION] = df[ANNOTATION].str.replace('&', 'and')
     df = _fix_nk_cells(df)
     df = df.applymap(clean_labels)
+    df = df.replace('', np.nan)
     return df
