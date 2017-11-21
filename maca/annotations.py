@@ -226,6 +226,7 @@ def clean_annotation(df, tissue):
         # Remove all numbers
         df[SUBANNOTATION] = df[SUBANNOTATION].str.rstrip('0123456789')
         df[SUBANNOTATION] = df[SUBANNOTATION].map(clean_labels)
+        df[SUBANNOTATION] = df[SUBANNOTATION].replace('unknown', np.nan)
 
         df[SUBANNOTATION] = df[SUBANNOTATION].replace(
             'monocyte', 'mature')
