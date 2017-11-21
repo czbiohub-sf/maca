@@ -1,5 +1,5 @@
 annotation,n_cells
-adipocytes,54
+adipocytes,93
 alpha_cells,326
 alveolar_epithelial_cells,96
 amplifying_cells,889
@@ -19,11 +19,11 @@ duct_cells,131
 endothelial_cells,3967
 enterocytes,782
 epithelial_cells,175
+erythroblasts_and_adipocytes,51
 exocrine_cells,177
-extracellular_matrix,162
 fenestrated_capillaries,69
 fibro_or_adipogenic_progenitors,486
-fibroblasts,2117
+fibroblasts,2152
 filliform_keratinocytes,181
 goblet_cells,814
 granulocytes,789
@@ -59,7 +59,7 @@ proliferating,192
 proliferating_cells,45
 red_blood_cells,11
 satellite_cells,442
-smooth_muscle_cells,218
+smooth_muscle_cells,255
 stellate_cells,29
 stratified_or_differentiating,345
 stromal_cells,1374
