@@ -48,14 +48,15 @@ extract_ngenes_ncells = function(tiss, object){
 
 cleaned_annotations = read.csv('~/code/maca/metadata/maca_3month_combined_cell_annotations.csv', row.names=1)
 
-figure_folder = '~/Google Drive/MACA_3mo_manuscript/Main figures/figure2/plates'
+figure_folder = '~/Google Drive/MACA_3mo_manuscript/Main figures/figure2/plates/'
 
 plot_annotated_tsne = function(tiss, object_name, tissue_of_interest){
   TSNEPlot(object = tiss, do.label = TRUE, pt.size = 0.5, group.by='annotation_subannotation')
   ggsave(paste0(figure_folder, 'tsne_annotated_', tissue_of_interest, '.pdf'))
 }
 
-object_tissue = c("Lung", "Trachea")
+object_tissue = c("Lung")
+subset_tissues = c("Heart", "Muscle")
 
 
 for (object_name in objects){
@@ -76,7 +77,7 @@ for (object_name in objects){
     extract_ngenes_ncells(tiss, object_name)
     
     # Heart and Aorta annotated some of the same cells but we use the Aorta annotations
-    if (tissue_of_interest == "Heart"){
+    if (any(tissue_of_interest == subset_tissues)){
       tiss = SubsetData(object=tiss, cells.use=rownames(tissue_annotations))
     }
 
