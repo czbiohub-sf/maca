@@ -1,7 +1,6 @@
 annotation,n_cells
 adipocytes,93
 alpha_cells,326
-alveolar_epithelial_cells,96
 amplifying_cells,889
 astrocytes,444
 b_cells,3902
@@ -18,7 +17,7 @@ dendritic_cells,69
 duct_cells,131
 endothelial_cells,3967
 enterocytes,782
-epithelial_cells,175
+epithelial_cells,271
 erythroblasts_and_adipocytes,51
 exocrine_cells,177
 fenestrated_capillaries,69
@@ -44,7 +43,6 @@ multipotent_progenitors,1924
 muscle_cells,27
 muscle_stem_cells,546
 myeloid_cells,527
-natural_killer_cells,165
 neural_progenitor_cells,36
 neuroendocrine_cells,2
 neurons,196
@@ -64,7 +62,7 @@ stellate_cells,29
 stratified_or_differentiating,345
 stromal_cells,1374
 stromal_mesenchymal_stem_cell,33
-t_cells,2387
+t_cells,2552
 thick_ascending_tubule_cells,67
 tubule,194
 tuft_cells,45
