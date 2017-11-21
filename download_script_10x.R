@@ -2,9 +2,9 @@ library(R.utils)
 library(dplyr)
 
 # change this to the tissue you want to download
-tissue_to_download <- 'Liver'
+tissue_to_download <- 'Lung'
 # change this to the location of your data (same as the MACA_Plate_Notebook location)
-rootdir <- "~/src/maca"
+rootdir <- "~/maca"
 tenx_data_dir = paste0(rootdir, '/data/10x')
 dir.create(tenx_data_dir)
 
