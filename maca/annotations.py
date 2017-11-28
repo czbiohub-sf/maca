@@ -37,16 +37,16 @@ def clean_annotation(df, tissue):
         df.loc[rows, SUBANNOTATION] = np.nan
 
     # --- Bladder ---
-    if tissue == 'Bladder':
+    elif tissue == 'Bladder':
         df[SUBANNOTATION] = df.annotation.str.extract(
             '(?P<subannotation>[AB]\d?$)')
         #         print(df.query('annotation == "Basal"').head())
-        df[ANNOTATION] = df.annotation.str.rstrip('AB12')
+        df[ANNOTATION] = df[ANNOTATION].str.rstrip('AB12')
         #         print(df.query('annotation == "Basal"').head())
-        df[ANNOTATION] = df[ANNOTATION] + ' cells'
+        df[ANNOTATION] = df[ANNOTATION].map(lambda x: x + ' cells' if not x.endswith('cells') else x)
 
     # --- Brain_FACS_neurons ----
-    if tissue == "Brain_FACS_neurons":
+    elif tissue == "Brain_FACS_neurons":
         df[ANNOTATION] = df[ANNOTATION].str.replace(
             'endothelial', 'endothelial_cells')
         df[ANNOTATION] = df[ANNOTATION].str.replace(
@@ -105,9 +105,11 @@ def clean_annotation(df, tissue):
         df[ANNOTATION] = df.annotation.str.replace('Fb', 'fibroblasts')
         df[ANNOTATION] = df.annotation.str.replace('Edc',
                                                      'endothelial_cells')
-        df[ANNOTATION] = df.annotation.str.replace('CMs', 'cardiomyocytes')
-        df[ANNOTATION] = df.annotation.str.replace('SMCs',
-                                                     'smooth_muscle_cells')
+        df[ANNOTATION] = df.annotation.str.replace('EDC',
+                                                     'endothelial_cells')
+        df[ANNOTATION] = df.annotation.str.replace('CM', 'cardiomyocyte')
+        df[ANNOTATION] = df.annotation.str.replace('SMC',
+                                                     'smooth_muscle_cell')
         df[ANNOTATION] = df.annotation.replace('Myofibroblast',
                                                  'Myofibroblasts')
 
@@ -123,20 +125,26 @@ def clean_annotation(df, tissue):
 
     # --- Kidney ---
     elif tissue == "Kidney":
-#         df[ANNOTATION] = df[ANNOTATION].str.replace('tubules', 'tubule')
-#         rows = df.annotation.str.contains('(', regex=False)
-#         pattern = '(?P<annotation>[a-zA-Z ]+)(?P<subannotation> \([a-zA-Z ]+\)?)'
-#         df.loc[rows] = df.loc[rows].annotation.str.extract(pattern)
-#         df[SUBANNOTATION] = df[ANNOTATION].str.extract(r'(\d)')
-#         rows = df.annotation == 'Proximal tubule cells'
-#         df.loc[rows, SUBANNOTATION] = '1'
-#         df[ANNOTATION] = df.annotation.str.rstrip(' 1234')
-        rows = df[ANNOTATION].str.lower().str.startswith('proximal')
-        df.loc[rows, SUBANNOTATION] = 'proximal'
-        df.loc[rows, ANNOTATION] = 'tubule'
-        rows = df[ANNOTATION].str.startswith('THICK')
-        df.loc[rows, SUBANNOTATION] = 'thick_ascending'
-        df.loc[rows, ANNOTATION] = 'tubule'
+        rows = df[ANNOTATION].str.lower().str.contains('tubule')
+        df.loc[rows, SUBANNOTATION] = df.loc[rows, ANNOTATION].str.extract(
+            '(?P<annotation>.+)(?=tubule)', expand=False)
+        df.loc[rows, ANNOTATION] = 'tubule_cells'
+
+        df[ANNOTATION] = df[ANNOTATION].str.replace('Feneserated',
+                                                    'fenestrated')
+        df[ANNOTATION] = df[ANNOTATION].str.replace('capillaries',
+                                                    'capillary_cells')
+
+        df[ANNOTATION] = df[ANNOTATION].replace('other immune', 'immune_cells')
+
+
+        #
+        # rows = df[ANNOTATION].str.lower().str.startswith('proximal')
+        # df.loc[rows, SUBANNOTATION] = 'proximal'
+        # df.loc[rows, ANNOTATION] = 'tubule'
+        # rows = df[ANNOTATION].str.startswith('Thick')
+        # df.loc[rows, SUBANNOTATION] = 'thick_ascending'
+        # df.loc[rows, ANNOTATION] = 'tubule'
 
     # --- Liver ---
     elif tissue == "Liver":
@@ -146,6 +154,15 @@ def clean_annotation(df, tissue):
         df[ANNOTATION] = df[ANNOTATION].str.replace(
             'NPC', 'non-parenchymal cell')
 
+        df = df.applymap(lambda x: x.lstrip('FM-') if isinstance(x, str) else x)
+        rows = df[ANNOTATION].str.contains('hep')
+        df.loc[rows, SUBANNOTATION] = df[ANNOTATION].str.extract('-(.+)', expand=False)
+        df.loc[rows, ANNOTATION] = 'hepatocytes'
+
+        # Add "cells" if not already plural
+        df[ANNOTATION] = df[ANNOTATION].map(
+            lambda x: x + ' cells' if not x.endswith('s') else x)
+
     # --- Lung ---
     elif tissue == "Lung":
         # print(sorted(df[ANNOTATION].unique()))
@@ -154,8 +171,9 @@ def clean_annotation(df, tissue):
             'Aveolar', 'Alveolar')
 
         rows = df[ANNOTATION].str.contains('Alveolar Epithelial')
+        df.loc[rows, SUBANNOTATION] = 'alveolar_' + df[ANNOTATION].str.extract(
+            r'(Type [IV]+)', expand=False).str.strip()
         df.loc[rows, ANNOTATION] = 'epithelial_cells'
-        df.loc[rows, SUBANNOTATION] = 'alveolar'
 
         # Remove newlines
         df[ANNOTATION] = df[ANNOTATION].str.replace('\n', '')
@@ -175,7 +193,7 @@ def clean_annotation(df, tissue):
         df.loc[rows, ANNOTATION] = 'macrophages'
         df.loc[rows, SUBANNOTATION] = 'interstitial'
 
-        rows = df[ANNOTATION] == 'Unknown Immune Is'
+        rows = df[ANNOTATION].str.startswith('Unknown Immune')
         df.loc[rows, ANNOTATION] = 'immune_cells'
         df.loc[rows, SUBANNOTATION] = np.nan
 
@@ -183,15 +201,25 @@ def clean_annotation(df, tissue):
         df.loc[rows, ANNOTATION] = 't_cells'
         df.loc[rows, SUBANNOTATION] = 'natural_killer_cells'
 
+        rows = df[ANNOTATION].str.contains('Doublet')
+        df.loc[rows, ANNOTATION] = 'unknown'
+
     # -- Mammary ---
     elif tissue == "Mammary_Gland":
         rows = df[ANNOTATION].str.startswith('hormone')
         df.loc[rows, ANNOTATION] = 'luminal cells'
         df.loc[rows, SUBANNOTATION] = 'hormone responsive'
 
+        rows = df[ANNOTATION] == 'luminal progenitors'
+        df.loc[rows, ANNOTATION] = 'luminal cells'
+        df.loc[rows, SUBANNOTATION] = 'progenitors'
+
     # --- Marrow ---
     elif tissue == "Marrow":
-        df = df.drop('plate.barcode', axis=1)
+        try:
+            df = df.drop('plate.barcode', axis=1)
+        except ValueError:
+            pass
 
         rows = df[ANNOTATION] == 'Neutrophils'
         df.loc[rows, SUBANNOTATION] = 'quiescent'
@@ -240,12 +268,16 @@ def clean_annotation(df, tissue):
     # --- Muscle ---
     elif tissue == "Muscle":
         df[ANNOTATION] = df[ANNOTATION].str.replace('-', '')
+        df[ANNOTATION] = df[ANNOTATION].fillna('unknown')
 
     # --- Pancreas ---
     elif tissue == "Pancreas":
         rows = df[SUBANNOTATION].str.contains('Alpha').fillna(False)
-        df.loc[rows, SUBANNOTATION] = ''
-        df[SUBANNOTATION] = df[SUBANNOTATION].replace('PP', 'pp_cells')
+        df.loc[rows, SUBANNOTATION] = np.nan
+
+        rows = df[SUBANNOTATION] == 'PP'
+        df.loc[rows, ANNOTATION] = 'pp_cells'
+        df.loc[rows, SUBANNOTATION] = np.nan
 
     # --- Skin ---
     elif tissue == 'Skin':
@@ -264,6 +296,9 @@ def clean_annotation(df, tissue):
 
     # --- Spleen ---
     elif tissue == 'Spleen':
+        df[ANNOTATION] = df[ANNOTATION].str.strip('0123456789. ')
+        # print(df.head())
+
         df[ANNOTATION] = df[ANNOTATION].map(
             lambda x: x if x.endswith('s') else x + 's')
         # Spell check
@@ -274,7 +309,7 @@ def clean_annotation(df, tissue):
         pattern = '(?P<subannotation>[a-zA-Z 48+]+) (?P<annotation>[BT] cells)'
         df.loc[rows] = df.annotation.str.extract(pattern)
 
-        rows = df[ANNOTATION].str.contains('Macrophages')
+        rows = df[ANNOTATION].str.contains('Macrophages').fillna(False)
         df.loc[rows, ANNOTATION] = 'myeloid_cells'
 
         rows = df[ANNOTATION] == 'Natural Killer cells'
@@ -316,6 +351,8 @@ def clean_annotation(df, tissue):
                                                     'basal_cells')
         df[SUBANNOTATION] = df[SUBANNOTATION].str.strip('0123456789')
         df[SUBANNOTATION] = df[SUBANNOTATION].str.replace('-', '_')
+
+
 
     # --- Trachea ---
     elif tissue == "Trachea":
