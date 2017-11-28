@@ -113,6 +113,23 @@ def clean_annotation(df, tissue):
         df[ANNOTATION] = df.annotation.replace('Myofibroblast',
                                                  'Myofibroblasts')
 
+        # Extract endothelial cells' subannotations
+        rows = df[ANNOTATION].str.endswith('endothelial_cells')
+        pattern = '(?P<subannotation>[a-zA-Z_]+)_endothelial_cells'
+        df.loc[rows, SUBANNOTATION] = df[ANNOTATION].str.extract(pattern, expand=False)
+        df.loc[rows, ANNOTATION] = 'endothelial_cells'
+
+        df[ANNOTATION] = df[ANNOTATION].replace('Blood_cells',
+                                                'red_blood_cells')
+
+        # Change Fb_SMC --> smooth muscle cell only
+        rows = df[ANNOTATION] == 'fibroblasts_smooth_muscle_cell'
+        df.loc[rows, ANNOTATION] = 'smooth_muscle_cells'
+        df.loc[rows, SUBANNOTATION] = np.nan
+
+        rows = df[SUBANNOTATION].str.lower().str.contains('jun').fillna(False)
+        df.loc[rows, SUBANNOTATION] = np.nan
+
         # Deal with Fb_1 and Immune_Cells_2
         rows = df.annotation.str.contains(r'\d$')
         pattern = '(?P<annotation>[a-zA-Z_]+)_\d?'
@@ -137,15 +154,6 @@ def clean_annotation(df, tissue):
 
         df[ANNOTATION] = df[ANNOTATION].replace('other immune', 'immune_cells')
 
-
-        #
-        # rows = df[ANNOTATION].str.lower().str.startswith('proximal')
-        # df.loc[rows, SUBANNOTATION] = 'proximal'
-        # df.loc[rows, ANNOTATION] = 'tubule'
-        # rows = df[ANNOTATION].str.startswith('Thick')
-        # df.loc[rows, SUBANNOTATION] = 'thick_ascending'
-        # df.loc[rows, ANNOTATION] = 'tubule'
-
     # --- Liver ---
     elif tissue == "Liver":
         # Remove newlines
@@ -158,10 +166,6 @@ def clean_annotation(df, tissue):
         rows = df[ANNOTATION].str.contains('hep')
         df.loc[rows, SUBANNOTATION] = df[ANNOTATION].str.extract('-(.+)', expand=False)
         df.loc[rows, ANNOTATION] = 'hepatocytes'
-
-        # Add "cells" if not already plural
-        df[ANNOTATION] = df[ANNOTATION].map(
-            lambda x: x + ' cells' if not x.endswith('s') else x)
 
     # --- Lung ---
     elif tissue == "Lung":
@@ -352,12 +356,13 @@ def clean_annotation(df, tissue):
         df[SUBANNOTATION] = df[SUBANNOTATION].str.strip('0123456789')
         df[SUBANNOTATION] = df[SUBANNOTATION].str.replace('-', '_')
 
-
-
     # --- Trachea ---
     elif tissue == "Trachea":
         df[ANNOTATION] = df[ANNOTATION].str.replace('Immunue', 'Immune')
 
+    # Add "cells" if not already plural
+    df[ANNOTATION] = df[ANNOTATION].map(
+        lambda x: x + ' cells' if not x.endswith('s') else x)
 
     df[ANNOTATION] = df[ANNOTATION].str.replace('&', 'and')
     df = _fix_nk_cells(df)
