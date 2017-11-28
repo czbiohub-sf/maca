@@ -57,16 +57,27 @@ df <- bind_rows(just_plates, just_tenx)
 
 ```{r}
 df <- df %>% mutate(tissue = fct_recode(tissue,
-    "Mammary" = "Mammary_Gland"))
+    "Mammary_Gland" = "Mammary"))
 df %>% count(tissue)
 ```
 
 ```{r, fig.width = 8, fig.height = 20}
 filter(df, tissue %in% common_tissues) %>% ggplot(aes(nGene, ..density..,colour = method)) + 
   geom_freqpoly(binwidth = 300) +
-  facet_wrap(~ tissue, ncol = 3)
+  facet_wrap(~ tissue, ncol = 2)
 ```
 
+```{r, fig.width = 8, fig.height = 20}
+filter(df, tissue %in% common_tissues) %>% ggplot(aes(percent.ribo, ..density..,colour = method)) + 
+  geom_freqpoly(binwidth = 0.02) +
+  facet_wrap(~ tissue, ncol = 2)
+```
+
+```{r, fig.width = 8, fig.height = 20}
+filter(df, tissue %in% common_tissues) %>% ggplot(aes(percent.Rn45s, ..density..,colour = method)) + 
+  geom_freqpoly(binwidth = 0.02) +
+  facet_wrap(~ tissue, ncol = 2)
+```
 
 ```{r}
 common_tissues <- c("Bladder", "Heart", "Kidney", "Liver","Lung","Mammary","Marrow","Muscle",
@@ -107,14 +118,15 @@ filter(df, tissue %in% common_tissues) %>% ggplot(aes(percent.ribo, ..density..,
 What about Rn45s? It's dramatically different between 10X and plateseq.
 
 ```{r}
-median_Rn45s <- df %>% group_by(method, tissue, run) %>% summarize(median_Rn45s = median(percent.Rn45s), 
+medians <- df %>% group_by(method, tissue, run) %>% summarize(median_Rn45s = median(percent.Rn45s), 
                                                                    median_ribo = median(percent.ribo),
                                                                    n_cells = n()) 
 ```
 
 ```{r}
-median_Rn45s %>% filter(tissue %in% common_tissues,) %>% ggplot(aes(x = median_Rn45s, y = median_ribo, color = tissue, shape = method)) + geom_point()  +
-    scale_color_brewer(palette="Spectral")
+medians %>% filter(tissue %in% common_tissues,) %>% ggplot(aes(x = median_Rn45s, y = median_ribo, color = tissue, shape = method)) + geom_point()  +
+    scale_color_brewer(palette="Spectral") +
+  ggtitle("Comparing Rn45s and ribo genes")
 ```
 
 ```{r, fig.width = 8, fig.height = 20}

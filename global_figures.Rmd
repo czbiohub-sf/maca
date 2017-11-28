@@ -1,0 +1,146 @@
+---
+title: "Global Figures"
+output: html_notebook
+---
+
+
+```{r}
+library(tidyverse)
+library(stringr)
+library(Seurat)
+```
+
+```{r}
+load("~/maca/save/All_seurat_tiss.Robj")
+```
+
+```{r}
+anno = read_csv('~/maca/metadata/maca_3month_combined_cell_annotations.csv')
+anno <- rename(anno, cell = X1)
+anno <- rename(anno, anno_tissue = tissue)
+anno %>% group_by(tissue, annotation, subannotation) %>% summarize(count = n())
+```
+
+```{r}
+tissue_colors <- read_csv('~/maca/metadata/tissue_colors.csv')
+tissue_colors <- rename(tissue_colors, anno_tissue = X1)
+tissue_colors
+```
+
+```{r}
+length(tiss@ident)
+```
+
+```{r}
+length(df$tSNE_1)
+```
+
+
+```{r}
+df <- as_tibble(tiss@meta.data)
+#df <- rownames_to_column(df, var = "cell")
+df <- left_join(df, anno, by = 'cell')
+
+df['tSNE_1'] <- tiss@dr$tsne@cell.embeddings[,'tSNE_1']
+df['tSNE_2'] <- tiss@dr$tsne@cell.embeddings[,'tSNE_2']
+df['cluster'] <- tiss@ident
+df <- left_join(df, tissue_colors, by='anno_tissue')
+```
+
+```{r, fig.width = 8, fig.height = 6}
+df %>% ggplot(aes(x = tSNE_1, y = tSNE_2)) + geom_point(aes(color = color), size=0.1) +
+   scale_color_identity(breaks = tissue_colors$color, 
+                        labels = tissue_colors$anno_tissue, 
+                        guide = "legend") + 
+  guides(colour = guide_legend(override.aes = list(size=2)))
+```
+
+
+
+```{r, fig.width = 8, fid.height = 6}
+df %>% ggplot(aes(x = tSNE_1, y = tSNE_2)) + geom_point(aes(color = color), size=0.1) +
+  guides(colour = guide_legend(override.aes = list(size=2)))
+```
+
+
+TenX TSNE
+
+```{r}
+load('~/maca/save/10x_All_regressed_seurat_tiss.Robj')
+```
+
+```{r}
+dfX <- as_tibble(tissX@meta.data)
+#df <- rownames_to_column(df, var = "cell")
+
+dfX <- mutate(dfX, tissue = fct_recode(tissue,
+    "Mammary_Gland" = "Mammary"))
+
+dfX['tSNE_1'] <- tissX@dr$tsne@cell.embeddings[,'tSNE_1']
+dfX['tSNE_2'] <- tissX@dr$tsne@cell.embeddings[,'tSNE_2']
+
+dfX['anno_tissue'] <- dfX['tissue']
+
+dfX <- left_join(dfX, tissue_colors, by='anno_tissue')
+```
+
+```{r, fig.width = 8, fid.height = 6}
+dfX %>% ggplot(aes(x = tSNE_1, y = tSNE_2)) + geom_point(aes(color = color), size=0.1) +
+   scale_color_identity(breaks = tissue_colors$color, 
+                        labels = tissue_colors$anno_tissue, 
+                        guide = "legend") + 
+  guides(colour = guide_legend(override.aes = list(size=2)))
+```
+
+
+What about the clustering at the top level? Do we see overlapping clusters between tissues?
+
+```{r}
+#install.packages('heatmaply')
+library('heatmaply')
+```
+
+```{r}
+hmap_df <- df %>% group_by(cluster, tissue) %>% summarize(count = n()) %>% spread(key=tissue, value = count, fill = 0)
+hmap_mat <- as.data.frame(hmap_df %>% ungroup() %>% select(-cluster))
+row.names(hmap_mat) <- hmap_df$cluster
+
+heatmaply(as.matrix(log10(hmap_mat+1)), distfun = 'pearson')
+```
+
+```{r}
+df %>% drop_na(annotation.y) %>% group_by(cluster, annotation.y, tissue) %>% summarize(count = n()) %>% filter(count > 5)
+```
+
+```{r, fig.width = 10, fig.height = 8}
+hmap_df <- df %>% drop_na(tissue) %>% group_by(tissue, cluster) %>% summarize(count = n()) %>% filter(count > 5) %>% spread(key=cluster, value = count, fill = 0)
+hmap_mat <- as.data.frame(hmap_df %>% ungroup() %>% select(-tissue))
+row.names(hmap_mat) <- hmap_df$tissue
+
+#heatmaply(as.matrix(log10(hmap_mat+1)), distfun = 'pearson', width = 700, height = 1000, plot_method = 'ggplot')
+gplots::heatmap.2(as.matrix(log10(hmap_mat+1)), col = viridis(100), trace = "none", margins=c(12,12))
+```
+
+```{r, fig.width = 10, fig.height = 15}
+hmap_df <- df %>% drop_na(annotation.y) %>% group_by(annotation.y, cluster) %>% summarize(count = n()) %>% filter(count > 5) %>% spread(key=cluster, value = count, fill = 0)
+hmap_mat <- as.data.frame(hmap_df %>% ungroup() %>% select(-annotation.y))
+row.names(hmap_mat) <- hmap_df$annotation.y
+
+#heatmaply(as.matrix(log10(hmap_mat+1)), distfun = 'pearson', width = 700, height = 1000, plot_method = 'ggplot')
+gplots::heatmap.2(as.matrix(log10(hmap_mat+1)), col = viridis(100), trace = "none", margins=c(12,12))
+```
+
+```{r}
+heatmaply(as.matrix(log10(hmap_mat+1)), width = 700, height = 1000, plot_method = 'ggplot')
+
+```
+
+In ggplot2, you don't naturally get a dendrogram-ordered heatmap.
+
+```{r}
+df %>% group_by(cluster, tissue) %>% summarize(count = n()) %>%
+  filter(count > 5) %>%
+  ggplot(aes(cluster, tissue, fill = count)) +
+  geom_tile() +
+  scale_fill_gradient( trans = 'log' )
+```
