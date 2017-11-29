@@ -56,6 +56,31 @@ df %>% ggplot(aes(x = tSNE_1, y = tSNE_2)) + geom_point(aes(color = color), size
 ```
 
 
+```{r}
+repeated_annotations <- anno %>% group_by(annotation, anno_tissue) %>% summarize(count = n()) %>% ungroup() %>% group_by(annotation) %>% summarize(count = n()) %>% filter(count > 1) %>% pull(annotation)
+```
+
+Color the big TSNE by annotations that occur in more than one tissue.
+
+```{r}
+A <- function(x){
+  if(x %in% repeated_annotations){
+    x
+  }else{
+    NA
+  }
+}
+```
+
+```{r}
+apply(anno$annotation, function(x){} if(x %in% repeated_annotatins){x}else NA})
+
+```
+
+```{r}
+repeated_annotations
+```
+
 
 ```{r, fig.width = 8, fid.height = 6}
 df %>% ggplot(aes(x = tSNE_1, y = tSNE_2)) + geom_point(aes(color = color), size=0.1) +
