@@ -98,6 +98,9 @@ def clean_annotation(df, tissue, debug=False):
         df[ANNOTATION] = df[ANNOTATION].replace(
             'opcs', 'oligodendrocyte_progenitor_cells')
 
+        rows = df[SUBANNOTATION] == 'myelinating_oligodendrocytes'
+        df.loc[rows, ANNOTATION] = 'oligodendrocytes'
+
     # --- Colon ---
     elif tissue == "Colon":
         pattern = '(?P<annotation>[a-zA-Z_-]+)'
@@ -348,15 +351,6 @@ def clean_annotation(df, tissue, debug=False):
 
     # --- Pancreas ---
     elif tissue == "Pancreas":
-        """
-        1) Please remove the two sub-annotation of immune_cells - because with
-        this small number of cells we feel the statistics of analysis is not 
-        as strong as we wish to have;  
-        2) please replace the current 
-        annotation "duct_cells" with "ductal_cells"; and 
-        3) please change the current annotation "exocrine_cells" to 
-        "acinar_cells". 
-        """
         rows = df[SUBANNOTATION].str.contains('alpha').fillna(False)
         df.loc[rows, SUBANNOTATION] = np.nan
 
