@@ -57,7 +57,7 @@ def clean_annotation(df, tissue, debug=False):
     df = df.applymap(lambda x: clean_labels(x, strip_numbers=strip_numbers))
 
     if debug:
-        print_sizes(df, message='\t--- after cleaning labels ---')
+        print_sizes(df, message='\t\t--- after cleaning labels ---')
 
     if tissue == "Thymus":
         df = df.applymap(protect_cd8_cd4)
@@ -97,6 +97,9 @@ def clean_annotation(df, tissue, debug=False):
             'doublet', 'undetermined')
         df[ANNOTATION] = df[ANNOTATION].replace(
             'opcs', 'oligodendrocyte_progenitor_cells')
+
+        df[SUBANNOTATION] = df[SUBANNOTATION].replace(
+            'vsmcs', 'vascular_smooth_muscle_cells')
 
         rows = df[SUBANNOTATION] == 'myelinating_oligodendrocytes'
         df.loc[rows, ANNOTATION] = 'oligodendrocytes'
@@ -152,8 +155,6 @@ def clean_annotation(df, tissue, debug=False):
         df[ANNOTATION] = df.annotation.str.replace('fb', 'fibroblasts')
         df[ANNOTATION] = df.annotation.str.replace('edc',
                                                      'endothelial_cells')
-        df[ANNOTATION] = df.annotation.str.replace('edc',
-                                                     'endothelial_cells')
         df[ANNOTATION] = df.annotation.str.replace('cm', 'cardiomyocyte')
         df[ANNOTATION] = df.annotation.str.replace('smc',
                                                      'smooth_muscle_cell')
@@ -171,9 +172,12 @@ def clean_annotation(df, tissue, debug=False):
         df[ANNOTATION] = df[ANNOTATION].replace('red_blood_cells',
                                                 'erythrocytes')
 
-        # Change Fb_SMC --> smooth muscle cell only
+        # Move subannotation to annotation for cluster of both fibroblasts and
+        # smooth muscle cells
         rows = df[ANNOTATION] == 'fibroblasts_smooth_muscle_cell'
-        df.loc[rows, ANNOTATION] = 'smooth_muscle_cells'
+        # Add 's' for "fibroblast" --> "fibroblasts"
+        df.loc[rows, ANNOTATION] = df.loc[rows, SUBANNOTATION].map(
+            lambda x: x+'s' if not x.endswith('s') else x)
         df.loc[rows, SUBANNOTATION] = np.nan
 
         rows = df[SUBANNOTATION].str.lower().str.contains('jun').fillna(False)
@@ -205,18 +209,27 @@ def clean_annotation(df, tissue, debug=False):
 
     # --- Liver ---
     elif tissue == "Liver":
-        # Remove newlines
-        df[SUBANNOTATION] = df[SUBANNOTATION].str.replace(
-            'female', '').str.replace('male', '')
-        df[ANNOTATION] = df[ANNOTATION].str.replace(
-            'npc', 'non-parenchymal cell')
 
-        df = df.applymap(lambda x: x.lstrip('fm-') if isinstance(x, str) else x)
-        rows = df[ANNOTATION].str.contains('hep')
-        df.loc[rows, SUBANNOTATION] = df[ANNOTATION].str.extract('-(.+)', expand=False)
-        df.loc[rows, ANNOTATION] = 'hepatocytes'
+        # Plate CSV has no subannotations
+        if df[SUBANNOTATION].notnull().any():
+            # This is 10x annotations
 
-        df[SUBANNOTATION] = df[SUBANNOTATION].replace('midlobule', 'midlobular')
+            # Remove newlines
+            df[SUBANNOTATION] = df[SUBANNOTATION].str.replace(
+                'female', '').str.replace('male', '')
+            df[ANNOTATION] = df[ANNOTATION].str.replace(
+                'npc', 'non-parenchymal cell')
+
+            df = df.applymap(lambda x: x.lstrip('fm-') if isinstance(x, str) else x)
+            rows = df[ANNOTATION].str.contains('hep')
+            df.loc[rows, SUBANNOTATION] = df[ANNOTATION].str.extract('-(.+)', expand=False)
+            df.loc[rows, ANNOTATION] = 'hepatocytes'
+
+            df[SUBANNOTATION] = df[SUBANNOTATION].replace('midlobule', 'midlobular')
+        else:
+            # This is plate annotations
+            df[ANNOTATION] = df[ANNOTATION].replace('nk/nkt',
+                                                    'natural_killer_cells')
 
     # --- Lung ---
     elif tissue == "Lung":
@@ -301,8 +314,8 @@ def clean_annotation(df, tissue, debug=False):
         df.loc[rows, ANNOTATION] = 'b_cells'
         df[ANNOTATION] = df[ANNOTATION].str.replace(
             'monocytes_monocyte-progenitors', 'monocytes')
-        df[ANNOTATION] = df[ANNOTATION].str.replace(
-            'stem_progenitors', 'hematopoietic_stem_cells')
+        df[ANNOTATION] = df[ANNOTATION].replace(
+            'stem_progenitors', 'progenitors')
 
         # Replace T_NK-type populations with simply t_cells
         df[ANNOTATION] = df[ANNOTATION].str.replace('t_nkt', 't_cells')
@@ -319,8 +332,13 @@ def clean_annotation(df, tissue, debug=False):
 
         # Split on dash for granulocytes and neutrophils
         rows = df[ANNOTATION].str.contains('-')
+        # erythroid-progenitors_erythroblasts -->  progenitors_erythroblasts
         pattern = '(?P<subannotation>.+)-(?P<annotation>.+)'
         df.loc[rows] = df.loc[rows, ANNOTATION].str.extract(pattern, expand=True)[[ANNOTATION, SUBANNOTATION]]
+
+        # remove "erythroblasts" from "progenitors_erythroblasts"
+        df[ANNOTATION] = df[ANNOTATION].replace('progenitors_erythroblasts',
+                                                'progenitors')
 
         # Remove all numbers
         df[SUBANNOTATION] = df[SUBANNOTATION].str.rstrip('0123456789')
@@ -342,8 +360,14 @@ def clean_annotation(df, tissue, debug=False):
 
     # --- Muscle ---
     elif tissue == "Muscle":
-        df[ANNOTATION] = df[ANNOTATION].str.replace('-', '')
         df[ANNOTATION] = df[ANNOTATION].fillna('unknown')
+        df[ANNOTATION] = df[ANNOTATION].str.replace('-', '')
+
+        # Only plate data has the erroneous jun annotations
+        if df[SUBANNOTATION].notnull().any():
+            # Remove Jun-negative, Jun-positive annotation from plate annotation
+            rows = df[SUBANNOTATION].str.startswith("jun").fillna(False)
+            df.loc[rows, SUBANNOTATION] = np.nan
 
         # Reduce ambiguity in annotation
         df[ANNOTATION] = df[ANNOTATION].replace('fibro/adipogenic_progenitors',
@@ -371,14 +395,16 @@ def clean_annotation(df, tissue, debug=False):
         df.loc[rows, SUBANNOTATION] = df.loc[rows, ANNOTATION]\
                                          .str.split().str[0] + '_cells'
         df.loc[rows, ANNOTATION] = 'interfollicular_epidermis'
-        df[ANNOTATION] = df[ANNOTATION].replace('cell_cycle', 'proliferating_cells')
 
-        rows = df[ANNOTATION] == 'outer_bulge'
-        df.loc[rows, ANNOTATION] = 'bulge_cells'
-        df.loc[rows, SUBANNOTATION] = 'outer'
-        rows = df[ANNOTATION] == 'inner_bulge'
-        df.loc[rows, ANNOTATION] = 'bulge_cells'
-        df.loc[rows, SUBANNOTATION] = 'inner'
+        rows = df[ANNOTATION] == 'cell_cycle'
+        df.loc[rows, ANNOTATION] = 'interfollicular_epidermis'
+        df.loc[rows, SUBANNOTATION] = 'proliferating'
+
+        # "Bulge" cells are part of the hair follicle, so make hair follicle
+        # the main annotation
+        rows = df[ANNOTATION].str.endswith('bulge')
+        df.loc[rows, SUBANNOTATION] = df.loc[rows, ANNOTATION]
+        df.loc[rows, ANNOTATION] = 'hair_follicle_cells'
 
     # --- Spleen ---
     elif tissue == "Spleen":
@@ -463,24 +489,26 @@ def clean_annotation(df, tissue, debug=False):
 
         rows = df[ANNOTATION] == 'basal/differentiating'
         df.loc[rows, ANNOTATION] = 'basal_cells'
-        df.loc[rows, SUBANNOTATION] = 'differentiating'
+        df.loc[rows, SUBANNOTATION] = np.nan
 
         rows = df[ANNOTATION] == 'filiform'
         df.loc[rows, ANNOTATION] = 'keratinocytes'
-        df.loc[rows, SUBANNOTATION] = 'filiform'
+        df.loc[rows, SUBANNOTATION] = 'filiform_cells'
 
         rows = df[ANNOTATION] == 'stratified/differentiated_keratinocytes'
-        df.loc[rows, ANNOTATION] = 'basal_cells'
-        df.loc[rows, SUBANNOTATION] = 'stratified_suprabasal'
+        df.loc[rows, ANNOTATION] = 'keratinocytes'
+        df.loc[rows, SUBANNOTATION] = 'suprabasal_cells'
 
         rows = df[ANNOTATION] == 'maturing/nonkeratinized'
         df.loc[rows, ANNOTATION] = 'keratinocytes'
-        df.loc[rows, SUBANNOTATION] = 'maturing'
+        df.loc[rows, SUBANNOTATION] = 'suprabasal'
 
         # Remaining cells are specific kinds of basal cells
-        rows = df[SUBANNOTATION].isnull()
-        df.loc[rows, SUBANNOTATION] = df.loc[rows, ANNOTATION]
+        rows = df[SUBANNOTATION].isnull() & (df[ANNOTATION] != 'unknown_cell')
+        df.loc[rows, SUBANNOTATION] = df.loc[rows, ANNOTATION].str.split('_').str[0]
         df.loc[rows, ANNOTATION] = 'basal_cells'
+
+        df[ANNOTATION] = df[ANNOTATION].replace('unknown_cell', 'unknown_cells')
 
         # df[ANNOTATION] = df[ANNOTATION].str.replace('basal_layer',
         #                                             'basal_cells')
@@ -526,7 +554,7 @@ def clean_annotation(df, tissue, debug=False):
         # df[ANNOTATION] = df[ANNOTATION].str.replace('immunue', 'immune')
 
     if debug:
-        print_sizes(df, '\t---- After tissue-specific cleaning ----')
+        print_sizes(df, '\t\t\t---- After tissue-specific cleaning ----')
 
     # Add "cells" if not already plural
     df[ANNOTATION] = df[ANNOTATION].map(
