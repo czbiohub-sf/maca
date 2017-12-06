@@ -1,8 +1,8 @@
 ,color
 Aorta,#1f77b4
 Bladder,#aec7e8
-Brain_FACS_microglia,#ff7f0e
-Brain_FACS_neurons,#ffbb78
+Brain_microglia,#ff7f0e
+Brain_neurons,#ffbb78
 Colon,#2ca02c
 Diaphragm,#98df8a
 Fat,#d62728
@@ -10,7 +10,7 @@ Heart,#ff9896
 Kidney,#9467bd
 Liver,#c5b0d5
 Lung,#8c564b
-Mammary_Gland,#c49c94
+Mammary,#c49c94
 Marrow,#e377c2
 Muscle,#f7b6d2
 Pancreas,#7f7f7f

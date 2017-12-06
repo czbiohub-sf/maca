@@ -56,17 +56,17 @@ Lung,T Cells,.,t_cells,.,246
 Lung,Type II Alveolar Epithelial Cells,.,epithelial,alveolar_type_ii,89
 Lung,Unknown Immune I,.,immune,.,124
 Lung,Unknown Immune II,.,immune,.,27
-Mammary_Gland,B cells,.,b_cells,.,764
-Mammary_Gland,Basal Epithelial cells,.,basal,.,393
-Mammary_Gland,Endothelial cells,.,endothelial,.,251
-Mammary_Gland,Hormone responsive luminal epithelial cells,.,luminal,hormone_responsive,190
-Mammary_Gland,Luminal epithelial progenitors Cd14+,.,luminal,progenitors,240
-Mammary_Gland,Macrophages,.,macrophages,.,186
-Mammary_Gland,S100a4+/Ccl5+ cells,.,stromal,s100a4+_and_ccl5+,57
-Mammary_Gland,Stromal cells,.,stromal,.,581
-Mammary_Gland,Stromal cells Mustn1+/Procr+,.,stromal,mustn1+_and_procr+,59
-Mammary_Gland,T cells,.,t_cells,.,1467
-Mammary_Gland,T cells Nkg7+,.,t_cells,nkg7+,293
+Mammary,B cells,.,b_cells,.,764
+Mammary,Basal Epithelial cells,.,basal_epithelial,.,393
+Mammary,Endothelial cells,.,endothelial,.,251
+Mammary,Hormone responsive luminal epithelial cells,.,hormone_responsive_luminal_epithelial,.,190
+Mammary,Luminal epithelial progenitors Cd14+,.,luminal_epithelial_progenitors_cd14+,.,240
+Mammary,Macrophages,.,macrophages,.,186
+Mammary,S100a4+/Ccl5+ cells,.,s100a4+/ccl5+,.,57
+Mammary,Stromal cells,.,stromal,.,581
+Mammary,Stromal cells Mustn1+/Procr+,.,stromal,.,59
+Mammary,T cells,.,t_cells,.,1467
+Mammary,T cells Nkg7+,.,t,.,293
 Marrow,Erythrocytes,.,erythrocytes,.,142
 Marrow,Erythroid-progenitors_Erythroblasts,.,progenitors,erythroid,268
 Marrow,Granulocyte-progenitors,.,progenitors,granulocyte,330
