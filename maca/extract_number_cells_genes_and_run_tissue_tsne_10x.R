@@ -74,6 +74,7 @@ i = 0
 
 for (object_name in objects){
   local({
+    # I don't understand why I need to do this
     i <- i
     tsne_plots <- tsne_plots
   load(object_name)
