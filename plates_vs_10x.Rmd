@@ -6,7 +6,6 @@ output:
 ---
 
 ```{r}
-#install.packages("tidyverse")
 library(tidyverse)
 library(stringr)
 library(Seurat)
@@ -16,11 +15,11 @@ Sys.setenv(R_MAX_NUM_DLLS=150)
 
 ```{r}
 load("~/maca/save/All_seurat_tiss.Robj")
-load("~/maca/save/tenx_All_seurat_tiss.Robj")
+
+load("~/maca/save/10x_All_regressed_seurat_tiss.Robj")
 
 tiss@meta.data['cell'] <- rownames(tiss@meta.data)
 tissX@meta.data['cell'] <- rownames(tissX@meta.data)
-
 ```
 
 Add in percent Rn54s.
@@ -69,12 +68,14 @@ common_tissues
 ## Differences in genes and ribo fraction for plates and tenx.
 
 ```{r, fig.width = 12, fig.height = 8}
+
 filter(df, tissue %in% common_tissues) %>% ggplot(aes(nGene, ..density..,colour = method)) + 
   geom_freqpoly(binwidth = 300) +
   facet_wrap(~ tissue, ncol = 4) + 
   ggtitle("Number of genes expressed")
-```
 
+ggsave('figures/ngenes_comparison.pdf', width = 7, height = 7, units = "in")
+```
 
 
 ```{r, fig.width = 12, fig.height = 8}
@@ -82,13 +83,18 @@ filter(df, tissue %in% common_tissues) %>% ggplot(aes(percent.ribo, ..density..,
   geom_freqpoly(binwidth = 0.02) +
   facet_wrap(~ tissue, ncol = 4) + 
   ggtitle("Percent ribosomal protein")
+
+ggsave('figures/percent_ribo_comparison.pdf', width = 7, height = 7, units = "in")
 ```
 
 ```{r, fig.width = 12, fig.height = 8}
+
 filter(df, tissue %in% common_tissues) %>% ggplot(aes(percent.Rn45s, ..density..,colour = method)) + 
   geom_freqpoly(binwidth = 0.02) +
   facet_wrap(~ tissue, ncol = 4) + 
   ggtitle("Percent Rn45s")
+
+ggsave('figures/percent_rn45s_comparison.pdf', width = 7, height = 7, units = "in")
 ```
 
 The enrichment of Rn45s and ribosomal genes differ strongly between the two methods.
@@ -110,6 +116,9 @@ medians %>% filter(tissue %in% common_tissues,) %>% ggplot(aes(x = median_Rn45s,
                        labels = tissue_colors$tissue,
                        guide = "legend") + 
   ggtitle("Comparing Rn45s and ribo genes between channels and plates.")
+
+ggsave('figures/rn45s_vs_percent_ribo.pdf', width = 7, height = 7, units = "in")
+
 ```
 
 
@@ -133,33 +142,41 @@ cell.subset <- filter(df, tissue == 'Heart', nGene > 2900, nGene < 3100) %>%
 It's difficult to compare UMI and reads apples to apples. Here both are scaled to 10k reads/UMIs then log(1+x)'d.
 
 ```{r, fig.width = 4, fig.height = 8}
+pdf('figures/heart_cell_comparison.pdf')
 par(mfrow=c(2,1))
 
-expr <- tissX@data[,cell.subset[1]]
+expr <- tissX@data[,cell.subset[2]]
 expr <- expr[expr > 0]
 plot(sort(expr), ylab = "log expression", xlab = "gene index", col = "red")
 title(main = "Heart tenx cell")
 
-expr <- tiss@data[,cell.subset[2]]
+expr <- tiss@data[,cell.subset[1]]
 expr <- expr[expr > 0]
 plot(sort(expr), ylab = "log expression", xlab = "gene index", col = "green")
 title(main = "Heart plateseq cell")
+
+dev.off()
 ```
 
 If we instead scaled them to 10^6 both, we would see a different shape for the plate data, with more dynamic range in the low values.
 
 ```{r, fig.width = 4, fig.height = 8}
+pdf('figures/heart_cell_comparison.pdf')
+
+
 par(mfrow=c(2,1))
 
-expr <- adjust_lognorm(tissX@data[,cell.subset[1]], 100)
+expr <- adjust_lognorm(tissX@data[,cell.subset[2]], 1)
 expr <- expr[expr > 0]
 plot(sort(expr), ylab = "log expression", xlab = "gene index", col = "red")
 title(main = "Heart tenx cell")
 
-expr <- adjust_lognorm(tiss@data[,cell.subset[2]], 100)
+expr <- adjust_lognorm(tiss@data[,cell.subset[1]], 100)
 expr <- expr[expr > 0]
 plot(sort(expr), ylab = "log expression", xlab = "gene index", col = "green")
 title(main = "Heart plateseq cell")
+
+dev.off()
 ```
 
 
@@ -223,24 +240,22 @@ plate_v_tenx("Bladder", "basal_cells")
 ```
 
 ```{r}
-plate_v_tenx("Liver", "hepatocytes")
-```
-
-```{r}
-plate_v_tenx("Spleen", "t_cells")
+plate_v_tenx("Liver", "hepatocytes") + ggtitle("Liver hepatocytes")
+ggsave('figures/Liver_hepatocytes.pdf', width = 7, height = 7, units = "in")
 ```
 
 ```{r}
 plate_v_tenx("Kidney", "fibroblasts") + ggtitle("Kidney fibroblasts")
+ggsave('figures/Kidney_fibroblasts.pdf', width = 7, height = 7, units = "in")
 ```
 
 ```{r}
 plate_v_tenx("Spleen", "b_cells") + ggtitle("Spleen b_cells")
+ggsave('figures/Spleen_b_cells.pdf', width = 7, height = 7, units = "in")
 ```
 
-```{r}
-plate_v_tenx("Liver", "hepatocytes") + ggtitle("Liver hepatocytes")
-```
+
+
 
 ### Global stats
 
@@ -300,7 +315,7 @@ pct_comparison <- all_pct %>% filter(anno_and_tissue %in% common_anno_tissue)  %
                    pct_diff = plate - tenx) %>%
         group_by(tissue, anno_and_tissue) %>% summarize(pct_plate_larger = round(mean(plate_larger),2), net_diff = round(mean(pct_diff),2))
 
-rtissue_colors = tissue_colors %>% rename(tissue = anno_tissue)
+rtissue_colors = tissue_colors %>% rename(tissue = tissue)
 pct_comparison <- left_join(pct_comparison, rtissue_colors, by = 'tissue')
 
 pct_comparison %>% ggplot(aes(pct_plate_larger, net_diff)) + geom_vline(xintercept = 0.5) + geom_hline(yintercept = 0) +
@@ -308,39 +323,19 @@ pct_comparison %>% ggplot(aes(pct_plate_larger, net_diff)) + geom_vline(xinterce
    scale_color_identity(breaks = rtissue_colors$color, 
                         labels = rtissue_colors$tissue, 
                         guide = "legend") + 
-  labs(title = 'Comparison of expression between Plate and 10x by Cell Type', x = 'Percent of genes expressed more in plates', y = 'Mean difference in expression percent') +
+  labs(x = 'Percent of genes expressed more in plates', y = 'Mean difference in expression percent') +
   guides(color = guide_legend(override.aes = list(size=2)))
 
 ```
 
 ```{r}
-anno_plate %>% filter(annotation == 'endothelial_cells') %>% count()
-anno_tenx %>% filter(annotation == 'endothelial_cells') %>% count()
+ggsave('figures/pct_of_pct_plate_v_tenx_by_cell_type.pdf', width = 12, height = 7, units = "in")
 ```
 
 
 ```{r}
 pct_comparison %>% filter(pct_plate_larger < 0.5)
 ```
-
-```{r}
-pct_comparison %>% filter(pct_plate_larger < 0.50)
-```
-
-
-All or none.
-
-
-
-Number 0 in plates and nonzero in tenx, and vice versa.
-Fraction on left or right of the equality line. Average absolute percent difference. Conditioned on present in one at > 5%.
-
-
-Side investigation:
-
-Genex expressed in every cell of one of the methods but not in the other. This could be caused by spillover in droplets.
-Best eg is t-cells in the thymus. Feels like qc.
-
 
 
 ## Miscellaneous
