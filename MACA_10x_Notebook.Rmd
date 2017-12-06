@@ -42,18 +42,17 @@ selected_metadata = filter(tenx_metadata, tissue == tissue_of_interest & mouse.a
 
 #Load the gene names and set the metadata columns by opening the first file
 
-raw.data <- Read10X(data.dir = paste0(rootdir, "/data/10x/", selected_metadata$channel[1]))
-colnames(raw.data) <- lapply(colnames(raw.data), function(x) paste0(selected_metadata$channel[1], '_', x))
+raw.data <- Read10X(data.dir = paste0(rootdir, "/data/10x/", downloaded_channels[1]))
+colnames(raw.data) <- lapply(colnames(raw.data), function(x) paste0(downloaded_channels[1], '_', x))
 meta.data = data.frame(row.names = colnames(raw.data))
 meta.data['channel'] = downloaded_channels[1]
 
 for(i in 2:nrow(selected_metadata)){
-  print(paste('i:', i))
-  new.data = Read10X(data.dir = paste0(rootdir, "/data/10x/", selected_metadata$channel[i]))
-  colnames(new.data) <- lapply(colnames(new.data), function(x) paste0(selected_metadata$channel[i], '_', x))
+  new.data = Read10X(data.dir = paste0(rootdir, "/data/10x/", downloaded_channels[i]))
+  colnames(new.data) <- lapply(colnames(new.data), function(x) paste0(downloaded_channels[i], '_', x))
 
   new.metadata = data.frame(row.names = colnames(new.data))
-  new.metadata['channel'] = selected_metadata$channel[i]
+  new.metadata['channel'] = downloaded_channels[i]
   
   raw.data = cbind(raw.data, new.data)
   meta.data = rbind(meta.data, new.metadata)
