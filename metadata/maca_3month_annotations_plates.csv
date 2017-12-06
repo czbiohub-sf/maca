@@ -36986,8 +36986,8 @@ C8.MAA000508.3_9_M.1.1,b_cells,MAA000508,marginal_zone,Spleen,b_cells: marginal_
 E8.MAA000508.3_9_M.1.1,b_cells,MAA000508,follicular,Spleen,b_cells: follicular
 E6.MAA000508.3_9_M.1.1,t_cells,MAA000508,cd4+,Spleen,t_cells: cd4+
 B1.MAA000508.3_9_M.1.1,b_cells,MAA000508,follicular,Spleen,b_cells: follicular
-C9.MAA000508.3_9_M.1.1,macrophages/dendritic_cells/monocytes_and_others,MAA000508,,Spleen,macrophages/dendritic_cells/monocytes_and_others
-E12.MAA000508.3_9_M.1.1,macrophages/dendritic_cells/monocytes_and_others,MAA000508,,Spleen,macrophages/dendritic_cells/monocytes_and_others
+C9.MAA000508.3_9_M.1.1,myeloid_cells,MAA000508,,Spleen,myeloid_cells
+E12.MAA000508.3_9_M.1.1,myeloid_cells,MAA000508,,Spleen,myeloid_cells
 B2.MAA000508.3_9_M.1.1,b_cells,MAA000508,follicular,Spleen,b_cells: follicular
 C18.MAA000508.3_9_M.1.1,b_cells,MAA000508,follicular,Spleen,b_cells: follicular
 E22.MAA000508.3_9_M.1.1,b_cells,MAA000508,follicular,Spleen,b_cells: follicular
@@ -37024,7 +37024,7 @@ B12.MAA000508.3_9_M.1.1,b_cells,MAA000508,follicular,Spleen,b_cells: follicular
 D7.MAA000508.3_9_M.1.1,t_cells,MAA000508,cd4+,Spleen,t_cells: cd4+
 G1.MAA000508.3_9_M.1.1,b_cells,MAA000508,follicular,Spleen,b_cells: follicular
 A10.MAA000508.3_9_M.1.1,t_cells,MAA000508,cd4+,Spleen,t_cells: cd4+
-A9.MAA000508.3_9_M.1.1,macrophages/dendritic_cells/monocytes_and_others,MAA000508,,Spleen,macrophages/dendritic_cells/monocytes_and_others
+A9.MAA000508.3_9_M.1.1,myeloid_cells,MAA000508,,Spleen,myeloid_cells
 B13.MAA000508.3_9_M.1.1,t_cells,MAA000508,cd4+,Spleen,t_cells: cd4+
 D10.MAA000508.3_9_M.1.1,t_cells,MAA000508,cd4+,Spleen,t_cells: cd4+
 G2.MAA000508.3_9_M.1.1,t_cells,MAA000508,cd4+,Spleen,t_cells: cd4+
@@ -37090,7 +37090,7 @@ P12.MAA000508.3_9_M.1.1,t_cells,MAA000508,cd4+,Spleen,t_cells: cd4+
 J3.MAA000508.3_9_M.1.1,t_cells,MAA000508,cd4+,Spleen,t_cells: cd4+
 L14.MAA000508.3_9_M.1.1,t_cells,MAA000508,cd4+,Spleen,t_cells: cd4+
 J2.MAA000508.3_9_M.1.1,b_cells,MAA000508,marginal_zone,Spleen,b_cells: marginal_zone
-L12.MAA000508.3_9_M.1.1,macrophages/dendritic_cells/monocytes_and_others,MAA000508,,Spleen,macrophages/dendritic_cells/monocytes_and_others
+L12.MAA000508.3_9_M.1.1,myeloid_cells,MAA000508,,Spleen,myeloid_cells
 M22.MAA000508.3_9_M.1.1,t_cells,MAA000508,cd4+,Spleen,t_cells: cd4+
 O10.MAA000508.3_9_M.1.1,b_cells,MAA000508,follicular,Spleen,b_cells: follicular
 P13.MAA000508.3_9_M.1.1,b_cells,MAA000508,follicular,Spleen,b_cells: follicular
@@ -37117,7 +37117,7 @@ L21.MAA000508.3_9_M.1.1,b_cells,MAA000508,follicular,Spleen,b_cells: follicular
 N6.MAA000508.3_9_M.1.1,b_cells,MAA000508,follicular,Spleen,b_cells: follicular
 O15.MAA000508.3_9_M.1.1,t_cells,MAA000508,cd4+,Spleen,t_cells: cd4+
 P18.MAA000508.3_9_M.1.1,t_cells,MAA000508,cd8+,Spleen,t_cells: cd8+
-M1.MAA000508.3_9_M.1.1,macrophages/dendritic_cells/monocytes_and_others,MAA000508,,Spleen,macrophages/dendritic_cells/monocytes_and_others
+M1.MAA000508.3_9_M.1.1,myeloid_cells,MAA000508,,Spleen,myeloid_cells
 N7.MAA000508.3_9_M.1.1,b_cells,MAA000508,follicular,Spleen,b_cells: follicular
 J20.MAA000508.3_9_M.1.1,t_cells,MAA000508,cd4+,Spleen,t_cells: cd4+
 O16.MAA000508.3_9_M.1.1,b_cells,MAA000508,follicular,Spleen,b_cells: follicular
@@ -37128,7 +37128,7 @@ N8.MAA000508.3_9_M.1.1,t_cells,MAA000508,cd4+,Spleen,t_cells: cd4+
 O17.MAA000508.3_9_M.1.1,t_cells,MAA000508,natural_killer_cells,Spleen,t_cells: natural_killer_cells
 P20.MAA000508.3_9_M.1.1,t_cells,MAA000508,cd8+,Spleen,t_cells: cd8+
 O18.MAA000508.3_9_M.1.1,b_cells,MAA000508,follicular,Spleen,b_cells: follicular
-P21.MAA000508.3_9_M.1.1,macrophages/dendritic_cells/monocytes_and_others,MAA000508,,Spleen,macrophages/dendritic_cells/monocytes_and_others
+P21.MAA000508.3_9_M.1.1,myeloid_cells,MAA000508,,Spleen,myeloid_cells
 K2.MAA000508.3_9_M.1.1,t_cells,MAA000508,cd4+,Spleen,t_cells: cd4+
 M3.MAA000508.3_9_M.1.1,b_cells,MAA000508,follicular,Spleen,b_cells: follicular
 N9.MAA000508.3_9_M.1.1,b_cells,MAA000508,follicular,Spleen,b_cells: follicular
@@ -37166,7 +37166,7 @@ K21.MAA000508.3_9_M.1.1,t_cells,MAA000508,cd4+,Spleen,t_cells: cd4+
 M10.MAA000508.3_9_M.1.1,b_cells,MAA000508,follicular,Spleen,b_cells: follicular
 N20.MAA000508.3_9_M.1.1,t_cells,MAA000508,cd4+,Spleen,t_cells: cd4+
 P3.MAA000508.3_9_M.1.1,t_cells,MAA000508,natural_killer_cells,Spleen,t_cells: natural_killer_cells
-I1.MAA000508.3_9_M.1.1,macrophages/dendritic_cells/monocytes_and_others,MAA000508,,Spleen,macrophages/dendritic_cells/monocytes_and_others
+I1.MAA000508.3_9_M.1.1,myeloid_cells,MAA000508,,Spleen,myeloid_cells
 K22.MAA000508.3_9_M.1.1,b_cells,MAA000508,follicular,Spleen,b_cells: follicular
 M11.MAA000508.3_9_M.1.1,t_cells,MAA000508,natural_killer_cells,Spleen,t_cells: natural_killer_cells
 N21.MAA000508.3_9_M.1.1,b_cells,MAA000508,follicular,Spleen,b_cells: follicular
@@ -37191,7 +37191,7 @@ H7.MAA000559.3_8_M.1.1,b_cells,MAA000559,follicular,Spleen,b_cells: follicular
 A5.MAA000559.3_8_M.1.1,t_cells,MAA000559,cd4+,Spleen,t_cells: cd4+
 B11.MAA000559.3_8_M.1.1,t_cells,MAA000559,cd4+,Spleen,t_cells: cd4+
 C14.MAA000559.3_8_M.1.1,b_cells,MAA000559,follicular,Spleen,b_cells: follicular
-D18.MAA000559.3_8_M.1.1,macrophages/dendritic_cells/monocytes_and_others,MAA000559,,Spleen,macrophages/dendritic_cells/monocytes_and_others
+D18.MAA000559.3_8_M.1.1,myeloid_cells,MAA000559,,Spleen,myeloid_cells
 F2.MAA000559.3_8_M.1.1,b_cells,MAA000559,follicular,Spleen,b_cells: follicular
 G6.MAA000559.3_8_M.1.1,b_cells,MAA000559,follicular,Spleen,b_cells: follicular
 H8.MAA000559.3_8_M.1.1,t_cells,MAA000559,cd8+,Spleen,t_cells: cd8+
@@ -37267,7 +37267,7 @@ M7.MAA000559.3_8_M.1.1,b_cells,MAA000559,follicular,Spleen,b_cells: follicular
 C20.MAA000559.3_8_M.1.1,b_cells,MAA000559,follicular,Spleen,b_cells: follicular
 E3.MAA000559.3_8_M.1.1,b_cells,MAA000559,follicular,Spleen,b_cells: follicular
 F9.MAA000559.3_8_M.1.1,t_cells,MAA000559,natural_killer_cells,Spleen,t_cells: natural_killer_cells
-G12.MAA000559.3_8_M.1.1,macrophages/dendritic_cells/monocytes_and_others,MAA000559,,Spleen,macrophages/dendritic_cells/monocytes_and_others
+G12.MAA000559.3_8_M.1.1,myeloid_cells,MAA000559,,Spleen,myeloid_cells
 H14.MAA000559.3_8_M.1.1,b_cells,MAA000559,follicular,Spleen,b_cells: follicular
 I16.MAA000559.3_8_M.1.1,b_cells,MAA000559,follicular,Spleen,b_cells: follicular
 J20.MAA000559.3_8_M.1.1,b_cells,MAA000559,follicular,Spleen,b_cells: follicular
@@ -37279,9 +37279,9 @@ B17.MAA000559.3_8_M.1.1,b_cells,MAA000559,follicular,Spleen,b_cells: follicular
 F10.MAA000559.3_8_M.1.1,t_cells,MAA000559,cd4+,Spleen,t_cells: cd4+
 G13.MAA000559.3_8_M.1.1,b_cells,MAA000559,follicular,Spleen,b_cells: follicular
 H15.MAA000559.3_8_M.1.1,b_cells,MAA000559,follicular,Spleen,b_cells: follicular
-I17.MAA000559.3_8_M.1.1,macrophages/dendritic_cells/monocytes_and_others,MAA000559,,Spleen,macrophages/dendritic_cells/monocytes_and_others
+I17.MAA000559.3_8_M.1.1,myeloid_cells,MAA000559,,Spleen,myeloid_cells
 J21.MAA000559.3_8_M.1.1,b_cells,MAA000559,follicular,Spleen,b_cells: follicular
-M9.MAA000559.3_8_M.1.1,macrophages/dendritic_cells/monocytes_and_others,MAA000559,,Spleen,macrophages/dendritic_cells/monocytes_and_others
+M9.MAA000559.3_8_M.1.1,myeloid_cells,MAA000559,,Spleen,myeloid_cells
 A14.MAA000559.3_8_M.1.1,t_cells,MAA000559,cd4+,Spleen,t_cells: cd4+
 A12.MAA000559.3_8_M.1.1,b_cells,MAA000559,follicular,Spleen,b_cells: follicular
 B18.MAA000559.3_8_M.1.1,t_cells,MAA000559,cd4+,Spleen,t_cells: cd4+
@@ -37302,7 +37302,7 @@ G14.MAA000559.3_8_M.1.1,b_cells,MAA000559,follicular,Spleen,b_cells: follicular
 H16.MAA000559.3_8_M.1.1,b_cells,MAA000559,follicular,Spleen,b_cells: follicular
 I18.MAA000559.3_8_M.1.1,t_cells,MAA000559,cd4+,Spleen,t_cells: cd4+
 J22.MAA000559.3_8_M.1.1,t_cells,MAA000559,cd4+,Spleen,t_cells: cd4+
-L6.MAA000559.3_8_M.1.1,macrophages/dendritic_cells/monocytes_and_others,MAA000559,,Spleen,macrophages/dendritic_cells/monocytes_and_others
+L6.MAA000559.3_8_M.1.1,myeloid_cells,MAA000559,,Spleen,myeloid_cells
 H17.MAA000559.3_8_M.1.1,b_cells,MAA000559,follicular,Spleen,b_cells: follicular
 A18.MAA000559.3_8_M.1.1,b_cells,MAA000559,follicular,Spleen,b_cells: follicular
 B21.MAA000559.3_8_M.1.1,b_cells,MAA000559,marginal_zone,Spleen,b_cells: marginal_zone
@@ -37396,7 +37396,7 @@ F22.MAA000559.3_8_M.1.1,b_cells,MAA000559,marginal_zone,Spleen,b_cells: marginal
 H2.MAA000559.3_8_M.1.1,b_cells,MAA000559,follicular,Spleen,b_cells: follicular
 E17.MAA000559.3_8_M.1.1,b_cells,MAA000559,follicular,Spleen,b_cells: follicular
 F20.MAA000559.3_8_M.1.1,b_cells,MAA000559,marginal_zone,Spleen,b_cells: marginal_zone
-H1.MAA000559.3_8_M.1.1,macrophages/dendritic_cells/monocytes_and_others,MAA000559,,Spleen,macrophages/dendritic_cells/monocytes_and_others
+H1.MAA000559.3_8_M.1.1,myeloid_cells,MAA000559,,Spleen,myeloid_cells
 I3.MAA000559.3_8_M.1.1,b_cells,MAA000559,follicular,Spleen,b_cells: follicular
 J6.MAA000559.3_8_M.1.1,b_cells,MAA000559,follicular,Spleen,b_cells: follicular
 K11.MAA000559.3_8_M.1.1,b_cells,MAA000559,follicular,Spleen,b_cells: follicular
@@ -37406,7 +37406,7 @@ C8.MAA000559.3_8_M.1.1,t_cells,MAA000559,natural_killer_cells,Spleen,t_cells: na
 D13.MAA000559.3_8_M.1.1,b_cells,MAA000559,follicular,Spleen,b_cells: follicular
 E19.MAA000559.3_8_M.1.1,b_cells,MAA000559,follicular,Spleen,b_cells: follicular
 G1.MAA000559.3_8_M.1.1,b_cells,MAA000559,follicular,Spleen,b_cells: follicular
-H3.MAA000559.3_8_M.1.1,macrophages/dendritic_cells/monocytes_and_others,MAA000559,,Spleen,macrophages/dendritic_cells/monocytes_and_others
+H3.MAA000559.3_8_M.1.1,myeloid_cells,MAA000559,,Spleen,myeloid_cells
 I4.MAA000559.3_8_M.1.1,b_cells,MAA000559,follicular,Spleen,b_cells: follicular
 I5.MAA000559.3_8_M.1.1,b_cells,MAA000559,follicular,Spleen,b_cells: follicular
 J8.MAA000559.3_8_M.1.1,b_cells,MAA000559,follicular,Spleen,b_cells: follicular
@@ -37427,11 +37427,11 @@ L18.MAA000559.3_8_M.1.1,b_cells,MAA000559,follicular,Spleen,b_cells: follicular
 N2.MAA000559.3_8_M.1.1,t_cells,MAA000559,cd4+,Spleen,t_cells: cd4+
 N1.MAA000559.3_8_M.1.1,b_cells,MAA000559,marginal_zone,Spleen,b_cells: marginal_zone
 A1.MAA000559.3_8_M.1.1,b_cells,MAA000559,follicular,Spleen,b_cells: follicular
-B7.MAA000559.3_8_M.1.1,macrophages/dendritic_cells/monocytes_and_others,MAA000559,,Spleen,macrophages/dendritic_cells/monocytes_and_others
+B7.MAA000559.3_8_M.1.1,myeloid_cells,MAA000559,,Spleen,myeloid_cells
 H5.MAA000559.3_8_M.1.1,b_cells,MAA000559,follicular,Spleen,b_cells: follicular
 I7.MAA000559.3_8_M.1.1,t_cells,MAA000559,cd4+,Spleen,t_cells: cd4+
 J10.MAA000559.3_8_M.1.1,b_cells,MAA000559,follicular,Spleen,b_cells: follicular
-K15.MAA000559.3_8_M.1.1,macrophages/dendritic_cells/monocytes_and_others,MAA000559,,Spleen,macrophages/dendritic_cells/monocytes_and_others
+K15.MAA000559.3_8_M.1.1,myeloid_cells,MAA000559,,Spleen,myeloid_cells
 L21.MAA000559.3_8_M.1.1,t_cells,MAA000559,cd4+,Spleen,t_cells: cd4+
 N3.MAA000559.3_8_M.1.1,b_cells,MAA000559,follicular,Spleen,b_cells: follicular
 A3.MAA000559.3_8_M.1.1,b_cells,MAA000559,follicular,Spleen,b_cells: follicular
@@ -37465,7 +37465,7 @@ O13.MAA000559.3_8_M.1.1,b_cells,MAA000559,follicular,Spleen,b_cells: follicular
 P17.MAA000559.3_8_M.1.1,t_cells,MAA000559,cd4+,Spleen,t_cells: cd4+
 P18.MAA000559.3_8_M.1.1,b_cells,MAA000559,marginal_zone,Spleen,b_cells: marginal_zone
 O14.MAA000559.3_8_M.1.1,b_cells,MAA000559,follicular,Spleen,b_cells: follicular
-O15.MAA000559.3_8_M.1.1,macrophages/dendritic_cells/monocytes_and_others,MAA000559,,Spleen,macrophages/dendritic_cells/monocytes_and_others
+O15.MAA000559.3_8_M.1.1,myeloid_cells,MAA000559,,Spleen,myeloid_cells
 P19.MAA000559.3_8_M.1.1,b_cells,MAA000559,follicular,Spleen,b_cells: follicular
 N13.MAA000559.3_8_M.1.1,b_cells,MAA000559,follicular,Spleen,b_cells: follicular
 O16.MAA000559.3_8_M.1.1,b_cells,MAA000559,follicular,Spleen,b_cells: follicular
@@ -37488,7 +37488,7 @@ P1.MAA000559.3_8_M.1.1,t_cells,MAA000559,cd8+,Spleen,t_cells: cd8+
 N21.MAA000559.3_8_M.1.1,b_cells,MAA000559,follicular,Spleen,b_cells: follicular
 P2.MAA000559.3_8_M.1.1,b_cells,MAA000559,follicular,Spleen,b_cells: follicular
 N22.MAA000559.3_8_M.1.1,t_cells,MAA000559,cd4+,Spleen,t_cells: cd4+
-P3.MAA000559.3_8_M.1.1,macrophages/dendritic_cells/monocytes_and_others,MAA000559,,Spleen,macrophages/dendritic_cells/monocytes_and_others
+P3.MAA000559.3_8_M.1.1,myeloid_cells,MAA000559,,Spleen,myeloid_cells
 O1.MAA000559.3_8_M.1.1,b_cells,MAA000559,follicular,Spleen,b_cells: follicular
 P4.MAA000559.3_8_M.1.1,b_cells,MAA000559,follicular,Spleen,b_cells: follicular
 O2.MAA000559.3_8_M.1.1,b_cells,MAA000559,follicular,Spleen,b_cells: follicular
@@ -37499,7 +37499,7 @@ O4.MAA000559.3_8_M.1.1,t_cells,MAA000559,cd4+,Spleen,t_cells: cd4+
 P7.MAA000559.3_8_M.1.1,b_cells,MAA000559,follicular,Spleen,b_cells: follicular
 O5.MAA000559.3_8_M.1.1,b_cells,MAA000559,follicular,Spleen,b_cells: follicular
 P8.MAA000559.3_8_M.1.1,b_cells,MAA000559,follicular,Spleen,b_cells: follicular
-O6.MAA000559.3_8_M.1.1,macrophages/dendritic_cells/monocytes_and_others,MAA000559,,Spleen,macrophages/dendritic_cells/monocytes_and_others
+O6.MAA000559.3_8_M.1.1,myeloid_cells,MAA000559,,Spleen,myeloid_cells
 P9.MAA000559.3_8_M.1.1,b_cells,MAA000559,follicular,Spleen,b_cells: follicular
 B15.MAA000776.3_10_M.1.1,b_cells,MAA000776,follicular,Spleen,b_cells: follicular
 C22.MAA000776.3_10_M.1.1,b_cells,MAA000776,follicular,Spleen,b_cells: follicular
@@ -37542,7 +37542,7 @@ I13.MAA000776.3_10_M.1.1,b_cells,MAA000776,marginal_zone,Spleen,b_cells: margina
 K13.MAA000776.3_10_M.1.1,b_cells,MAA000776,follicular,Spleen,b_cells: follicular
 M11.MAA000776.3_10_M.1.1,b_cells,MAA000776,follicular,Spleen,b_cells: follicular
 O6.MAA000776.3_10_M.1.1,b_cells,MAA000776,follicular,Spleen,b_cells: follicular
-P17.MAA000776.3_10_M.1.1,macrophages/dendritic_cells/monocytes_and_others,MAA000776,,Spleen,macrophages/dendritic_cells/monocytes_and_others
+P17.MAA000776.3_10_M.1.1,myeloid_cells,MAA000776,,Spleen,myeloid_cells
 G6.MAA000776.3_10_M.1.1,b_cells,MAA000776,follicular,Spleen,b_cells: follicular
 A16.MAA000776.3_10_M.1.1,t_cells,MAA000776,cd4+,Spleen,t_cells: cd4+
 B20.MAA000776.3_10_M.1.1,b_cells,MAA000776,follicular,Spleen,b_cells: follicular
@@ -37577,10 +37577,10 @@ M16.MAA000776.3_10_M.1.1,b_cells,MAA000776,follicular,Spleen,b_cells: follicular
 O9.MAA000776.3_10_M.1.1,b_cells,MAA000776,follicular,Spleen,b_cells: follicular
 P21.MAA000776.3_10_M.1.1,b_cells,MAA000776,follicular,Spleen,b_cells: follicular
 O10.MAA000776.3_10_M.1.1,b_cells,MAA000776,follicular,Spleen,b_cells: follicular
-C1.MAA000776.3_10_M.1.1,macrophages/dendritic_cells/monocytes_and_others,MAA000776,,Spleen,macrophages/dendritic_cells/monocytes_and_others
+C1.MAA000776.3_10_M.1.1,myeloid_cells,MAA000776,,Spleen,myeloid_cells
 D8.MAA000776.3_10_M.1.1,b_cells,MAA000776,follicular,Spleen,b_cells: follicular
 E21.MAA000776.3_10_M.1.1,b_cells,MAA000776,follicular,Spleen,b_cells: follicular
-G18.MAA000776.3_10_M.1.1,macrophages/dendritic_cells/monocytes_and_others,MAA000776,,Spleen,macrophages/dendritic_cells/monocytes_and_others
+G18.MAA000776.3_10_M.1.1,myeloid_cells,MAA000776,,Spleen,myeloid_cells
 J3.MAA000776.3_10_M.1.1,b_cells,MAA000776,marginal_zone,Spleen,b_cells: marginal_zone
 K21.MAA000776.3_10_M.1.1,b_cells,MAA000776,follicular,Spleen,b_cells: follicular
 M19.MAA000776.3_10_M.1.1,b_cells,MAA000776,marginal_zone,Spleen,b_cells: marginal_zone
@@ -37600,7 +37600,7 @@ A21.MAA000776.3_10_M.1.1,b_cells,MAA000776,follicular,Spleen,b_cells: follicular
 M22.MAA000776.3_10_M.1.1,b_cells,MAA000776,marginal_zone,Spleen,b_cells: marginal_zone
 O14.MAA000776.3_10_M.1.1,t_cells,MAA000776,cd4+,Spleen,t_cells: cd4+
 C3.MAA000776.3_10_M.1.1,b_cells,MAA000776,follicular,Spleen,b_cells: follicular
-D11.MAA000776.3_10_M.1.1,macrophages/dendritic_cells/monocytes_and_others,MAA000776,,Spleen,macrophages/dendritic_cells/monocytes_and_others
+D11.MAA000776.3_10_M.1.1,myeloid_cells,MAA000776,,Spleen,myeloid_cells
 F2.MAA000776.3_10_M.1.1,t_cells,MAA000776,cd4+,Spleen,t_cells: cd4+
 G21.MAA000776.3_10_M.1.1,b_cells,MAA000776,follicular,Spleen,b_cells: follicular
 J10.MAA000776.3_10_M.1.1,b_cells,MAA000776,follicular,Spleen,b_cells: follicular
@@ -37618,7 +37618,7 @@ J11.MAA000776.3_10_M.1.1,b_cells,MAA000776,follicular,Spleen,b_cells: follicular
 L4.MAA000776.3_10_M.1.1,t_cells,MAA000776,natural_killer_cells,Spleen,t_cells: natural_killer_cells
 N1.MAA000776.3_10_M.1.1,b_cells,MAA000776,follicular,Spleen,b_cells: follicular
 F5.MAA000776.3_10_M.1.1,b_cells,MAA000776,follicular,Spleen,b_cells: follicular
-O17.MAA000776.3_10_M.1.1,macrophages/dendritic_cells/monocytes_and_others,MAA000776,,Spleen,macrophages/dendritic_cells/monocytes_and_others
+O17.MAA000776.3_10_M.1.1,myeloid_cells,MAA000776,,Spleen,myeloid_cells
 H1.MAA000776.3_10_M.1.1,t_cells,MAA000776,cd4+,Spleen,t_cells: cd4+
 B2.MAA000776.3_10_M.1.1,b_cells,MAA000776,follicular,Spleen,b_cells: follicular
 J12.MAA000776.3_10_M.1.1,b_cells,MAA000776,follicular,Spleen,b_cells: follicular
@@ -37644,7 +37644,7 @@ F7.MAA000776.3_10_M.1.1,b_cells,MAA000776,follicular,Spleen,b_cells: follicular
 B4.MAA000776.3_10_M.1.1,b_cells,MAA000776,follicular,Spleen,b_cells: follicular
 C12.MAA000776.3_10_M.1.1,b_cells,MAA000776,marginal_zone,Spleen,b_cells: marginal_zone
 D17.MAA000776.3_10_M.1.1,b_cells,MAA000776,marginal_zone,Spleen,b_cells: marginal_zone
-F9.MAA000776.3_10_M.1.1,macrophages/dendritic_cells/monocytes_and_others,MAA000776,,Spleen,macrophages/dendritic_cells/monocytes_and_others
+F9.MAA000776.3_10_M.1.1,myeloid_cells,MAA000776,,Spleen,myeloid_cells
 H13.MAA000776.3_10_M.1.1,t_cells,MAA000776,natural_killer_cells,Spleen,t_cells: natural_killer_cells
 J16.MAA000776.3_10_M.1.1,t_cells,MAA000776,cd4+,Spleen,t_cells: cd4+
 L11.MAA000776.3_10_M.1.1,b_cells,MAA000776,follicular,Spleen,b_cells: follicular
@@ -37654,7 +37654,7 @@ C14.MAA000776.3_10_M.1.1,b_cells,MAA000776,follicular,Spleen,b_cells: follicular
 D18.MAA000776.3_10_M.1.1,b_cells,MAA000776,follicular,Spleen,b_cells: follicular
 F11.MAA000776.3_10_M.1.1,t_cells,MAA000776,natural_killer_cells,Spleen,t_cells: natural_killer_cells
 H16.MAA000776.3_10_M.1.1,t_cells,MAA000776,cd4+,Spleen,t_cells: cd4+
-J17.MAA000776.3_10_M.1.1,macrophages/dendritic_cells/monocytes_and_others,MAA000776,,Spleen,macrophages/dendritic_cells/monocytes_and_others
+J17.MAA000776.3_10_M.1.1,myeloid_cells,MAA000776,,Spleen,myeloid_cells
 L12.MAA000776.3_10_M.1.1,b_cells,MAA000776,follicular,Spleen,b_cells: follicular
 N6.MAA000776.3_10_M.1.1,t_cells,MAA000776,cd4+,Spleen,t_cells: cd4+
 O22.MAA000776.3_10_M.1.1,b_cells,MAA000776,follicular,Spleen,b_cells: follicular
@@ -37687,7 +37687,7 @@ D22.MAA000776.3_10_M.1.1,b_cells,MAA000776,follicular,Spleen,b_cells: follicular
 F15.MAA000776.3_10_M.1.1,b_cells,MAA000776,follicular,Spleen,b_cells: follicular
 A5.MAA000776.3_10_M.1.1,b_cells,MAA000776,follicular,Spleen,b_cells: follicular
 H19.MAA000776.3_10_M.1.1,b_cells,MAA000776,marginal_zone,Spleen,b_cells: marginal_zone
-K1.MAA000776.3_10_M.1.1,macrophages/dendritic_cells/monocytes_and_others,MAA000776,,Spleen,macrophages/dendritic_cells/monocytes_and_others
+K1.MAA000776.3_10_M.1.1,myeloid_cells,MAA000776,,Spleen,myeloid_cells
 L19.MAA000776.3_10_M.1.1,t_cells,MAA000776,cd8+,Spleen,t_cells: cd8+
 N13.MAA000776.3_10_M.1.1,b_cells,MAA000776,follicular,Spleen,b_cells: follicular
 P4.MAA000776.3_10_M.1.1,t_cells,MAA000776,natural_killer_cells,Spleen,t_cells: natural_killer_cells
@@ -37746,7 +37746,7 @@ A21.MAA000779.3_11_M.1.1,b_cells,MAA000779,marginal_zone,Spleen,b_cells: margina
 C1.MAA000779.3_11_M.1.1,b_cells,MAA000779,follicular,Spleen,b_cells: follicular
 D3.MAA000779.3_11_M.1.1,b_cells,MAA000779,follicular,Spleen,b_cells: follicular
 H20.MAA000779.3_11_M.1.1,t_cells,MAA000779,cd4+,Spleen,t_cells: cd4+
-J3.MAA000779.3_11_M.1.1,macrophages/dendritic_cells/monocytes_and_others,MAA000779,,Spleen,macrophages/dendritic_cells/monocytes_and_others
+J3.MAA000779.3_11_M.1.1,myeloid_cells,MAA000779,,Spleen,myeloid_cells
 A22.MAA000779.3_11_M.1.1,t_cells,MAA000779,cd4+,Spleen,t_cells: cd4+
 B1.MAA000779.3_11_M.1.1,b_cells,MAA000779,follicular,Spleen,b_cells: follicular
 C3.MAA000779.3_11_M.1.1,b_cells,MAA000779,follicular,Spleen,b_cells: follicular
@@ -37754,7 +37754,7 @@ D5.MAA000779.3_11_M.1.1,t_cells,MAA000779,cd4+,Spleen,t_cells: cd4+
 C2.MAA000779.3_11_M.1.1,b_cells,MAA000779,marginal_zone,Spleen,b_cells: marginal_zone
 D4.MAA000779.3_11_M.1.1,t_cells,MAA000779,natural_killer_cells,Spleen,t_cells: natural_killer_cells
 E8.MAA000779.3_11_M.1.1,b_cells,MAA000779,follicular,Spleen,b_cells: follicular
-F14.MAA000779.3_11_M.1.1,macrophages/dendritic_cells/monocytes_and_others,MAA000779,,Spleen,macrophages/dendritic_cells/monocytes_and_others
+F14.MAA000779.3_11_M.1.1,myeloid_cells,MAA000779,,Spleen,myeloid_cells
 G17.MAA000779.3_11_M.1.1,b_cells,MAA000779,marginal_zone,Spleen,b_cells: marginal_zone
 E9.MAA000779.3_11_M.1.1,b_cells,MAA000779,follicular,Spleen,b_cells: follicular
 B2.MAA000779.3_11_M.1.1,t_cells,MAA000779,cd4+,Spleen,t_cells: cd4+
@@ -37804,7 +37804,7 @@ C9.MAA000779.3_11_M.1.1,b_cells,MAA000779,follicular,Spleen,b_cells: follicular
 D11.MAA000779.3_11_M.1.1,b_cells,MAA000779,follicular,Spleen,b_cells: follicular
 E16.MAA000779.3_11_M.1.1,b_cells,MAA000779,follicular,Spleen,b_cells: follicular
 F22.MAA000779.3_11_M.1.1,b_cells,MAA000779,follicular,Spleen,b_cells: follicular
-H2.MAA000779.3_11_M.1.1,macrophages/dendritic_cells/monocytes_and_others,MAA000779,,Spleen,macrophages/dendritic_cells/monocytes_and_others
+H2.MAA000779.3_11_M.1.1,myeloid_cells,MAA000779,,Spleen,myeloid_cells
 I6.MAA000779.3_11_M.1.1,b_cells,MAA000779,follicular,Spleen,b_cells: follicular
 A5.MAA000779.3_11_M.1.1,b_cells,MAA000779,follicular,Spleen,b_cells: follicular
 H3.MAA000779.3_11_M.1.1,b_cells,MAA000779,follicular,Spleen,b_cells: follicular
@@ -37821,18 +37821,18 @@ G1.MAA000779.3_11_M.1.1,b_cells,MAA000779,follicular,Spleen,b_cells: follicular
 D13.MAA000779.3_11_M.1.1,b_cells,MAA000779,follicular,Spleen,b_cells: follicular
 A8.MAA000779.3_11_M.1.1,b_cells,MAA000779,follicular,Spleen,b_cells: follicular
 B10.MAA000779.3_11_M.1.1,t_cells,MAA000779,cd4+,Spleen,t_cells: cd4+
-C12.MAA000779.3_11_M.1.1,macrophages/dendritic_cells/monocytes_and_others,MAA000779,,Spleen,macrophages/dendritic_cells/monocytes_and_others
+C12.MAA000779.3_11_M.1.1,myeloid_cells,MAA000779,,Spleen,myeloid_cells
 D14.MAA000779.3_11_M.1.1,b_cells,MAA000779,follicular,Spleen,b_cells: follicular
 E19.MAA000779.3_11_M.1.1,t_cells,MAA000779,cd4+,Spleen,t_cells: cd4+
 G3.MAA000779.3_11_M.1.1,t_cells,MAA000779,cd4+,Spleen,t_cells: cd4+
 E18.MAA000779.3_11_M.1.1,b_cells,MAA000779,follicular,Spleen,b_cells: follicular
-H5.MAA000779.3_11_M.1.1,macrophages/dendritic_cells/monocytes_and_others,MAA000779,,Spleen,macrophages/dendritic_cells/monocytes_and_others
+H5.MAA000779.3_11_M.1.1,myeloid_cells,MAA000779,,Spleen,myeloid_cells
 I9.MAA000779.3_11_M.1.1,b_cells,MAA000779,follicular,Spleen,b_cells: follicular
-G2.MAA000779.3_11_M.1.1,macrophages/dendritic_cells/monocytes_and_others,MAA000779,,Spleen,macrophages/dendritic_cells/monocytes_and_others
+G2.MAA000779.3_11_M.1.1,myeloid_cells,MAA000779,,Spleen,myeloid_cells
 H4.MAA000779.3_11_M.1.1,b_cells,MAA000779,follicular,Spleen,b_cells: follicular
 I8.MAA000779.3_11_M.1.1,b_cells,MAA000779,follicular,Spleen,b_cells: follicular
 C13.MAA000779.3_11_M.1.1,b_cells,MAA000779,follicular,Spleen,b_cells: follicular
-D15.MAA000779.3_11_M.1.1,macrophages/dendritic_cells/monocytes_and_others,MAA000779,,Spleen,macrophages/dendritic_cells/monocytes_and_others
+D15.MAA000779.3_11_M.1.1,myeloid_cells,MAA000779,,Spleen,myeloid_cells
 E21.MAA000779.3_11_M.1.1,b_cells,MAA000779,follicular,Spleen,b_cells: follicular
 G4.MAA000779.3_11_M.1.1,b_cells,MAA000779,follicular,Spleen,b_cells: follicular
 H6.MAA000779.3_11_M.1.1,b_cells,MAA000779,follicular,Spleen,b_cells: follicular
@@ -37840,7 +37840,7 @@ I10.MAA000779.3_11_M.1.1,b_cells,MAA000779,follicular,Spleen,b_cells: follicular
 A9.MAA000779.3_11_M.1.1,b_cells,MAA000779,follicular,Spleen,b_cells: follicular
 B11.MAA000779.3_11_M.1.1,b_cells,MAA000779,follicular,Spleen,b_cells: follicular
 A11.MAA000779.3_11_M.1.1,b_cells,MAA000779,follicular,Spleen,b_cells: follicular
-B13.MAA000779.3_11_M.1.1,macrophages/dendritic_cells/monocytes_and_others,MAA000779,,Spleen,macrophages/dendritic_cells/monocytes_and_others
+B13.MAA000779.3_11_M.1.1,myeloid_cells,MAA000779,,Spleen,myeloid_cells
 A10.MAA000779.3_11_M.1.1,b_cells,MAA000779,follicular,Spleen,b_cells: follicular
 C15.MAA000779.3_11_M.1.1,b_cells,MAA000779,marginal_zone,Spleen,b_cells: marginal_zone
 D17.MAA000779.3_11_M.1.1,b_cells,MAA000779,follicular,Spleen,b_cells: follicular
@@ -37910,12 +37910,12 @@ A18.MAA000779.3_11_M.1.1,b_cells,MAA000779,follicular,Spleen,b_cells: follicular
 B20.MAA000779.3_11_M.1.1,b_cells,MAA000779,follicular,Spleen,b_cells: follicular
 C22.MAA000779.3_11_M.1.1,b_cells,MAA000779,follicular,Spleen,b_cells: follicular
 H16.MAA000779.3_11_M.1.1,t_cells,MAA000779,cd4+,Spleen,t_cells: cd4+
-I22.MAA000779.3_11_M.1.1,macrophages/dendritic_cells/monocytes_and_others,MAA000779,,Spleen,macrophages/dendritic_cells/monocytes_and_others
+I22.MAA000779.3_11_M.1.1,myeloid_cells,MAA000779,,Spleen,myeloid_cells
 K3.MAA000779.3_11_M.1.1,b_cells,MAA000779,follicular,Spleen,b_cells: follicular
 L5.MAA000779.3_11_M.1.1,b_cells,MAA000779,follicular,Spleen,b_cells: follicular
 M10.MAA000779.3_11_M.1.1,b_cells,MAA000779,follicular,Spleen,b_cells: follicular
 N12.MAA000779.3_11_M.1.1,b_cells,MAA000779,follicular,Spleen,b_cells: follicular
-O16.MAA000779.3_11_M.1.1,macrophages/dendritic_cells/monocytes_and_others,MAA000779,,Spleen,macrophages/dendritic_cells/monocytes_and_others
+O16.MAA000779.3_11_M.1.1,myeloid_cells,MAA000779,,Spleen,myeloid_cells
 P19.MAA000779.3_11_M.1.1,t_cells,MAA000779,cd4+,Spleen,t_cells: cd4+
 A19.MAA000779.3_11_M.1.1,b_cells,MAA000779,follicular,Spleen,b_cells: follicular
 B21.MAA000779.3_11_M.1.1,t_cells,MAA000779,natural_killer_cells,Spleen,t_cells: natural_killer_cells
@@ -37971,7 +37971,7 @@ M19.MAA000779.3_11_M.1.1,b_cells,MAA000779,follicular,Spleen,b_cells: follicular
 N22.MAA000779.3_11_M.1.1,b_cells,MAA000779,follicular,Spleen,b_cells: follicular
 P3.MAA000779.3_11_M.1.1,b_cells,MAA000779,follicular,Spleen,b_cells: follicular
 K13.MAA000779.3_11_M.1.1,b_cells,MAA000779,follicular,Spleen,b_cells: follicular
-L17.MAA000779.3_11_M.1.1,macrophages/dendritic_cells/monocytes_and_others,MAA000779,,Spleen,macrophages/dendritic_cells/monocytes_and_others
+L17.MAA000779.3_11_M.1.1,myeloid_cells,MAA000779,,Spleen,myeloid_cells
 M20.MAA000779.3_11_M.1.1,b_cells,MAA000779,follicular,Spleen,b_cells: follicular
 O1.MAA000779.3_11_M.1.1,t_cells,MAA000779,natural_killer_cells,Spleen,t_cells: natural_killer_cells
 P4.MAA000779.3_11_M.1.1,t_cells,MAA000779,cd4+,Spleen,t_cells: cd4+
@@ -38020,7 +38020,7 @@ K20.MAA000779.3_11_M.1.1,b_cells,MAA000779,follicular,Spleen,b_cells: follicular
 M3.MAA000779.3_11_M.1.1,b_cells,MAA000779,marginal_zone,Spleen,b_cells: marginal_zone
 N6.MAA000779.3_11_M.1.1,b_cells,MAA000779,follicular,Spleen,b_cells: follicular
 O9.MAA000779.3_11_M.1.1,t_cells,MAA000779,cd4+,Spleen,t_cells: cd4+
-P13.MAA000779.3_11_M.1.1,macrophages/dendritic_cells/monocytes_and_others,MAA000779,,Spleen,macrophages/dendritic_cells/monocytes_and_others
+P13.MAA000779.3_11_M.1.1,myeloid_cells,MAA000779,,Spleen,myeloid_cells
 K21.MAA000779.3_11_M.1.1,t_cells,MAA000779,cd4+,Spleen,t_cells: cd4+
 K22.MAA000779.3_11_M.1.1,b_cells,MAA000779,follicular,Spleen,b_cells: follicular
 M4.MAA000779.3_11_M.1.1,b_cells,MAA000779,follicular,Spleen,b_cells: follicular
@@ -38162,7 +38162,7 @@ F3.B000971.3_39_F.1.1,b_cells,B000971,marginal_zone,Spleen,b_cells: marginal_zon
 C19.B000971.3_39_F.1.1,b_cells,B000971,follicular,Spleen,b_cells: follicular
 A16.B000971.3_39_F.1.1,t_cells,B000971,cd4+,Spleen,t_cells: cd4+
 B18.B000971.3_39_F.1.1,b_cells,B000971,follicular,Spleen,b_cells: follicular
-D21.B000971.3_39_F.1.1,macrophages/dendritic_cells/monocytes_and_others,B000971,,Spleen,macrophages/dendritic_cells/monocytes_and_others
+D21.B000971.3_39_F.1.1,myeloid_cells,B000971,,Spleen,myeloid_cells
 C20.B000971.3_39_F.1.1,b_cells,B000971,follicular,Spleen,b_cells: follicular
 F5.B000971.3_39_F.1.1,b_cells,B000971,follicular,Spleen,b_cells: follicular
 A17.B000971.3_39_F.1.1,b_cells,B000971,marginal_zone,Spleen,b_cells: marginal_zone
@@ -38206,7 +38206,7 @@ M1.B000971.3_39_F.1.1,t_cells,B000971,cd4+,Spleen,t_cells: cd4+
 N4.B000971.3_39_F.1.1,b_cells,B000971,follicular,Spleen,b_cells: follicular
 O10.B000971.3_39_F.1.1,b_cells,B000971,follicular,Spleen,b_cells: follicular
 P13.B000971.3_39_F.1.1,b_cells,B000971,follicular,Spleen,b_cells: follicular
-G17.B000971.3_39_F.1.1,macrophages/dendritic_cells/monocytes_and_others,B000971,,Spleen,macrophages/dendritic_cells/monocytes_and_others
+G17.B000971.3_39_F.1.1,myeloid_cells,B000971,,Spleen,myeloid_cells
 I2.B000971.3_39_F.1.1,b_cells,B000971,follicular,Spleen,b_cells: follicular
 J7.B000971.3_39_F.1.1,b_cells,B000971,follicular,Spleen,b_cells: follicular
 K15.B000971.3_39_F.1.1,b_cells,B000971,follicular,Spleen,b_cells: follicular
@@ -38233,7 +38233,7 @@ I6.B000971.3_39_F.1.1,t_cells,B000971,cd4+,Spleen,t_cells: cd4+
 J11.B000971.3_39_F.1.1,t_cells,B000971,cd4+,Spleen,t_cells: cd4+
 J10.B000971.3_39_F.1.1,b_cells,B000971,follicular,Spleen,b_cells: follicular
 L1.B000971.3_39_F.1.1,b_cells,B000971,follicular,Spleen,b_cells: follicular
-M5.B000971.3_39_F.1.1,macrophages/dendritic_cells/monocytes_and_others,B000971,,Spleen,macrophages/dendritic_cells/monocytes_and_others
+M5.B000971.3_39_F.1.1,myeloid_cells,B000971,,Spleen,myeloid_cells
 N8.B000971.3_39_F.1.1,t_cells,B000971,cd4+,Spleen,t_cells: cd4+
 K21.B000971.3_39_F.1.1,b_cells,B000971,follicular,Spleen,b_cells: follicular
 M4.B000971.3_39_F.1.1,b_cells,B000971,follicular,Spleen,b_cells: follicular
@@ -38370,7 +38370,7 @@ A8.B001750.3_38_F.1.1,b_cells,B001750,follicular,Spleen,b_cells: follicular
 A9.B001750.3_38_F.1.1,t_cells,B001750,cd8+,Spleen,t_cells: cd8+
 A10.B001750.3_38_F.1.1,t_cells,B001750,cd8+,Spleen,t_cells: cd8+
 A11.B001750.3_38_F.1.1,t_cells,B001750,natural_killer_cells,Spleen,t_cells: natural_killer_cells
-A1.B001750.3_38_F.1.1,macrophages/dendritic_cells/monocytes_and_others,B001750,,Spleen,macrophages/dendritic_cells/monocytes_and_others
+A1.B001750.3_38_F.1.1,myeloid_cells,B001750,,Spleen,myeloid_cells
 A2.B001750.3_38_F.1.1,b_cells,B001750,follicular,Spleen,b_cells: follicular
 A3.B001750.3_38_F.1.1,b_cells,B001750,follicular,Spleen,b_cells: follicular
 B6.B001750.3_38_F.1.1,b_cells,B001750,follicular,Spleen,b_cells: follicular
@@ -38394,7 +38394,7 @@ M18.B001750.3_38_F.1.1,t_cells,B001750,cd8+,Spleen,t_cells: cd8+
 N20.B001750.3_38_F.1.1,b_cells,B001750,marginal_zone,Spleen,b_cells: marginal_zone
 P3.B001750.3_38_F.1.1,b_cells,B001750,follicular,Spleen,b_cells: follicular
 P2.B001750.3_38_F.1.1,b_cells,B001750,follicular,Spleen,b_cells: follicular
-B7.B001750.3_38_F.1.1,macrophages/dendritic_cells/monocytes_and_others,B001750,,Spleen,macrophages/dendritic_cells/monocytes_and_others
+B7.B001750.3_38_F.1.1,myeloid_cells,B001750,,Spleen,myeloid_cells
 C9.B001750.3_38_F.1.1,t_cells,B001750,cd4+,Spleen,t_cells: cd4+
 D12.B001750.3_38_F.1.1,b_cells,B001750,follicular,Spleen,b_cells: follicular
 B8.B001750.3_38_F.1.1,b_cells,B001750,follicular,Spleen,b_cells: follicular
@@ -38405,7 +38405,7 @@ B9.B001750.3_38_F.1.1,b_cells,B001750,marginal_zone,Spleen,b_cells: marginal_zon
 C11.B001750.3_38_F.1.1,b_cells,B001750,follicular,Spleen,b_cells: follicular
 D16.B001750.3_38_F.1.1,b_cells,B001750,follicular,Spleen,b_cells: follicular
 C10.B001750.3_38_F.1.1,b_cells,B001750,follicular,Spleen,b_cells: follicular
-F3.B001750.3_38_F.1.1,macrophages/dendritic_cells/monocytes_and_others,B001750,,Spleen,macrophages/dendritic_cells/monocytes_and_others
+F3.B001750.3_38_F.1.1,myeloid_cells,B001750,,Spleen,myeloid_cells
 G9.B001750.3_38_F.1.1,b_cells,B001750,follicular,Spleen,b_cells: follicular
 H14.B001750.3_38_F.1.1,b_cells,B001750,follicular,Spleen,b_cells: follicular
 D13.B001750.3_38_F.1.1,b_cells,B001750,follicular,Spleen,b_cells: follicular
@@ -38497,7 +38497,7 @@ B16.B001750.3_38_F.1.1,b_cells,B001750,marginal_zone,Spleen,b_cells: marginal_zo
 M3.B001750.3_38_F.1.1,b_cells,B001750,follicular,Spleen,b_cells: follicular
 N5.B001750.3_38_F.1.1,b_cells,B001750,follicular,Spleen,b_cells: follicular
 O8.B001750.3_38_F.1.1,b_cells,B001750,follicular,Spleen,b_cells: follicular
-P12.B001750.3_38_F.1.1,macrophages/dendritic_cells/monocytes_and_others,B001750,,Spleen,macrophages/dendritic_cells/monocytes_and_others
+P12.B001750.3_38_F.1.1,myeloid_cells,B001750,,Spleen,myeloid_cells
 A15.B001750.3_38_F.1.1,b_cells,B001750,follicular,Spleen,b_cells: follicular
 C18.B001750.3_38_F.1.1,b_cells,B001750,follicular,Spleen,b_cells: follicular
 B17.B001750.3_38_F.1.1,b_cells,B001750,follicular,Spleen,b_cells: follicular
@@ -38518,7 +38518,7 @@ F11.B001750.3_38_F.1.1,t_cells,B001750,cd4+,Spleen,t_cells: cd4+
 E3.B001750.3_38_F.1.1,b_cells,B001750,follicular,Spleen,b_cells: follicular
 F12.B001750.3_38_F.1.1,b_cells,B001750,marginal_zone,Spleen,b_cells: marginal_zone
 G17.B001750.3_38_F.1.1,b_cells,B001750,follicular,Spleen,b_cells: follicular
-I1.B001750.3_38_F.1.1,macrophages/dendritic_cells/monocytes_and_others,B001750,,Spleen,macrophages/dendritic_cells/monocytes_and_others
+I1.B001750.3_38_F.1.1,myeloid_cells,B001750,,Spleen,myeloid_cells
 J11.B001750.3_38_F.1.1,b_cells,B001750,follicular,Spleen,b_cells: follicular
 K19.B001750.3_38_F.1.1,b_cells,B001750,follicular,Spleen,b_cells: follicular
 M4.B001750.3_38_F.1.1,b_cells,B001750,follicular,Spleen,b_cells: follicular
@@ -38667,7 +38667,7 @@ K4.B001750.3_38_F.1.1,b_cells,B001750,marginal_zone,Spleen,b_cells: marginal_zon
 L10.B001750.3_38_F.1.1,t_cells,B001750,cd4+,Spleen,t_cells: cd4+
 M16.B001750.3_38_F.1.1,b_cells,B001750,follicular,Spleen,b_cells: follicular
 N18.B001750.3_38_F.1.1,t_cells,B001750,cd4+,Spleen,t_cells: cd4+
-P1.B001750.3_38_F.1.1,macrophages/dendritic_cells/monocytes_and_others,B001750,,Spleen,macrophages/dendritic_cells/monocytes_and_others
+P1.B001750.3_38_F.1.1,myeloid_cells,B001750,,Spleen,myeloid_cells
 H6.MAA000607.3_9_M.1.1,t_cells,MAA000607,immature_single_positive_cd4+,Thymus,t_cells: immature_single_positive_cd4+
 I8.MAA000607.3_9_M.1.1,t_cells,MAA000607,double_positive,Thymus,t_cells: double_positive
 J10.MAA000607.3_9_M.1.1,t_cells,MAA000607,double_positive_rapidly_dividing_favoring_cd8+,Thymus,t_cells: double_positive_rapidly_dividing_favoring_cd8+
@@ -38722,7 +38722,7 @@ K17.MAA000607.3_9_M.1.1,t_cells,MAA000607,double_positive_favoring_cd8+,Thymus,t
 A22.MAA000607.3_9_M.1.1,t_cells,MAA000607,double_positive,Thymus,t_cells: double_positive
 C2.MAA000607.3_9_M.1.1,t_cells,MAA000607,immature_single_positive_cd8+,Thymus,t_cells: immature_single_positive_cd8+
 A21.MAA000607.3_9_M.1.1,t_cells,MAA000607,double_positive_favoring_cd8+,Thymus,t_cells: double_positive_favoring_cd8+
-D4.MAA000607.3_9_M.1.1,stromal_mesenchymal_stem_cell_cells,MAA000607,,Thymus,stromal_mesenchymal_stem_cell_cells
+D4.MAA000607.3_9_M.1.1,stromal_stem_cells,MAA000607,,Thymus,stromal_stem_cells
 E6.MAA000607.3_9_M.1.1,t_cells,MAA000607,double_positive_favoring_cd8+,Thymus,t_cells: double_positive_favoring_cd8+
 F8.MAA000607.3_9_M.1.1,t_cells,MAA000607,double_positive_favoring_cd8+,Thymus,t_cells: double_positive_favoring_cd8+
 C1.MAA000607.3_9_M.1.1,t_cells,MAA000607,immature_single_positive_cd4+,Thymus,t_cells: immature_single_positive_cd4+
@@ -38746,7 +38746,7 @@ J16.MAA000607.3_9_M.1.1,t_cells,MAA000607,double_positive_favoring_cd8+,Thymus,t
 K18.MAA000607.3_9_M.1.1,t_cells,MAA000607,double_positive_favoring_cd8+,Thymus,t_cells: double_positive_favoring_cd8+
 I15.MAA000607.3_9_M.1.1,t_cells,MAA000607,immature_single_positive_cd4+,Thymus,t_cells: immature_single_positive_cd4+
 B2.MAA000607.3_9_M.1.1,t_cells,MAA000607,double_positive_favoring_cd8+,Thymus,t_cells: double_positive_favoring_cd8+
-C4.MAA000607.3_9_M.1.1,stromal_mesenchymal_stem_cell_cells,MAA000607,,Thymus,stromal_mesenchymal_stem_cell_cells
+C4.MAA000607.3_9_M.1.1,stromal_stem_cells,MAA000607,,Thymus,stromal_stem_cells
 D6.MAA000607.3_9_M.1.1,t_cells,MAA000607,double_positive_rapidly_dividing_favoring_cd8+,Thymus,t_cells: double_positive_rapidly_dividing_favoring_cd8+
 E8.MAA000607.3_9_M.1.1,t_cells,MAA000607,immature_single_positive_cd4+,Thymus,t_cells: immature_single_positive_cd4+
 F10.MAA000607.3_9_M.1.1,t_cells,MAA000607,double_positive_favoring_cd8+,Thymus,t_cells: double_positive_favoring_cd8+
@@ -38801,7 +38801,7 @@ A6.MAA000607.3_9_M.1.1,t_cells,MAA000607,double_positive,Thymus,t_cells: double_
 B8.MAA000607.3_9_M.1.1,t_cells,MAA000607,immature_single_positive_cd4+,Thymus,t_cells: immature_single_positive_cd4+
 D12.MAA000607.3_9_M.1.1,t_cells,MAA000607,double_positive_favoring_cd8+,Thymus,t_cells: double_positive_favoring_cd8+
 A5.MAA000607.3_9_M.1.1,t_cells,MAA000607,double_positive_favoring_cd8+,Thymus,t_cells: double_positive_favoring_cd8+
-B7.MAA000607.3_9_M.1.1,stromal_mesenchymal_stem_cell_cells,MAA000607,,Thymus,stromal_mesenchymal_stem_cell_cells
+B7.MAA000607.3_9_M.1.1,stromal_stem_cells,MAA000607,,Thymus,stromal_stem_cells
 C9.MAA000607.3_9_M.1.1,t_cells,MAA000607,double_positive_favoring_cd8+,Thymus,t_cells: double_positive_favoring_cd8+
 D11.MAA000607.3_9_M.1.1,t_cells,MAA000607,double_positive_favoring_cd8+,Thymus,t_cells: double_positive_favoring_cd8+
 E13.MAA000607.3_9_M.1.1,t_cells,MAA000607,double_positive_favoring_cd8+,Thymus,t_cells: double_positive_favoring_cd8+
@@ -38836,7 +38836,7 @@ A9.MAA000607.3_9_M.1.1,t_cells,MAA000607,immature_single_positive_cd8+,Thymus,t_
 K5.MAA000607.3_9_M.1.1,t_cells,MAA000607,double_positive_favoring_cd8+,Thymus,t_cells: double_positive_favoring_cd8+
 A10.MAA000607.3_9_M.1.1,t_cells,MAA000607,double_positive_favoring_cd8+,Thymus,t_cells: double_positive_favoring_cd8+
 B12.MAA000607.3_9_M.1.1,t_cells,MAA000607,double_positive_favoring_cd8+,Thymus,t_cells: double_positive_favoring_cd8+
-C14.MAA000607.3_9_M.1.1,stromal_mesenchymal_stem_cell_cells,MAA000607,,Thymus,stromal_mesenchymal_stem_cell_cells
+C14.MAA000607.3_9_M.1.1,stromal_stem_cells,MAA000607,,Thymus,stromal_stem_cells
 B11.MAA000607.3_9_M.1.1,t_cells,MAA000607,double_positive_favoring_cd8+,Thymus,t_cells: double_positive_favoring_cd8+
 D16.MAA000607.3_9_M.1.1,t_cells,MAA000607,double_positive_favoring_cd8+,Thymus,t_cells: double_positive_favoring_cd8+
 E18.MAA000607.3_9_M.1.1,t_cells,MAA000607,double_positive_favoring_cd8+,Thymus,t_cells: double_positive_favoring_cd8+
@@ -38854,7 +38854,7 @@ C15.MAA000607.3_9_M.1.1,t_cells,MAA000607,double_positive_rapidly_dividing_favor
 D17.MAA000607.3_9_M.1.1,t_cells,MAA000607,double_positive_favoring_cd8+,Thymus,t_cells: double_positive_favoring_cd8+
 E19.MAA000607.3_9_M.1.1,t_cells,MAA000607,immature_single_positive_cd4+,Thymus,t_cells: immature_single_positive_cd4+
 F21.MAA000607.3_9_M.1.1,t_cells,MAA000607,double_positive_favoring_cd8+,Thymus,t_cells: double_positive_favoring_cd8+
-H1.MAA000607.3_9_M.1.1,stromal_mesenchymal_stem_cell_cells,MAA000607,,Thymus,stromal_mesenchymal_stem_cell_cells
+H1.MAA000607.3_9_M.1.1,stromal_stem_cells,MAA000607,,Thymus,stromal_stem_cells
 I3.MAA000607.3_9_M.1.1,t_cells,MAA000607,double_positive_favoring_cd8+,Thymus,t_cells: double_positive_favoring_cd8+
 J5.MAA000607.3_9_M.1.1,t_cells,MAA000607,immature_single_positive_cd4+,Thymus,t_cells: immature_single_positive_cd4+
 I2.MAA000607.3_9_M.1.1,t_cells,MAA000607,double_positive_rapidly_dividing_favoring_cd8+,Thymus,t_cells: double_positive_rapidly_dividing_favoring_cd8+
@@ -38889,14 +38889,14 @@ H3.MAA000607.3_9_M.1.1,t_cells,MAA000607,immature_single_positive_cd8+,Thymus,t_
 I5.MAA000607.3_9_M.1.1,t_cells,MAA000607,double_positive_rapidly_dividing_favoring_cd8+,Thymus,t_cells: double_positive_rapidly_dividing_favoring_cd8+
 J7.MAA000607.3_9_M.1.1,t_cells,MAA000607,double_positive_rapidly_dividing_favoring_cd8+,Thymus,t_cells: double_positive_rapidly_dividing_favoring_cd8+
 K9.MAA000607.3_9_M.1.1,t_cells,MAA000607,immature_single_positive_cd8+,Thymus,t_cells: immature_single_positive_cd8+
-J8.MAA000607.3_9_M.1.1,stromal_mesenchymal_stem_cell_cells,MAA000607,,Thymus,stromal_mesenchymal_stem_cell_cells
+J8.MAA000607.3_9_M.1.1,stromal_stem_cells,MAA000607,,Thymus,stromal_stem_cells
 B17.MAA000607.3_9_M.1.1,t_cells,MAA000607,double_positive_favoring_cd8+,Thymus,t_cells: double_positive_favoring_cd8+
 C19.MAA000607.3_9_M.1.1,t_cells,MAA000607,double_positive_favoring_cd8+,Thymus,t_cells: double_positive_favoring_cd8+
 D21.MAA000607.3_9_M.1.1,t_cells,MAA000607,immature_single_positive_cd4+,Thymus,t_cells: immature_single_positive_cd4+
 F1.MAA000607.3_9_M.1.1,t_cells,MAA000607,immature_single_positive_cd8+,Thymus,t_cells: immature_single_positive_cd8+
 G3.MAA000607.3_9_M.1.1,t_cells,MAA000607,double_positive_favoring_cd8+,Thymus,t_cells: double_positive_favoring_cd8+
 H5.MAA000607.3_9_M.1.1,t_cells,MAA000607,immature_single_positive_cd4+,Thymus,t_cells: immature_single_positive_cd4+
-I7.MAA000607.3_9_M.1.1,stromal_mesenchymal_stem_cell_cells,MAA000607,,Thymus,stromal_mesenchymal_stem_cell_cells
+I7.MAA000607.3_9_M.1.1,stromal_stem_cells,MAA000607,,Thymus,stromal_stem_cells
 J9.MAA000607.3_9_M.1.1,t_cells,MAA000607,double_negative4,Thymus,t_cells: double_negative4
 K11.MAA000607.3_9_M.1.1,t_cells,MAA000607,immature_single_positive_cd4+,Thymus,t_cells: immature_single_positive_cd4+
 K10.MAA000607.3_9_M.1.1,t_cells,MAA000607,double_positive_favoring_cd8+,Thymus,t_cells: double_positive_favoring_cd8+
@@ -38979,7 +38979,7 @@ O14.MAA000607.3_9_M.1.1,t_cells,MAA000607,double_positive,Thymus,t_cells: double
 P16.MAA000607.3_9_M.1.1,t_cells,MAA000607,double_positive_favoring_cd8+,Thymus,t_cells: double_positive_favoring_cd8+
 L9.MAA000607.3_9_M.1.1,t_cells,MAA000607,double_positive_favoring_cd8+,Thymus,t_cells: double_positive_favoring_cd8+
 M11.MAA000607.3_9_M.1.1,t_cells,MAA000607,double_positive_rapidly_dividing_favoring_cd8+,Thymus,t_cells: double_positive_rapidly_dividing_favoring_cd8+
-N13.MAA000607.3_9_M.1.1,stromal_mesenchymal_stem_cell_cells,MAA000607,,Thymus,stromal_mesenchymal_stem_cell_cells
+N13.MAA000607.3_9_M.1.1,stromal_stem_cells,MAA000607,,Thymus,stromal_stem_cells
 O15.MAA000607.3_9_M.1.1,t_cells,MAA000607,immature_single_positive_cd4+,Thymus,t_cells: immature_single_positive_cd4+
 P17.MAA000607.3_9_M.1.1,t_cells,MAA000607,double_positive_favoring_cd8+,Thymus,t_cells: double_positive_favoring_cd8+
 P18.MAA000607.3_9_M.1.1,t_cells,MAA000607,immature_single_positive_cd8+,Thymus,t_cells: immature_single_positive_cd8+
@@ -39032,7 +39032,7 @@ P9.MAA000609.3_8_M.1.1,t_cells,MAA000609,double_positive_favoring_cd8+,Thymus,t_
 K9.MAA000609.3_8_M.1.1,t_cells,MAA000609,immature_single_positive_cd4+,Thymus,t_cells: immature_single_positive_cd4+
 L21.MAA000609.3_8_M.1.1,t_cells,MAA000609,double_positive_favoring_cd8+,Thymus,t_cells: double_positive_favoring_cd8+
 A6.MAA000609.3_8_M.1.1,t_cells,MAA000609,double_positive_favoring_cd8+,Thymus,t_cells: double_positive_favoring_cd8+
-D11.MAA000609.3_8_M.1.1,stromal_mesenchymal_stem_cell_cells,MAA000609,,Thymus,stromal_mesenchymal_stem_cell_cells
+D11.MAA000609.3_8_M.1.1,stromal_stem_cells,MAA000609,,Thymus,stromal_stem_cells
 N19.MAA000609.3_8_M.1.1,t_cells,MAA000609,double_positive_favoring_cd8+,Thymus,t_cells: double_positive_favoring_cd8+
 I9.MAA000609.3_8_M.1.1,t_cells,MAA000609,double_positive,Thymus,t_cells: double_positive
 K10.MAA000609.3_8_M.1.1,t_cells,MAA000609,double_positive_favoring_cd8+,Thymus,t_cells: double_positive_favoring_cd8+
@@ -39196,12 +39196,12 @@ P18.MAA000880.3_11_M.1.1,t_cells,MAA000880,double_positive_favoring_cd8+,Thymus,
 O10.MAA000880.3_11_M.1.1,t_cells,MAA000880,double_positive_favoring_cd8+,Thymus,t_cells: double_positive_favoring_cd8+
 P17.MAA000880.3_11_M.1.1,t_cells,MAA000880,double_positive_favoring_cd8+,Thymus,t_cells: double_positive_favoring_cd8+
 F21.MAA000880.3_11_M.1.1,t_cells,MAA000880,double_negative4,Thymus,t_cells: double_negative4
-I22.MAA000880.3_11_M.1.1,stromal_mesenchymal_stem_cell_cells,MAA000880,,Thymus,stromal_mesenchymal_stem_cell_cells
+I22.MAA000880.3_11_M.1.1,stromal_stem_cells,MAA000880,,Thymus,stromal_stem_cells
 L8.MAA000880.3_11_M.1.1,t_cells,MAA000880,double_positive_favoring_cd8+,Thymus,t_cells: double_positive_favoring_cd8+
 M19.MAA000880.3_11_M.1.1,t_cells,MAA000880,double_positive_favoring_cd8+,Thymus,t_cells: double_positive_favoring_cd8+
 O12.MAA000880.3_11_M.1.1,t_cells,MAA000880,double_positive_favoring_cd8+,Thymus,t_cells: double_positive_favoring_cd8+
 P19.MAA000880.3_11_M.1.1,t_cells,MAA000880,double_positive_favoring_cd8+,Thymus,t_cells: double_positive_favoring_cd8+
-A8.MAA000880.3_11_M.1.1,stromal_mesenchymal_stem_cell_cells,MAA000880,,Thymus,stromal_mesenchymal_stem_cell_cells
+A8.MAA000880.3_11_M.1.1,stromal_stem_cells,MAA000880,,Thymus,stromal_stem_cells
 B17.MAA000880.3_11_M.1.1,t_cells,MAA000880,double_positive_favoring_cd8+,Thymus,t_cells: double_positive_favoring_cd8+
 D13.MAA000880.3_11_M.1.1,t_cells,MAA000880,double_positive_favoring_cd8+,Thymus,t_cells: double_positive_favoring_cd8+
 O13.MAA000880.3_11_M.1.1,t_cells,MAA000880,double_positive_favoring_cd8+,Thymus,t_cells: double_positive_favoring_cd8+
@@ -39301,7 +39301,7 @@ K11.MAA000880.3_11_M.1.1,t_cells,MAA000880,double_positive_favoring_cd8+,Thymus,
 L20.MAA000880.3_11_M.1.1,t_cells,MAA000880,double_positive_favoring_cd8+,Thymus,t_cells: double_positive_favoring_cd8+
 N15.MAA000880.3_11_M.1.1,t_cells,MAA000880,immature_single_positive_cd4+,Thymus,t_cells: immature_single_positive_cd4+
 P7.MAA000880.3_11_M.1.1,t_cells,MAA000880,double_negative4,Thymus,t_cells: double_negative4
-A21.MAA000880.3_11_M.1.1,stromal_mesenchymal_stem_cell_cells,MAA000880,,Thymus,stromal_mesenchymal_stem_cell_cells
+A21.MAA000880.3_11_M.1.1,stromal_stem_cells,MAA000880,,Thymus,stromal_stem_cells
 C16.MAA000880.3_11_M.1.1,t_cells,MAA000880,immature_single_positive_cd4+,Thymus,t_cells: immature_single_positive_cd4+
 E20.MAA000880.3_11_M.1.1,t_cells,MAA000880,double_negative1,Thymus,t_cells: double_negative1
 H14.MAA000880.3_11_M.1.1,t_cells,MAA000880,double_positive_rapidly_dividing_favoring_cd8+,Thymus,t_cells: double_positive_rapidly_dividing_favoring_cd8+
@@ -39418,7 +39418,7 @@ J16.B000827.3_38_F.1.1,t_cells,B000827,immature_single_positive_cd4+,Thymus,t_ce
 B22.B000827.3_38_F.1.1,t_cells,B000827,immature_single_positive_cd4+,Thymus,t_cells: immature_single_positive_cd4+
 D3.B000827.3_38_F.1.1,t_cells,B000827,immature_single_positive_cd4+,Thymus,t_cells: immature_single_positive_cd4+
 E6.B000827.3_38_F.1.1,t_cells,B000827,double_positive_rapidly_dividing_favoring_cd8+,Thymus,t_cells: double_positive_rapidly_dividing_favoring_cd8+
-F9.B000827.3_38_F.1.1,stromal_mesenchymal_stem_cell_cells,B000827,,Thymus,stromal_mesenchymal_stem_cell_cells
+F9.B000827.3_38_F.1.1,stromal_stem_cells,B000827,,Thymus,stromal_stem_cells
 G11.B000827.3_38_F.1.1,t_cells,B000827,immature_single_positive_cd4+,Thymus,t_cells: immature_single_positive_cd4+
 H13.B000827.3_38_F.1.1,t_cells,B000827,immature_single_positive_cd4+,Thymus,t_cells: immature_single_positive_cd4+
 I15.B000827.3_38_F.1.1,t_cells,B000827,immature_single_positive_cd4+,Thymus,t_cells: immature_single_positive_cd4+
@@ -39633,39 +39633,39 @@ N19.B000827.3_38_F.1.1,t_cells,B000827,immature_single_positive_cd4+,Thymus,t_ce
 O22.B000827.3_38_F.1.1,t_cells,B000827,immature_single_positive_cd4+,Thymus,t_cells: immature_single_positive_cd4+
 N20.B000827.3_38_F.1.1,t_cells,B000827,immature_single_positive_cd4+,Thymus,t_cells: immature_single_positive_cd4+
 P1.B000827.3_38_F.1.1,t_cells,B000827,immature_single_positive_cd4+,Thymus,t_cells: immature_single_positive_cd4+
-E6.B003284.3_39_F.1.1,stromal_mesenchymal_stem_cell_cells,B003284,,Thymus,stromal_mesenchymal_stem_cell_cells
-L8.B003284.3_39_F.1.1,stromal_mesenchymal_stem_cell_cells,B003284,,Thymus,stromal_mesenchymal_stem_cell_cells
-M7.B003284.3_39_F.1.1,stromal_mesenchymal_stem_cell_cells,B003284,,Thymus,stromal_mesenchymal_stem_cell_cells
-I1.B003284.3_39_F.1.1,stromal_mesenchymal_stem_cell_cells,B003284,,Thymus,stromal_mesenchymal_stem_cell_cells
+E6.B003284.3_39_F.1.1,stromal_stem_cells,B003284,,Thymus,stromal_stem_cells
+L8.B003284.3_39_F.1.1,stromal_stem_cells,B003284,,Thymus,stromal_stem_cells
+M7.B003284.3_39_F.1.1,stromal_stem_cells,B003284,,Thymus,stromal_stem_cells
+I1.B003284.3_39_F.1.1,stromal_stem_cells,B003284,,Thymus,stromal_stem_cells
 A2.B003284.3_39_F.1.1,t_cells,B003284,double_positive_favoring_cd8+,Thymus,t_cells: double_positive_favoring_cd8+
 D1.B003284.3_39_F.1.1,t_cells,B003284,double_positive_rapidly_dividing_favoring_cd8+,Thymus,t_cells: double_positive_rapidly_dividing_favoring_cd8+
-I8.B003284.3_39_F.1.1,stromal_mesenchymal_stem_cell_cells,B003284,,Thymus,stromal_mesenchymal_stem_cell_cells
+I8.B003284.3_39_F.1.1,stromal_stem_cells,B003284,,Thymus,stromal_stem_cells
 L8.B003285.3_38_F.1.1,t_cells,B003285,double_positive_favoring_cd8+,Thymus,t_cells: double_positive_favoring_cd8+
 M14.B003285.3_38_F.1.1,t_cells,B003285,double_positive_favoring_cd8+,Thymus,t_cells: double_positive_favoring_cd8+
 B9.B003285.3_38_F.1.1,t_cells,B003285,double_positive_favoring_cd8+,Thymus,t_cells: double_positive_favoring_cd8+
-M17.B003285.3_38_F.1.1,stromal_mesenchymal_stem_cell_cells,B003285,,Thymus,stromal_mesenchymal_stem_cell_cells
+M17.B003285.3_38_F.1.1,stromal_stem_cells,B003285,,Thymus,stromal_stem_cells
 O1.B003285.3_38_F.1.1,t_cells,B003285,double_positive_favoring_cd8+,Thymus,t_cells: double_positive_favoring_cd8+
 C6.B003285.3_38_F.1.1,t_cells,B003285,double_negative4,Thymus,t_cells: double_negative4
-D15.B003285.3_38_F.1.1,stromal_mesenchymal_stem_cell_cells,B003285,,Thymus,stromal_mesenchymal_stem_cell_cells
-P11.B003285.3_38_F.1.1,stromal_mesenchymal_stem_cell_cells,B003285,,Thymus,stromal_mesenchymal_stem_cell_cells
+D15.B003285.3_38_F.1.1,stromal_stem_cells,B003285,,Thymus,stromal_stem_cells
+P11.B003285.3_38_F.1.1,stromal_stem_cells,B003285,,Thymus,stromal_stem_cells
 E2.B003285.3_38_F.1.1,t_cells,B003285,double_positive_favoring_cd8+,Thymus,t_cells: double_positive_favoring_cd8+
-E1.B003285.3_38_F.1.1,stromal_mesenchymal_stem_cell_cells,B003285,,Thymus,stromal_mesenchymal_stem_cell_cells
-E7.B003285.3_38_F.1.1,stromal_mesenchymal_stem_cell_cells,B003285,,Thymus,stromal_mesenchymal_stem_cell_cells
+E1.B003285.3_38_F.1.1,stromal_stem_cells,B003285,,Thymus,stromal_stem_cells
+E7.B003285.3_38_F.1.1,stromal_stem_cells,B003285,,Thymus,stromal_stem_cells
 A6.B003285.3_38_F.1.1,t_cells,B003285,double_positive_favoring_cd8+,Thymus,t_cells: double_positive_favoring_cd8+
-H15.B003285.3_38_F.1.1,stromal_mesenchymal_stem_cell_cells,B003285,,Thymus,stromal_mesenchymal_stem_cell_cells
-A5.B003285.3_38_F.1.1,stromal_mesenchymal_stem_cell_cells,B003285,,Thymus,stromal_mesenchymal_stem_cell_cells
-F12.B003285.3_38_F.1.1,stromal_mesenchymal_stem_cell_cells,B003285,,Thymus,stromal_mesenchymal_stem_cell_cells
-I4.B003285.3_38_F.1.1,stromal_mesenchymal_stem_cell_cells,B003285,,Thymus,stromal_mesenchymal_stem_cell_cells
-J19.B003285.3_38_F.1.1,stromal_mesenchymal_stem_cell_cells,B003285,,Thymus,stromal_mesenchymal_stem_cell_cells
+H15.B003285.3_38_F.1.1,stromal_stem_cells,B003285,,Thymus,stromal_stem_cells
+A5.B003285.3_38_F.1.1,stromal_stem_cells,B003285,,Thymus,stromal_stem_cells
+F12.B003285.3_38_F.1.1,stromal_stem_cells,B003285,,Thymus,stromal_stem_cells
+I4.B003285.3_38_F.1.1,stromal_stem_cells,B003285,,Thymus,stromal_stem_cells
+J19.B003285.3_38_F.1.1,stromal_stem_cells,B003285,,Thymus,stromal_stem_cells
 A15.B003285.3_38_F.1.1,t_cells,B003285,double_negative4,Thymus,t_cells: double_negative4
-K13.B003285.3_38_F.1.1,stromal_mesenchymal_stem_cell_cells,B003285,,Thymus,stromal_mesenchymal_stem_cell_cells
+K13.B003285.3_38_F.1.1,stromal_stem_cells,B003285,,Thymus,stromal_stem_cells
 L4.B003285.3_38_F.1.1,t_cells,B003285,double_positive_favoring_cd8+,Thymus,t_cells: double_positive_favoring_cd8+
 A13.B003291.3_39_F.1.1,t_cells,B003291,double_positive_favoring_cd8+,Thymus,t_cells: double_positive_favoring_cd8+
 F2.B003291.3_39_F.1.1,t_cells,B003291,double_positive_favoring_cd8+,Thymus,t_cells: double_positive_favoring_cd8+
 G4.B003291.3_39_F.1.1,t_cells,B003291,double_positive_favoring_cd8+,Thymus,t_cells: double_positive_favoring_cd8+
 H6.B003291.3_39_F.1.1,t_cells,B003291,double_positive_favoring_cd8+,Thymus,t_cells: double_positive_favoring_cd8+
 I8.B003291.3_39_F.1.1,t_cells,B003291,double_positive_favoring_cd8+,Thymus,t_cells: double_positive_favoring_cd8+
-G5.B003291.3_39_F.1.1,stromal_mesenchymal_stem_cell_cells,B003291,,Thymus,stromal_mesenchymal_stem_cell_cells
+G5.B003291.3_39_F.1.1,stromal_stem_cells,B003291,,Thymus,stromal_stem_cells
 H7.B003291.3_39_F.1.1,t_cells,B003291,immature_single_positive_cd4+,Thymus,t_cells: immature_single_positive_cd4+
 I9.B003291.3_39_F.1.1,t_cells,B003291,double_positive_favoring_cd8+,Thymus,t_cells: double_positive_favoring_cd8+
 A14.B003291.3_39_F.1.1,t_cells,B003291,immature_single_positive_cd4+,Thymus,t_cells: immature_single_positive_cd4+
@@ -39775,9 +39775,9 @@ E19.B003291.3_39_F.1.1,t_cells,B003291,double_positive_favoring_cd8+,Thymus,t_ce
 F21.B003291.3_39_F.1.1,t_cells,B003291,double_positive_favoring_cd8+,Thymus,t_cells: double_positive_favoring_cd8+
 H1.B003291.3_39_F.1.1,t_cells,B003291,double_positive_favoring_cd8+,Thymus,t_cells: double_positive_favoring_cd8+
 I3.B003291.3_39_F.1.1,t_cells,B003291,double_positive_favoring_cd8+,Thymus,t_cells: double_positive_favoring_cd8+
-A8.B003291.3_39_F.1.1,stromal_mesenchymal_stem_cell_cells,B003291,,Thymus,stromal_mesenchymal_stem_cell_cells
+A8.B003291.3_39_F.1.1,stromal_stem_cells,B003291,,Thymus,stromal_stem_cells
 B12.B003291.3_39_F.1.1,t_cells,B003291,double_positive,Thymus,t_cells: double_positive
-A10.B003291.3_39_F.1.1,stromal_mesenchymal_stem_cell_cells,B003291,,Thymus,stromal_mesenchymal_stem_cell_cells
+A10.B003291.3_39_F.1.1,stromal_stem_cells,B003291,,Thymus,stromal_stem_cells
 B14.B003291.3_39_F.1.1,t_cells,B003291,double_positive_favoring_cd8+,Thymus,t_cells: double_positive_favoring_cd8+
 A9.B003291.3_39_F.1.1,t_cells,B003291,double_positive_favoring_cd8+,Thymus,t_cells: double_positive_favoring_cd8+
 D19.B003291.3_39_F.1.1,t_cells,B003291,double_positive_favoring_cd8+,Thymus,t_cells: double_positive_favoring_cd8+
@@ -39839,7 +39839,7 @@ J17.B003291.3_39_F.1.1,t_cells,B003291,double_positive_favoring_cd8+,Thymus,t_ce
 K19.B003291.3_39_F.1.1,t_cells,B003291,immature_single_positive_cd8+,Thymus,t_cells: immature_single_positive_cd8+
 K18.B003291.3_39_F.1.1,t_cells,B003291,double_positive_favoring_cd8+,Thymus,t_cells: double_positive_favoring_cd8+
 N1.B003291.3_39_F.1.1,t_cells,B003291,double_positive_favoring_cd8+,Thymus,t_cells: double_positive_favoring_cd8+
-L20.B003291.3_39_F.1.1,stromal_mesenchymal_stem_cell_cells,B003291,,Thymus,stromal_mesenchymal_stem_cell_cells
+L20.B003291.3_39_F.1.1,stromal_stem_cells,B003291,,Thymus,stromal_stem_cells
 O3.B003291.3_39_F.1.1,t_cells,B003291,double_positive_favoring_cd8+,Thymus,t_cells: double_positive_favoring_cd8+
 P5.B003291.3_39_F.1.1,t_cells,B003291,double_positive_favoring_cd8+,Thymus,t_cells: double_positive_favoring_cd8+
 O4.B003291.3_39_F.1.1,t_cells,B003291,double_positive_favoring_cd8+,Thymus,t_cells: double_positive_favoring_cd8+
