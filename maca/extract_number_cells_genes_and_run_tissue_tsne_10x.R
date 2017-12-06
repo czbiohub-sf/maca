@@ -4,12 +4,25 @@ setwd('~/Google Drive/MACA uploads')
 
 library(Seurat)
 library(cowplot)
+# 
+# theme(axis.line=element_blank(),
+#       axis.text.x=element_blank(),
+#       axis.text.y=element_blank(),
+#       axis.ticks=element_blank(),
+#       axis.title.x=element_blank(),
+#       axis.title.y=element_blank(),
+#       legend.position="none",
+#       panel.background=element_blank(),
+#       panel.border=element_blank(),
+#       panel.grid.major=element_blank(),
+#       panel.grid.minor=element_blank(),
+#       plot.background=element_blank())
 
 objects = c(
             'Bladder/10x_Bladder_seurat_tiss.Robj',
             'Heart/10x_Heart_seurat_tiss.Robj',
             "Kidney/10x_Kidney_seurat_tiss.Robj",
-            'Liver/20171117_plate_10x/10x_Liver_seurat_3m_201711017.Robj',
+            'Liver/10x_Liver_seurat_3m_201711017.Robj',
             "Lung/10x_Lung_seurat_tissue.10X.Robj",
             'Mammary_Gland/10x_Mammary_seurat_tiss.Robj',
             'Marrow/10x_Marrow_seurat_tiss.Robj',
@@ -39,37 +52,46 @@ extract_ngenes_ncells = function(tiss, object){
                    '_nreads_ngenes.csv'))
 }
 
-cleaned_annotations = read.csv('~/code/maca/metadata/maca_3month_combined_cell_annotations_10x.csv', row.names=1)
+cleaned_annotations = read.csv('~/code/maca/metadata/maca_3month_annotations_10x.csv', row.names=1)
 
 figure_folder = '~/Google Drive/MACA_3mo_manuscript/Main figures/figure2/10x/'
 
 plot_annotated_tsne = function(tiss, object_name, tissue_of_interest){
-  TSNEPlot(object = tiss, do.label = TRUE, pt.size = 0.5, group.by='annotation_subannotation')
-  ggsave(paste0(figure_folder, 'tsne_annotated_', tissue_of_interest, '.pdf'))
+  p = TSNEPlot(object = tiss, do.label = FALSE, pt.size = 0.05, group.by='annotation', 
+           no.legend=TRUE, no.axes=TRUE, alpha = 0.5, do.return=TRUE) #+ geom_point(alpha = 0.1)
+  # title(main=tissue_of_interest)
+  ggsave(paste0(figure_folder, 'tsne_annotated_', tissue_of_interest, '.pdf'), width=2, height=2)
+  return(p)
 }
 
 # Lung used a different variable name for their tissue
 object_tissue = c("Lung")
-skip_tissues = c("Tongue")
+#skip_tissues = c("Tongue")
 
+tsne_plots <- list()
+
+i = 0
 
 for (object_name in objects){
+  local({
+    i <- i
+    tsne_plots <- tsne_plots
   load(object_name)
   print(ls())
   tissue_of_interest = strsplit(object_name, '/')[[1]][1]
   print(tissue_of_interest)
   tissue_annotations = cleaned_annotations[cleaned_annotations$tissue == tissue_of_interest, ]
   
-  if (any(tissue_of_interest == skip_tissues)){
-    next
-  }
+  # if (any(tissue_of_interest == skip_tissues)){
+  #   next
+  # }
 
   if( any(tissue_of_interest == object_tissue)){
     extract_ngenes_ncells(tissue.10X, object_name)
     
     # Reassign metadata with cleaned annotations and plot TSNE
     tissue.10X@meta.data = tissue_annotations
-    plot_annotated_tsne(tissue.10X, object_name, tissue_of_interest)
+    p = plot_annotated_tsne(tissue.10X, object_name, tissue_of_interest)
     rm(list=c('tissue.10X', 'tissue_of_interest'))
   } else{
     extract_ngenes_ncells(tiss, object_name)
@@ -80,8 +102,13 @@ for (object_name in objects){
     
     # Reassign metadata with cleaned annotations and plot TSNE
     tiss@meta.data = tissue_annotations
-    plot_annotated_tsne(tiss, object_name, tissue_of_interest)
+    p = plot_annotated_tsne(tiss, object_name, tissue_of_interest)
     rm(list=c('tiss', 'tissue_of_interest'))
   }
+  
+  # Add to growing list of plots
+  i = i+1
+  tsne_plots[[i]] <<- p
+  })
   
 }
