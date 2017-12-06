@@ -1,8 +1,6 @@
 ---
-title: "tenx vs Plate"
-output:
-  html_document:
-    df_print: paged
+title: "10x vs Plate"
+output: html_notebook
 ---
 
 ```{r}
@@ -14,9 +12,10 @@ library(Seurat)
 Sys.setenv(R_MAX_NUM_DLLS=150)
 ```
 
+
 ```{r}
 load("~/maca/save/All_seurat_tiss.Robj")
-load("~/maca/save/tenx_All_seurat_tiss.Robj")
+load("~/maca/save/10x_All_seurat_tiss.Robj")
 
 tiss@meta.data['cell'] <- rownames(tiss@meta.data)
 tissX@meta.data['cell'] <- rownames(tissX@meta.data)
@@ -32,6 +31,12 @@ percent.Rn45s <- tissX@raw.data[c('Rn45s'), ]/Matrix::colSums(tissX@raw.data)
 tissX <- AddMetaData(object = tissX, metadata = percent.Rn45s, col.name = "percent.Rn45s")
 ```
 
+```{r}
+tissX@meta.data$nUMI
+```
+
+
+
 Extract just the metadata from plates and tenx cells.
 ```{r}
 just_plates = as_tibble(tiss@meta.data[c('tissue', 'subtissue', 'percent.ribo', 'percent.Rn45s','nGene', 'plate.barcode', 'nReads')])
@@ -44,93 +49,91 @@ just_tenx = as_tibble(tissX@meta.data[c('tissue', 'percent.ribo', 'nGene','chann
 just_tenx <- rownames_to_column(just_tenx, "cell")
 just_tenx <- rename(just_tenx, nMolecules = nUMI)
 
-just_tenx['method'] <- 'tenx'
+just_tenx['method'] <- '10x'
 just_tenx <- rename(just_tenx, run = channel)
 
 df <- bind_rows(just_plates, just_tenx)
 ```
 
-Rename mammary from tenx and check tissue counts.
-
 ```{r}
 df <- df %>% mutate(tissue = fct_recode(tissue,
-    "Mammary_Gland" = "Mammary"))
+    "Mammary" = "Mammary_Gland"))
 df %>% count(tissue)
 ```
 
-```{r}
-common_tissues <- as.character(df %>% 
-                                 group_by(tissue, method) %>% summarize(count = n()) %>% 
-                                 ungroup() %>% group_by(tissue) %>% summarize(count = n()) %>% 
-                                 filter(count > 1) %>% pull(tissue))
-common_tissues
-```
-
-## Differences in genes and ribo fraction for plates and tenx.
-
-```{r, fig.width = 12, fig.height = 8}
+```{r, fig.width = 8, fig.height = 20}
 filter(df, tissue %in% common_tissues) %>% ggplot(aes(nGene, ..density..,colour = method)) + 
   geom_freqpoly(binwidth = 300) +
-  facet_wrap(~ tissue, ncol = 4) + 
-  ggtitle("Number of genes expressed")
+  facet_wrap(~ tissue, ncol = 3)
 ```
 
 
+```{r}
+common_tissues <- c("Bladder", "Heart", "Kidney", "Liver","Lung","Mammary","Marrow","Muscle",
+                         "Spleen", "Tongue", "Thymus")
+```
 
-```{r, fig.width = 12, fig.height = 8}
+
+How do the number of genes detected vary across tissues and methods?
+
+```{r, fig.width = 8, fig.height = 20}
+filter(df, tissue %in% common_tissues) %>% ggplot(aes(nGene, ..density..,colour = method)) + 
+  geom_freqpoly(binwidth = 300) +
+  facet_wrap(~ tissue, nrow = 8, scales = "free_x")
+```
+
+Is this an artifact of the channel used?
+
+```{r}
+medians <- df %>% group_by(method, tissue, run) %>% summarize(median_genes = median(nGene), n_cells = n()) 
+```
+
+```{r}
+medians %>% filter(method == '10x') %>% ggplot(aes(x = median_genes, y = n_cells, color = tissue)) + geom_point()  +
+    scale_color_brewer(palette="Spectral")
+```
+
+
+How about percent ribo?
+
+
+```{r, fig.width = 8, fig.height = 20}
 filter(df, tissue %in% common_tissues) %>% ggplot(aes(percent.ribo, ..density..,colour = method)) + 
-  geom_freqpoly(binwidth = 0.02) +
-  facet_wrap(~ tissue, ncol = 4) + 
-  ggtitle("Percent ribosomal protein")
+  geom_freqpoly(binwidth = 0.01) +
+  facet_wrap(~ tissue, nrow = 8, scales = "free_x")
 ```
 
-```{r, fig.width = 12, fig.height = 8}
-filter(df, tissue %in% common_tissues) %>% ggplot(aes(percent.Rn45s, ..density..,colour = method)) + 
-  geom_freqpoly(binwidth = 0.02) +
-  facet_wrap(~ tissue, ncol = 4) + 
-  ggtitle("Percent Rn45s")
-```
 
-The enrichment of Rn45s and ribosomal genes differ strongly between the two methods.
+What about Rn45s? It's dramatically different between 10X and plateseq.
 
 ```{r}
-tissue_colors <- read_csv('~/maca/metadata/tissue_colors.csv')
-tissue_colors <- rename(tissue_colors, tissue = X1)
+median_Rn45s <- df %>% group_by(method, tissue, run) %>% summarize(median_Rn45s = median(percent.Rn45s), 
+                                                                   median_ribo = median(percent.ribo),
+                                                                   n_cells = n()) 
 ```
 
 ```{r}
-medians <- df %>% group_by(method, tissue, run) %>% 
-                  summarize(median_Rn45s = median(percent.Rn45s), 
-                            median_ribo = median(percent.ribo),
-                            n_cells = n()) 
-medians <- left_join(medians, tissue_colors, by = 'tissue')
-
-medians %>% filter(tissue %in% common_tissues,) %>% ggplot(aes(x = median_Rn45s, y = median_ribo, color = color, shape = method)) + geom_point()  +
-  scale_color_identity(breaks = tissue_colors$color,
-                       labels = tissue_colors$tissue,
-                       guide = "legend") + 
-  ggtitle("Comparing Rn45s and ribo genes between channels and plates.")
+median_Rn45s %>% filter(tissue %in% common_tissues,) %>% ggplot(aes(x = median_Rn45s, y = median_ribo, color = tissue, shape = method)) + geom_point()  +
+    scale_color_brewer(palette="Spectral")
 ```
 
+```{r, fig.width = 8, fig.height = 20}
+filter(df, tissue %in% common_tissues, method == 'plate') %>% ggplot(aes(percent.Rn45s,..density..,colour = tissue)) + 
+  geom_freqpoly(binwidth = 0.01) +
+  facet_wrap(~ tissue, nrow = 8, scales = "free_x")
+```
 
-
-
-##  Dynamic Range of individual cells
-
-We compare individual cells from tissues containing similar numbers of genes per cell.
-
+# Dynamic Range
 
 Get a few cells from each method with values in a certain range.
 ```{r}
-subset.size <- 1
-set.seed(1)
+subset.size <- 2
+
 cell.subset <- filter(df, tissue == 'Heart', nGene > 2900, nGene < 3100) %>% 
     group_by(method) %>% 
     sample_n(subset.size) %>%
     pull(cell)
 ```
-
-It's difficult to compare UMI and reads apples to apples. Here both are scaled to 10k reads/UMIs then log(1+x)'d.
 
 ```{r, fig.width = 4, fig.height = 8}
 par(mfrow=c(2,1))
@@ -138,230 +141,149 @@ par(mfrow=c(2,1))
 expr <- tissX@data[,cell.subset[1]]
 expr <- expr[expr > 0]
 plot(sort(expr), ylab = "log expression", xlab = "gene index", col = "red")
-title(main = "Heart tenx cell")
+title(main = "Heart 10x cell")
 
-expr <- tiss@data[,cell.subset[2]]
+expr <- tiss@data[,cell.subset[3]]
 expr <- expr[expr > 0]
 plot(sort(expr), ylab = "log expression", xlab = "gene index", col = "green")
 title(main = "Heart plateseq cell")
 ```
 
-If we instead scaled them to 10^6 both, we would see a different shape for the plate data, with more dynamic range in the low values.
 
 ```{r, fig.width = 4, fig.height = 8}
 par(mfrow=c(2,1))
 
-expr <- adjust_lognorm(tissX@data[,cell.subset[1]], 100)
+expr <- tissX@raw.data[,cell.subset[1]]
 expr <- expr[expr > 0]
-plot(sort(expr), ylab = "log expression", xlab = "gene index", col = "red")
-title(main = "Heart tenx cell")
+plot(sort(expr), ylab = "expression", xlab = "gene index", col = "red", log = 'y')
+title(main = "Heart 10x cell")
 
-expr <- adjust_lognorm(tiss@data[,cell.subset[2]], 100)
+expr <- tiss@raw.data[,cell.subset[3]]
 expr <- expr[expr > 0]
-plot(sort(expr), ylab = "log expression", xlab = "gene index", col = "green")
+plot(sort(expr), ylab = "expression", xlab = "gene index", col = "green", log = 'y')
 title(main = "Heart plateseq cell")
 ```
 
 
-## Comparing the Average (T cell)
+# Comparing the Average Thymus cell
 
 ```{r}
-anno_plate = read_csv('~/maca/metadata/maca_3month_combined_cell_annotations.csv')
-anno_plate <- rename(anno_plate, cell = X1)
-#anno_plate <- rename(anno, anno_tissue = tissue)
-anno_plate %>% group_by(tissue, annotation, subannotation) %>% summarize(count = n())
 
-anno_tenx = read_csv('~/maca/metadata/maca_3month_combined_cell_annotations_10x.csv')
-anno_tenx <- rename(anno_tenx, cell = X1)
-#anno_plate <- rename(anno, anno_tissue = tissue)
-anno_tenx %>% group_by(tissue, annotation, subannotation) %>% summarize(count = n())
-```
+tissue_pct <- function(seurat_obj, tissue){
+  cells = rownames(seurat_obj@meta.data[seurat_obj@meta.data$tissue == tissue,])
+  expr = seurat_obj@data[,cells]
+  pct = Matrix::rowMeans(expr > 0)
+  pct
+} 
 
-
-```{r}
-library(scales)
 ```
 
 ```{r}
-plate_v_tenx <- function(tissue_var, annotation_var){
 
-cells_plate <- anno_plate %>% filter(annotation == annotation_var & tissue == tissue_var) %>% pull(cell)
-pct_plate <- Matrix::rowMeans(tiss@raw.data[,cells_plate] > 0)
-pct_plate
-cells_tenx <- anno_tenx %>% filter(annotation == annotation_var & tissue == tissue_var) %>% pull(cell)
-pct_tenx <- Matrix::rowMeans(tissX@raw.data[,cells_tenx] > 0)
+tissue_avg <- function(seurat_obj, tissue){
+  cells = rownames(seurat_obj@meta.data[seurat_obj@meta.data$tissue == tissue,])
+  expr = seurat_obj@raw.data[,cells]
+  avg = Matrix::rowMeans(expr)
+  avg
+} 
 
-pct1 = as_data_frame(pct_tenx)
-pct1['gene'] <- names(pct_tenx)
+```
+
+```{r}
+tissue_of_interest = "Spleen"
+plate_pct = tissue_pct(tiss, tissue_of_interest)
+tenx_pct = tissue_pct(tissX, tissue_of_interest)
+
+pct1 = as_data_frame(tenx_pct)
+pct1['gene'] <- names(tenx_pct)
 pct1['method'] <- 'tenx'
 pct1 <- filter(pct1, value > 0.01)
 
-pct2 = as_data_frame(pct_plate)
-pct2['gene'] <- names(pct_plate)
+pct2 = as_data_frame(plate_pct)
+pct2['gene'] <- names(plate_pct)
 pct2['method'] <- 'plate'
 pct2 <- filter(pct2, value > 0.01)
 
 pct <- bind_rows(pct1, pct2)
-
-pct  %>% spread(key = method, value = value, fill = 0) %>% 
-  ggplot(aes(x = plate, y = tenx)) + geom_hex() + geom_abline(slope=1, intercept=0)  + scale_fill_continuous(trans = log10_trans())
-}
-```
-
-## Examples
-
-```{r}
-plate_v_tenx("Kidney", "tubule_cells")
 ```
 
 ```{r}
-plate_v_tenx("Bladder", "luminal_cells")
+tissue_avg(tiss, "Liver")['D14Ertd449e']
 ```
 
 ```{r}
-plate_v_tenx("Bladder", "basal_cells")
+df = as_data_frame(tiss@meta.data)
+df['cell'] <- rownames(tiss@meta.data)
+
+df['tSNE_1'] <- tiss@dr$tsne@cell.embeddings[,'tSNE_1']
+df['tSNE_2'] <- tiss@dr$tsne@cell.embeddings[,'tSNE_2']
+df['order'] <- 
 ```
 
 ```{r}
-plate_v_tenx("Liver", "hepatocytes")
-```
-
-```{r}
-plate_v_tenx("Spleen", "t_cells")
-```
-
-```{r}
-plate_v_tenx("Kidney", "fibroblasts") + ggtitle("Kidney fibroblasts")
-```
-
-```{r}
-plate_v_tenx("Spleen", "b_cells") + ggtitle("Spleen b_cells")
-```
-
-```{r}
-plate_v_tenx("Liver", "hepatocytes") + ggtitle("Liver hepatocytes")
-```
-
-### Global stats
-
-Let's just go big!
-
-```{r}
-anno_plate %>% select(cell, annotation, subannotation, tissue) %>% rename(anno_tissue = tissue) %>% mutate(method = "plate")
-anno_tenx %>% select(cell, annotation, subannotation, tissue) %>% rename(anno_tissue = tissue) %>% mutate(method = "tenx")
-```
-
-```{r}
-all_pct <- tibble(value = double(), gene = character(), method = character(), tissue = character(), annotation = character())
-
-for(tissue_name in unique(anno_plate$tissue)){
-  for(annotation_name in filter(anno_plate, tissue == tissue_name) %>% pull(annotation) %>% unique()){
-    cells_plate <- anno_plate %>% filter(annotation == annotation_name & tissue == tissue_name) %>% pull(cell)
-    pct_plate <- Matrix::rowMeans(tiss@raw.data[,cells_plate] > 0)
-    
-    pct = as_data_frame(pct_plate)
-    pct['gene'] <- names(pct_plate)
-    pct['method'] <- 'plate'
-    pct['tissue'] <- tissue_name
-    pct['annotation'] <- annotation_name
-    pct <- filter(pct, value > 0.01)
-    
-    all_pct <- bind_rows(all_pct, pct)
-  }
-}
-
-for(tissue_name in unique(anno_tenx$tissue)){
-  for(annotation_name in filter(anno_tenx, tissue == tissue_name) %>% pull(annotation) %>% unique()){
-    cells_tenx <- anno_tenx %>% filter(annotation == annotation_name & tissue == tissue_name) %>% pull(cell)
-    pct_tenx <- Matrix::rowMeans(tissX@raw.data[,cells_tenx] > 0)
-    
-    pct = as_data_frame(pct_tenx)
-    pct['gene'] <- names(pct_tenx)
-    pct['method'] <- 'tenx'
-    pct['tissue'] <- tissue_name
-    pct['annotation'] <- annotation_name
-    pct <- filter(pct, value > 0.01)
-    
-    all_pct <- bind_rows(all_pct, pct)
-    }
-}
-```
-
-```{r}
-all_pct <- all_pct %>% mutate(anno_and_tissue = paste(annotation, tissue, sep='-'))
-
-common_anno_tissue <- all_pct %>% group_by(anno_and_tissue, method) %>% summarize(count = n()) %>%
-                        ungroup() %>% group_by(anno_and_tissue) %>% summarize(count = n()) %>%
-                        filter(count > 1) %>% pull(anno_and_tissue)
-
-pct_comparison <- all_pct %>% filter(anno_and_tissue %in% common_anno_tissue)  %>% spread(key = method, value = value, fill = 0) %>%
-        filter(plate > 0.05 | tenx > 0.05) %>% 
-        mutate(plate_larger = (plate>tenx),
-                   pct_diff = plate - tenx) %>%
-        group_by(tissue, anno_and_tissue) %>% summarize(pct_plate_larger = round(mean(plate_larger),2), net_diff = round(mean(pct_diff),2))
-
-rtissue_colors = tissue_colors %>% rename(tissue = anno_tissue)
-pct_comparison <- left_join(pct_comparison, rtissue_colors, by = 'tissue')
-
-pct_comparison %>% ggplot(aes(pct_plate_larger, net_diff)) + geom_vline(xintercept = 0.5) + geom_hline(yintercept = 0) +
-   geom_point(aes(color = color), size=2) +
-   scale_color_identity(breaks = rtissue_colors$color, 
-                        labels = rtissue_colors$tissue, 
-                        guide = "legend") + 
-  labs(title = 'Comparison of expression between Plate and 10x by Cell Type', x = 'Percent of genes expressed more in plates', y = 'Mean difference in expression percent') +
-  guides(color = guide_legend(override.aes = list(size=2)))
-
-```
-
-```{r}
-anno_plate %>% filter(annotation == 'endothelial_cells') %>% count()
-anno_tenx %>% filter(annotation == 'endothelial_cells') %>% count()
+sample(1:10, )
 ```
 
 
 ```{r}
-pct_comparison %>% filter(pct_plate_larger < 0.5)
+
+set.seed(001) # just to make it reproducible
+sample(V)
+
+df %>% ggplot(aes(tSNE_1, tSNE_2, col=tissue)) + geom_point(size=0.5, alpha = 0.5) + guides(col = guide_legend(override.aes = list(size=2)))
 ```
 
 ```{r}
-pct_comparison %>% filter(pct_plate_larger < 0.50)
+pct %>% spread(key = method, value = value, fill = 0) %>% filter((tenx > 0.5 & plate < 0.1))
 ```
 
-
-All or none.
-
-
-
-Number 0 in plates and nonzero in tenx, and vice versa.
-Fraction on left or right of the equality line. Average absolute percent difference. Conditioned on present in one at > 5%.
-
-
-Side investigation:
-
-Genex expressed in every cell of one of the methods but not in the other. This could be caused by spillover in droplets.
-Best eg is t-cells in the thymus. Feels like qc.
-
-
-
-## Miscellaneous
-
-
-
+```{r}
+pct %>% spread(key = method, value = value, fill = 0) %>% filter((tenx > 0.5 & plate < 0.1))
+```
 
 ```{r}
-df %>% group_by(annotation.y, tissue, plate.barcode.x) %>% summarize(count = n()) %>% ungroup() %>% group_by(annotation.y, tissue) %>% summarize(n_plates = n()) %>% arrange(desc(n_plates))
+pct %>% spread(key = method, value = value, fill = 0) %>% 
+  ggplot(aes_string("plate", "tenx")) + geom_point(alpha = 0.3) + geom_abline(slope=1, intercept=0) + geom_smooth()
+```
 
-df %>% group_by(annotation.y, tissue) %>% summarize(count = n()) %>% ungroup() %>% group_by(annotation.y) %>% summarize(n_tissues = n()) %>% arrange(desc(n_tissues))
+```{r}
+pct %>% spread(key = method, value = value, fill = 0) %>% filter(plate > 0.10) %>% ggplot(aes(tenx, ..density..)) + geom_freqpoly()
+
+#ggplot(aes_string("plate", "tenx")) + geom_point(alpha = 0.3) + geom_abline(slope=1, intercept=0) + geom_smooth()
+```
+
+```{r}
+pct %>% spread(key = method, value = value, fill = 0) %>% filter(tenx > 0.10) %>% ggplot(aes(plate, ..density..)) + geom_freqpoly()
+
+#ggplot(aes_string("plate", "tenx")) + geom_point(alpha = 0.3) + geom_abline(slope=1, intercept=0) + geom_smooth()
 ```
 
 
 
 ```{r}
-df %>% group_by(annotation.y, subannotation.y) %>% summarize(count = n()) %>% ungroup()
+pct %>% spread(key = method, value = value, fill = 0) %>% filter(tenx > 0.1 | plate > 0.1) %>% ggplot(aes_string("plate", "tenx")) + geom_hex()
+```
+
+```{r}
+pct %>% select(value < 0.05)
 ```
 
 
+Present in one, absent in the other.
+
+
+How many tenx cells do you need to get a plate cell?
+
+
+
 ```{r}
-df %>% group_by(annotation.y, tissue, plate.barcode.x) %>% summarize(count = n()) %>% ungroup() %>% group_by(annotation.y, tissue) %>% summarize(n_plates = n()) %>% arrange(desc(n_plates))
+pct %>% filter(value < 0.05) %>% spread(key = method, value = value, fill = 0) %>% ggplot(aes_string("plate", "tenx")) + geom_point()
+```
+
+
+
+Number of genes above a certain threshold of cells expressing. This could be made into a plot for a given cell type. A histogrammy version of starry night.
+```{r}
+pct %>% filter(value > 0.05) %>% group_by(method) %>% count()
 ```
 
