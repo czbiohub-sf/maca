@@ -21,8 +21,8 @@ enterocytes,782
 immune_cells,718
 mesenchymal_cells,656
 muscle_stem_cells,546
+myeloid_cells,527
 mesenchymal_stem_cells,486
-myeloid_cells,479
 satellite_cells,442
 astrocytes,433
 beta_cells,411
@@ -48,11 +48,10 @@ delta_cells,91
 fenestrated_capillary_cells,69
 dendritic_cells,69
 kuppfer_cells,51
-macrophages/dendritic_cells/monocytes_and_others,48
 tuft_cells,45
 collecting_duct_cells,44
 neural_progenitor_cells,36
-stromal_mesenchymal_stem_cell_cells,33
+stromal_stem_cells,33
 stellate_cells,29
 muscle_cells,27
 chromaffin_cells,25

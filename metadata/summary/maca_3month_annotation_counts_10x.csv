@@ -25,11 +25,12 @@ satellite_cells,349
 fenestrated_capillary_cells,345
 fibroblasts,335
 erythrocytes,197
-stromal_mesenchymal_cells,112
 cardiomyocytes,83
+stromal_mesenchymal_cells,81
 collecting_duct_cells,72
 smooth_muscle_cells,71
 ciliated_cells,41
+stromal_mesenchymal_cell_cells,31
 mesothelial_cells,24
 mast_cells,22
 club_cells,5

@@ -186,11 +186,11 @@ Skin,Outer Bulge,.,hair_follicle_cells,outer_bulge,547
 Skin,Outer IFE,.,interfollicular_epidermis,outer_ife_cells,186
 Spleen,9CD8+ T cells,.,t_cells,cd8+,81
 Spleen,CD4+ T cells,.,t_cells,cd4+,273
-Spleen,Macrophages/Dendritic cells/Monocytes and others,.,macrophages/dendritic_cells/monocytes_and_others,.,48
+Spleen,Macrophages/Dendritic cells/Monocytes and others,.,myeloid_cells,.,48
 Spleen,Marginal Zone B cells,.,b_cells,marginal_zone,153
 Spleen,Natural Killer cells,.,t_cells,natural_killer_cells,49
 Spleen,T1/T2/Follicular B cells,.,b_cells,follicular,1085
-Thymus,stromal_mesenchymal stem cell,.,stromal_mesenchymal_stem_cell_cells,.,33
+Thymus,stromal_mesenchymal stem cell,.,stromal_stem_cells,.,33
 Thymus,thymocyte_1_mix of DN4_DP_immatureSPs,DN4,t_cells,double_negative4,92
 Thymus,thymocyte_1_mix of DN4_DP_immatureSPs,DP,t_cells,double_positive,44
 Thymus,thymocyte_1_mix of DN4_DP_immatureSPs,Immature_SP_CD8,t_cells,immature_single_positive_cd8+,62

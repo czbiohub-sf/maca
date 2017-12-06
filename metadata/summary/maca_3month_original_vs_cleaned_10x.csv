@@ -107,7 +107,7 @@ Thymus,DN-Stage4b,.,t_cells,double_negative-stage4b,211
 Thymus,immature SP Cd8,.,t_cells,immature_single_positive_cd8+,194
 Thymus,mix of cells,"Single positive Cd8, possibly mature",t_cells,"single_positive_cd8+,_possibly_mature",117
 Thymus,mix of cells,stromal_mesenchymal cells,stromal_mesenchymal_cells,.,81
-Thymus,stromal mesenchymal cell,.,stromal_mesenchymal_cells,.,31
+Thymus,stromal mesenchymal cell,.,stromal_mesenchymal_cell_cells,.,31
 Thymus,thymocyte-DP,.,t_cells,double_positive,381
 Thymus,thymocyte-DP-proliferating,.,t_cells,double_positive-proliferating,336
 Tongue,Basal_cells,.,basal_cells,basal,4242
