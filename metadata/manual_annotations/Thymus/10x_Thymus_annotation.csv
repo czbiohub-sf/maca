@@ -1,0 +1,1430 @@
+"","annotation","subannotation"
+"10X_P7_11_AAACCTGAGACAGGCT","DN-Stage4b",NA
+"10X_P7_11_AAACCTGAGAGTCTGG","thymocyte-DP",NA
+"10X_P7_11_AAACCTGCAGGAATGC","DN-Stage4b",NA
+"10X_P7_11_AAACCTGGTACCGTAT","thymocyte-DP",NA
+"10X_P7_11_AAACGGGGTCAAACTC","stromal mesenchymal cell",NA
+"10X_P7_11_AAACGGGGTCGGCTCA","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_AAACGGGTCCCGGATG","mix of cells","stromal_mesenchymal cells"
+"10X_P7_11_AAAGATGAGACCCACC","thymocyte-DP",NA
+"10X_P7_11_AAAGATGAGTAGATGT","DN-Stage3",NA
+"10X_P7_11_AAAGATGCAACAACCT","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_AAAGATGCACATCCGG","stromal mesenchymal cell",NA
+"10X_P7_11_AAAGATGTCACAGGCC","thymocyte-DP",NA
+"10X_P7_11_AAAGCAAAGGTGGGTT","immature SP Cd8",NA
+"10X_P7_11_AAAGCAACAAGCGAGT","thymocyte-DP-proliferating",NA
+"10X_P7_11_AAAGCAAGTCATTAGC","DN-Stage4b",NA
+"10X_P7_11_AAAGTAGAGACTGGGT","immature SP Cd8",NA
+"10X_P7_11_AAAGTAGAGTTGTCGT","immature SP Cd8",NA
+"10X_P7_11_AAAGTAGTCCTAAGTG","immature SP Cd8",NA
+"10X_P7_11_AAAGTAGTCTTACCTA","thymocyte-DP",NA
+"10X_P7_11_AAATGCCCACTGAAGG","mix of cells","stromal_mesenchymal cells"
+"10X_P7_11_AAATGCCTCAAACCAC","thymocyte-DP-proliferating",NA
+"10X_P7_11_AACACGTAGCGATGAC","mix of cells","stromal_mesenchymal cells"
+"10X_P7_11_AACACGTAGGCAGTCA","thymocyte-DP-proliferating",NA
+"10X_P7_11_AACACGTGTGAACCTT","DN-Stage4b",NA
+"10X_P7_11_AACCATGCACATCCAA","thymocyte-DP",NA
+"10X_P7_11_AACCATGGTCATCCCT","thymocyte-DP",NA
+"10X_P7_11_AACCGCGCACATAACC","immature SP Cd8",NA
+"10X_P7_11_AACCGCGGTACAGCAG","mix of cells","stromal_mesenchymal cells"
+"10X_P7_11_AACCGCGGTTGTCGCG","thymocyte-DP",NA
+"10X_P7_11_AACCGCGTCGCCTGAG","thymocyte-DP",NA
+"10X_P7_11_AACGTTGAGCAGACTG","thymocyte-DP",NA
+"10X_P7_11_AACGTTGCAATGACCT","thymocyte-DP",NA
+"10X_P7_11_AACGTTGCATGTAAGA","DN-Stage4b",NA
+"10X_P7_11_AACGTTGTCTTGCCGT","DN-Stage3",NA
+"10X_P7_11_AACTCAGCAATAGCAA","thymocyte-DP-proliferating",NA
+"10X_P7_11_AACTCAGTCCATGAAC","mix of cells","stromal_mesenchymal cells"
+"10X_P7_11_AACTCCCAGCCCAGCT","thymocyte-DP",NA
+"10X_P7_11_AACTCCCAGTCCAGGA","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_AACTCCCGTCGGGTCT","thymocyte-DP-proliferating",NA
+"10X_P7_11_AACTCTTCACACTGCG","stromal mesenchymal cell",NA
+"10X_P7_11_AACTCTTGTGGGTCAA","thymocyte-DP-proliferating",NA
+"10X_P7_11_AACTCTTTCATCATTC","DN-Stage4b",NA
+"10X_P7_11_AACTCTTTCTTACCTA","thymocyte-DP",NA
+"10X_P7_11_AACTGGTAGCTCCTCT","DN-Stage4b",NA
+"10X_P7_11_AACTGGTAGGCACATG","thymocyte-DP",NA
+"10X_P7_11_AACTGGTCAATCCGAT","thymocyte-DP",NA
+"10X_P7_11_AACTTTCCAGATGGGT","DN-Stage4b",NA
+"10X_P7_11_AAGACCTGTTCATGGT","DN-Stage 4c",NA
+"10X_P7_11_AAGACCTTCCGCGGTA","thymocyte-DP-proliferating",NA
+"10X_P7_11_AAGACCTTCCTGTACC","thymocyte-DP",NA
+"10X_P7_11_AAGCCGCAGCTGAACG","thymocyte-DP",NA
+"10X_P7_11_AAGCCGCGTGAAAGAG","DN-Stage3",NA
+"10X_P7_11_AAGCCGCGTTTGACAC","mix of cells","stromal_mesenchymal cells"
+"10X_P7_11_AAGGAGCCACTAAGTC","DN-Stage4b",NA
+"10X_P7_11_AAGGTTCCAGGCTGAA","thymocyte-DP-proliferating",NA
+"10X_P7_11_AAGGTTCTCATCTGCC","thymocyte-DP-proliferating",NA
+"10X_P7_11_AAGTCTGTCGTGGTCG","DN-Stage4b",NA
+"10X_P7_11_AATCCAGAGAAGGCCT","thymocyte-DP",NA
+"10X_P7_11_AATCCAGAGCTACCGC","mix of cells","stromal_mesenchymal cells"
+"10X_P7_11_AATCCAGAGGGAGTAA","DN-Stage4b",NA
+"10X_P7_11_AATCCAGAGTGCGATG","immature SP Cd8",NA
+"10X_P7_11_AATCCAGAGTGGAGAA","DN-Stage3",NA
+"10X_P7_11_AATCCAGCAACACCTA","immature SP Cd8",NA
+"10X_P7_11_AATCCAGCAGAGCCAA","thymocyte-DP-proliferating",NA
+"10X_P7_11_AATCCAGGTAGTAGTA","thymocyte-DP",NA
+"10X_P7_11_AATCCAGTCGGCATCG","immature SP Cd8",NA
+"10X_P7_11_AATCGGTAGATGTCGG","thymocyte-DP-proliferating",NA
+"10X_P7_11_AATCGGTCAGCAGTTT","thymocyte-DP-proliferating",NA
+"10X_P7_11_ACACCAAAGTACTTGC","DN-Stage3",NA
+"10X_P7_11_ACACCAACAAAGGTGC","thymocyte-DP",NA
+"10X_P7_11_ACACCAAGTAGAGCTG","thymocyte-DP-proliferating",NA
+"10X_P7_11_ACACCCTCACCCAGTG","DN-Stage4b",NA
+"10X_P7_11_ACACCCTCAGACAGGT","thymocyte-DP",NA
+"10X_P7_11_ACACCCTCATAGTAAG","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_ACACCCTCATTAACCG","thymocyte-DP",NA
+"10X_P7_11_ACACCCTGTTACGTCA","immature SP Cd8",NA
+"10X_P7_11_ACACCCTTCGGTTCGG","DN-Stage4b",NA
+"10X_P7_11_ACACCGGAGGTTACCT","thymocyte-DP",NA
+"10X_P7_11_ACACCGGCACGAGAGT","thymocyte-DP",NA
+"10X_P7_11_ACACCGGGTTCCATGA","thymocyte-DP",NA
+"10X_P7_11_ACACTGAAGCTGCAAG","thymocyte-DP",NA
+"10X_P7_11_ACACTGACATAGAAAC","mix of cells","stromal_mesenchymal cells"
+"10X_P7_11_ACACTGAGTTGGTTTG","mix of cells","stromal_mesenchymal cells"
+"10X_P7_11_ACAGCCGAGGACCACA","thymocyte-DP-proliferating",NA
+"10X_P7_11_ACAGCCGCAGCGTTCG","DN-Stage4b",NA
+"10X_P7_11_ACAGCTAGTCCGAACC","mix of cells","stromal_mesenchymal cells"
+"10X_P7_11_ACATACGAGAGTAAGG","thymocyte-DP",NA
+"10X_P7_11_ACATACGTCAGGATCT","DN-Stage 4c",NA
+"10X_P7_11_ACATCAGAGATGGCGT","thymocyte-DP",NA
+"10X_P7_11_ACATCAGAGGAACTGC","thymocyte-DP",NA
+"10X_P7_11_ACATCAGGTGCACTTA","DN-Stage4b",NA
+"10X_P7_11_ACATCAGTCGTGGGAA","stromal mesenchymal cell",NA
+"10X_P7_11_ACCAGTAAGCAGACTG","immature SP Cd8",NA
+"10X_P7_11_ACCAGTACACGAGAGT","thymocyte-DP",NA
+"10X_P7_11_ACCAGTAGTCCCTTGT","immature SP Cd8",NA
+"10X_P7_11_ACCAGTATCAGGCGAA","thymocyte-DP",NA
+"10X_P7_11_ACCCACTAGAGCTTCT","immature SP Cd8",NA
+"10X_P7_11_ACCCACTAGAGTCGGT","DN-Stage4b",NA
+"10X_P7_11_ACCCACTAGTACGATA","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_ACCCACTGTAGAAGGA","thymocyte-DP",NA
+"10X_P7_11_ACCGTAAAGCCCAATT","DN-Stage4b",NA
+"10X_P7_11_ACCGTAACACATTTCT","mix of cells","stromal_mesenchymal cells"
+"10X_P7_11_ACCGTAAGTAGAGGAA","mix of cells","stromal_mesenchymal cells"
+"10X_P7_11_ACCTTTAGTAGAGCTG","immature SP Cd8",NA
+"10X_P7_11_ACCTTTAGTAGCGCAA","DN-Stage4b",NA
+"10X_P7_11_ACGAGCCCAGTATCTG","DN-Stage 4c",NA
+"10X_P7_11_ACGAGCCTCCCATTTA","thymocyte-DP",NA
+"10X_P7_11_ACGAGCCTCGACAGCC","DN-Stage4b",NA
+"10X_P7_11_ACGAGGAGTATCGCAT","thymocyte-DP",NA
+"10X_P7_11_ACGAGGATCGCTGATA","thymocyte-DP",NA
+"10X_P7_11_ACGATACAGCCTATGT","thymocyte-DP",NA
+"10X_P7_11_ACGATACAGGAATTAC","thymocyte-DP",NA
+"10X_P7_11_ACGATACCAGTCGATT","thymocyte-DP",NA
+"10X_P7_11_ACGATACGTGCTTCTC","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_ACGATGTAGAGTAATC","mix of cells","stromal_mesenchymal cells"
+"10X_P7_11_ACGATGTAGCGATCCC","thymocyte-DP-proliferating",NA
+"10X_P7_11_ACGATGTAGGCCCTCA","DN-Stage4b",NA
+"10X_P7_11_ACGATGTGTGTCCTCT","DN-Stage4b",NA
+"10X_P7_11_ACGATGTTCTTGTTTG","thymocyte-DP",NA
+"10X_P7_11_ACGCAGCCAATGTTGC","DN-Stage 4c",NA
+"10X_P7_11_ACGCAGCCACGAAATA","immature SP Cd8",NA
+"10X_P7_11_ACGCAGCTCACTTATC","thymocyte-DP",NA
+"10X_P7_11_ACGCAGCTCTGCAAGT","DN-Stage3",NA
+"10X_P7_11_ACGCCAGAGATGCCTT","DN-Stage4b",NA
+"10X_P7_11_ACGCCAGAGTAGGTGC","thymocyte-DP-proliferating",NA
+"10X_P7_11_ACGCCAGCACGGTAGA","thymocyte-DP",NA
+"10X_P7_11_ACGCCAGTCTGTTGAG","thymocyte-DP-proliferating",NA
+"10X_P7_11_ACGCCGACACATCCAA","immature SP Cd8",NA
+"10X_P7_11_ACGCCGATCAATCTCT","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_ACGGAGACATGCCTAA","thymocyte-DP-proliferating",NA
+"10X_P7_11_ACGGAGAGTACAGCAG","thymocyte-DP-proliferating",NA
+"10X_P7_11_ACGGAGATCTCGCTTG","thymocyte-DP",NA
+"10X_P7_11_ACGGCCATCATAACCG","immature SP Cd8",NA
+"10X_P7_11_ACGGGCTGTCGATTGT","thymocyte-DP-proliferating",NA
+"10X_P7_11_ACGGGCTGTTGGGACA","stromal mesenchymal cell",NA
+"10X_P7_11_ACGGGCTTCAATCACG","immature SP Cd8",NA
+"10X_P7_11_ACGGGCTTCTCCTATA","thymocyte-DP-proliferating",NA
+"10X_P7_11_ACGGGTCCAGCTATTG","DN-Stage4b",NA
+"10X_P7_11_ACGGGTCTCTTCAACT","DN-Stage3",NA
+"10X_P7_11_ACGTCAAAGCGAGAAA","thymocyte-DP-proliferating",NA
+"10X_P7_11_ACGTCAAAGGGTTTCT","DN-Stage4b",NA
+"10X_P7_11_ACGTCAAGTCTTGCGG","immature SP Cd8",NA
+"10X_P7_11_ACGTCAAGTTGGGACA","thymocyte-DP-proliferating",NA
+"10X_P7_11_ACTATCTAGCTAGTGG","thymocyte-DP",NA
+"10X_P7_11_ACTATCTGTCGGCTCA","mix of cells","stromal_mesenchymal cells"
+"10X_P7_11_ACTATCTGTCTGGAGA","thymocyte-DP-proliferating",NA
+"10X_P7_11_ACTATCTGTTCGGGCT","thymocyte-DP-proliferating",NA
+"10X_P7_11_ACTATCTTCCAGTAGT","thymocyte-DP",NA
+"10X_P7_11_ACTGAACCACTGTTAG","thymocyte-DP-proliferating",NA
+"10X_P7_11_ACTGAACGTAGTAGTA","thymocyte-DP-proliferating",NA
+"10X_P7_11_ACTGAACTCTTTACAC","thymocyte-DP-proliferating",NA
+"10X_P7_11_ACTGAGTCATCGGGTC","mix of cells","stromal_mesenchymal cells"
+"10X_P7_11_ACTGAGTTCAACCAAC","thymocyte-DP-proliferating",NA
+"10X_P7_11_ACTGATGAGGTTACCT","thymocyte-DP-proliferating",NA
+"10X_P7_11_ACTGATGCAAAGGAAG","DN-Stage3",NA
+"10X_P7_11_ACTGATGCAGGCTGAA","thymocyte-DP-proliferating",NA
+"10X_P7_11_ACTGATGGTTCCTCCA","DN-Stage4b",NA
+"10X_P7_11_ACTGCTCCATGGTAGG","mix of cells","stromal_mesenchymal cells"
+"10X_P7_11_ACTGCTCGTCACTGGC","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_ACTGCTCTCGAATGCT","DN-Stage4b",NA
+"10X_P7_11_ACTTACTCAAAGTCAA","thymocyte-DP",NA
+"10X_P7_11_ACTTACTGTGTGCCTG","thymocyte-DP-proliferating",NA
+"10X_P7_11_ACTTGTTCAATGGACG","thymocyte-DP-proliferating",NA
+"10X_P7_11_ACTTGTTGTTCACGGC","DN-Stage4b",NA
+"10X_P7_11_ACTTGTTTCTGCGACG","immature SP Cd8",NA
+"10X_P7_11_ACTTTCAAGAAACCTA","thymocyte-DP-proliferating",NA
+"10X_P7_11_ACTTTCAAGACACTAA","thymocyte-DP-proliferating",NA
+"10X_P7_11_ACTTTCAAGCACCGTC","thymocyte-DP-proliferating",NA
+"10X_P7_11_ACTTTCATCGTTACAG","thymocyte-DP-proliferating",NA
+"10X_P7_11_AGAATAGTCCTCAACC","thymocyte-DP",NA
+"10X_P7_11_AGACGTTAGGCGATAC","DN-Stage 4c",NA
+"10X_P7_11_AGACGTTGTCCTGCTT","DN-Stage3",NA
+"10X_P7_11_AGAGCGACAGGCTGAA","stromal mesenchymal cell",NA
+"10X_P7_11_AGAGCGAGTTCACCTC","mix of cells","stromal_mesenchymal cells"
+"10X_P7_11_AGAGCGAGTTGGTGGA","mix of cells","stromal_mesenchymal cells"
+"10X_P7_11_AGAGCGATCAGTTGAC","immature SP Cd8",NA
+"10X_P7_11_AGAGCTTAGGGATGGG","thymocyte-DP",NA
+"10X_P7_11_AGAGCTTCAATAAGCA","DN-Stage4b",NA
+"10X_P7_11_AGAGCTTTCCTTTACA","immature SP Cd8",NA
+"10X_P7_11_AGAGTGGTCATGTCTT","DN-Stage4b",NA
+"10X_P7_11_AGAGTGGTCGACGGAA","thymocyte-DP-proliferating",NA
+"10X_P7_11_AGAGTGGTCGTGGACC","thymocyte-DP",NA
+"10X_P7_11_AGATCTGAGAGAGCTC","mix of cells","stromal_mesenchymal cells"
+"10X_P7_11_AGATCTGGTGCGCTTG","thymocyte-DP-proliferating",NA
+"10X_P7_11_AGATTGCAGGCAAAGA","DN-Stage4b",NA
+"10X_P7_11_AGATTGCCACACAGAG","thymocyte-DP",NA
+"10X_P7_11_AGATTGCCATGCCACG","thymocyte-DP",NA
+"10X_P7_11_AGATTGCGTGTGTGCC","thymocyte-DP-proliferating",NA
+"10X_P7_11_AGCAGCCCATCGGTTA","immature SP Cd8",NA
+"10X_P7_11_AGCAGCCTCAGTCCCT","thymocyte-DP",NA
+"10X_P7_11_AGCATACGTAAGGGCT","thymocyte-DP",NA
+"10X_P7_11_AGCCTAAAGATCCCAT","immature SP Cd8",NA
+"10X_P7_11_AGCCTAACACGGCGTT","DN-Stage4b",NA
+"10X_P7_11_AGCCTAAGTAATCGTC","immature SP Cd8",NA
+"10X_P7_11_AGCCTAAGTCATCGGC","DN-Stage4b",NA
+"10X_P7_11_AGCCTAATCCTGCTTG","stromal mesenchymal cell",NA
+"10X_P7_11_AGCGGTCGTGCAGTAG","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_AGCGTCGAGGCATGGT","thymocyte-DP",NA
+"10X_P7_11_AGCGTCGGTCAAAGCG","immature SP Cd8",NA
+"10X_P7_11_AGCGTCGTCCACGCAG","thymocyte-DP",NA
+"10X_P7_11_AGCTCCTAGGTTCCTA","thymocyte-DP",NA
+"10X_P7_11_AGCTCCTCAGTCCTTC","mix of cells","stromal_mesenchymal cells"
+"10X_P7_11_AGCTCCTCATGATCCA","thymocyte-DP-proliferating",NA
+"10X_P7_11_AGCTCTCAGGGATGGG","DN-Stage 4c",NA
+"10X_P7_11_AGCTCTCAGGGTGTTG","thymocyte-DP-proliferating",NA
+"10X_P7_11_AGCTCTCAGTATCTCG","thymocyte-DP",NA
+"10X_P7_11_AGCTCTCGTATGCTTG","immature SP Cd8",NA
+"10X_P7_11_AGCTCTCTCATTGCGA","thymocyte-DP",NA
+"10X_P7_11_AGCTTGACAATGACCT","thymocyte-DP",NA
+"10X_P7_11_AGCTTGAGTTTAGGAA","thymocyte-DP",NA
+"10X_P7_11_AGCTTGATCATTGCGA","immature SP Cd8",NA
+"10X_P7_11_AGCTTGATCGCGTTTC","thymocyte-DP",NA
+"10X_P7_11_AGGCCACAGGAATTAC","DN-Stage4b",NA
+"10X_P7_11_AGGCCGTAGGACAGAA","thymocyte-DP-proliferating",NA
+"10X_P7_11_AGGCCGTCATTGGTAC","DN-Stage4b",NA
+"10X_P7_11_AGGCCGTTCGTTTGCC","thymocyte-DP",NA
+"10X_P7_11_AGGCCGTTCTGGCGTG","DN-Stage4b",NA
+"10X_P7_11_AGGGATGAGTTGTAGA","immature SP Cd8",NA
+"10X_P7_11_AGGGATGCAAGCCATT","immature SP Cd8",NA
+"10X_P7_11_AGGGATGCATGATCCA","thymocyte-DP-proliferating",NA
+"10X_P7_11_AGGGATGGTTGTCTTT","thymocyte-DP",NA
+"10X_P7_11_AGGGTGAAGAGTCTGG","thymocyte-DP-proliferating",NA
+"10X_P7_11_AGGGTGACAAGGGTCA","DN-Stage4b",NA
+"10X_P7_11_AGGGTGACATCGGACC","DN-Stage4b",NA
+"10X_P7_11_AGGGTGAGTAAATGTG","thymocyte-DP",NA
+"10X_P7_11_AGGGTGAGTCCTCCAT","thymocyte-DP",NA
+"10X_P7_11_AGGGTGAGTCGAACAG","thymocyte-DP-proliferating",NA
+"10X_P7_11_AGGGTGAGTTACCGAT","thymocyte-DP-proliferating",NA
+"10X_P7_11_AGGTCATGTTTGTTTC","thymocyte-DP-proliferating",NA
+"10X_P7_11_AGGTCCGAGTCTCAAC","thymocyte-DP",NA
+"10X_P7_11_AGGTCCGTCTGCGACG","thymocyte-DP",NA
+"10X_P7_11_AGTAGTCAGATGGCGT","DN-Stage4b",NA
+"10X_P7_11_AGTAGTCGTCTAGTGT","DN-Stage4b",NA
+"10X_P7_11_AGTAGTCGTTCCAACA","thymocyte-DP-proliferating",NA
+"10X_P7_11_AGTCTTTCAAAGCAAT","DN-Stage4b",NA
+"10X_P7_11_AGTCTTTTCACCTTAT","DN-Stage3",NA
+"10X_P7_11_AGTCTTTTCACGATGT","thymocyte-DP",NA
+"10X_P7_11_AGTGAGGCATATACCG","thymocyte-DP",NA
+"10X_P7_11_AGTGAGGGTGAGGGAG","thymocyte-DP-proliferating",NA
+"10X_P7_11_AGTGAGGGTTAAGAAC","thymocyte-DP",NA
+"10X_P7_11_AGTGAGGTCAGGCGAA","thymocyte-DP-proliferating",NA
+"10X_P7_11_AGTGAGGTCATGTAGC","DN-Stage 4c",NA
+"10X_P7_11_AGTGAGGTCCGCATAA","thymocyte-DP-proliferating",NA
+"10X_P7_11_AGTGAGGTCGACGGAA","thymocyte-DP-proliferating",NA
+"10X_P7_11_AGTGGGAAGAAACCTA","thymocyte-DP",NA
+"10X_P7_11_AGTGGGAAGGGATACC","thymocyte-DP",NA
+"10X_P7_11_AGTGGGACACTTACGA","immature SP Cd8",NA
+"10X_P7_11_AGTGGGAGTGTAAGTA","thymocyte-DP",NA
+"10X_P7_11_AGTGGGAGTTACCAGT","immature SP Cd8",NA
+"10X_P7_11_AGTGTCAAGACTACAA","thymocyte-DP-proliferating",NA
+"10X_P7_11_AGTGTCACAAGTACCT","thymocyte-DP-proliferating",NA
+"10X_P7_11_AGTGTCACATGCCTTC","thymocyte-DP",NA
+"10X_P7_11_AGTGTCAGTTTGGGCC","DN-Stage3",NA
+"10X_P7_11_AGTTGGTCAGTCCTTC","thymocyte-DP",NA
+"10X_P7_11_AGTTGGTCATGAGCGA","DN-Stage4b",NA
+"10X_P7_11_AGTTGGTGTATCTGCA","mix of cells","stromal_mesenchymal cells"
+"10X_P7_11_AGTTGGTTCGGTCCGA","DN-Stage 4c",NA
+"10X_P7_11_AGTTGGTTCTTGCATT","thymocyte-DP-proliferating",NA
+"10X_P7_11_ATAACGCAGGCAGGTT","immature SP Cd8",NA
+"10X_P7_11_ATAACGCCAAGCGAGT","thymocyte-DP-proliferating",NA
+"10X_P7_11_ATAACGCGTAGCTGCC","stromal mesenchymal cell",NA
+"10X_P7_11_ATAAGAGAGAACAACT","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_ATAAGAGCACCCAGTG","thymocyte-DP-proliferating",NA
+"10X_P7_11_ATAAGAGCACCGTTGG","stromal mesenchymal cell",NA
+"10X_P7_11_ATAAGAGGTGCAGGTA","thymocyte-DP",NA
+"10X_P7_11_ATAAGAGTCTGGCGTG","thymocyte-DP",NA
+"10X_P7_11_ATAGACCAGGCTAGCA","stromal mesenchymal cell",NA
+"10X_P7_11_ATAGACCCACGCTTTC","immature SP Cd8",NA
+"10X_P7_11_ATAGACCGTGTCCTCT","thymocyte-DP-proliferating",NA
+"10X_P7_11_ATAGACCTCAGAAATG","DN-Stage4b",NA
+"10X_P7_11_ATCACGACAACTGCTA","thymocyte-DP-proliferating",NA
+"10X_P7_11_ATCACGATCACTCTTA","thymocyte-DP-proliferating",NA
+"10X_P7_11_ATCACGATCCTTCAAT","DN-Stage3",NA
+"10X_P7_11_ATCATCTAGGAGTTGC","thymocyte-DP-proliferating",NA
+"10X_P7_11_ATCATCTGTAGTAGTA","DN-Stage4b",NA
+"10X_P7_11_ATCATCTTCCAAATGC","mix of cells","stromal_mesenchymal cells"
+"10X_P7_11_ATCATGGCAATAACGA","DN-Stage4b",NA
+"10X_P7_11_ATCATGGCACGAAAGC","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_ATCATGGCATCCGCGA","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_ATCATGGGTCCCTACT","thymocyte-DP",NA
+"10X_P7_11_ATCATGGTCCGTAGTA","thymocyte-DP",NA
+"10X_P7_11_ATCCACCGTATAATGG","immature SP Cd8",NA
+"10X_P7_11_ATCCACCGTGAAGGCT","immature SP Cd8",NA
+"10X_P7_11_ATCCACCGTGACGCCT","immature SP Cd8",NA
+"10X_P7_11_ATCCGAACACGTCAGC","DN-Stage4b",NA
+"10X_P7_11_ATCCGAACATGTAGTC","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_ATCCGAAGTAGCTTGT","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_ATCCGAAGTAGGCATG","stromal mesenchymal cell",NA
+"10X_P7_11_ATCCGAATCTTGACGA","thymocyte-DP",NA
+"10X_P7_11_ATCGAGTAGACAAAGG","DN-Stage 4c",NA
+"10X_P7_11_ATCGAGTAGATTACCC","mix of cells","stromal_mesenchymal cells"
+"10X_P7_11_ATCTACTAGCTGTTCA","stromal mesenchymal cell",NA
+"10X_P7_11_ATCTACTGTCCAAGTT","thymocyte-DP-proliferating",NA
+"10X_P7_11_ATCTACTGTCCGAACC","thymocyte-DP-proliferating",NA
+"10X_P7_11_ATCTGCCGTTACGGAG","thymocyte-DP-proliferating",NA
+"10X_P7_11_ATCTGCCTCCTGTACC","thymocyte-DP",NA
+"10X_P7_11_ATGAGGGCACATGGGA","immature SP Cd8",NA
+"10X_P7_11_ATGAGGGCACGAGGTA","thymocyte-DP",NA
+"10X_P7_11_ATGAGGGGTCTAGAGG","thymocyte-DP-proliferating",NA
+"10X_P7_11_ATGAGGGTCAAAGTAG","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_ATGAGGGTCGACCAGC","immature SP Cd8",NA
+"10X_P7_11_ATGCGATAGATGAGAG","DN-Stage4b",NA
+"10X_P7_11_ATGCGATAGTGTGGCA","thymocyte-DP-proliferating",NA
+"10X_P7_11_ATGCGATCACAAGTAA","immature SP Cd8",NA
+"10X_P7_11_ATGCGATTCAAACCGT","thymocyte-DP",NA
+"10X_P7_11_ATGCGATTCGATCCCT","immature SP Cd8",NA
+"10X_P7_11_ATGGGAGCACTTCGAA","mix of cells","stromal_mesenchymal cells"
+"10X_P7_11_ATGGGAGGTAATCACC","thymocyte-DP-proliferating",NA
+"10X_P7_11_ATGGGAGTCAAACCAC","thymocyte-DP",NA
+"10X_P7_11_ATGGGAGTCACTCCTG","thymocyte-DP-proliferating",NA
+"10X_P7_11_ATGGGAGTCTATCCTA","immature SP Cd8",NA
+"10X_P7_11_ATGTGTGTCGATGAGG","thymocyte-DP-proliferating",NA
+"10X_P7_11_ATGTGTGTCGTACGGC","thymocyte-DP-proliferating",NA
+"10X_P7_11_ATGTGTGTCTCCAACC","immature SP Cd8",NA
+"10X_P7_11_ATGTGTGTCTTAGAGC","DN-Stage4b",NA
+"10X_P7_11_ATTACTCAGACAGAGA","stromal mesenchymal cell",NA
+"10X_P7_11_ATTACTCCAACGCACC","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_ATTATCCAGTGCAAGC","thymocyte-DP",NA
+"10X_P7_11_ATTATCCTCAAGGTAA","thymocyte-DP",NA
+"10X_P7_11_ATTATCCTCCTAGAAC","thymocyte-DP",NA
+"10X_P7_11_ATTCTACGTACCTACA","DN-Stage4b",NA
+"10X_P7_11_ATTGGACCATCCTAGA","thymocyte-DP",NA
+"10X_P7_11_ATTGGACGTCATATCG","mix of cells","stromal_mesenchymal cells"
+"10X_P7_11_ATTGGTGCACGTCTCT","thymocyte-DP-proliferating",NA
+"10X_P7_11_ATTGGTGCATTCACTT","thymocyte-DP",NA
+"10X_P7_11_ATTGGTGGTGCCTGTG","thymocyte-DP",NA
+"10X_P7_11_ATTTCTGCACTTAAGC","DN-Stage4b",NA
+"10X_P7_11_ATTTCTGGTCAAAGCG","immature SP Cd8",NA
+"10X_P7_11_ATTTCTGTCCTAAGTG","stromal mesenchymal cell",NA
+"10X_P7_11_CAACCAACATGATCCA","DN-Stage3",NA
+"10X_P7_11_CAACCAAGTAGCTTGT","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_CAACCAATCCCATTAT","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_CAACCAATCTTGCCGT","thymocyte-DP",NA
+"10X_P7_11_CAACCTCGTAATCGTC","thymocyte-DP-proliferating",NA
+"10X_P7_11_CAACCTCGTCGGATCC","thymocyte-DP",NA
+"10X_P7_11_CAACCTCTCAAGGCTT","thymocyte-DP",NA
+"10X_P7_11_CAACCTCTCACGGTTA","thymocyte-DP-proliferating",NA
+"10X_P7_11_CAACTAGAGAGATGAG","thymocyte-DP",NA
+"10X_P7_11_CAAGAAATCGGCGCTA","immature SP Cd8",NA
+"10X_P7_11_CAAGATCAGAGTTGGC","thymocyte-DP",NA
+"10X_P7_11_CAAGATCAGTGGAGTC","thymocyte-DP-proliferating",NA
+"10X_P7_11_CAAGATCGTCCGCTGA","thymocyte-DP-proliferating",NA
+"10X_P7_11_CAAGATCGTTCCAACA","DN-Stage4b",NA
+"10X_P7_11_CAAGGCCAGTAGCCGA","thymocyte-DP",NA
+"10X_P7_11_CAAGGCCCATGGATGG","DN-Stage4b",NA
+"10X_P7_11_CAAGTTGAGAGTGACC","thymocyte-DP-proliferating",NA
+"10X_P7_11_CAAGTTGAGATCTGAA","DN-Stage3",NA
+"10X_P7_11_CAAGTTGAGATGCGAC","thymocyte-DP-proliferating",NA
+"10X_P7_11_CAAGTTGCAGGTGGAT","DN-Stage4b",NA
+"10X_P7_11_CAAGTTGCATTCTTAC","DN-Stage4b",NA
+"10X_P7_11_CAAGTTGTCTTTAGTC","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_CACAAACAGAGTAAGG","DN-Stage 4c",NA
+"10X_P7_11_CACAAACAGCGTAGTG","immature SP Cd8",NA
+"10X_P7_11_CACAAACCAGTCACTA","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_CACAAACCAGTTTACG","thymocyte-DP-proliferating",NA
+"10X_P7_11_CACAAACGTGAAAGAG","immature SP Cd8",NA
+"10X_P7_11_CACAAACTCGCATGAT","thymocyte-DP",NA
+"10X_P7_11_CACACAAAGTCACGCC","thymocyte-DP",NA
+"10X_P7_11_CACACAATCAACGGCC","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_CACACAATCAGTACGT","thymocyte-DP-proliferating",NA
+"10X_P7_11_CACACAATCTTCGGTC","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_CACACCTCAATAGCGG","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_CACACCTTCGAATGCT","thymocyte-DP-proliferating",NA
+"10X_P7_11_CACACTCAGAGTAATC","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_CACACTCAGGGCTCTC","thymocyte-DP-proliferating",NA
+"10X_P7_11_CACAGGCCATCCCACT","thymocyte-DP-proliferating",NA
+"10X_P7_11_CACAGGCGTTGAACTC","thymocyte-DP-proliferating",NA
+"10X_P7_11_CACAGGCGTTTCGCTC","DN-Stage4b",NA
+"10X_P7_11_CACAGGCTCCAAGCCG","DN-Stage3",NA
+"10X_P7_11_CACAGTAGTGGTAACG","thymocyte-DP",NA
+"10X_P7_11_CACAGTATCTTACCTA","thymocyte-DP",NA
+"10X_P7_11_CACATAGCAATGGACG","thymocyte-DP",NA
+"10X_P7_11_CACATTTAGCCTCGTG","DN-Stage4b",NA
+"10X_P7_11_CACATTTCACGTAAGG","immature SP Cd8",NA
+"10X_P7_11_CACATTTTCGAGAACG","immature SP Cd8",NA
+"10X_P7_11_CACCACTGTGCGATAG","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_CACCACTGTTCAGGCC","DN-Stage4b",NA
+"10X_P7_11_CACCAGGAGAGGGCTT","thymocyte-DP-proliferating",NA
+"10X_P7_11_CACCAGGCAGATCGGA","thymocyte-DP-proliferating",NA
+"10X_P7_11_CACCAGGCATCTGGTA","thymocyte-DP-proliferating",NA
+"10X_P7_11_CACCAGGGTTAGAACA","immature SP Cd8",NA
+"10X_P7_11_CACCTTGCATTACGAC","thymocyte-DP",NA
+"10X_P7_11_CACCTTGGTGAAGGCT","immature SP Cd8",NA
+"10X_P7_11_CACCTTGGTTATGTGC","thymocyte-DP",NA
+"10X_P7_11_CACTCCAAGACCTTTG","mix of cells","stromal_mesenchymal cells"
+"10X_P7_11_CAGAATCAGTACGACG","thymocyte-DP",NA
+"10X_P7_11_CAGAATCCAACACCCG","thymocyte-DP",NA
+"10X_P7_11_CAGAATCCACAACGTT","thymocyte-DP-proliferating",NA
+"10X_P7_11_CAGAATCCAGCTATTG","thymocyte-DP-proliferating",NA
+"10X_P7_11_CAGAATCGTAAACGCG","thymocyte-DP-proliferating",NA
+"10X_P7_11_CAGAATCGTTCCGTCT","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_CAGAATCTCTTTACAC","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_CAGAGAGAGGGTGTGT","mix of cells","stromal_mesenchymal cells"
+"10X_P7_11_CAGAGAGAGTGGAGAA","thymocyte-DP",NA
+"10X_P7_11_CAGAGAGAGTGTGGCA","DN-Stage4b",NA
+"10X_P7_11_CAGAGAGCAAGACGTG","stromal mesenchymal cell",NA
+"10X_P7_11_CAGAGAGGTCTCCACT","thymocyte-DP-proliferating",NA
+"10X_P7_11_CAGAGAGTCACTCCTG","thymocyte-DP",NA
+"10X_P7_11_CAGAGAGTCGTCACGG","DN-Stage4b",NA
+"10X_P7_11_CAGATCAAGGGCTTCC","immature SP Cd8",NA
+"10X_P7_11_CAGATCAAGTCAATAG","immature SP Cd8",NA
+"10X_P7_11_CAGCATAAGTGGACGT","thymocyte-DP",NA
+"10X_P7_11_CAGCATAAGTGGGATC","thymocyte-DP",NA
+"10X_P7_11_CAGCATAAGTGGTAGC","DN-Stage4b",NA
+"10X_P7_11_CAGCCGAAGCTCCTCT","thymocyte-DP",NA
+"10X_P7_11_CAGCCGACATCGGGTC","DN-Stage4b",NA
+"10X_P7_11_CAGCGACTCCTTCAAT","stromal mesenchymal cell",NA
+"10X_P7_11_CAGCTAAGTACACCGC","DN-Stage4b",NA
+"10X_P7_11_CAGCTAATCCTCTAGC","thymocyte-DP-proliferating",NA
+"10X_P7_11_CAGCTGGAGGGATCTG","thymocyte-DP",NA
+"10X_P7_11_CAGCTGGCAACTTGAC","thymocyte-DP",NA
+"10X_P7_11_CAGGTGCCAATAGCGG","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_CAGGTGCCAGCCACCA","immature SP Cd8",NA
+"10X_P7_11_CAGGTGCCATAGTAAG","thymocyte-DP",NA
+"10X_P7_11_CAGGTGCTCATCACCC","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_CAGTAACAGCACACAG","thymocyte-DP",NA
+"10X_P7_11_CAGTCCTCAATCAGAA","thymocyte-DP",NA
+"10X_P7_11_CAGTCCTGTCTAGCGC","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_CATATGGAGGACACCA","thymocyte-DP",NA
+"10X_P7_11_CATATGGAGGCCATAG","thymocyte-DP",NA
+"10X_P7_11_CATATGGCACCACCAG","mix of cells","stromal_mesenchymal cells"
+"10X_P7_11_CATATGGCATACTCTT","thymocyte-DP",NA
+"10X_P7_11_CATATGGGTACGCACC","thymocyte-DP",NA
+"10X_P7_11_CATATTCTCTTCAACT","DN-Stage4b",NA
+"10X_P7_11_CATCAAGAGATCGGGT","thymocyte-DP-proliferating",NA
+"10X_P7_11_CATCAAGAGCCTATGT","immature SP Cd8",NA
+"10X_P7_11_CATCAAGCACCAGTTA","mix of cells","stromal_mesenchymal cells"
+"10X_P7_11_CATCAAGGTGTGAATA","thymocyte-DP",NA
+"10X_P7_11_CATCAGACAATCTACG","thymocyte-DP-proliferating",NA
+"10X_P7_11_CATCAGAGTTTAAGCC","immature SP Cd8",NA
+"10X_P7_11_CATCAGATCTTCCTTC","immature SP Cd8",NA
+"10X_P7_11_CATCCACAGCTACCTA","thymocyte-DP-proliferating",NA
+"10X_P7_11_CATCCACAGGAACTGC","thymocyte-DP",NA
+"10X_P7_11_CATCCACCAGTGGGAT","immature SP Cd8",NA
+"10X_P7_11_CATCCACTCTGGTTCC","immature SP Cd8",NA
+"10X_P7_11_CATCCACTCTTGTACT","thymocyte-DP",NA
+"10X_P7_11_CATCGAAGTAATCACC","immature SP Cd8",NA
+"10X_P7_11_CATCGAATCAATCTCT","immature SP Cd8",NA
+"10X_P7_11_CATCGGGAGATGCCTT","thymocyte-DP",NA
+"10X_P7_11_CATCGGGAGCGGCTTC","thymocyte-DP-proliferating",NA
+"10X_P7_11_CATCGGGCAGCCAGAA","DN-Stage4b",NA
+"10X_P7_11_CATCGGGGTTTACTCT","thymocyte-DP-proliferating",NA
+"10X_P7_11_CATGACACAATTGCTG","immature SP Cd8",NA
+"10X_P7_11_CATGACAGTCGAAAGC","thymocyte-DP",NA
+"10X_P7_11_CATGACAGTCTGCAAT","thymocyte-DP",NA
+"10X_P7_11_CATGACAGTTCCAACA","DN-Stage4b",NA
+"10X_P7_11_CATGCCTGTATAAACG","thymocyte-DP-proliferating",NA
+"10X_P7_11_CATGCCTTCCATGAAC","immature SP Cd8",NA
+"10X_P7_11_CATGGCGGTAACGACG","thymocyte-DP-proliferating",NA
+"10X_P7_11_CATGGCGTCACTTACT","DN-Stage 4c",NA
+"10X_P7_11_CATTATCGTTAAAGAC","thymocyte-DP-proliferating",NA
+"10X_P7_11_CATTATCTCGTCCAGG","thymocyte-DP",NA
+"10X_P7_11_CATTCGCAGAAACCTA","thymocyte-DP-proliferating",NA
+"10X_P7_11_CATTCGCCACTACAGT","thymocyte-DP",NA
+"10X_P7_11_CATTCGCTCTATCCTA","immature SP Cd8",NA
+"10X_P7_11_CCAATCCAGAACTGTA","thymocyte-DP",NA
+"10X_P7_11_CCAATCCAGAGTGACC","thymocyte-DP-proliferating",NA
+"10X_P7_11_CCAATCCCAGGAATCG","thymocyte-DP",NA
+"10X_P7_11_CCAATCCTCATGTGGT","thymocyte-DP-proliferating",NA
+"10X_P7_11_CCACCTAAGGGTTCCC","thymocyte-DP",NA
+"10X_P7_11_CCACCTACAGACAAGC","DN-Stage 4c",NA
+"10X_P7_11_CCACGGAAGATCGATA","thymocyte-DP",NA
+"10X_P7_11_CCACGGAAGCCTTGAT","thymocyte-DP-proliferating",NA
+"10X_P7_11_CCACGGACACGCGAAA","immature SP Cd8",NA
+"10X_P7_11_CCACTACAGACTGTAA","DN-Stage4b",NA
+"10X_P7_11_CCACTACAGCTTCGCG","thymocyte-DP-proliferating",NA
+"10X_P7_11_CCACTACAGTCCGTAT","DN-Stage 4c",NA
+"10X_P7_11_CCACTACGTCAACTGT","thymocyte-DP",NA
+"10X_P7_11_CCACTACTCCATTCTA","thymocyte-DP",NA
+"10X_P7_11_CCAGCGAAGTTTAGGA","DN-Stage3",NA
+"10X_P7_11_CCAGCGACATTATCTC","DN-Stage3",NA
+"10X_P7_11_CCAGCGAGTATTCGTG","DN-Stage4b",NA
+"10X_P7_11_CCAGCGATCTTTACGT","thymocyte-DP-proliferating",NA
+"10X_P7_11_CCATGTCCACGAAAGC","immature SP Cd8",NA
+"10X_P7_11_CCATGTCCAGTTTACG","DN-Stage4b",NA
+"10X_P7_11_CCATTCGAGATGTAAC","immature SP Cd8",NA
+"10X_P7_11_CCATTCGTCACAATGC","thymocyte-DP",NA
+"10X_P7_11_CCCAATCAGGAGTCTG","thymocyte-DP",NA
+"10X_P7_11_CCCAATCCACCGAATT","thymocyte-DP",NA
+"10X_P7_11_CCCAATCGTCAATGTC","immature SP Cd8",NA
+"10X_P7_11_CCCAATCTCACTTATC","thymocyte-DP-proliferating",NA
+"10X_P7_11_CCCAGTTCAATGAATG","immature SP Cd8",NA
+"10X_P7_11_CCCAGTTGTGAGGGTT","thymocyte-DP",NA
+"10X_P7_11_CCCATACCAAACTGTC","thymocyte-DP-proliferating",NA
+"10X_P7_11_CCCATACGTCAATGTC","thymocyte-DP-proliferating",NA
+"10X_P7_11_CCCATACTCCCAAGTA","immature SP Cd8",NA
+"10X_P7_11_CCCATACTCTCGATGA","thymocyte-DP-proliferating",NA
+"10X_P7_11_CCCTCCTAGAGTTGGC","thymocyte-DP-proliferating",NA
+"10X_P7_11_CCCTCCTAGCGATATA","DN-Stage4b",NA
+"10X_P7_11_CCCTCCTCAAACAACA","thymocyte-DP",NA
+"10X_P7_11_CCCTCCTCACAACTGT","thymocyte-DP-proliferating",NA
+"10X_P7_11_CCCTCCTGTCCGAATT","thymocyte-DP-proliferating",NA
+"10X_P7_11_CCCTCCTTCACCGTAA","DN-Stage4b",NA
+"10X_P7_11_CCGGGATAGAGCTTCT","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_CCGGGATAGATACACA","immature SP Cd8",NA
+"10X_P7_11_CCGGGATTCTTTACGT","stromal mesenchymal cell",NA
+"10X_P7_11_CCGGTAGGTAACGACG","thymocyte-DP-proliferating",NA
+"10X_P7_11_CCGGTAGGTTTGGGCC","DN-Stage4b",NA
+"10X_P7_11_CCGGTAGTCAGGCGAA","thymocyte-DP-proliferating",NA
+"10X_P7_11_CCGTACTCACCCTATC","thymocyte-DP-proliferating",NA
+"10X_P7_11_CCGTACTTCACGCATA","DN-Stage4b",NA
+"10X_P7_11_CCGTTCAGTAGTGAAT","DN-Stage4b",NA
+"10X_P7_11_CCGTTCATCTCCCTGA","thymocyte-DP",NA
+"10X_P7_11_CCTAAAGTCCAGAAGG","thymocyte-DP-proliferating",NA
+"10X_P7_11_CCTACACCATACAGCT","DN-Stage4b",NA
+"10X_P7_11_CCTACACTCCACGTTC","DN-Stage4b",NA
+"10X_P7_11_CCTACCAAGTCTCGGC","DN-Stage4b",NA
+"10X_P7_11_CCTACCACACCTCGTT","immature SP Cd8",NA
+"10X_P7_11_CCTACCACATTGGCGC","thymocyte-DP-proliferating",NA
+"10X_P7_11_CCTACCAGTCGGATCC","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_CCTACCATCAACGGGA","thymocyte-DP-proliferating",NA
+"10X_P7_11_CCTACCATCAGTCAGT","DN-Stage4b",NA
+"10X_P7_11_CCTAGCTAGATCCCGC","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_CCTAGCTCAAGTAATG","thymocyte-DP-proliferating",NA
+"10X_P7_11_CCTAGCTCAGATTGCT","thymocyte-DP-proliferating",NA
+"10X_P7_11_CCTAGCTCATCGGTTA","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_CCTATTAAGTACATGA","thymocyte-DP-proliferating",NA
+"10X_P7_11_CCTCAGTCAAGTTCTG","thymocyte-DP",NA
+"10X_P7_11_CCTCAGTGTATAGGTA","thymocyte-DP-proliferating",NA
+"10X_P7_11_CCTCAGTGTCGAAAGC","immature SP Cd8",NA
+"10X_P7_11_CCTCAGTGTCTAAAGA","DN-Stage4b",NA
+"10X_P7_11_CCTCAGTTCACGACTA","thymocyte-DP",NA
+"10X_P7_11_CCTCTGAAGCACAGGT","immature SP Cd8",NA
+"10X_P7_11_CCTTACGAGCATCATC","thymocyte-DP",NA
+"10X_P7_11_CCTTACGGTGAAATCA","immature SP Cd8",NA
+"10X_P7_11_CCTTACGTCTGTCTCG","DN-Stage4b",NA
+"10X_P7_11_CCTTCCCCAGATGGCA","thymocyte-DP",NA
+"10X_P7_11_CCTTCCCCAGGCTGAA","immature SP Cd8",NA
+"10X_P7_11_CCTTCCCTCTGTTTGT","thymocyte-DP",NA
+"10X_P7_11_CCTTCGACAGATCGGA","DN-Stage4b",NA
+"10X_P7_11_CCTTCGACAGCCTGTG","thymocyte-DP-proliferating",NA
+"10X_P7_11_CCTTCGACAGTTCATG","stromal mesenchymal cell",NA
+"10X_P7_11_CCTTCGATCAGAGACG","thymocyte-DP-proliferating",NA
+"10X_P7_11_CCTTTCTCATTGTGCA","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_CCTTTCTGTAGCGTCC","thymocyte-DP-proliferating",NA
+"10X_P7_11_CGAACATAGCGCCTTG","thymocyte-DP",NA
+"10X_P7_11_CGAACATCAAGTAATG","thymocyte-DP",NA
+"10X_P7_11_CGAACATCACCATGTA","thymocyte-DP-proliferating",NA
+"10X_P7_11_CGAACATGTAGAAAGG","thymocyte-DP-proliferating",NA
+"10X_P7_11_CGAACATGTAGCGTAG","thymocyte-DP",NA
+"10X_P7_11_CGAACATTCGCGTTTC","immature SP Cd8",NA
+"10X_P7_11_CGAATGTAGCTTCGCG","thymocyte-DP-proliferating",NA
+"10X_P7_11_CGAATGTCACGGTAGA","thymocyte-DP-proliferating",NA
+"10X_P7_11_CGACCTTCATGAACCT","thymocyte-DP-proliferating",NA
+"10X_P7_11_CGACCTTGTCTCACCT","thymocyte-DP",NA
+"10X_P7_11_CGACTTCTCCTTAATC","DN-Stage4b",NA
+"10X_P7_11_CGACTTCTCTTCTGGC","DN-Stage4b",NA
+"10X_P7_11_CGACTTCTCTTTACAC","immature SP Cd8",NA
+"10X_P7_11_CGAGAAGAGACTAGGC","thymocyte-DP",NA
+"10X_P7_11_CGAGAAGCACCCATTC","thymocyte-DP-proliferating",NA
+"10X_P7_11_CGAGAAGCAGGCGATA","thymocyte-DP",NA
+"10X_P7_11_CGAGAAGGTAAATGTG","thymocyte-DP",NA
+"10X_P7_11_CGAGAAGTCGCCAAAT","thymocyte-DP-proliferating",NA
+"10X_P7_11_CGAGCACCACCGCTAG","thymocyte-DP-proliferating",NA
+"10X_P7_11_CGAGCACCAGTAAGAT","thymocyte-DP",NA
+"10X_P7_11_CGAGCACGTGCATCTA","mix of cells","stromal_mesenchymal cells"
+"10X_P7_11_CGATCGGAGCCACGTC","DN-Stage4b",NA
+"10X_P7_11_CGATGGCCAGATCTGT","thymocyte-DP",NA
+"10X_P7_11_CGATGGCGTAACGTTC","stromal mesenchymal cell",NA
+"10X_P7_11_CGATGTAAGATGGGTC","immature SP Cd8",NA
+"10X_P7_11_CGATGTAAGTGACATA","thymocyte-DP-proliferating",NA
+"10X_P7_11_CGATGTAGTATTACCG","DN-Stage4b",NA
+"10X_P7_11_CGATTGATCAGATAAG","thymocyte-DP",NA
+"10X_P7_11_CGATTGATCAGGCGAA","thymocyte-DP",NA
+"10X_P7_11_CGATTGATCATGTCCC","thymocyte-DP-proliferating",NA
+"10X_P7_11_CGATTGATCCGCATCT","mix of cells","stromal_mesenchymal cells"
+"10X_P7_11_CGATTGATCCTATTCA","thymocyte-DP",NA
+"10X_P7_11_CGCCAAGAGGCTAGGT","mix of cells","stromal_mesenchymal cells"
+"10X_P7_11_CGCCAAGCAGTGGGAT","thymocyte-DP",NA
+"10X_P7_11_CGCCAAGTCAACGGGA","thymocyte-DP-proliferating",NA
+"10X_P7_11_CGCGGTAAGGGTCGAT","mix of cells","stromal_mesenchymal cells"
+"10X_P7_11_CGCGTTTAGCCACCTG","thymocyte-DP",NA
+"10X_P7_11_CGCGTTTAGCCCAACC","thymocyte-DP",NA
+"10X_P7_11_CGCGTTTGTAGCGCTC","mix of cells","stromal_mesenchymal cells"
+"10X_P7_11_CGCGTTTTCTGAGGGA","thymocyte-DP-proliferating",NA
+"10X_P7_11_CGCTATCAGATGTGTA","thymocyte-DP-proliferating",NA
+"10X_P7_11_CGCTATCAGCACCGTC","immature SP Cd8",NA
+"10X_P7_11_CGCTATCCACAACGTT","thymocyte-DP",NA
+"10X_P7_11_CGCTATCGTAAAGTCA","immature SP Cd8",NA
+"10X_P7_11_CGCTGGAAGCTAGCCC","immature SP Cd8",NA
+"10X_P7_11_CGCTGGAGTCAGTGGA","thymocyte-DP",NA
+"10X_P7_11_CGCTTCAGTCTTGATG","thymocyte-DP",NA
+"10X_P7_11_CGCTTCAGTTGCGTTA","immature SP Cd8",NA
+"10X_P7_11_CGGACACGTAGGAGTC","thymocyte-DP-proliferating",NA
+"10X_P7_11_CGGACGTAGATGTGTA","thymocyte-DP-proliferating",NA
+"10X_P7_11_CGGACGTGTTGTACAC","immature SP Cd8",NA
+"10X_P7_11_CGGACTGAGCGATGAC","thymocyte-DP",NA
+"10X_P7_11_CGGACTGCAACACCTA","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_CGGACTGCACGCATCG","mix of cells","stromal_mesenchymal cells"
+"10X_P7_11_CGGACTGCACTGCCAG","DN-Stage4b",NA
+"10X_P7_11_CGGACTGTCGTGACAT","immature SP Cd8",NA
+"10X_P7_11_CGGAGCTGTAATAGCA","immature SP Cd8",NA
+"10X_P7_11_CGGAGCTGTATTCGTG","thymocyte-DP-proliferating",NA
+"10X_P7_11_CGGAGCTGTTCCAACA","immature SP Cd8",NA
+"10X_P7_11_CGGAGTCCAACAACCT","thymocyte-DP",NA
+"10X_P7_11_CGGAGTCTCGGCCGAT","DN-Stage4b",NA
+"10X_P7_11_CGGCTAGCATACGCTA","immature SP Cd8",NA
+"10X_P7_11_CGGCTAGGTGTCGCTG","DN-Stage4b",NA
+"10X_P7_11_CGGCTAGTCATGCATG","thymocyte-DP",NA
+"10X_P7_11_CGGGTCAAGATATACG","thymocyte-DP",NA
+"10X_P7_11_CGGGTCACAACAACCT","DN-Stage4b",NA
+"10X_P7_11_CGGGTCACATCAGTAC","immature SP Cd8",NA
+"10X_P7_11_CGGGTCAGTTAGTGGG","immature SP Cd8",NA
+"10X_P7_11_CGGTTAACAGGTCTCG","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_CGGTTAAGTTCACGGC","immature SP Cd8",NA
+"10X_P7_11_CGGTTAATCATCGATG","thymocyte-DP-proliferating",NA
+"10X_P7_11_CGGTTAATCGTCTGCT","thymocyte-DP-proliferating",NA
+"10X_P7_11_CGTAGCGGTAGTACCT","thymocyte-DP-proliferating",NA
+"10X_P7_11_CGTAGCGTCCCTGACT","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_CGTAGCGTCTCAAACG","immature SP Cd8",NA
+"10X_P7_11_CGTAGCGTCTCTTGAT","thymocyte-DP-proliferating",NA
+"10X_P7_11_CGTAGGCGTCACCCAG","DN-Stage4b",NA
+"10X_P7_11_CGTCACTAGCAACGGT","thymocyte-DP-proliferating",NA
+"10X_P7_11_CGTCACTAGCCCGAAA","immature SP Cd8",NA
+"10X_P7_11_CGTCACTCACTCAGGC","DN-Stage 4c",NA
+"10X_P7_11_CGTCACTCAGCTGCAC","thymocyte-DP",NA
+"10X_P7_11_CGTCAGGCAGATGGGT","immature SP Cd8",NA
+"10X_P7_11_CGTCAGGTCAACTCTT","immature SP Cd8",NA
+"10X_P7_11_CGTCAGGTCCCGACTT","mix of cells","stromal_mesenchymal cells"
+"10X_P7_11_CGTCCATCAGGAACGT","DN-Stage4b",NA
+"10X_P7_11_CGTCCATTCATGTGGT","thymocyte-DP",NA
+"10X_P7_11_CGTCTACGTCATACTG","mix of cells","stromal_mesenchymal cells"
+"10X_P7_11_CGTCTACGTCGTCTTC","mix of cells","stromal_mesenchymal cells"
+"10X_P7_11_CGTCTACTCCCAGGTG","thymocyte-DP",NA
+"10X_P7_11_CGTGAGCAGCCGATTT","thymocyte-DP",NA
+"10X_P7_11_CGTGAGCAGGACAGAA","thymocyte-DP",NA
+"10X_P7_11_CGTGAGCCATCTCCCA","thymocyte-DP",NA
+"10X_P7_11_CGTGAGCGTTCATGGT","DN-Stage 4c",NA
+"10X_P7_11_CGTGAGCTCATTGCCC","thymocyte-DP",NA
+"10X_P7_11_CGTGAGCTCTGGTATG","thymocyte-DP-proliferating",NA
+"10X_P7_11_CGTGTAAAGACTAGAT","mix of cells","stromal_mesenchymal cells"
+"10X_P7_11_CGTGTAACACATAACC","DN-Stage 4c",NA
+"10X_P7_11_CGTGTAACAGGTGGAT","DN-Stage4b",NA
+"10X_P7_11_CGTGTAAGTAATAGCA","thymocyte-DP-proliferating",NA
+"10X_P7_11_CGTGTAAGTGAGCGAT","DN-Stage4b",NA
+"10X_P7_11_CGTGTCTAGCCCAGCT","thymocyte-DP",NA
+"10X_P7_11_CGTGTCTCAAAGTGCG","thymocyte-DP-proliferating",NA
+"10X_P7_11_CGTTAGAAGTACCGGA","DN-Stage 4c",NA
+"10X_P7_11_CGTTAGACAAATCCGT","thymocyte-DP-proliferating",NA
+"10X_P7_11_CGTTAGAGTCTCCACT","immature SP Cd8",NA
+"10X_P7_11_CGTTCTGAGATCCGAG","immature SP Cd8",NA
+"10X_P7_11_CGTTCTGGTACGAAAT","mix of cells","stromal_mesenchymal cells"
+"10X_P7_11_CGTTCTGGTATCAGTC","stromal mesenchymal cell",NA
+"10X_P7_11_CGTTCTGTCAAGATCC","thymocyte-DP",NA
+"10X_P7_11_CGTTGGGTCATCGCTC","thymocyte-DP",NA
+"10X_P7_11_CGTTGGGTCGGCGCAT","DN-Stage3",NA
+"10X_P7_11_CTAACTTCAGACAAGC","thymocyte-DP",NA
+"10X_P7_11_CTAACTTGTCTAGCCG","immature SP Cd8",NA
+"10X_P7_11_CTAACTTGTGGCTCCA","thymocyte-DP-proliferating",NA
+"10X_P7_11_CTAACTTTCACATAGC","thymocyte-DP-proliferating",NA
+"10X_P7_11_CTAACTTTCACCTCGT","thymocyte-DP",NA
+"10X_P7_11_CTAACTTTCCTAGTGA","thymocyte-DP",NA
+"10X_P7_11_CTAACTTTCGCGATCG","thymocyte-DP",NA
+"10X_P7_11_CTAAGACCAAGTACCT","thymocyte-DP-proliferating",NA
+"10X_P7_11_CTAAGACCAATAACGA","DN-Stage3",NA
+"10X_P7_11_CTAAGACCAATCCGAT","thymocyte-DP",NA
+"10X_P7_11_CTAAGACGTTGAGGTG","thymocyte-DP",NA
+"10X_P7_11_CTAATGGGTCTCAACA","mix of cells","stromal_mesenchymal cells"
+"10X_P7_11_CTACACCAGCTCCTCT","stromal mesenchymal cell",NA
+"10X_P7_11_CTACACCCAAACCCAT","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_CTACACCCAAGAAGAG","DN-Stage 4c",NA
+"10X_P7_11_CTACACCGTCTCTCTG","thymocyte-DP",NA
+"10X_P7_11_CTACACCTCCCTAACC","thymocyte-DP",NA
+"10X_P7_11_CTACATTCACGCTTTC","thymocyte-DP-proliferating",NA
+"10X_P7_11_CTACATTGTTTAGGAA","thymocyte-DP-proliferating",NA
+"10X_P7_11_CTACATTTCCGCGGTA","DN-Stage4b",NA
+"10X_P7_11_CTACCCAAGTGCCATT","thymocyte-DP",NA
+"10X_P7_11_CTACCCACACGAAACG","thymocyte-DP-proliferating",NA
+"10X_P7_11_CTACCCACATCGTCGG","thymocyte-DP-proliferating",NA
+"10X_P7_11_CTACCCATCCCACTTG","thymocyte-DP-proliferating",NA
+"10X_P7_11_CTACCCATCGAGAACG","DN-Stage4b",NA
+"10X_P7_11_CTACCCATCTAACTTC","immature SP Cd8",NA
+"10X_P7_11_CTACGTCCATCGATGT","thymocyte-DP",NA
+"10X_P7_11_CTACGTCCATTCTTAC","immature SP Cd8",NA
+"10X_P7_11_CTAGAGTTCGGAAATA","thymocyte-DP-proliferating",NA
+"10X_P7_11_CTAGCCTAGCTAGTCT","thymocyte-DP",NA
+"10X_P7_11_CTAGCCTCATATACCG","DN-Stage4b",NA
+"10X_P7_11_CTAGCCTCATCCCATC","thymocyte-DP",NA
+"10X_P7_11_CTAGCCTGTCATCCCT","thymocyte-DP",NA
+"10X_P7_11_CTAGCCTTCTCGATGA","DN-Stage4b",NA
+"10X_P7_11_CTAGTGAAGTACTTGC","thymocyte-DP",NA
+"10X_P7_11_CTAGTGACATTAGCCA","thymocyte-DP-proliferating",NA
+"10X_P7_11_CTAGTGAGTCCAGTTA","thymocyte-DP-proliferating",NA
+"10X_P7_11_CTAGTGAGTCTTGTCC","DN-Stage4b",NA
+"10X_P7_11_CTCACACTCACAGTAC","DN-Stage4b",NA
+"10X_P7_11_CTCAGAAAGCTAAACA","immature SP Cd8",NA
+"10X_P7_11_CTCAGAAGTACCGAGA","DN-Stage4b",NA
+"10X_P7_11_CTCCTAGAGGGTCTCC","thymocyte-DP-proliferating",NA
+"10X_P7_11_CTCCTAGAGGTGACCA","DN-Stage4b",NA
+"10X_P7_11_CTCCTAGGTAAACACA","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_CTCGAAAAGGTCGGAT","thymocyte-DP",NA
+"10X_P7_11_CTCGAAACAAGCTGAG","thymocyte-DP",NA
+"10X_P7_11_CTCGAAAGTCGCCATG","thymocyte-DP",NA
+"10X_P7_11_CTCGAAATCACCTTAT","thymocyte-DP-proliferating",NA
+"10X_P7_11_CTCGAAATCTCTTGAT","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_CTCGAGGAGCTGCCCA","DN-Stage4b",NA
+"10X_P7_11_CTCGAGGCAACCGCCA","thymocyte-DP-proliferating",NA
+"10X_P7_11_CTCGAGGGTCAAAGCG","thymocyte-DP-proliferating",NA
+"10X_P7_11_CTCGGAGGTAGGACAC","thymocyte-DP-proliferating",NA
+"10X_P7_11_CTCGGAGGTGAGGCTA","immature SP Cd8",NA
+"10X_P7_11_CTCGGAGTCAGTCCCT","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_CTCGTACAGGCGACAT","thymocyte-DP-proliferating",NA
+"10X_P7_11_CTCGTACCAGCTTAAC","immature SP Cd8",NA
+"10X_P7_11_CTCGTACGTAGCTCCG","thymocyte-DP",NA
+"10X_P7_11_CTCGTACGTGTGAATA","thymocyte-DP-proliferating",NA
+"10X_P7_11_CTCGTCAAGACTACAA","thymocyte-DP-proliferating",NA
+"10X_P7_11_CTCGTCAAGTGTACTC","thymocyte-DP-proliferating",NA
+"10X_P7_11_CTCGTCAGTATATGAG","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_CTCGTCATCTGTCTAT","DN-Stage4b",NA
+"10X_P7_11_CTCGTCATCTTCGGTC","DN-Stage4b",NA
+"10X_P7_11_CTCTAATAGCCACGTC","thymocyte-DP",NA
+"10X_P7_11_CTCTAATCACTCTGTC","immature SP Cd8",NA
+"10X_P7_11_CTCTAATGTGCACCAC","thymocyte-DP",NA
+"10X_P7_11_CTCTACGGTATGAAAC","thymocyte-DP",NA
+"10X_P7_11_CTCTACGGTCTTGATG","thymocyte-DP-proliferating",NA
+"10X_P7_11_CTCTACGGTTCCATGA","DN-Stage4b",NA
+"10X_P7_11_CTCTACGTCATGGTCA","DN-Stage4b",NA
+"10X_P7_11_CTCTGGTCAAGCTGGA","thymocyte-DP-proliferating",NA
+"10X_P7_11_CTCTGGTGTAGGAGTC","thymocyte-DP",NA
+"10X_P7_11_CTGAAACAGAAACCAT","immature SP Cd8",NA
+"10X_P7_11_CTGAAACAGGGTGTTG","DN-Stage4b",NA
+"10X_P7_11_CTGAAACGTCTGATCA","thymocyte-DP",NA
+"10X_P7_11_CTGAAACTCGAACGGA","thymocyte-DP-proliferating",NA
+"10X_P7_11_CTGAAGTAGACGACGT","thymocyte-DP",NA
+"10X_P7_11_CTGAAGTGTCTAGCCG","thymocyte-DP",NA
+"10X_P7_11_CTGAAGTGTGTGAAAT","thymocyte-DP-proliferating",NA
+"10X_P7_11_CTGAAGTGTGTTTGTG","thymocyte-DP-proliferating",NA
+"10X_P7_11_CTGAAGTTCTCGCATC","DN-Stage4b",NA
+"10X_P7_11_CTGATAGAGAAACGCC","immature SP Cd8",NA
+"10X_P7_11_CTGATAGAGCTCCCAG","thymocyte-DP-proliferating",NA
+"10X_P7_11_CTGATAGGTACCGGCT","DN-Stage4b",NA
+"10X_P7_11_CTGATAGGTATTACCG","thymocyte-DP",NA
+"10X_P7_11_CTGATAGTCACCACCT","thymocyte-DP-proliferating",NA
+"10X_P7_11_CTGATCCCAAGTCTGT","thymocyte-DP-proliferating",NA
+"10X_P7_11_CTGATCCTCAACGGCC","thymocyte-DP",NA
+"10X_P7_11_CTGATCCTCCTCTAGC","thymocyte-DP-proliferating",NA
+"10X_P7_11_CTGATCCTCGCGGATC","immature SP Cd8",NA
+"10X_P7_11_CTGCCTAAGTGGCACA","thymocyte-DP",NA
+"10X_P7_11_CTGCCTACAAGGGTCA","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_CTGCGGAGTCATATGC","mix of cells","stromal_mesenchymal cells"
+"10X_P7_11_CTGCGGATCGCTTGTC","immature SP Cd8",NA
+"10X_P7_11_CTGCGGATCGTTACAG","thymocyte-DP-proliferating",NA
+"10X_P7_11_CTGCTGTGTAAGTGGC","thymocyte-DP-proliferating",NA
+"10X_P7_11_CTGCTGTTCATTTGGG","DN-Stage 4c",NA
+"10X_P7_11_CTGGTCTAGAGAGCTC","thymocyte-DP",NA
+"10X_P7_11_CTGGTCTCAGGAATCG","thymocyte-DP",NA
+"10X_P7_11_CTGGTCTGTCGCATCG","thymocyte-DP-proliferating",NA
+"10X_P7_11_CTGGTCTTCAATACCG","mix of cells","stromal_mesenchymal cells"
+"10X_P7_11_CTGGTCTTCGGTCCGA","immature SP Cd8",NA
+"10X_P7_11_CTGTGCTAGCTTCGCG","thymocyte-DP-proliferating",NA
+"10X_P7_11_CTGTGCTGTTGGTGGA","DN-Stage 4c",NA
+"10X_P7_11_CTGTTTACAGATCTGT","thymocyte-DP-proliferating",NA
+"10X_P7_11_CTGTTTATCTTAACCT","thymocyte-DP",NA
+"10X_P7_11_CTTAACTAGAAACGCC","thymocyte-DP",NA
+"10X_P7_11_CTTAACTAGCTAGTGG","immature SP Cd8",NA
+"10X_P7_11_CTTAACTAGTACACCT","thymocyte-DP",NA
+"10X_P7_11_CTTAACTAGTAGATGT","DN-Stage4b",NA
+"10X_P7_11_CTTAACTGTAGCGTGA","DN-Stage4b",NA
+"10X_P7_11_CTTAACTGTTTGGCGC","thymocyte-DP",NA
+"10X_P7_11_CTTAACTTCGTTACGA","thymocyte-DP-proliferating",NA
+"10X_P7_11_CTTACCGAGAATAGGG","thymocyte-DP-proliferating",NA
+"10X_P7_11_CTTAGGAAGGCATGTG","DN-Stage 4c",NA
+"10X_P7_11_CTTAGGACAAGCCTAT","thymocyte-DP-proliferating",NA
+"10X_P7_11_CTTAGGAGTCGTGGCT","DN-Stage4b",NA
+"10X_P7_11_CTTCTCTAGGGATACC","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_CTTGGCTAGACAATAC","DN-Stage4b",NA
+"10X_P7_11_CTTTGCGAGTTAAGTG","DN-Stage 4c",NA
+"10X_P7_11_CTTTGCGGTAGAAGGA","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_CTTTGCGTCACTCCTG","thymocyte-DP-proliferating",NA
+"10X_P7_11_CTTTGCGTCAGCGATT","thymocyte-DP-proliferating",NA
+"10X_P7_11_GAAACTCCAAGTACCT","thymocyte-DP",NA
+"10X_P7_11_GAAACTCGTCACTTCC","thymocyte-DP-proliferating",NA
+"10X_P7_11_GAAACTCGTCGGGTCT","thymocyte-DP-proliferating",NA
+"10X_P7_11_GAAATGAAGCTGCGAA","thymocyte-DP",NA
+"10X_P7_11_GAAATGATCCAACCAA","immature SP Cd8",NA
+"10X_P7_11_GAACATCAGAGAACAG","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_GAACATCGTGGAAAGA","DN-Stage3",NA
+"10X_P7_11_GAACATCTCTGATTCT","DN-Stage4b",NA
+"10X_P7_11_GAACCTAAGAGCTGGT","mix of cells","stromal_mesenchymal cells"
+"10X_P7_11_GAACCTAAGCCAGTAG","thymocyte-DP-proliferating",NA
+"10X_P7_11_GAACCTACAGCCAGAA","stromal mesenchymal cell",NA
+"10X_P7_11_GAACCTATCGGATGTT","immature SP Cd8",NA
+"10X_P7_11_GAACGGACATATGGTC","thymocyte-DP",NA
+"10X_P7_11_GAACGGACATCACGAT","thymocyte-DP",NA
+"10X_P7_11_GAAGCAGAGATCGATA","DN-Stage 4c",NA
+"10X_P7_11_GAAGCAGAGCTGATAA","stromal mesenchymal cell",NA
+"10X_P7_11_GAAGCAGGTCAAACTC","thymocyte-DP",NA
+"10X_P7_11_GAAGCAGGTCTAGTCA","mix of cells","stromal_mesenchymal cells"
+"10X_P7_11_GAATAAGAGACAATAC","thymocyte-DP",NA
+"10X_P7_11_GAATAAGGTGCAGTAG","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_GAATAAGTCTGTACGA","DN-Stage4b",NA
+"10X_P7_11_GAATGAAAGCTTATCG","thymocyte-DP-proliferating",NA
+"10X_P7_11_GAATGAAAGTTTCCTT","thymocyte-DP",NA
+"10X_P7_11_GAATGAATCACGATGT","immature SP Cd8",NA
+"10X_P7_11_GACACGCAGACTGTAA","thymocyte-DP",NA
+"10X_P7_11_GACACGCAGGCACATG","thymocyte-DP",NA
+"10X_P7_11_GACACGCCAAGGACTG","thymocyte-DP-proliferating",NA
+"10X_P7_11_GACACGCCACAGACAG","mix of cells","stromal_mesenchymal cells"
+"10X_P7_11_GACACGCCAGACGCTC","thymocyte-DP",NA
+"10X_P7_11_GACACGCGTTAAGAAC","immature SP Cd8",NA
+"10X_P7_11_GACAGAGAGGGTGTGT","immature SP Cd8",NA
+"10X_P7_11_GACAGAGCAGTATCTG","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_GACAGAGTCCAAACAC","DN-Stage4b",NA
+"10X_P7_11_GACCAATCACCACGTG","DN-Stage 4c",NA
+"10X_P7_11_GACCAATTCAACGCTA","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_GACCAATTCCTTTCTC","immature SP Cd8",NA
+"10X_P7_11_GACCTGGCATGCATGT","mix of cells","stromal_mesenchymal cells"
+"10X_P7_11_GACGCGTCAGTCCTTC","thymocyte-DP-proliferating",NA
+"10X_P7_11_GACGGCTAGCAGATCG","thymocyte-DP",NA
+"10X_P7_11_GACGGCTGTAAGTAGT","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_GACGTGCAGTGCGATG","thymocyte-DP-proliferating",NA
+"10X_P7_11_GACGTTACAGTTTACG","DN-Stage3",NA
+"10X_P7_11_GACGTTAGTAAGTAGT","DN-Stage4b",NA
+"10X_P7_11_GACGTTAGTCCGCTGA","DN-Stage4b",NA
+"10X_P7_11_GACGTTATCTAACTTC","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_GACTAACTCATAGCAC","DN-Stage 4c",NA
+"10X_P7_11_GACTAACTCGAATGGG","immature SP Cd8",NA
+"10X_P7_11_GACTACAAGATACACA","immature SP Cd8",NA
+"10X_P7_11_GACTACACAGTTAACC","thymocyte-DP-proliferating",NA
+"10X_P7_11_GACTACAGTTACAGAA","thymocyte-DP-proliferating",NA
+"10X_P7_11_GACTGCGAGTTCGATC","thymocyte-DP",NA
+"10X_P7_11_GACTGCGTCAATACCG","thymocyte-DP",NA
+"10X_P7_11_GACTGCGTCCATTCTA","DN-Stage4b",NA
+"10X_P7_11_GACTGCGTCCCAGGTG","DN-Stage4b",NA
+"10X_P7_11_GAGCAGAAGAGCTGGT","thymocyte-DP-proliferating",NA
+"10X_P7_11_GAGCAGAAGGCAAAGA","thymocyte-DP",NA
+"10X_P7_11_GAGCAGAAGTTGTCGT","thymocyte-DP",NA
+"10X_P7_11_GAGCAGACATTGGCGC","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_GAGCAGATCTGGTTCC","thymocyte-DP-proliferating",NA
+"10X_P7_11_GAGGTGACACCACGTG","thymocyte-DP-proliferating",NA
+"10X_P7_11_GAGGTGACAGATGAGC","thymocyte-DP",NA
+"10X_P7_11_GAGGTGATCACTGGGC","thymocyte-DP",NA
+"10X_P7_11_GAGGTGATCCAAACTG","thymocyte-DP",NA
+"10X_P7_11_GAGGTGATCCTGCAGG","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_GAGGTGATCTCTTATG","immature SP Cd8",NA
+"10X_P7_11_GATCAGTAGCAATCTC","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_GATCAGTCATGGTTGT","thymocyte-DP-proliferating",NA
+"10X_P7_11_GATCAGTTCGTAGGTT","DN-Stage4b",NA
+"10X_P7_11_GATCGATGTAAATGAC","immature SP Cd8",NA
+"10X_P7_11_GATCGCGAGGATATAC","thymocyte-DP",NA
+"10X_P7_11_GATCGCGAGTCAATAG","thymocyte-DP",NA
+"10X_P7_11_GATCGCGCACGGCTAC","thymocyte-DP",NA
+"10X_P7_11_GATCGCGCAGCGATCC","DN-Stage4b",NA
+"10X_P7_11_GATCGTAAGACAGAGA","thymocyte-DP-proliferating",NA
+"10X_P7_11_GATCGTAGTTGACGTT","thymocyte-DP-proliferating",NA
+"10X_P7_11_GATCGTAGTTGCGCAC","thymocyte-DP",NA
+"10X_P7_11_GATCGTATCCGCGTTT","thymocyte-DP",NA
+"10X_P7_11_GATCGTATCCGTAGTA","thymocyte-DP",NA
+"10X_P7_11_GATCGTATCGGAATCT","thymocyte-DP-proliferating",NA
+"10X_P7_11_GATCTAGAGATCCCGC","DN-Stage4b",NA
+"10X_P7_11_GATCTAGGTATATGGA","immature SP Cd8",NA
+"10X_P7_11_GATCTAGGTGTTCGAT","thymocyte-DP",NA
+"10X_P7_11_GATCTAGTCGGAATCT","thymocyte-DP",NA
+"10X_P7_11_GATGAAACAATCCAAC","thymocyte-DP-proliferating",NA
+"10X_P7_11_GATGAGGCACCTTGTC","thymocyte-DP-proliferating",NA
+"10X_P7_11_GATGAGGGTCGGGTCT","thymocyte-DP",NA
+"10X_P7_11_GATGAGGTCCTTGCCA","thymocyte-DP",NA
+"10X_P7_11_GATGAGGTCGATGAGG","thymocyte-DP",NA
+"10X_P7_11_GATGCTAAGCGCTCCA","DN-Stage4b",NA
+"10X_P7_11_GATGCTACAATGCCAT","DN-Stage 4c",NA
+"10X_P7_11_GATTCAGAGTGGACGT","thymocyte-DP",NA
+"10X_P7_11_GATTCAGGTCCGTTAA","thymocyte-DP-proliferating",NA
+"10X_P7_11_GCAATCAAGTAAGTAC","thymocyte-DP",NA
+"10X_P7_11_GCAATCAGTCTCTCGT","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_GCAATCATCGCCAGCA","thymocyte-DP",NA
+"10X_P7_11_GCAATCATCTACTATC","DN-Stage3",NA
+"10X_P7_11_GCACATAAGATGTAAC","thymocyte-DP-proliferating",NA
+"10X_P7_11_GCACATAAGCGCTCCA","mix of cells","stromal_mesenchymal cells"
+"10X_P7_11_GCACATATCAGGTAAA","DN-Stage3",NA
+"10X_P7_11_GCACATATCGTGACAT","thymocyte-DP",NA
+"10X_P7_11_GCACTCTAGGGCTTGA","DN-Stage 4c",NA
+"10X_P7_11_GCACTCTCACAGGAGT","thymocyte-DP-proliferating",NA
+"10X_P7_11_GCACTCTGTGCGAAAC","thymocyte-DP",NA
+"10X_P7_11_GCACTCTTCGAATGCT","thymocyte-DP",NA
+"10X_P7_11_GCACTCTTCTGCCAGG","thymocyte-DP-proliferating",NA
+"10X_P7_11_GCACTCTTCTTACCGC","mix of cells","stromal_mesenchymal cells"
+"10X_P7_11_GCAGCCAAGCTTCGCG","thymocyte-DP",NA
+"10X_P7_11_GCAGCCAAGGAGTAGA","thymocyte-DP",NA
+"10X_P7_11_GCAGCCACAGGACCCT","mix of cells","stromal_mesenchymal cells"
+"10X_P7_11_GCAGCCACATTGGTAC","DN-Stage4b",NA
+"10X_P7_11_GCAGCCAGTTAAGTAG","DN-Stage4b",NA
+"10X_P7_11_GCAGTTAAGTACCGGA","thymocyte-DP",NA
+"10X_P7_11_GCAGTTACACACGCTG","thymocyte-DP",NA
+"10X_P7_11_GCAGTTAGTCTAGCCG","immature SP Cd8",NA
+"10X_P7_11_GCATACACAATGGACG","thymocyte-DP",NA
+"10X_P7_11_GCATACAGTACGCTGC","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_GCATACAGTAGCTGCC","DN-Stage4b",NA
+"10X_P7_11_GCATACAGTGCAGACA","thymocyte-DP",NA
+"10X_P7_11_GCATACATCATCTGTT","DN-Stage4b",NA
+"10X_P7_11_GCATGATCATCTACGA","thymocyte-DP-proliferating",NA
+"10X_P7_11_GCATGATTCGCCCTTA","immature SP Cd8",NA
+"10X_P7_11_GCATGCGAGCCACGTC","thymocyte-DP-proliferating",NA
+"10X_P7_11_GCATGCGCAGCCTGTG","thymocyte-DP",NA
+"10X_P7_11_GCATGCGCATGTCCTC","thymocyte-DP",NA
+"10X_P7_11_GCATGCGGTGAAGGCT","thymocyte-DP-proliferating",NA
+"10X_P7_11_GCATGCGTCGTTACAG","thymocyte-DP-proliferating",NA
+"10X_P7_11_GCATGTAAGACTTGAA","DN-Stage4b",NA
+"10X_P7_11_GCATGTACACCGCTAG","thymocyte-DP",NA
+"10X_P7_11_GCATGTACATTCGACA","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_GCATGTAGTTACCGAT","DN-Stage4b",NA
+"10X_P7_11_GCATGTATCCTAGAAC","thymocyte-DP-proliferating",NA
+"10X_P7_11_GCCAAATAGCAGCGTA","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_GCCAAATCACAGCGTC","immature SP Cd8",NA
+"10X_P7_11_GCCAAATGTCGTGGCT","thymocyte-DP",NA
+"10X_P7_11_GCCAAATTCCTACAGA","stromal mesenchymal cell",NA
+"10X_P7_11_GCCAAATTCTGTGCAA","thymocyte-DP-proliferating",NA
+"10X_P7_11_GCGACCAAGGCCGAAT","DN-Stage4b",NA
+"10X_P7_11_GCGACCAGTTAAGAAC","DN-Stage4b",NA
+"10X_P7_11_GCGACCAGTTTCGCTC","mix of cells","stromal_mesenchymal cells"
+"10X_P7_11_GCGACCATCAGGCCCA","thymocyte-DP",NA
+"10X_P7_11_GCGAGAACACCTATCC","thymocyte-DP-proliferating",NA
+"10X_P7_11_GCGAGAACAGGGCATA","DN-Stage4b",NA
+"10X_P7_11_GCGAGAAGTAATTGGA","DN-Stage4b",NA
+"10X_P7_11_GCGAGAATCCATGCTC","thymocyte-DP",NA
+"10X_P7_11_GCGAGAATCTCAAACG","immature SP Cd8",NA
+"10X_P7_11_GCGCAACAGCACACAG","thymocyte-DP-proliferating",NA
+"10X_P7_11_GCGCAACAGGAATTAC","immature SP Cd8",NA
+"10X_P7_11_GCGCAACCATCACGTA","thymocyte-DP",NA
+"10X_P7_11_GCGCAACGTTGGAGGT","immature SP Cd8",NA
+"10X_P7_11_GCGCAACTCACCTCGT","thymocyte-DP",NA
+"10X_P7_11_GCGCAGTCATACGCCG","DN-Stage4b",NA
+"10X_P7_11_GCGCAGTTCGTAGGTT","thymocyte-DP",NA
+"10X_P7_11_GCGCCAAAGCTCCTTC","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_GCGCCAAAGGCTAGCA","thymocyte-DP",NA
+"10X_P7_11_GCGCCAAGTATCACCA","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_GCGCGATCAGCCTTTC","DN-Stage3",NA
+"10X_P7_11_GCGCGATGTTGAGGTG","thymocyte-DP-proliferating",NA
+"10X_P7_11_GCGGGTTGTCAATACC","thymocyte-DP",NA
+"10X_P7_11_GCGGGTTGTCGAAAGC","thymocyte-DP-proliferating",NA
+"10X_P7_11_GCTCCTATCAGAAATG","DN-Stage3",NA
+"10X_P7_11_GCTCCTATCCAGAAGG","DN-Stage4b",NA
+"10X_P7_11_GCTCTGTCACAACGTT","thymocyte-DP-proliferating",NA
+"10X_P7_11_GCTCTGTGTCAGGACA","DN-Stage4b",NA
+"10X_P7_11_GCTCTGTGTCGGCACT","thymocyte-DP-proliferating",NA
+"10X_P7_11_GCTCTGTTCAGCGATT","immature SP Cd8",NA
+"10X_P7_11_GCTCTGTTCTATCCTA","mix of cells","stromal_mesenchymal cells"
+"10X_P7_11_GCTGCAGCAGGATTGG","DN-Stage4b",NA
+"10X_P7_11_GCTGCGAAGCCCAATT","thymocyte-DP-proliferating",NA
+"10X_P7_11_GCTGCGACACATCCGG","immature SP Cd8",NA
+"10X_P7_11_GCTGCGACATCCCATC","immature SP Cd8",NA
+"10X_P7_11_GCTGCGAGTCTCTCTG","thymocyte-DP",NA
+"10X_P7_11_GCTGCTTAGCTTCGCG","thymocyte-DP",NA
+"10X_P7_11_GCTGCTTCATTCCTGC","thymocyte-DP-proliferating",NA
+"10X_P7_11_GCTGCTTGTACAGTGG","DN-Stage4b",NA
+"10X_P7_11_GCTGCTTGTATAGGTA","thymocyte-DP-proliferating",NA
+"10X_P7_11_GCTGCTTGTATCTGCA","DN-Stage4b",NA
+"10X_P7_11_GCTGCTTGTTGATTCG","thymocyte-DP",NA
+"10X_P7_11_GCTGCTTTCGGTTAAC","thymocyte-DP-proliferating",NA
+"10X_P7_11_GCTGGGTTCGGCGCAT","immature SP Cd8",NA
+"10X_P7_11_GCTGGGTTCGTCCAGG","immature SP Cd8",NA
+"10X_P7_11_GCTTCCATCGGCGCTA","thymocyte-DP-proliferating",NA
+"10X_P7_11_GCTTCCATCGTAGGTT","thymocyte-DP",NA
+"10X_P7_11_GCTTGAAGTCGCGAAA","thymocyte-DP-proliferating",NA
+"10X_P7_11_GGAAAGCTCGCAAACT","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_GGAACTTAGACAGACC","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_GGAACTTCAAGTAGTA","immature SP Cd8",NA
+"10X_P7_11_GGAACTTGTCTAGTGT","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_GGAACTTGTTCAGTAC","thymocyte-DP-proliferating",NA
+"10X_P7_11_GGAACTTTCGGTTCGG","mix of cells","stromal_mesenchymal cells"
+"10X_P7_11_GGAATAACAAACAACA","thymocyte-DP",NA
+"10X_P7_11_GGAATAACAACTGCGC","thymocyte-DP",NA
+"10X_P7_11_GGACAAGAGAGTCTGG","DN-Stage3",NA
+"10X_P7_11_GGACAAGAGCAAATCA","thymocyte-DP",NA
+"10X_P7_11_GGACAAGAGCCCAGCT","thymocyte-DP",NA
+"10X_P7_11_GGACAGAAGGGCTTCC","DN-Stage4b",NA
+"10X_P7_11_GGACAGACAGGTCTCG","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_GGACAGACATCTGGTA","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_GGACATTAGGAATGGA","thymocyte-DP-proliferating",NA
+"10X_P7_11_GGACATTCAAGACGTG","stromal mesenchymal cell",NA
+"10X_P7_11_GGACATTCAAGCGCTC","thymocyte-DP-proliferating",NA
+"10X_P7_11_GGACATTGTGTATGGG","DN-Stage 4c",NA
+"10X_P7_11_GGACATTTCAGCCTAA","thymocyte-DP",NA
+"10X_P7_11_GGACATTTCATCGCTC","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_GGACATTTCGCATGAT","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_GGACGTCAGATCTGAA","DN-Stage 4c",NA
+"10X_P7_11_GGACGTCCAAGACGTG","mix of cells","stromal_mesenchymal cells"
+"10X_P7_11_GGACGTCGTGTATGGG","thymocyte-DP-proliferating",NA
+"10X_P7_11_GGACGTCTCCGCGGTA","immature SP Cd8",NA
+"10X_P7_11_GGAGCAACATTGCGGC","DN-Stage4b",NA
+"10X_P7_11_GGAGCAATCATATCGG","thymocyte-DP-proliferating",NA
+"10X_P7_11_GGAGCAATCTGCGGCA","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_GGATGTTAGGTAGCTG","thymocyte-DP",NA
+"10X_P7_11_GGATGTTCATTTGCTT","immature SP Cd8",NA
+"10X_P7_11_GGATGTTTCACAGTAC","thymocyte-DP",NA
+"10X_P7_11_GGATGTTTCCTTAATC","thymocyte-DP",NA
+"10X_P7_11_GGATTACCAGAGCCAA","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_GGATTACCAGTGGAGT","thymocyte-DP-proliferating",NA
+"10X_P7_11_GGATTACGTGACAAAT","thymocyte-DP-proliferating",NA
+"10X_P7_11_GGCAATTAGATGTAAC","thymocyte-DP-proliferating",NA
+"10X_P7_11_GGCAATTGTGTCCTCT","thymocyte-DP",NA
+"10X_P7_11_GGCAATTTCTCCGGTT","thymocyte-DP-proliferating",NA
+"10X_P7_11_GGCCGATAGATGCCTT","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_GGCCGATAGGAATGGA","thymocyte-DP",NA
+"10X_P7_11_GGCCGATGTCACTTCC","thymocyte-DP-proliferating",NA
+"10X_P7_11_GGCGACTAGCGTAATA","DN-Stage4b",NA
+"10X_P7_11_GGCGACTCAAACCCAT","thymocyte-DP",NA
+"10X_P7_11_GGCGACTGTGCAGTAG","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_GGCTGGTGTTAAGACA","thymocyte-DP",NA
+"10X_P7_11_GGCTGGTTCAGGCGAA","DN-Stage 4c",NA
+"10X_P7_11_GGGAATGAGAGAGCTC","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_GGGAATGAGGACACCA","immature SP Cd8",NA
+"10X_P7_11_GGGAATGCATAGACTC","DN-Stage4b",NA
+"10X_P7_11_GGGAATGCATCCGGGT","thymocyte-DP",NA
+"10X_P7_11_GGGAATGGTGTAATGA","thymocyte-DP-proliferating",NA
+"10X_P7_11_GGGACCTGTCAAACTC","thymocyte-DP-proliferating",NA
+"10X_P7_11_GGGACCTGTCGTCTTC","thymocyte-DP-proliferating",NA
+"10X_P7_11_GGGAGATCACCAGCAC","immature SP Cd8",NA
+"10X_P7_11_GGGAGATCATGCCCGA","thymocyte-DP-proliferating",NA
+"10X_P7_11_GGGAGATGTACTTCTT","thymocyte-DP",NA
+"10X_P7_11_GGGAGATTCCCACTTG","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_GGGATGAGTACTCTCC","immature SP Cd8",NA
+"10X_P7_11_GGGATGAGTTCAGCGC","thymocyte-DP",NA
+"10X_P7_11_GGGCACTAGCGTTGCC","thymocyte-DP",NA
+"10X_P7_11_GGGCACTCAATGAAAC","DN-Stage4b",NA
+"10X_P7_11_GGGCACTCACCTTGTC","thymocyte-DP-proliferating",NA
+"10X_P7_11_GGGCATCAGCCGTCGT","thymocyte-DP",NA
+"10X_P7_11_GGGCATCTCAACACTG","thymocyte-DP",NA
+"10X_P7_11_GGGCATCTCGAATGCT","thymocyte-DP",NA
+"10X_P7_11_GGGTCTGAGAACTCGG","thymocyte-DP-proliferating",NA
+"10X_P7_11_GGGTCTGCACAAGACG","DN-Stage4b",NA
+"10X_P7_11_GGGTCTGGTATCACCA","thymocyte-DP",NA
+"10X_P7_11_GGGTCTGTCGTGGTCG","thymocyte-DP",NA
+"10X_P7_11_GGGTCTGTCTACTCAT","thymocyte-DP-proliferating",NA
+"10X_P7_11_GGGTTGCAGTGCCAGA","thymocyte-DP-proliferating",NA
+"10X_P7_11_GGGTTGCCACGGTAAG","DN-Stage4b",NA
+"10X_P7_11_GGGTTGCGTGATAAGT","DN-Stage4b",NA
+"10X_P7_11_GGGTTGCGTTACCAGT","mix of cells","stromal_mesenchymal cells"
+"10X_P7_11_GGTATTGAGCTAGCCC","mix of cells","stromal_mesenchymal cells"
+"10X_P7_11_GGTATTGCAAGCGAGT","immature SP Cd8",NA
+"10X_P7_11_GGTATTGGTTTACTCT","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_GGTATTGTCCTTAATC","thymocyte-DP",NA
+"10X_P7_11_GGTGAAGAGACGCAAC","DN-Stage4b",NA
+"10X_P7_11_GGTGAAGGTGGCTCCA","thymocyte-DP-proliferating",NA
+"10X_P7_11_GGTGCGTAGCTGGAAC","immature SP Cd8",NA
+"10X_P7_11_GGTGCGTAGGGAGTAA","thymocyte-DP",NA
+"10X_P7_11_GGTGTTAAGGCCCTCA","thymocyte-DP-proliferating",NA
+"10X_P7_11_GTAACGTAGTTCGCGC","DN-Stage4b",NA
+"10X_P7_11_GTAACGTTCTGTCAAG","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_GTAACTGAGATGTTAG","mix of cells","stromal_mesenchymal cells"
+"10X_P7_11_GTAACTGAGGTAAACT","thymocyte-DP-proliferating",NA
+"10X_P7_11_GTAACTGGTACTTAGC","thymocyte-DP-proliferating",NA
+"10X_P7_11_GTAACTGTCGACAGCC","mix of cells","stromal_mesenchymal cells"
+"10X_P7_11_GTACGTAAGCCCAACC","DN-Stage4b",NA
+"10X_P7_11_GTACGTAAGCCTTGAT","mix of cells","stromal_mesenchymal cells"
+"10X_P7_11_GTACGTACAAGCGTAG","thymocyte-DP-proliferating",NA
+"10X_P7_11_GTACTCCAGTAGCCGA","thymocyte-DP-proliferating",NA
+"10X_P7_11_GTACTCCCAACCGCCA","thymocyte-DP",NA
+"10X_P7_11_GTACTCCGTACCAGTT","thymocyte-DP-proliferating",NA
+"10X_P7_11_GTACTCCGTCGAGTTT","thymocyte-DP-proliferating",NA
+"10X_P7_11_GTACTCCTCGAATGGG","thymocyte-DP-proliferating",NA
+"10X_P7_11_GTACTTTCAAGGTTCT","thymocyte-DP",NA
+"10X_P7_11_GTACTTTTCAGCTCGG","DN-Stage3",NA
+"10X_P7_11_GTACTTTTCGCTGATA","thymocyte-DP-proliferating",NA
+"10X_P7_11_GTAGGCCCACTGTCGG","DN-Stage4b",NA
+"10X_P7_11_GTAGGCCCAGGCTGAA","mix of cells","stromal_mesenchymal cells"
+"10X_P7_11_GTAGGCCGTCTTGTCC","immature SP Cd8",NA
+"10X_P7_11_GTAGGCCGTTGTGGCC","thymocyte-DP-proliferating",NA
+"10X_P7_11_GTAGTCAAGAGCCCAA","immature SP Cd8",NA
+"10X_P7_11_GTAGTCAAGTGTCTCA","DN-Stage3",NA
+"10X_P7_11_GTAGTCAAGTGTTTGC","thymocyte-DP-proliferating",NA
+"10X_P7_11_GTAGTCACAATCGGTT","thymocyte-DP",NA
+"10X_P7_11_GTAGTCACATATGGTC","thymocyte-DP-proliferating",NA
+"10X_P7_11_GTAGTCAGTATAAACG","thymocyte-DP-proliferating",NA
+"10X_P7_11_GTAGTCAGTCTAGCCG","DN-Stage4b",NA
+"10X_P7_11_GTAGTCAGTGATAAGT","thymocyte-DP",NA
+"10X_P7_11_GTATTCTCATCGATGT","stromal mesenchymal cell",NA
+"10X_P7_11_GTATTCTGTGACCAAG","immature SP Cd8",NA
+"10X_P7_11_GTATTCTTCCAACCAA","thymocyte-DP-proliferating",NA
+"10X_P7_11_GTCAAGTAGGAGTTGC","DN-Stage4b",NA
+"10X_P7_11_GTCAAGTCAGGCTGAA","immature SP Cd8",NA
+"10X_P7_11_GTCAAGTGTACCATCA","immature SP Cd8",NA
+"10X_P7_11_GTCAAGTTCGCCAGCA","thymocyte-DP-proliferating",NA
+"10X_P7_11_GTCACAACAGCCAGAA","thymocyte-DP-proliferating",NA
+"10X_P7_11_GTCACAAGTATATGAG","thymocyte-DP",NA
+"10X_P7_11_GTCACGGCAAAGGCGT","thymocyte-DP-proliferating",NA
+"10X_P7_11_GTCACGGGTTGATTGC","immature SP Cd8",NA
+"10X_P7_11_GTCATTTCAACAACCT","mix of cells","stromal_mesenchymal cells"
+"10X_P7_11_GTCCTCACAATGTAAG","thymocyte-DP",NA
+"10X_P7_11_GTCCTCACACGAGGTA","thymocyte-DP-proliferating",NA
+"10X_P7_11_GTCCTCAGTAGCAAAT","thymocyte-DP",NA
+"10X_P7_11_GTCCTCAGTAGGCTGA","thymocyte-DP",NA
+"10X_P7_11_GTCCTCATCGACGGAA","immature SP Cd8",NA
+"10X_P7_11_GTCGGGTAGCAATCTC","immature SP Cd8",NA
+"10X_P7_11_GTCGGGTGTCAACTGT","DN-Stage3",NA
+"10X_P7_11_GTCGTAAGTATAGGGC","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_GTCTCGTAGACTTTCG","immature SP Cd8",NA
+"10X_P7_11_GTCTCGTCAATGTAAG","DN-Stage4b",NA
+"10X_P7_11_GTCTCGTTCTTAGAGC","thymocyte-DP",NA
+"10X_P7_11_GTCTTCGAGCCCAGCT","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_GTGAAGGCACTTCGAA","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_GTGAAGGGTAAGTGTA","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_GTGAAGGTCGTTTAGG","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_GTGAAGGTCTACTATC","DN-Stage4b",NA
+"10X_P7_11_GTGCAGCCAAGCGAGT","DN-Stage4b",NA
+"10X_P7_11_GTGCAGCTCAGCGATT","immature SP Cd8",NA
+"10X_P7_11_GTGCATAGTCCATCCT","immature SP Cd8",NA
+"10X_P7_11_GTGCTTCAGGCTAGCA","DN-Stage4b",NA
+"10X_P7_11_GTGCTTCAGTTCGCGC","thymocyte-DP",NA
+"10X_P7_11_GTGCTTCGTAATCACC","DN-Stage4b",NA
+"10X_P7_11_GTGCTTCGTCGCATCG","DN-Stage4b",NA
+"10X_P7_11_GTGCTTCGTCTAAAGA","immature SP Cd8",NA
+"10X_P7_11_GTGGGTCAGGTGATAT","DN-Stage4b",NA
+"10X_P7_11_GTGGGTCCAGGTCTCG","thymocyte-DP-proliferating",NA
+"10X_P7_11_GTGGGTCTCCATTCTA","thymocyte-DP-proliferating",NA
+"10X_P7_11_GTGTGCGTCACGAAGG","mix of cells","stromal_mesenchymal cells"
+"10X_P7_11_GTGTTAGAGTCCCACG","thymocyte-DP",NA
+"10X_P7_11_GTGTTAGTCAGAGGTG","thymocyte-DP-proliferating",NA
+"10X_P7_11_GTGTTAGTCGTTGCCT","DN-Stage4b",NA
+"10X_P7_11_GTTAAGCCAGCTTCGG","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_GTTACAGAGCCACCTG","thymocyte-DP",NA
+"10X_P7_11_GTTACAGAGCGTTCCG","thymocyte-DP",NA
+"10X_P7_11_GTTACAGTCAGTGCAT","DN-Stage4b",NA
+"10X_P7_11_GTTCATTGTAAACACA","thymocyte-DP",NA
+"10X_P7_11_GTTCATTTCAACACGT","thymocyte-DP-proliferating",NA
+"10X_P7_11_GTTCATTTCAATAAGG","thymocyte-DP-proliferating",NA
+"10X_P7_11_GTTCGGGCACTGCCAG","thymocyte-DP",NA
+"10X_P7_11_GTTCGGGGTTCCATGA","thymocyte-DP",NA
+"10X_P7_11_GTTCTCGAGAAGATTC","thymocyte-DP",NA
+"10X_P7_11_GTTCTCGAGCACCGTC","mix of cells","stromal_mesenchymal cells"
+"10X_P7_11_GTTTCTAAGGTTCCTA","mix of cells","stromal_mesenchymal cells"
+"10X_P7_11_GTTTCTAGTTCGTCTC","thymocyte-DP",NA
+"10X_P7_11_TAAACCGAGAGTCGGT","thymocyte-DP",NA
+"10X_P7_11_TAAACCGGTCATCGGC","immature SP Cd8",NA
+"10X_P7_11_TAAACCGGTGGTTTCA","stromal mesenchymal cell",NA
+"10X_P7_11_TAAACCGTCGCAAACT","thymocyte-DP",NA
+"10X_P7_11_TAAGAGACATTAACCG","thymocyte-DP-proliferating",NA
+"10X_P7_11_TAAGCGTAGAGTAAGG","DN-Stage4b",NA
+"10X_P7_11_TAAGCGTAGTACACCT","thymocyte-DP-proliferating",NA
+"10X_P7_11_TAAGCGTTCCACGTTC","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_TAAGCGTTCCGCATAA","thymocyte-DP",NA
+"10X_P7_11_TAAGTGCAGATACACA","thymocyte-DP",NA
+"10X_P7_11_TAAGTGCAGTTATCGC","DN-Stage4b",NA
+"10X_P7_11_TAAGTGCGTCCGTCAG","thymocyte-DP",NA
+"10X_P7_11_TAAGTGCGTCTCCACT","immature SP Cd8",NA
+"10X_P7_11_TACACGAAGGGATCTG","immature SP Cd8",NA
+"10X_P7_11_TACACGAGTAATAGCA","thymocyte-DP",NA
+"10X_P7_11_TACAGTGAGATATGGT","stromal mesenchymal cell",NA
+"10X_P7_11_TACAGTGAGGACACCA","DN-Stage4b",NA
+"10X_P7_11_TACAGTGGTGATGTGG","DN-Stage4b",NA
+"10X_P7_11_TACCTATAGAATGTGT","immature SP Cd8",NA
+"10X_P7_11_TACCTATGTTATTCTC","thymocyte-DP",NA
+"10X_P7_11_TACCTTAAGCGAGAAA","DN-Stage4b",NA
+"10X_P7_11_TACCTTAGTATTCTCT","thymocyte-DP-proliferating",NA
+"10X_P7_11_TACCTTATCGAATCCA","thymocyte-DP",NA
+"10X_P7_11_TACCTTATCTTCCTTC","thymocyte-DP-proliferating",NA
+"10X_P7_11_TACGGATAGCGTGAGT","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_TACGGATCAATGAAAC","DN-Stage 4c",NA
+"10X_P7_11_TACGGATTCCTGTAGA","thymocyte-DP-proliferating",NA
+"10X_P7_11_TACGGGCCAGTGGGAT","immature SP Cd8",NA
+"10X_P7_11_TACGGGCGTAGGACAC","thymocyte-DP-proliferating",NA
+"10X_P7_11_TACGGGCGTATCAGTC","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_TACGGTAAGAATGTTG","thymocyte-DP",NA
+"10X_P7_11_TACGGTACAAGCTGTT","thymocyte-DP",NA
+"10X_P7_11_TACGGTAGTAAAGTCA","immature SP Cd8",NA
+"10X_P7_11_TACTCATTCTTCGGTC","thymocyte-DP-proliferating",NA
+"10X_P7_11_TACTCGCCAGTGGAGT","thymocyte-DP",NA
+"10X_P7_11_TACTCGCGTCTTGTCC","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_TACTTACAGCGAGAAA","thymocyte-DP-proliferating",NA
+"10X_P7_11_TACTTACGTCCATGAT","DN-Stage4b",NA
+"10X_P7_11_TACTTACGTGGGTCAA","immature SP Cd8",NA
+"10X_P7_11_TACTTGTGTCGTCTTC","DN-Stage4b",NA
+"10X_P7_11_TACTTGTGTCTAACGT","mix of cells","stromal_mesenchymal cells"
+"10X_P7_11_TAGACCAAGTGAAGAG","DN-Stage4b",NA
+"10X_P7_11_TAGACCACAAACGCGA","thymocyte-DP",NA
+"10X_P7_11_TAGACCACAACGATCT","DN-Stage4b",NA
+"10X_P7_11_TAGACCACAATAGCGG","thymocyte-DP",NA
+"10X_P7_11_TAGACCATCCTCATTA","thymocyte-DP-proliferating",NA
+"10X_P7_11_TAGCCGGCAGTCAGAG","DN-Stage4b",NA
+"10X_P7_11_TAGGCATCATGCATGT","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_TAGGCATTCTCCAGGG","DN-Stage4b",NA
+"10X_P7_11_TAGTGGTAGAATCTCC","immature SP Cd8",NA
+"10X_P7_11_TAGTGGTAGCGTGAAC","immature SP Cd8",NA
+"10X_P7_11_TAGTGGTCAAAGTCAA","thymocyte-DP",NA
+"10X_P7_11_TAGTGGTGTACTTGAC","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_TAGTTGGTCCTGCTTG","thymocyte-DP-proliferating",NA
+"10X_P7_11_TAGTTGGTCGTTTAGG","thymocyte-DP-proliferating",NA
+"10X_P7_11_TATCAGGAGTGAAGAG","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_TATCAGGCAGCCTTTC","thymocyte-DP-proliferating",NA
+"10X_P7_11_TATCAGGCATGGATGG","thymocyte-DP",NA
+"10X_P7_11_TATCAGGGTTTAGCTG","DN-Stage4b",NA
+"10X_P7_11_TATCAGGTCCCAACGG","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_TATCTCAGTTACGCGC","DN-Stage3",NA
+"10X_P7_11_TATCTCATCAGTGTTG","DN-Stage4b",NA
+"10X_P7_11_TATGCCCAGGATATAC","thymocyte-DP",NA
+"10X_P7_11_TATGCCCCAGTACACT","DN-Stage4b",NA
+"10X_P7_11_TATTACCGTCTAGCCG","DN-Stage4b",NA
+"10X_P7_11_TCAACGACATTATCTC","DN-Stage4b",NA
+"10X_P7_11_TCAACGAGTCTTCGTC","thymocyte-DP-proliferating",NA
+"10X_P7_11_TCAACGAGTGTAACGG","thymocyte-DP-proliferating",NA
+"10X_P7_11_TCAACGAGTTACGACT","immature SP Cd8",NA
+"10X_P7_11_TCAACGAGTTTGTTTC","immature SP Cd8",NA
+"10X_P7_11_TCAATCTCATCTCCCA","DN-Stage3",NA
+"10X_P7_11_TCAATCTTCTGACCTC","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_TCACAAGCAATGGTCT","immature SP Cd8",NA
+"10X_P7_11_TCACAAGGTCGCTTTC","thymocyte-DP",NA
+"10X_P7_11_TCACAAGTCAGCAACT","DN-Stage4b",NA
+"10X_P7_11_TCACAAGTCAGTCAGT","DN-Stage4b",NA
+"10X_P7_11_TCACAAGTCAGTTAGC","immature SP Cd8",NA
+"10X_P7_11_TCACGAAAGCATCATC","thymocyte-DP-proliferating",NA
+"10X_P7_11_TCACGAAAGGAGCGTT","thymocyte-DP-proliferating",NA
+"10X_P7_11_TCACGAAGTCTTGTCC","immature SP Cd8",NA
+"10X_P7_11_TCACGAAGTTCTCATT","mix of cells","stromal_mesenchymal cells"
+"10X_P7_11_TCACGAATCTACGAGT","thymocyte-DP",NA
+"10X_P7_11_TCAGATGAGTACGCGA","thymocyte-DP",NA
+"10X_P7_11_TCAGATGCACAACGCC","thymocyte-DP-proliferating",NA
+"10X_P7_11_TCAGATGCAGCTCGAC","thymocyte-DP-proliferating",NA
+"10X_P7_11_TCAGATGGTTCTGAAC","thymocyte-DP-proliferating",NA
+"10X_P7_11_TCAGATGTCAAGATCC","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_TCAGCAAAGAGTCTGG","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_TCAGCAACATCGGACC","immature SP Cd8",NA
+"10X_P7_11_TCAGCTCCATTACGAC","immature SP Cd8",NA
+"10X_P7_11_TCAGCTCTCCTGCAGG","thymocyte-DP",NA
+"10X_P7_11_TCAGGATAGAGACTTA","thymocyte-DP",NA
+"10X_P7_11_TCAGGATAGCCAACAG","thymocyte-DP",NA
+"10X_P7_11_TCAGGATTCCAGAGGA","DN-Stage4b",NA
+"10X_P7_11_TCAGGATTCTATCCTA","immature SP Cd8",NA
+"10X_P7_11_TCAGGTACAGCGTAAG","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_TCAGGTAGTAATCGTC","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_TCAGGTAGTATTAGCC","thymocyte-DP",NA
+"10X_P7_11_TCAGGTATCTAACTGG","immature SP Cd8",NA
+"10X_P7_11_TCATTACAGGCCATAG","thymocyte-DP",NA
+"10X_P7_11_TCATTACCATGCCTTC","DN-Stage 4c",NA
+"10X_P7_11_TCATTACGTTACGGAG","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_TCATTTGAGTCATCCA","immature SP Cd8",NA
+"10X_P7_11_TCATTTGCAATGTTGC","DN-Stage4b",NA
+"10X_P7_11_TCATTTGGTGACTACT","thymocyte-DP-proliferating",NA
+"10X_P7_11_TCATTTGGTGCGCTTG","DN-Stage4b",NA
+"10X_P7_11_TCCACACCAATTCCTT","immature SP Cd8",NA
+"10X_P7_11_TCCACACGTCAGAATA","thymocyte-DP",NA
+"10X_P7_11_TCCACACGTCTCTCGT","DN-Stage4b",NA
+"10X_P7_11_TCCACACGTTTGTTGG","thymocyte-DP",NA
+"10X_P7_11_TCCACACTCGGTGTCG","DN-Stage4b",NA
+"10X_P7_11_TCCCGATCAAAGTGCG","thymocyte-DP-proliferating",NA
+"10X_P7_11_TCGAGGCAGCTGGAAC","DN-Stage 4c",NA
+"10X_P7_11_TCGAGGCCAATGGTCT","thymocyte-DP",NA
+"10X_P7_11_TCGCGAGCAAATTGCC","DN-Stage4b",NA
+"10X_P7_11_TCGCGAGCAAGCGAGT","thymocyte-DP-proliferating",NA
+"10X_P7_11_TCGCGAGGTAAAGTCA","thymocyte-DP-proliferating",NA
+"10X_P7_11_TCGCGAGGTAGAGGAA","immature SP Cd8",NA
+"10X_P7_11_TCGCGAGTCGTATCAG","mix of cells","stromal_mesenchymal cells"
+"10X_P7_11_TCGCGAGTCTCACATT","thymocyte-DP",NA
+"10X_P7_11_TCGCGTTGTTCTGTTT","thymocyte-DP",NA
+"10X_P7_11_TCGCGTTTCACGGTTA","DN-Stage 4c",NA
+"10X_P7_11_TCGGGACAGGGCTTCC","thymocyte-DP",NA
+"10X_P7_11_TCGGGACGTTACGTCA","immature SP Cd8",NA
+"10X_P7_11_TCGGGACTCCTAGGGC","thymocyte-DP",NA
+"10X_P7_11_TCGGTAAAGGACCACA","thymocyte-DP",NA
+"10X_P7_11_TCGGTAATCAGTGCAT","mix of cells","stromal_mesenchymal cells"
+"10X_P7_11_TCGGTAATCCCACTTG","DN-Stage4b",NA
+"10X_P7_11_TCGTAGACAACGATGG","thymocyte-DP-proliferating",NA
+"10X_P7_11_TCGTAGACATTAGCCA","DN-Stage 4c",NA
+"10X_P7_11_TCTATTGGTAGGGACT","mix of cells","stromal_mesenchymal cells"
+"10X_P7_11_TCTATTGGTGCACTTA","DN-Stage4b",NA
+"10X_P7_11_TCTCATAAGGCTAGGT","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_TCTCATACACCGATAT","thymocyte-DP",NA
+"10X_P7_11_TCTCATACATGGTAGG","DN-Stage 4c",NA
+"10X_P7_11_TCTCATAGTTTGGCGC","thymocyte-DP-proliferating",NA
+"10X_P7_11_TCTCATATCAGCTCGG","DN-Stage4b",NA
+"10X_P7_11_TCTCTAACAGTTAACC","thymocyte-DP",NA
+"10X_P7_11_TCTCTAAGTACACCGC","immature SP Cd8",NA
+"10X_P7_11_TCTCTAATCCACGTTC","thymocyte-DP",NA
+"10X_P7_11_TCTGAGAAGTTTGCGT","thymocyte-DP",NA
+"10X_P7_11_TCTGAGAGTCCGACGT","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_TCTGAGATCCGCTGTT","immature SP Cd8",NA
+"10X_P7_11_TCTGAGATCTCGTATT","DN-Stage4b",NA
+"10X_P7_11_TCTGAGATCTCTGAGA","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_TCTGGAAAGCCAGTTT","immature SP Cd8",NA
+"10X_P7_11_TCTTCGGCAAGGTGTG","thymocyte-DP-proliferating",NA
+"10X_P7_11_TCTTCGGGTCGGCACT","DN-Stage4b",NA
+"10X_P7_11_TCTTTCCCACAGATTC","thymocyte-DP",NA
+"10X_P7_11_TCTTTCCGTGAGGCTA","DN-Stage4b",NA
+"10X_P7_11_TCTTTCCGTGCAGACA","thymocyte-DP",NA
+"10X_P7_11_TGAAAGAAGTAATCCC","thymocyte-DP",NA
+"10X_P7_11_TGAAAGAGTTCCATGA","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_TGACAACAGGGATGGG","immature SP Cd8",NA
+"10X_P7_11_TGACAACGTCATCGGC","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_TGACAACGTTGGTGGA","thymocyte-DP",NA
+"10X_P7_11_TGACAACTCATCATTC","DN-Stage4b",NA
+"10X_P7_11_TGACAACTCCGTCAAA","immature SP Cd8",NA
+"10X_P7_11_TGACGGCAGAAGAAGC","thymocyte-DP-proliferating",NA
+"10X_P7_11_TGACGGCAGGAATTAC","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_TGACGGCCACAACTGT","thymocyte-DP-proliferating",NA
+"10X_P7_11_TGACGGCCACTATCTT","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_TGACGGCGTTTAAGCC","immature SP Cd8",NA
+"10X_P7_11_TGACTAGAGCGTAATA","mix of cells","stromal_mesenchymal cells"
+"10X_P7_11_TGACTAGAGTACCGGA","mix of cells","stromal_mesenchymal cells"
+"10X_P7_11_TGACTAGTCTCGTATT","immature SP Cd8",NA
+"10X_P7_11_TGACTTTAGGATGCGT","thymocyte-DP-proliferating",NA
+"10X_P7_11_TGACTTTTCTGACCTC","DN-Stage 4c",NA
+"10X_P7_11_TGAGAGGGTCAAACTC","thymocyte-DP",NA
+"10X_P7_11_TGAGAGGTCCTGTAGA","thymocyte-DP-proliferating",NA
+"10X_P7_11_TGAGCATGTGCTGTAT","DN-Stage4b",NA
+"10X_P7_11_TGAGCCGAGACCTAGG","thymocyte-DP",NA
+"10X_P7_11_TGAGCCGGTAAGTTCC","thymocyte-DP-proliferating",NA
+"10X_P7_11_TGAGCCGTCGTGGTCG","thymocyte-DP-proliferating",NA
+"10X_P7_11_TGAGGGAAGATCGGGT","DN-Stage4b",NA
+"10X_P7_11_TGAGGGACATGCCCGA","mix of cells","stromal_mesenchymal cells"
+"10X_P7_11_TGAGGGAGTATGGTTC","DN-Stage3",NA
+"10X_P7_11_TGAGGGAGTGCGCTTG","DN-Stage3",NA
+"10X_P7_11_TGAGGGAGTTATGCGT","DN-Stage4b",NA
+"10X_P7_11_TGATTTCTCTTACCTA","immature SP Cd8",NA
+"10X_P7_11_TGCACCTCAGCGTAAG","thymocyte-DP-proliferating",NA
+"10X_P7_11_TGCACCTCATCTCCCA","thymocyte-DP",NA
+"10X_P7_11_TGCACCTGTAGCGTCC","thymocyte-DP-proliferating",NA
+"10X_P7_11_TGCACCTTCCGCATCT","thymocyte-DP-proliferating",NA
+"10X_P7_11_TGCCAAAGTGCGATAG","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_TGCCCATAGCCCAACC","mix of cells","stromal_mesenchymal cells"
+"10X_P7_11_TGCCCATAGCGATCCC","DN-Stage4b",NA
+"10X_P7_11_TGCCCATCATTAGGCT","thymocyte-DP-proliferating",NA
+"10X_P7_11_TGCCCATGTGGACGAT","thymocyte-DP",NA
+"10X_P7_11_TGCCCTAAGACCTTTG","DN-Stage4b",NA
+"10X_P7_11_TGCCCTACAAGCCGTC","thymocyte-DP-proliferating",NA
+"10X_P7_11_TGCCCTACAATAGCGG","thymocyte-DP",NA
+"10X_P7_11_TGCCCTAGTCACTTCC","thymocyte-DP-proliferating",NA
+"10X_P7_11_TGCCCTATCACATAGC","thymocyte-DP-proliferating",NA
+"10X_P7_11_TGCCCTATCAGATAAG","thymocyte-DP",NA
+"10X_P7_11_TGCCCTATCCTTTCGG","thymocyte-DP-proliferating",NA
+"10X_P7_11_TGCGCAGAGCGAGAAA","DN-Stage4b",NA
+"10X_P7_11_TGCGCAGAGTGGGATC","DN-Stage4b",NA
+"10X_P7_11_TGCGCAGGTGCGCTTG","mix of cells","stromal_mesenchymal cells"
+"10X_P7_11_TGCGCAGTCTTAACCT","thymocyte-DP-proliferating",NA
+"10X_P7_11_TGCGGGTAGCATCATC","stromal mesenchymal cell",NA
+"10X_P7_11_TGCGGGTGTAAATACG","thymocyte-DP-proliferating",NA
+"10X_P7_11_TGCGTGGAGGTTACCT","thymocyte-DP",NA
+"10X_P7_11_TGCGTGGCACGGTAAG","immature SP Cd8",NA
+"10X_P7_11_TGCGTGGGTTGCGTTA","thymocyte-DP-proliferating",NA
+"10X_P7_11_TGCGTGGTCAGGTTCA","thymocyte-DP",NA
+"10X_P7_11_TGCTACCAGGTGACCA","immature SP Cd8",NA
+"10X_P7_11_TGCTACCAGTCTCAAC","mix of cells","stromal_mesenchymal cells"
+"10X_P7_11_TGCTACCTCAGCCTAA","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_TGCTGCTCACAGGAGT","DN-Stage3",NA
+"10X_P7_11_TGCTGCTTCTGGTGTA","thymocyte-DP",NA
+"10X_P7_11_TGCTGCTTCTGTGCAA","thymocyte-DP",NA
+"10X_P7_11_TGGACGCTCTAGCACA","thymocyte-DP-proliferating",NA
+"10X_P7_11_TGGCGCAGTAGAGTGC","thymocyte-DP",NA
+"10X_P7_11_TGGCGCAGTGTAACGG","thymocyte-DP",NA
+"10X_P7_11_TGGCGCAGTTGGTTTG","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_TGGCGCATCAACTCTT","thymocyte-DP-proliferating",NA
+"10X_P7_11_TGGCGCATCCTATGTT","thymocyte-DP",NA
+"10X_P7_11_TGGCTGGAGAGTCTGG","mix of cells","stromal_mesenchymal cells"
+"10X_P7_11_TGGCTGGCAAGCCTAT","mix of cells","stromal_mesenchymal cells"
+"10X_P7_11_TGGCTGGTCGTCCAGG","DN-Stage 4c",NA
+"10X_P7_11_TGGGCGTGTGCGAAAC","thymocyte-DP-proliferating",NA
+"10X_P7_11_TGGTTAGGTGTCCTCT","thymocyte-DP",NA
+"10X_P7_11_TGGTTAGTCCCTAACC","thymocyte-DP-proliferating",NA
+"10X_P7_11_TGGTTAGTCTCACATT","DN-Stage 4c",NA
+"10X_P7_11_TGGTTCCCACGGCCAT","thymocyte-DP-proliferating",NA
+"10X_P7_11_TGGTTCCTCACTTCAT","thymocyte-DP",NA
+"10X_P7_11_TGTATTCAGCCAGTAG","thymocyte-DP",NA
+"10X_P7_11_TGTATTCCACACCGAC","thymocyte-DP",NA
+"10X_P7_11_TGTATTCTCACCAGGC","thymocyte-DP",NA
+"10X_P7_11_TGTATTCTCAGCATGT","immature SP Cd8",NA
+"10X_P7_11_TGTCCCAGTGAGGGAG","thymocyte-DP-proliferating",NA
+"10X_P7_11_TGTGGTACAGGCGATA","immature SP Cd8",NA
+"10X_P7_11_TGTGGTACATACTCTT","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_TGTGGTATCACAAACC","thymocyte-DP-proliferating",NA
+"10X_P7_11_TGTGGTATCTAACGGT","DN-Stage4b",NA
+"10X_P7_11_TGTGTTTAGGTAGCCA","thymocyte-DP-proliferating",NA
+"10X_P7_11_TGTGTTTCACATCCAA","DN-Stage 4c",NA
+"10X_P7_11_TGTGTTTCAGCCAATT","immature SP Cd8",NA
+"10X_P7_11_TGTGTTTCATGCTGGC","thymocyte-DP-proliferating",NA
+"10X_P7_11_TGTTCCGTCTTACCTA","thymocyte-DP-proliferating",NA
+"10X_P7_11_TTAACTCAGTGTACTC","thymocyte-DP-proliferating",NA
+"10X_P7_11_TTAACTCTCTCCTATA","mix of cells","stromal_mesenchymal cells"
+"10X_P7_11_TTAGGACCATCCCACT","immature SP Cd8",NA
+"10X_P7_11_TTAGGCACAGGCAGTA","stromal mesenchymal cell",NA
+"10X_P7_11_TTAGGCAGTCATATCG","thymocyte-DP-proliferating",NA
+"10X_P7_11_TTAGGCATCGAGAGCA","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_TTAGGCATCTGAGGGA","thymocyte-DP",NA
+"10X_P7_11_TTAGGCATCTTAGAGC","DN-Stage4b",NA
+"10X_P7_11_TTAGTTCTCCGTTGCT","thymocyte-DP-proliferating",NA
+"10X_P7_11_TTATGCTCAGGGTTAG","thymocyte-DP",NA
+"10X_P7_11_TTATGCTGTAATCACC","mix of cells","stromal_mesenchymal cells"
+"10X_P7_11_TTATGCTTCCAAAGTC","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_TTCCCAGGTCAATGTC","immature SP Cd8",NA
+"10X_P7_11_TTCCCAGGTCTGCGGT","immature SP Cd8",NA
+"10X_P7_11_TTCGAAGAGGAGTACC","DN-Stage4b",NA
+"10X_P7_11_TTCGAAGTCCGCAGTG","thymocyte-DP-proliferating",NA
+"10X_P7_11_TTCGGTCGTCCAAGTT","DN-Stage4b",NA
+"10X_P7_11_TTCGGTCTCATGTGGT","stromal mesenchymal cell",NA
+"10X_P7_11_TTCGGTCTCCCAACGG","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_TTCTACAGTCATACTG","immature SP Cd8",NA
+"10X_P7_11_TTCTCAACATGTTGAC","DN-Stage 4c",NA
+"10X_P7_11_TTCTCAAGTGATAAGT","mix of cells","stromal_mesenchymal cells"
+"10X_P7_11_TTCTCAATCGTCTGCT","thymocyte-DP-proliferating",NA
+"10X_P7_11_TTCTCCTAGAGTACCG","thymocyte-DP",NA
+"10X_P7_11_TTCTCCTAGTTGCAGG","thymocyte-DP",NA
+"10X_P7_11_TTCTCCTTCGCTAGCG","immature SP Cd8",NA
+"10X_P7_11_TTCTTAGAGGGTGTGT","thymocyte-DP",NA
+"10X_P7_11_TTCTTAGCAAGGTTTC","thymocyte-DP-proliferating",NA
+"10X_P7_11_TTCTTAGCACAGTCGC","immature SP Cd8",NA
+"10X_P7_11_TTCTTAGCAGTTAACC","thymocyte-DP",NA
+"10X_P7_11_TTCTTAGGTATAAACG","mix of cells","stromal_mesenchymal cells"
+"10X_P7_11_TTCTTAGGTATGAAAC","DN-Stage 4c",NA
+"10X_P7_11_TTGACTTCAGATGGCA","DN-Stage4b",NA
+"10X_P7_11_TTGACTTTCCTGCTTG","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_TTGCCGTGTCGCGAAA","thymocyte-DP",NA
+"10X_P7_11_TTGCGTCAGAGGTACC","DN-Stage4b",NA
+"10X_P7_11_TTGCGTCTCCGCATCT","DN-Stage4b",NA
+"10X_P7_11_TTGGAACAGGATGTAT","thymocyte-DP",NA
+"10X_P7_11_TTGGAACAGGGAACGG","thymocyte-DP-proliferating",NA
+"10X_P7_11_TTGGAACCAGCATACT","thymocyte-DP",NA
+"10X_P7_11_TTGGAACCATACTACG","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_TTGGAACGTTCAACCA","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_TTGGCAAAGTGTTAGA","thymocyte-DP",NA
+"10X_P7_11_TTGGCAACAACTGGCC","DN-Stage4b",NA
+"10X_P7_11_TTGGCAATCTAACTCT","DN-Stage4b",NA
+"10X_P7_11_TTGTAGGAGACCACGA","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_TTGTAGGTCAGCTCGG","thymocyte-DP-proliferating",NA
+"10X_P7_11_TTGTAGGTCCGGCACA","DN-Stage4b",NA
+"10X_P7_11_TTTACTGAGTGCCAGA","thymocyte-DP",NA
+"10X_P7_11_TTTACTGCAAGCGTAG","immature SP Cd8",NA
+"10X_P7_11_TTTACTGCACGTCTCT","thymocyte-DP",NA
+"10X_P7_11_TTTACTGGTCATGCAT","thymocyte-DP",NA
+"10X_P7_11_TTTATGCGTGCTCTTC","thymocyte-DP",NA
+"10X_P7_11_TTTATGCTCATTCACT","thymocyte-DP-proliferating",NA
+"10X_P7_11_TTTATGCTCTACTCAT","DN-Stage4b",NA
+"10X_P7_11_TTTCCTCAGAGCAATT","thymocyte-DP-proliferating",NA
+"10X_P7_11_TTTCCTCAGATGCGAC","DN-Stage4b",NA
+"10X_P7_11_TTTCCTCGTAATTGGA","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_TTTCCTCTCAATCACG","thymocyte-DP",NA
+"10X_P7_11_TTTGCGCAGAGTAATC","immature SP Cd8",NA
+"10X_P7_11_TTTGCGCCACCCATTC","thymocyte-DP",NA
+"10X_P7_11_TTTGCGCCATACAGCT","thymocyte-DP-proliferating",NA
+"10X_P7_11_TTTGCGCGTTAAAGAC","DN-Stage3",NA
+"10X_P7_11_TTTGGTTCACCAGCAC","mix of cells","Single positive Cd8, possibly mature"
+"10X_P7_11_TTTGGTTTCCGAACGC","DN-Stage 4c",NA
+"10X_P7_11_TTTGGTTTCCTAGGGC","thymocyte-DP",NA
+"10X_P7_11_TTTGTCATCGAACTGT","mix of cells","Single positive Cd8, possibly mature"

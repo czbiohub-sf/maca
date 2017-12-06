@@ -1,0 +1,212 @@
+tissue,annotation_original,subannotation_original,annotation_cleaned,subannotation_cleaned,n_cells
+Aorta,adipocytes,.,adipocytes,.,54
+Aorta,endothelial cells,.,endothelial,.,131
+Aorta,fibroblasts,.,fibroblasts,.,35
+Aorta,hematopoetic cells,.,hematopoietic,.,17
+Aorta,heterogenous group of cells,adipocytes,adipocytes,.,39
+Aorta,heterogenous group of cells,erythroblasts and adipocytes,unknown,.,51
+Aorta,heterogenous group of cells,smooth muscle cells,smooth_muscle,.,37
+Bladder,Basal,.,basal,.,99
+Bladder,LuminalA1,.,luminal,a,191
+Bladder,LuminalA2,.,luminal,a,245
+Bladder,LuminalB,.,luminal,b,96
+Bladder,MesenchymalA1,.,mesenchymal,a,170
+Bladder,MesenchymalA2,.,mesenchymal,a,165
+Bladder,MesenchymalB1,.,mesenchymal,b,156
+Bladder,MesenchymalB2,.,mesenchymal,b,165
+Brain_Microglia,Macrophages,.,macrophages,.,36
+Brain_Microglia,Microglia,.,microglia,.,4329
+Brain_Neurons,NPCS,.,npcs,.,36
+Brain_Neurons,OPCs,.,opcs,.,202
+Brain_Neurons,astrocytes,Berg.Glia,astrocytes,berg_glia,30
+Brain_Neurons,astrocytes,cerebral_astrocytes,astrocytes,cerebral_astrocytes,403
+Brain_Neurons,astrocytes,myelinating_oligodendrocytes,astrocytes,myelinating_oligodendrocytes,11
+Brain_Neurons,endothelial,vSMCs,endothelial,vsmcs,14
+Brain_Neurons,endothelial,vascular,endothelial,vascular,625
+Brain_Neurons,neurons,doublet,neurons,doublet,2
+Brain_Neurons,neurons,excitatory,neurons,excitatory,73
+Brain_Neurons,neurons,inhibitory,neurons,inhibitory,98
+Brain_Neurons,neurons,undetermined,neurons,undetermined,23
+Brain_Neurons,oligodendrocytes,.,oligodendrocytes,.,1175
+Brain_Neurons,pericytes,.,pericytes,.,132
+Brain_Neurons,unknown,.,unknown,.,176
+Colon,Amplifying Cell,.,amplifying,.,889
+Colon,Chromaffin Cell,.,chromaffin,.,25
+Colon,Cycling Undiff. Cell,.,undifferentiated,proliferating,206
+Colon,Enterocyte 1,.,enterocytes,.,582
+Colon,Enterocyte 2,.,enterocytes,.,200
+Colon,Goblet Cell 1,.,goblet,.,219
+Colon,Goblet Cell 2,.,goblet,.,208
+Colon,Goblet Cell 3 (Batch Effect),.,goblet,.,153
+Colon,Goblet Cell 4,.,goblet,.,143
+Colon,Goblet Cell 5 (Batch Effect),.,goblet,.,91
+Colon,Non-Cycling Undiff. Cell,.,undifferentiated,quiescent,571
+Colon,Tuft Cell,.,tuft,.,45
+Colon,Undiff. Cell (Batch Effect),.,undifferentiated,.,127
+Diaphragm,B cells & T-cells,B cells & T-cells,b_cells,.,80
+Diaphragm,endothelial cells,endothelial cells,endothelial,.,77
+Diaphragm,fibro/adipogenic progenitors,fibro/adipogenic progenitors,mesenchymal_stem,.,240
+Diaphragm,macrophages,macrophages,macrophages,.,31
+Diaphragm,satellite cells 1,satellite cells 1,satellite,.,228
+Diaphragm,satellite cells 2,satellite cells 2,satellite,.,214
+Fat,B-cells,.,b_cells,.,513
+Fat,Endothelial,.,endothelial,.,549
+Fat,Endothelial?,.,endothelial,.,41
+Fat,Epithelial?,.,epithelial,.,51
+Fat,Granulocytes,.,granulocytes,.,409
+Fat,Mono/macro/DCs,.,myeloid,.,479
+Fat,Multipotent Progenitors,.,multipotent_progenitors,.,1924
+Fat,Muscle?,.,muscle,.,27
+Fat,NK-cells,.,natural_killer,.,129
+Fat,Neutrophils,.,neutrophils,.,221
+Fat,T-cells,.,t_cells,.,366
+Heart,CMs,.,cardiomyocytes,.,140
+Heart,Edc_1,.,endothelial,.,844
+Heart,Edc_2_coronary_vascular,.,endothelial,coronary_vascular,293
+Heart,Edc_3_endocardial,.,endothelial,endocardial,175
+Heart,Fb_1,.,fibroblasts,.,940
+Heart,Fb_2,.,fibroblasts,.,620
+Heart,Fb_3,.,fibroblasts,.,492
+Heart,Immune_Cells_1,.,immune,.,391
+Heart,Immune_Cells_2,.,immune,.,97
+Heart,Red_blood_cells,.,erythrocytes,.,11
+Heart,SMCs,Myofibroblast,smooth_muscle,myofibroblast,175
+Heart,SMCs,Smooth_Muscle_Cells,smooth_muscle,smooth_muscle_cells,43
+Kidney,Collecting duct cells ,.,collecting_duct,.,44
+Kidney,Endothelial cells,.,endothelial,.,40
+Kidney,Fenestrated capillaries,.,fenestrated_capillary,.,69
+Kidney,Fibroblasts,.,fibroblasts,.,65
+Kidney,Immune cells,.,immune,.,38
+Kidney,Proximal tubule cells,.,tubule,proximal,67
+Kidney,Proximal tubule cells 3,.,tubule,proximal,40
+Kidney,Proximal tubule cells 4,.,tubule,proximal,35
+Kidney,Thick Ascending tubule cells,.,tubule,thick_ascending,67
+Kidney,proximal tubule cells 2,.,tubule,proximal,52
+Liver,B_cells,.,b_cells,.,29
+Liver,NK/NKT,.,natural_killer,.,35
+Liver,endothelial_cells,.,endothelial,.,196
+Liver,hepatocytes,.,hepatocytes,.,399
+Liver,kuppfer_cells,.,kuppfer,.,51
+Lung,Alveolar Epithelial Cell Type I,.,epithelial,alveolar_type_i,2
+Lung,Alveolar Macrophages,.,macrophages,alveolar,13
+Lung,Aveolar Epithelial Cell Type II,.,epithelial,alveolar_type_ii,94
+Lung,B Cells,.,b_cells,.,55
+Lung,Ciliated Cells,.,ciliated,.,14
+Lung,Club Cells,.,club,.,13
+Lung,Dendritic Cells,.,dendritic,.,69
+Lung,Endothelial Cell Type I,.,endothelial,.,446
+Lung,Endothelial Cell Type II,.,endothelial,.,124
+Lung,Endothelial Cell Type III,.,endothelial,.,67
+Lung,Endothelial Cell Type IV,.,endothelial,.,101
+Lung,Interstital Macrophages,.,macrophages,interstitial,56
+Lung,Mesothelial Cells,.,mesothelial,.,2
+Lung,Monocytes,.,monocytes,.,65
+Lung,Natural Killer Cells,.,natural_killer,.,36
+Lung,Neuroendocrine Cells,.,neuroendocrine,.,2
+Lung,Remaining Epithelial Cells,.,remaining_epithelial,.,9
+Lung,Stromal Cell Type I,.,stromal,.,142
+Lung,Stromal Cell Type II,.,stromal,.,110
+Lung,Stromal Cell Type III,.,stromal,.,47
+Lung,Stromal Cell Type IV,.,stromal,.,42
+Lung,Stromal Cell Type V,.,stromal,.,25
+Lung,T Cells,.,t_cells,.,55
+Lung,Unknown Immune I,.,immune,.,31
+Mammary,basal cells,.,basal,.,37
+Mammary,basal cells,1,basal,.,318
+Mammary,basal cells,2,basal,.,233
+Mammary,basal cells,Chac1+Mthfd2+,basal,chac1+mthfd2+,390
+Mammary,basal cells,Cxcl2+Vcam+Procr+,basal,cxcl2+vcam+procr+,57
+Mammary,basal cells,Fos+,basal,fos+,111
+Mammary,basal cells,Id1+Id2+Pdfgrl+Wnt10a,basal,id1+id2+pdfgrl+wnt10a,52
+Mammary,basal cells,Ifgbp2+Igfbp4,basal,ifgbp2+igfbp,77
+Mammary,endothelial cells,.,endothelial,.,49
+Mammary,hormone responsive luminal cells,.,hormone_responsive_luminal,.,156
+Mammary,luminal progenitors,.,luminal_progenitors,.,396
+Mammary,stromal cells,.,stromal,.,428
+Marrow,Immature-B,.,b_cells,immature,285
+Marrow,Immature_Mature-B,B0,b_cells,immature_mature,207
+Marrow,Immature_Mature-B,B1,b_cells,immature_mature,143
+Marrow,Immature_Mature-B,B2,b_cells,immature_mature,132
+Marrow,Immature_Mature-B,B3,b_cells,immature_mature,121
+Marrow,Immature_Mature-B,B4,b_cells,immature_mature,93
+Marrow,Immature_Mature-B,B5,b_cells,immature_mature,82
+Marrow,Immature_Mature-B,B6,b_cells,immature_mature,60
+Marrow,Immature_Mature-B,B7,b_cells,immature_mature,25
+Marrow,Mature-B,.,b_cells,mature,700
+Marrow,Monocytes_Monocyte-Progenitors,MonoProgenitor1,monocytes,progenitor,76
+Marrow,Monocytes_Monocyte-Progenitors,MonoProgenitor4,monocytes,progenitor,43
+Marrow,Monocytes_Monocyte-Progenitors,Monocyte0,monocytes,mature,82
+Marrow,Monocytes_Monocyte-Progenitors,Monocyte2,monocytes,mature,63
+Marrow,Monocytes_Monocyte-Progenitors,Monocyte3,monocytes,mature,60
+Marrow,Neutrophils,.,neutrophils,quiescent,390
+Marrow,PreProB,.,b_cells,prepro,177
+Marrow,Proliferating-Neutrophils,.,neutrophils,proliferating,209
+Marrow,Resting-Granulocytes,.,granulocytes,quiescent,380
+Marrow,Stem_Progenitors,0,progenitors,.,289
+Marrow,Stem_Progenitors,1,progenitors,.,181
+Marrow,Stem_Progenitors,2,progenitors,.,165
+Marrow,Stem_Progenitors,3,progenitors,.,155
+Marrow,Stem_Progenitors,4,progenitors,.,147
+Marrow,Stem_Progenitors,5,progenitors,.,128
+Marrow,Stem_Progenitors,6,progenitors,.,111
+Marrow,Stem_Progenitors,7,progenitors,.,58
+Marrow,Stem_Progenitors,8,progenitors,.,53
+Marrow,Stem_Progenitors,9,progenitors,.,4
+Marrow,T_NK,NK_2,natural_killer,.,58
+Marrow,T_NK,Nk_1,natural_killer,.,78
+Marrow,T_NK,T,t_cells,.,80
+Marrow,T_NK,Unknown1,t_cells,.,26
+Marrow,T_NK,Unknown2,t_cells,.,19
+Marrow,T_NK,Unknown3,t_cells,.,17
+Muscle,B cells,.,b_cells,.,71
+Muscle,T cells,.,t_cells,.,35
+Muscle,endothelial cells,.,endothelial,.,25
+Muscle,endothelial cells,Jun-negative,endothelial,.,53
+Muscle,endothelial cells,Jun-positive,endothelial,.,51
+Muscle,fibro-/adipogenic progenitors,.,mesenchymal_stem,.,246
+Muscle,macrophages,.,macrophages,.,40
+Muscle,muscle stem cells,.,muscle_stem,.,546
+Pancreas,PP cells,.,pp,.,68
+Pancreas,alpha cells,Alpha - female,alpha,.,159
+Pancreas,alpha cells,Alpha - male,alpha,.,128
+Pancreas,alpha cells,PP,pp,.,39
+Pancreas,beta cells,.,beta,.,411
+Pancreas,delta cells,.,delta,.,91
+Pancreas,duct cells,.,ductal,.,131
+Pancreas,endothelial cells,.,endothelial,.,49
+Pancreas,exocrine cells,.,acinar,.,177
+Pancreas,immune cells,Exocrine?,immune,.,24
+Pancreas,immune cells,Immune,immune,.,21
+Pancreas,stellate cells,.,stellate,.,29
+Skin,Basal IFE,.,interfollicular_epidermis,basal_ife_cells,402
+Skin,Cell Cycle,.,interfollicular_epidermis,proliferating,45
+Skin,Inner Bulge,.,hair_follicle,inner_bulge,824
+Skin,Intermediate IFE,.,interfollicular_epidermis,intermediate_ife_cells,259
+Skin,Outer Bulge,.,hair_follicle,outer_bulge,547
+Skin,Outer IFE,.,interfollicular_epidermis,outer_ife_cells,186
+Spleen,9CD8+ T cells,.,t_cells,cd8+,81
+Spleen,CD4+ T cells,.,t_cells,cd4+,273
+Spleen,Macrophages/Dendritic cells/Monocytes and others,.,myeloid,.,48
+Spleen,Marginal Zone B cells,.,b_cells,marginal_zone,153
+Spleen,Natural Killer cells,.,t_cells,natural_killer_cells,49
+Spleen,T1/T2/Follicular B cells,.,b_cells,follicular,1085
+Thymus,stromal_mesenchymal stem cell,.,stromal_stem,.,33
+Thymus,thymocyte_1_mix of DN4_DP_immatureSPs,DN4,t_cells,double_negative4,92
+Thymus,thymocyte_1_mix of DN4_DP_immatureSPs,DP,t_cells,double_positive,44
+Thymus,thymocyte_1_mix of DN4_DP_immatureSPs,Immature_SP_CD8,t_cells,immature_single_positive_cd8+,62
+Thymus,thymocyte_1_mix of DN4_DP_immatureSPs,immature_SP_CD4,t_cells,immature_single_positive_cd4+,280
+Thymus,thymocyte_2_DP_favoring CD8 differentiation,.,t_cells,double_positive_favoring_cd8+,323
+Thymus,thymocyte_3_DP_favoring CD8 differentation,.,t_cells,double_positive_favoring_cd8+,314
+Thymus,thymocyte_4_DP_rapidly dividing_favoring CD8 differenation,.,t_cells,double_positive_rapidly_dividing_favoring_cd8+,103
+Thymus,thymocyte_5_DN1,.,t_cells,double_negative1,32
+Tongue,Basal/differentiating,.,basal,basal,831
+Tongue,Filiform,.,keratinocytes,filiform_cells,35
+Tongue,Maturing/nonkeratinized,.,keratinocytes,suprabasal,178
+Tongue,Proliferating,.,basal,proliferating,202
+Tongue,Stratified/differentiated keratinocytes,.,keratinocytes,suprabasal_cells,148
+Trachea,Epcam,Krt5,epithelial,basal_cells,29
+Trachea,Epcam,No Krt5,epithelial,no_krt5,44
+Trachea,Pdgfrb,.,stromal,.,569
+Trachea,Pecam1,.,endothelial,.,33
+Trachea,Ptprc,.,immune,.,116
+Trachea,Scgb1a1,.,epithelial,secretory_cells,55
