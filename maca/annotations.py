@@ -96,7 +96,7 @@ def clean_annotation(df, tissue, debug=False):
         df[SUBANNOTATION] = df[SUBANNOTATION].str.replace(
             'doublet', 'undetermined')
         df[ANNOTATION] = df[ANNOTATION].replace(
-            'opcs', 'oligodendrocyte_progenitor_cells')
+            'opcs', 'OPCs')
 
         df[SUBANNOTATION] = df[SUBANNOTATION].replace(
             'vsmcs', 'vascular_smooth_muscle_cells')
@@ -454,6 +454,9 @@ def clean_annotation(df, tissue, debug=False):
         # Make sure cells are plural
         df[ANNOTATION] = df[ANNOTATION].replace('stromal_mesenchymal_stem_cell',
                                                 'stromal_stem_cells')
+        # Make sure cells are plural
+        df[ANNOTATION] = df[ANNOTATION].replace('stromal_mesenchymal_cell',
+                                                'stromal_mesenchymal_cells')
 
         # Deal with thymocyte_2,3,4,5_subannotation
         rows = df[ANNOTATION].str.startswith('thymocyte') | ~df[ANNOTATION].str.contains('cell')
@@ -566,4 +569,8 @@ def clean_annotation(df, tissue, debug=False):
     # df = _fix_nk_cells(df)
     df = df.applymap(lambda x: clean_labels(x, strip_numbers=strip_numbers))
     df = df.replace('', np.nan)
+
+    # Remove _cells excdpt for b_cells and t_cells
+    df[ANNOTATION] = df[ANNOTATION].map(lambda x: x.split('_cells')[0]
+        if not x in ('t_cells', 'b_cells') else x)
     return df

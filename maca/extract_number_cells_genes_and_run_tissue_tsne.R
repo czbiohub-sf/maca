@@ -14,7 +14,7 @@ objects = c('Aorta/Heart_seurat_tiss.Robj',
             "Fat/Fat_seurat_tiss.Robj",
             'Heart/heart_seurat_tiss.Robj',
             "Kidney/Kidney_seurat_tiss.Robj",
-            'Liver/Plate Data/Liver_seurat_tiss.Robj',
+            'Liver/Liver_seurat_tiss-1117.Robj',
             "Lung/SmartSeq2_Lung_seurat_tissue.Robj",
             'Mammary_Gland/Mammary_Gland_seurat_tiss.Robj',
             'Marrow/Marrow_seurat_tiss.Robj',
@@ -46,13 +46,33 @@ extract_ngenes_ncells = function(tiss, object){
                    '_nreads_ngenes.csv'))
 }
 
-cleaned_annotations = read.csv('~/code/maca/metadata/maca_3month_combined_cell_annotations.csv', row.names=1)
+cleaned_annotations = read.csv('~/code/maca/metadata/maca_3month_annotations_plates.csv', row.names=1)
 
 figure_folder = '~/Google Drive/MACA_3mo_manuscript/Main figures/figure2/plates/'
 
-plot_annotated_tsne = function(tiss, object_name, tissue_of_interest){
-  TSNEPlot(object = tiss, do.label = TRUE, pt.size = 0.5, group.by='annotation_subannotation')
-  ggsave(paste0(figure_folder, 'tsne_annotated_', tissue_of_interest, '.pdf'))
+plot_annotated_tsne = function(tiss, object_name, tissue_of_interest) {
+  p = TSNEPlot(
+    object = tiss,
+    do.label = FALSE,
+    pt.size = 0.05,
+    group.by = 'annotation',
+    no.legend = TRUE,
+    no.axes = TRUE,
+    alpha = 0.5,
+    do.return = TRUE
+  ) #+ geom_point(alpha = 0.1)
+  p + labs(title=tissue_of_interest)
+  ggsave(
+    paste0(
+      figure_folder,
+      'tsne_annotated_',
+      tissue_of_interest,
+      '.pdf'
+    ),
+    width = 2,
+    height = 2
+  )
+  return(p)
 }
 
 object_tissue = c("Lung")
@@ -71,7 +91,7 @@ for (object_name in objects){
     
     # Reassign metadata with cleaned annotations and plot TSNE
     tissue@meta.data = tissue_annotations
-    plot_annotated_tsne(tissue, object_name, tissue_of_interest)
+    p = plot_annotated_tsne(tissue, object_name, tissue_of_interest)
     rm(list=c('tissue', 'tissue_of_interest'))
   } else{
     extract_ngenes_ncells(tiss, object_name)
@@ -83,7 +103,7 @@ for (object_name in objects){
 
     # Reassign metadata with cleaned annotations and plot TSNE
     tiss@meta.data = tissue_annotations
-    plot_annotated_tsne(tiss, object_name, tissue_of_interest)
+    p = plot_annotated_tsne(tiss, object_name, tissue_of_interest)
     rm(list=c('tiss', 'tissue_of_interest'))
   }
   
