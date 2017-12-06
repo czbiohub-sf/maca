@@ -1,8 +1,8 @@
 ,color
 Aorta,#1f77b4
 Bladder,#aec7e8
-Brain_microglia,#ff7f0e
-Brain_neurons,#ffbb78
+Brain_Microglia,#ff7f0e
+Brain_Neurons,#ffbb78
 Colon,#2ca02c
 Diaphragm,#98df8a
 Fat,#d62728

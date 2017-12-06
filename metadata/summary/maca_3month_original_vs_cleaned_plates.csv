@@ -14,22 +14,22 @@ Bladder,MesenchymalA1,.,mesenchymal,a,170
 Bladder,MesenchymalA2,.,mesenchymal,a,165
 Bladder,MesenchymalB1,.,mesenchymal,b,156
 Bladder,MesenchymalB2,.,mesenchymal,b,165
-Brain_microglia,Macrophages,.,macrophages,.,36
-Brain_microglia,Microglia,.,microglia,.,4329
-Brain_neurons,NPCS,.,npcs,.,36
-Brain_neurons,OPCs,.,opcs,.,202
-Brain_neurons,astrocytes,Berg.Glia,astrocytes,berg_glia,30
-Brain_neurons,astrocytes,cerebral_astrocytes,astrocytes,cerebral_astrocytes,403
-Brain_neurons,astrocytes,myelinating_oligodendrocytes,astrocytes,myelinating_oligodendrocytes,11
-Brain_neurons,endothelial,vSMCs,endothelial,vsmcs,14
-Brain_neurons,endothelial,vascular,endothelial,vascular,625
-Brain_neurons,neurons,doublet,neurons,doublet,2
-Brain_neurons,neurons,excitatory,neurons,excitatory,73
-Brain_neurons,neurons,inhibitory,neurons,inhibitory,98
-Brain_neurons,neurons,undetermined,neurons,undetermined,23
-Brain_neurons,oligodendrocytes,.,oligodendrocytes,.,1175
-Brain_neurons,pericytes,.,pericytes,.,132
-Brain_neurons,unknown,.,unknown,.,176
+Brain_Microglia,Macrophages,.,macrophages,.,36
+Brain_Microglia,Microglia,.,microglia,.,4329
+Brain_Neurons,NPCS,.,npcs,.,36
+Brain_Neurons,OPCs,.,opcs,.,202
+Brain_Neurons,astrocytes,Berg.Glia,astrocytes,berg_glia,30
+Brain_Neurons,astrocytes,cerebral_astrocytes,astrocytes,cerebral_astrocytes,403
+Brain_Neurons,astrocytes,myelinating_oligodendrocytes,astrocytes,myelinating_oligodendrocytes,11
+Brain_Neurons,endothelial,vSMCs,endothelial,vsmcs,14
+Brain_Neurons,endothelial,vascular,endothelial,vascular,625
+Brain_Neurons,neurons,doublet,neurons,doublet,2
+Brain_Neurons,neurons,excitatory,neurons,excitatory,73
+Brain_Neurons,neurons,inhibitory,neurons,inhibitory,98
+Brain_Neurons,neurons,undetermined,neurons,undetermined,23
+Brain_Neurons,oligodendrocytes,.,oligodendrocytes,.,1175
+Brain_Neurons,pericytes,.,pericytes,.,132
+Brain_Neurons,unknown,.,unknown,.,176
 Colon,Amplifying Cell,.,amplifying,.,889
 Colon,Chromaffin Cell,.,chromaffin,.,25
 Colon,Cycling Undiff. Cell,.,undifferentiated,proliferating,206

@@ -108,7 +108,7 @@ B002716,24,515686,6/23/17 12757296,Biorad HSP3901,Biohub,7/14/17,170718,Bladder,
 B002723,24,515686,6/23/17 12757296,Biorad HSP3901,Biohub,7/14/17,170718,Bladder,,18_53_M,Multiple,100,"Sony, Beckman",exp 29,,,1,MACA12_1,,18,53,M,False,,Bladder
 B002725,24,515686,6/23/17 12757296,Biorad HSP3901,Biohub,7/14/17,170718,Bladder,,18_53_M,Multiple,100,"Sony, Beckman",exp 29,,,2,MACA12_1,,18,53,M,False,,Bladder
 MAA000048,,402480/444238,12427002,Biorad HSP3841,Biohub,170515,170522,Brain,Cerebellum,30_1_M,Neurons,130,SIM1,exp2,,,,MACA4_4,,30,1,M,False,,Brain_Neurons
-MAA000049,,402480/444239,12427002,Biorad HSP3841,Biohub,170515,170522,Brain,Cerebellum,30_1_M,Multiple,100,SIM1,exp2,,,,MACA2_12,,30,1,M,False,,Brain
+MAA000049,,402480/444239,12427002,Biorad HSP3841,Biohub,170515,170522,Brain,Cerebellum,30_1_M,Multiple,100,SIM1,exp2,,,,MACA2_12,,30,1,M,False,,Brain_Neurons
 MAA000056,,402480/444246,12427002,Biorad HSP3841,Biohub,170515,170522,Brain,Hippocampus,30_1_M,Neurons,130,SIM1,exp2,,,,MACA2_12,,30,1,M,False,,Brain_Neurons
 MAA000057,,402480/444247,12427002,Biorad HSP3841,Biohub,170515,170522,Brain,Cortex,30_1_M,Microglia,100,SIM1,exp2,,,,MACA2_12,,30,1,M,False,,Brain_Microglia
 MAA000060,,402480/444250,12427002,Biorad HSP3841,Biohub,170515,170522,Brain,Striatum,30_1_M,Microglia,100,SIM1,exp2,,,,,,30,1,M,False,,Brain_Microglia
@@ -178,7 +178,7 @@ MAA000376,3,490668,4/25/17,Biorad HSP3841,Biohub,6/12/17,170614,Brain,Cerebellum
 MAA000379,3,490668,4/25/17,Biorad HSP3841,Biohub,6/12/17,170614,Brain,Hippocampus,1_7_M,Neurons,130,Sony SIM1,,,,1,MACA1_14,,1,7,M,False,,Brain_Neurons
 MAA000380,3,490668,4/25/17,Biorad HSP3841,Biohub,6/12/17,170614,Brain,Striatum,1_7_M,Neurons,130,Sony SIM1,exp7,,,1,MACA2_1,,1,7,M,False,,Brain_Neurons
 MAA000406,3,490668,4/25/17,Biorad HSP3841,Biohub,6/12/17,170614,Brain,Cortex,1_7_M,Neurons,130,Sony SIM1,exp7,,,2,MACA2_7,,1,7,M,False,,Brain_Neurons
-MAA000425,3,490668,4/25/17,Biorad HSP3841,Biohub,6/12/17,170616,Brain,Cerebellum,3_11_M,,,,,,,1,MACA1_3,,3,11,M,False,,Brain
+MAA000425,3,490668,4/25/17,Biorad HSP3841,Biohub,6/12/17,170616,Brain,Cerebellum,3_11_M,,,,,,,1,MACA1_3,,3,11,M,False,,Brain_Neurons
 MAA000423,4,490668,4/25/17,Biorad HSP3841,Biohub,6/12/17,170614,Brain,Cortex,1_6_M,Neurons,130,Sony SIM1,exp7,,,1,MACA2_4,,1,6,M,False,,Brain_Neurons
 MAA000478,4,490668,4/25/17,Biorad HSP3841,Biohub,6/12/17,170614,Brain,Cortex,1_6_M,Neurons,130,Sony SIM1,exp7,,,2,MACA2_4,,1,6,M,False,,Brain_Neurons
 MAA000479,4,490668,4/25/17,Biorad HSP3841,Biohub,6/12/17,170614,Brain,Striatum,1_6_M,Neurons,130,Sony SIM1,exp7,,,1,MACA2_7,,1,6,M,False,,Brain_Neurons
@@ -197,7 +197,7 @@ MAA000518,4,490668,4/25/17,Biorad HSP3841,Biohub,6/12/17,170614,Brain,Cerebellum
 MAA000538,5,505171,6/14/17 159428956,Biorad HSP3841,Biohub,6/14/17,170615,Brain,Cerebellum,3_8_M,Neurons,130,,,,,1,MACA4_7,,3,8,M,False,,Brain_Neurons
 MAA000541,5,505171,6/14/17 159428956,Biorad HSP3841,Biohub,6/14/17,170615,Brain,Striatum,3_9_M,Neurons,130,,,,,2,MACA3_6,,3,9,M,False,,Brain_Neurons
 MAA000550,5,505171,6/14/17 159428956,Biorad HSP3841,Biohub,6/14/17,170616,Brain,Hippocampus,3_10_M,Neurons,130,,,,,1,MACA1_10,,3,10,M,False,,Brain_Neurons
-MAA000553,5,505171,6/14/17 159428956,Biorad HSP3841,Biohub,6/14/17,170616,Brain,Hippocampus,3_10_M,,,,,,,2,MACA1_10,,3,10,M,False,,Brain
+MAA000553,5,505171,6/14/17 159428956,Biorad HSP3841,Biohub,6/14/17,170616,Brain,Hippocampus,3_10_M,,,,,,,2,MACA1_10,,3,10,M,False,,Brain_Neurons
 MAA000560,5,505171,6/14/17 159428956,Biorad HSP3841,Biohub,6/14/17,170616,Brain,Cortex,3_10_M,Neurons,130,,,,,1,MACA1_4,,3,10,M,False,,Brain_Neurons
 MAA000561,5,505171,6/14/17 159428956,Biorad HSP3841,Biohub,6/14/17,170616,Brain,Cortex,3_10_M,Neurons,130,,,,,2,MACA1_3,,3,10,M,False,,Brain_Neurons
 MAA000563,5,505171,6/14/17 159428956,Biorad HSP3841,Biohub,6/14/17,170616,Brain,Hippocampus,3_10_M,Neurons,130,,,,,1,MACA1_10,,3,10,M,False,,Brain_Neurons
@@ -223,14 +223,14 @@ MAA000615,5,505171,6/14/17 159428956,Biorad HSP3841,Biohub,6/14/17,170616,Brain,
 MAA000616,5,505171,6/14/17 159428956,Biorad HSP3841,Biohub,6/14/17,170616,Brain,Striatum,3_11_M,Microglia,100,,,,,1,MACA1_10,,3,11,M,False,,Brain_Microglia
 MAA000617,5,505171,6/14/17 159428956,Biorad HSP3841,Biohub,6/14/17,170616,Brain,Striatum,3_10_M,Microglia,100,,,,,1,MACA1_10,,3,10,M,False,,Brain_Microglia
 MAA000638,5,505171,6/14/17 159428956,Biorad HSP3841,Biohub,6/14/17,170615,Brain,Cerebellum,3_9_M,Neurons,130,,,,,3,MACA4_7,,3,9,M,False,,Brain_Neurons
-MAA000641,5,505171,6/14/17 159428956,Biorad HSP3841,Biohub,6/14/17,170615,Brain,Cerebellum,3_9_M,Multiple,100,Sony SIM1,,,,2,MACA4_6,,3,9,M,False,,Brain
+MAA000641,5,505171,6/14/17 159428956,Biorad HSP3841,Biohub,6/14/17,170615,Brain,Cerebellum,3_9_M,Multiple,100,Sony SIM1,,,,2,MACA4_6,,3,9,M,False,,Brain_Neurons
 MAA000658,5,505171,6/14/17 159428956,Biorad HSP3841,Biohub,6/14/17,170626,Brain,Cortex,19_23_M_P6,Neurons,130,SIM1,exp15,,,1,MACA5_7,,19,23,M,True,P6,Brain_Neurons
 MAA000670,5,505171,6/14/17 159428956,Biorad HSP3841,Biohub,6/14/17,170626,Brain,Cortex,19_22_M_P6,Neurons,130,SIM1,exp15,,,1,MACA5_3,,19,22,M,True,P6,Brain_Neurons
 MAA000671,5,505171,6/14/17 159428956,Biorad HSP3841,Biohub,6/14/17,170626,Brain,Cerebellum,19_23_M_P6,Neurons,130,SIM1,exp15,,,1,MACA8_5,,19,23,M,True,P6,Brain_Neurons
 MAA000672,5,505171,6/14/17 159428956,Biorad HSP3841,Biohub,6/14/17,170626,Brain,Cortex,19_22_M_P6,Neurons,130,SIM1,exp15,,,2,,,19,22,M,True,P6,Brain_Neurons
 MAA000673,5,505171,6/14/17 159428956,Biorad HSP3841,Biohub,6/14/17,170626,Brain,Cortex,19_23_M_P6,Neurons,130,SIM1,exp15,,,2,MACA5_3,,19,23,M,True,P6,Brain_Neurons
 MAA000694,5,505171,6/14/17 159428956,Biorad HSP3841,Biohub,6/14/17,170626,Brain,Hippocampus,19_22_M_P6,Neurons,130,Sony SIM1,exp15,,,1,MACA5_3,,19,22,M,True,P6,Brain_Neurons
-MAA000697_2,,,,,,,170626,Brain,Hippocampus,19_22_M_P6,,,,,,,2,MACA5_3,,19,22,M,True,P6,Brain
+MAA000697_2,,,,,,,170626,Brain,Hippocampus,19_22_M_P6,,,,,,,2,MACA5_3,,19,22,M,True,P6,Brain_Neurons
 MAA000708,5,505171,6/14/17 159428956,Biorad HSP3841,Biohub,6/14/17,170626,Brain,Cerebellum,19_23_M_P6,Microglia,100,Sony SIM1,exp15,,,1,MACA5_6,,19,23,M,True,P6,Brain_Microglia
 MAA000710,5,505171,6/14/17 159428956,Biorad HSP3841,Biohub,6/14/17,170626,Brain,Cerebellum,19_22_M_P6,Neurons,130,Sony SIM1,exp15,,,1,MACA5_3,,19,22,M,True,P6,Brain_Neurons
 MAA000711,5,505171,6/14/17 159428956,Biorad HSP3841,Biohub,6/14/17,170626,Brain,Cerebellum,19_22_M_P6,Microglia,100,Sony SIM1,exp15,,,1,MACA5_3,,19,22,M,True,P6,Brain_Microglia
@@ -271,7 +271,7 @@ MAA000853,6,505171,6/14/17 159428956,Biorad HSP3841,Biohub,6/15/17,170619,Brain,
 MAA000861,6,505171,6/14/17 159428956,Biorad HSP3841,Biohub,6/15/17,170619,Brain,Cortex,4_12_M_P1,Neurons,130,Sony SIM1,exp10,,,2,MACA4_14,,4,12,M,True,P1,Brain_Neurons
 MAA000894,6,505171,6/14/17 159428956,Biorad HSP3841,Biohub,6/15/17,170619,Brain,Hippocampus,4_12_M_P1,Neurons,130,Sony SIM1,exp10,,,1,MACA22_7,,4,12,M,True,P1,Brain_Neurons
 MAA000902,6,505171,6/14/17 159428956,Biorad HSP3841,Biohub,6/15/17,170616,Brain,Striatum,3_11_M,Neurons,,,,,,1,MACA1_4,,3,11,M,False,,Brain_Neurons
-MAA000905,6,505171,6/14/17 159428956,Biorad HSP3841,Biohub,6/15/17,170616,Brain,Cortex,3_11_M,,,,,,,1,MACA1_2,,3,11,M,False,,Brain
+MAA000905,6,505171,6/14/17 159428956,Biorad HSP3841,Biohub,6/15/17,170616,Brain,Cortex,3_11_M,,,,,,,1,MACA1_2,,3,11,M,False,,Brain_Neurons
 MAA000923,,,,,,,170615,Brain,Hippocampus,3_9_M,Neurons,130,Sony SIM1,,,,1,MACA4_11,,3,9,M,False,,Brain_Neurons
 MAA000924,,,,,,,170615,Brain,Cerebellum,3_8_M,Neurons,130,Sony SIM1,,,,2,MACA4_11,,3,8,M,False,,Brain_Neurons
 MAA000925,,,,,,,170615,Brain,Striatum,3_9_M,Neurons,130,Sony SIM1,,,,1,MACA4_11,,3,9,M,False,,Brain_Neurons
