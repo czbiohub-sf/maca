@@ -24,7 +24,7 @@ objects = c(
   "Kidney/10x_Kidney_seurat_tiss.Robj",
   'Liver/10x_Liver_seurat_3m_201711017.Robj',
   "Lung/10x_Lung_seurat_tissue.10X.Robj",
-  'Mammary_Gland/10x_Mammary_seurat_tiss.Robj',
+  'Mammary/10x_Mammary_seurat_tiss.Robj',
   'Marrow/10x_Marrow_seurat_tiss.Robj',
   'Muscle/10x_Muscle_seurat_tiss.Robj',
   'Spleen/10x_Spleen_seurat_tiss.Robj',
