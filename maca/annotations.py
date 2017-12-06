@@ -534,6 +534,7 @@ def clean_annotation(df, tissue, debug=False):
         """
         gene_to_annotation = {'epcam': 'epithelial_cells',
                               # 'scgb1a1': 'epithelial_cells',
+                              'pdgfrb_+_ptprc': 'neuroendocrine_cells',
                               'pecam': 'endothelial_cells',
                               'pecam1': 'endothelial_cells',
                               'ptprc': 'immune_cells',
