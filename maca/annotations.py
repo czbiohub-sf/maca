@@ -409,6 +409,8 @@ def clean_annotation(df, tissue, debug=False):
     # --- Spleen ---
     elif tissue == "Spleen":
         df[ANNOTATION] = df[ANNOTATION].str.strip('0123456789. ')
+        df[ANNOTATION] = df[ANNOTATION].replace('macrophages/dendritic_cells/monocytes_and_others',
+                                                'myeloid_cells')
         # print(df.head())
 
         df[ANNOTATION] = df[ANNOTATION].str.replace(
@@ -450,8 +452,8 @@ def clean_annotation(df, tissue, debug=False):
             'thymocyte_1_mix_of_dn4_dp_immaturesps', 't_cells')
 
         # Make sure cells are plural
-        df[ANNOTATION] = df[ANNOTATION].replace('stromal_mesenchymal_cell',
-                                                'stromal_mesenchymal_cells')
+        df[ANNOTATION] = df[ANNOTATION].replace('stromal_mesenchymal_stem_cell',
+                                                'stromal_stem_cells')
 
         # Deal with thymocyte_2,3,4,5_subannotation
         rows = df[ANNOTATION].str.startswith('thymocyte') | ~df[ANNOTATION].str.contains('cell')
