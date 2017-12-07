@@ -1,0 +1,66 @@
+---
+title: "Load and decorate"
+output: html_notebook
+---
+
+This notebook is for loading in the big precomputed tiss and tissX objects and incorporating the annotations and coloring information into the metadata.
+
+```{r}
+load("~/maca/save/All_seurat_tiss.Robj")
+
+load("~/maca/save/10x_All_regressed_seurat_tiss.Robj")
+
+tiss@meta.data['cell'] <- rownames(tiss@meta.data)
+tissX@meta.data['cell'] <- rownames(tissX@meta.data)
+
+tiss@meta.data['cluster'] <- tiss@ident
+tissX@meta.data['cluster'] <- tissX@ident
+```
+
+
+Add in percent Rn54s.
+```{r}
+percent.Rn45s <- Matrix::colSums(tiss@raw.data[c('Rn45s'), ])/Matrix::colSums(tiss@raw.data)
+tiss <- AddMetaData(object = tiss, metadata = percent.Rn45s, col.name = "percent.Rn45s")
+
+percent.Rn45s <- tissX@raw.data[c('Rn45s'), ]/Matrix::colSums(tissX@raw.data)
+tissX <- AddMetaData(object = tissX, metadata = percent.Rn45s, col.name = "percent.Rn45s")
+```
+
+Loading annotations
+```{r}
+anno_plate = read_csv('~/maca/metadata/maca_3month_annotations_plates.csv')
+anno_plate <- rename(anno_plate, cell = X1)
+anno_plate <- rename(anno_plate, anno_tissue = tissue)
+anno_plate %>% group_by(anno_tissue, annotation, subannotation) %>% summarize(count = n())
+
+anno_tenx = read_csv('~/maca/metadata/maca_3month_annotations_10x.csv')
+anno_tenx <- rename(anno_tenx, cell = X1)
+anno_tenx <- rename(anno_tenx, anno_tissue = tissue)
+anno_tenx %>% group_by(anno_tissue, annotation, subannotation) %>% summarize(count = n())
+```
+
+```{r}
+tissue_colors <- read_csv('~/maca/metadata/tissue_colors.csv')
+tissue_colors <- rename(tissue_colors, anno_tissue = X1)
+tissue_colors
+```
+
+```{r}
+tiss@meta.data <- tiss@meta.data %>% select(-(annotation:subannotation)) %>% 
+                   left_join(anno_plate, by = 'cell') %>%
+                   left_join(tissue_colors, by = 'anno_tissue')
+
+rownames(tiss@meta.data) <- tiss@meta.data$cell
+```
+
+```{r}
+tissX@meta.data <- tissX@meta.data %>% select(-(annotation:subannotation)) %>% 
+                   left_join(anno_tenx, by = 'cell') %>%
+                   left_join(tissue_colors, by = 'anno_tissue')
+
+rownames(tissX@meta.data) <- tissX@meta.data$cell
+```
+
+
+
