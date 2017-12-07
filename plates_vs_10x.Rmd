@@ -7,28 +7,11 @@ output:
 
 ```{r}
 library(tidyverse)
+library(RColorBrewer)
 library(stringr)
 library(Seurat)
 
 Sys.setenv(R_MAX_NUM_DLLS=150)
-```
-
-```{r}
-load("~/maca/save/All_seurat_tiss.Robj")
-
-load("~/maca/save/10x_All_regressed_seurat_tiss.Robj")
-
-tiss@meta.data['cell'] <- rownames(tiss@meta.data)
-tissX@meta.data['cell'] <- rownames(tissX@meta.data)
-```
-
-Add in percent Rn54s.
-```{r}
-percent.Rn45s <- Matrix::colSums(tiss@raw.data[c('Rn45s'), ])/Matrix::colSums(tiss@raw.data)
-tiss <- AddMetaData(object = tiss, metadata = percent.Rn45s, col.name = "percent.Rn45s")
-
-percent.Rn45s <- tissX@raw.data[c('Rn45s'), ]/Matrix::colSums(tissX@raw.data)
-tissX <- AddMetaData(object = tissX, metadata = percent.Rn45s, col.name = "percent.Rn45s")
 ```
 
 Extract just the metadata from plates and tenx cells.
@@ -118,10 +101,12 @@ medians %>% filter(tissue %in% common_tissues,) %>% ggplot(aes(x = median_Rn45s,
   ggtitle("Comparing Rn45s and ribo genes between channels and plates.")
 
 ggsave('figures/rn45s_vs_percent_ribo.pdf', width = 7, height = 7, units = "in")
-
 ```
 
 
+```{r}
+tiss@meta.data 
+```
 
 
 ##  Dynamic Range of individual cells
@@ -130,6 +115,7 @@ We compare individual cells from tissues containing similar numbers of genes per
 
 
 Get a few cells from each method with values in a certain range.
+
 ```{r}
 subset.size <- 1
 set.seed(1)
@@ -158,11 +144,15 @@ title(main = "Heart plateseq cell")
 dev.off()
 ```
 
-If we instead scaled them to 10^6 both, we would see a different shape for the plate data, with more dynamic range in the low values.
+If we instead scaled plates to 10^6, we would see a different shape for the plate data, with more dynamic range in the low values.
+
+```{r}
+adjust_lognorm = function(x, rescaling) log1p(rescaling*(exp(x)-1))
+```
+
 
 ```{r, fig.width = 4, fig.height = 8}
 pdf('figures/heart_cell_comparison.pdf')
-
 
 par(mfrow=c(2,1))
 
@@ -175,6 +165,89 @@ expr <- adjust_lognorm(tiss@data[,cell.subset[1]], 100)
 expr <- expr[expr > 0]
 plot(sort(expr), ylab = "log expression", xlab = "gene index", col = "green")
 title(main = "Heart plateseq cell")
+
+dev.off()
+```
+
+```{r}
+
+median_cell <- function(stiss, tissue_name, annotation_name){
+  med = median(stiss@meta.data %>% filter(tissue == tissue_name, annotation == annotation_name) %>% pull(nGene))
+  cell = stiss@meta.data %>% filter(tissue == tissue_name, annotation == annotation_name, nGene > med - 20, nGene < med + 20) %>%
+  sample_n(1) %>% pull(cell)
+  
+  cell
+}
+```
+
+```{r, fig.width = 4, fig.height = 8}
+pdf('figures/Hepatocyte_cell_comparison.pdf')
+
+par(mfrow=c(2,1))
+
+tissue_name = "Liver"
+cell_type = "hepatocytes"
+
+tenx_cell = median_cell(tissX, tissue_name, cell_type)
+plate_cell = median_cell(tiss, tissue_name, cell_type)
+
+expr <- tissX@data[,tenx_cell]
+expr <- expr[expr > 0]
+plot(sort(expr), ylab = "log normalized expression", xlab = "gene index", col = "red")
+title(main = paste0("Hepatocyte - 10x"))
+
+expr <- adjust_lognorm(tiss@data[,plate_cell], 100)
+expr <- expr[expr > 0]
+plot(sort(expr), ylab = "log  normalized expression", xlab = "gene index", col = "green")
+title(main = paste0("Hepatocyte - plate"))
+
+dev.off()
+```
+
+```{r, fig.width = 4, fig.height = 8}
+#pdf('figures/Kidney_fibroblast_cell_comparison.pdf')
+
+par(mfrow=c(2,1))
+
+tissue_name = "Kidney"
+cell_type = "fibroblasts"
+
+tenx_cell = median_cell(tissX, tissue_name, cell_type)
+plate_cell = median_cell(tiss, tissue_name, cell_type)
+
+expr <- tissX@data[,tenx_cell]
+expr <- expr[expr > 0]
+plot(sort(expr), ylab = "log normalized expression", xlab = "gene index", col = "red")
+title(main = paste0("Kidney fibroblast - 10x"))
+
+expr <- adjust_lognorm(tiss@data[,plate_cell], 100)
+expr <- expr[expr > 0]
+plot(sort(expr), ylab = "log  normalized expression", xlab = "gene index", col = "green")
+title(main = paste0("Kidney fibroblast - plate"))
+
+dev.off()
+```
+
+```{r, fig.width = 4, fig.height = 8}
+pdf('figures/Spleen_b_cell_comparison.pdf')
+
+par(mfrow=c(2,1))
+
+tissue_name = "Spleen"
+cell_type = "b_cells"
+
+tenx_cell = median_cell(tissX, tissue_name, cell_type)
+plate_cell = median_cell(tiss, tissue_name, cell_type)
+
+expr <- tissX@data[,tenx_cell]
+expr <- expr[expr > 0]
+plot(sort(expr), ylab = "log normalized expression", xlab = "gene index", col = "red")
+title(main = paste0("Spleen B cell - 10x"))
+
+expr <- adjust_lognorm(tiss@data[,plate_cell], 100)
+expr <- expr[expr > 0]
+plot(sort(expr), ylab = "log  normalized expression", xlab = "gene index", col = "green")
+title(main = paste0("Spleen B cell - plate"))
 
 dev.off()
 ```
@@ -269,9 +342,9 @@ anno_tenx %>% select(cell, annotation, subannotation, tissue) %>% rename(anno_ti
 ```{r}
 all_pct <- tibble(value = double(), gene = character(), method = character(), tissue = character(), annotation = character())
 
-for(tissue_name in unique(anno_plate$tissue)){
-  for(annotation_name in filter(anno_plate, tissue == tissue_name) %>% pull(annotation) %>% unique()){
-    cells_plate <- anno_plate %>% filter(annotation == annotation_name & tissue == tissue_name) %>% pull(cell)
+for(tissue_name in unique(tiss@meta.data$anno_tissue)){
+  for(annotation_name in filter(tiss@meta.data, anno_tissue == tissue_name) %>% pull(annotation) %>% unique()){
+    cells_plate <- tiss@meta.data %>% filter(annotation == annotation_name & anno_tissue == tissue_name) %>% pull(cell)
     pct_plate <- Matrix::rowMeans(tiss@raw.data[,cells_plate] > 0)
     
     pct = as_data_frame(pct_plate)
@@ -285,9 +358,9 @@ for(tissue_name in unique(anno_plate$tissue)){
   }
 }
 
-for(tissue_name in unique(anno_tenx$tissue)){
-  for(annotation_name in filter(anno_tenx, tissue == tissue_name) %>% pull(annotation) %>% unique()){
-    cells_tenx <- anno_tenx %>% filter(annotation == annotation_name & tissue == tissue_name) %>% pull(cell)
+for(tissue_name in unique(tiss@meta.data$anno_tissue)){
+  for(annotation_name in filter(tissX@meta.data, anno_tissue == tissue_name) %>% pull(annotation) %>% unique()){
+    cells_tenx <- tissX@meta.data %>% filter(annotation == annotation_name & anno_tissue == tissue_name) %>% pull(cell)
     pct_tenx <- Matrix::rowMeans(tissX@raw.data[,cells_tenx] > 0)
     
     pct = as_data_frame(pct_tenx)
@@ -312,20 +385,25 @@ common_anno_tissue <- all_pct %>% group_by(anno_and_tissue, method) %>% summariz
 pct_comparison <- all_pct %>% filter(anno_and_tissue %in% common_anno_tissue)  %>% spread(key = method, value = value, fill = 0) %>%
         filter(plate > 0.05 | tenx > 0.05) %>% 
         mutate(plate_larger = (plate>tenx),
-                   pct_diff = plate - tenx) %>%
-        group_by(tissue, anno_and_tissue) %>% summarize(pct_plate_larger = round(mean(plate_larger),2), net_diff = round(mean(pct_diff),2))
+                   plate_smaller = (plate < tenx)) %>%
+        group_by(tissue, anno_and_tissue) %>% summarize(plate_is_larger = sum(plate_larger),
+                                                        plate_is_smaller = sum(plate_smaller),
+                                                        ngene = n())
 
-rtissue_colors = tissue_colors %>% rename(tissue = tissue)
+rtissue_colors = tissue_colors %>% rename(tissue = anno_tissue)
+
 pct_comparison <- left_join(pct_comparison, rtissue_colors, by = 'tissue')
 
-pct_comparison %>% ggplot(aes(pct_plate_larger, net_diff)) + geom_vline(xintercept = 0.5) + geom_hline(yintercept = 0) +
+pct_comparison %>% ggplot(aes(plate_is_larger, plate_is_smaller, xmin = 0, ymin = 0, xmax = 11000, ymax = 11000)) + geom_abline(intercept = 0, slope = 1) + 
    geom_point(aes(color = color), size=2) +
    scale_color_identity(breaks = rtissue_colors$color, 
                         labels = rtissue_colors$tissue, 
                         guide = "legend") + 
-  labs(x = 'Percent of genes expressed more in plates', y = 'Mean difference in expression percent') +
+  labs(x = 'Genes present more often in plates', y = 'Genes present more often in 10x') +
+  
   guides(color = guide_legend(override.aes = list(size=2)))
 
+ggsave('figures/plate_tenx_comparison.pdf')
 ```
 
 ```{r}
