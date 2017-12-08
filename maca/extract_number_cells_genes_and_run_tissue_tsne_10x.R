@@ -58,6 +58,12 @@ cleaned_annotations = read.csv('~/code/maca/metadata/maca_3month_annotations_10x
 figure_folder = '~/Google Drive/MACA_3mo_manuscript/Main figures/figure2/10x/'
 
 plot_annotated_tsne = function(tiss, object_name, tissue_of_interest) {
+  n_annotations = dim(unique(tiss@meta.data['annotation']))[1]
+  if (n_annotations > 8){
+    colors.use = c(brewer.pal(8, 'Set2'), brewer.pal(n_annotations-8, 'Dark2'))
+  } else{
+    colors.use = brewer.pal(n_annotations, 'Set2')
+  }
   p = TSNEPlot(
     object = tiss,
     do.label = FALSE,
@@ -66,7 +72,8 @@ plot_annotated_tsne = function(tiss, object_name, tissue_of_interest) {
     no.legend = TRUE,
     no.axes = TRUE,
     alpha = 0.5,
-    do.return = TRUE
+    do.return = TRUE,
+    colors.use=colors.use
   ) #+ geom_point(alpha = 0.1)
   p + labs(title=tissue_of_interest)
   ggsave(

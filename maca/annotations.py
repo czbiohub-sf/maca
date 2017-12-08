@@ -86,7 +86,7 @@ def clean_annotation(df, tissue, debug=False):
         df[ANNOTATION] = df[ANNOTATION].map(lambda x: x + ' cells' if not x.endswith('cells') else x)
 
     # --- Brain_FACS_neurons ----
-    elif tissue == "Brain_FACS_neurons":
+    elif tissue == "Brain_neurons":
         df[ANNOTATION] = df[ANNOTATION].str.replace(
             'endothelial', 'endothelial_cells')
         df[ANNOTATION] = df[ANNOTATION].str.replace(
@@ -273,12 +273,12 @@ def clean_annotation(df, tissue, debug=False):
         df.loc[rows, ANNOTATION] = 'unknown'
 
     # -- Mammary ---
-    elif tissue == "Mammary_Gland":
+    elif tissue == "Mammary":
         df[ANNOTATION] = df[ANNOTATION].str.lower().str.replace(
             'epithelial_', '')
         # print(df.fillna('-').groupby([ANNOTATION, SUBANNOTATION]).size())
 
-        rows = df[ANNOTATION].str.lower().str.startswith('hormone')
+        rows = df[ANNOTATION].str.startswith('hormone')
         df.loc[rows, ANNOTATION] = 'luminal_cells'
         df.loc[rows, SUBANNOTATION] = 'hormone_responsive'
 
