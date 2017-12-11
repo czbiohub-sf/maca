@@ -1,0 +1,126 @@
+tissue,annotation_original,subannotation_original,annotation_cleaned,subannotation_cleaned,n_cells,Class,Term IRI
+Bladder,Basal,.,basal,.,266,basal cell of urothelium,http://purl.obolibrary.org/obo/CL_1000486
+Bladder,Endothelial cells,.,endothelial,.,68,endothelial cell,http://purl.obolibrary.org/obo/CL_0000115
+Bladder,Immune cells,.,immune,.,57,leukocyte,http://purl.obolibrary.org/obo/CL_0000738
+Bladder,LuminalA1,.,luminal,a,313,bladder cell,http://purl.obolibrary.org/obo/CL_1001319
+Bladder,LuminalA2,.,luminal,a,219,bladder cell,http://purl.obolibrary.org/obo/CL_1001319
+Bladder,LuminalB,.,luminal,b,391,bladder cell,http://purl.obolibrary.org/obo/CL_1001319
+Bladder,MesenchymalA1,.,mesenchymal,a,169,mesenchymal cell,http://purl.obolibrary.org/obo/CL_0008019
+Bladder,MesenchymalA2,.,mesenchymal,a,501,mesenchymal cell,http://purl.obolibrary.org/obo/CL_0008019
+Bladder,MesenchymalB1,.,mesenchymal,b,187,mesenchymal cell,http://purl.obolibrary.org/obo/CL_0008019
+Bladder,MesenchymalB2,.,mesenchymal,b,329,mesenchymal cell,http://purl.obolibrary.org/obo/CL_0008019
+Heart,Blood_Cells,.,erythrocytes,.,55,erythrocyte,http://purl.obolibrary.org/obo/CL_0000232
+Heart,CMs,.,cardiomyocytes,.,83,cardiac muscle cell,http://purl.obolibrary.org/obo/CL_0000746
+Heart,Coronary_vascular_EDC,.,endothelial,coronary_vascular,178,endothelial cell,http://purl.obolibrary.org/obo/CL_0000115
+Heart,Endocardial_EDC,.,endothelial,endocardial,65,endocardial cell,http://purl.obolibrary.org/obo/CL_0002350
+Heart,Fb,.,fibroblasts,.,157,fibroblast,http://purl.obolibrary.org/obo/CL_0000057
+Heart,Fb_SMC,Fibroblast,fibroblasts,.,65,fibroblast,http://purl.obolibrary.org/obo/CL_0000057
+Heart,Fb_SMC,Smooth_Muscle_Cells,smooth_muscle,.,21,smooth muscle cell,http://purl.obolibrary.org/obo/CL_0000192
+Kidney,Collecting duct cells,.,collecting_duct,.,72,kidney collecting duct cell,http://purl.obolibrary.org/obo/CL_1001225
+Kidney,Feneserated capillary cells,.,fenestrated_capillary,.,345,fenestrated cell,http://purl.obolibrary.org/obo/CL_0000666
+Kidney,Fibroblasts,.,fibroblasts,.,113,fibroblast,http://purl.obolibrary.org/obo/CL_0000057
+Kidney,Macrophages,.,macrophages,.,181,macrophage,http://purl.obolibrary.org/obo/CL_0000235
+Kidney,Proximal ascending tubule,.,tubule,proximal_ascending,352,kidney tubule cell,http://purl.obolibrary.org/obo/CL_1000507
+Kidney,Smooth muscle cells,.,smooth_muscle,.,50,smooth muscle cell,http://purl.obolibrary.org/obo/CL_0000192
+Kidney,Thick Ascending tubule,.,tubule,thick_ascending,473,kidney tubule cell,http://purl.obolibrary.org/obo/CL_1000507
+Kidney,connecting tubule cells,.,tubule,connecting,245,kidney tubule cell,http://purl.obolibrary.org/obo/CL_1000507
+Kidney,endothelial cells,.,endothelial,.,45,endothelial cell,http://purl.obolibrary.org/obo/CL_0000115
+Kidney,other immune,.,immune,.,54,leukocyte,http://purl.obolibrary.org/obo/CL_0000738
+Kidney,proximal tubule,.,tubule,proximal,851,kidney tubule cell,http://purl.obolibrary.org/obo/CL_1000507
+Liver,F-hep-midlobule,F-Hamp-high,hepatocytes,midlobular,50,hepatocyte,http://purl.obolibrary.org/obo/CL_0000182
+Liver,F-hep-pericentral,"F-Cyp2e1, Glul",hepatocytes,pericentral,258,hepatocyte,http://purl.obolibrary.org/obo/CL_0000182
+Liver,F-hep-periportal,F-Cyp2f2,hepatocytes,periportal,203,hepatocyte,http://purl.obolibrary.org/obo/CL_0000182
+Liver,M-hep-midlobule,M-Mup-high,hepatocytes,midlobular,214,hepatocyte,http://purl.obolibrary.org/obo/CL_0000182
+Liver,M-hep-pericentral,"M-Cyp2e1, Glul",hepatocytes,pericentral,115,hepatocyte,http://purl.obolibrary.org/obo/CL_0000182
+Liver,M-hep-periportal,M-Cyp2f2,hepatocytes,periportal,166,hepatocyte,http://purl.obolibrary.org/obo/CL_0000182
+Liver,endothelial,.,endothelial,.,20,endothelial cell,http://purl.obolibrary.org/obo/CL_0000115
+Lung,Alveolar Macrophages,.,macrophages,alveolar,345,macrophage,http://purl.obolibrary.org/obo/CL_0000235
+Lung,B Cells,.,b_cells,.,205,B cell,http://purl.obolibrary.org/obo/CL_0000236
+Lung,Ciliated Cells,.,ciliated,.,41,ciliated cell,http://purl.obolibrary.org/obo/CL_0000064
+Lung,Club Cells,.,club,.,5,Clara cell,http://purl.obolibrary.org/obo/CL_0000158
+Lung,Dendritic Cells,.,dendritic,.,225,dendritic cell,http://purl.obolibrary.org/obo/CL_0000451
+Lung,Endothelial Cell Type I,.,endothelial,.,349,endothelial cell,http://purl.obolibrary.org/obo/CL_0000115
+Lung,Endothelial Cell Type IV,.,endothelial,.,76,endothelial cell,http://purl.obolibrary.org/obo/CL_0000115
+Lung,Interstital Macrophages,.,macrophages,interstitial,111,macrophage,http://purl.obolibrary.org/obo/CL_0000235
+Lung,Mast Cells,.,mast,.,22,mast cell,http://purl.obolibrary.org/obo/CL_0000097
+Lung,Mesothelial Cells,.,mesothelial,.,24,mesothelial cell,http://purl.obolibrary.org/obo/CL_0000077
+Lung,Monocytes,.,monocytes,.,145,monocyte,http://purl.obolibrary.org/obo/CL_0000576
+Lung,Natural Killer Cells,.,natural_killer,.,832,natural killer cell,http://purl.obolibrary.org/obo/CL_0000623
+Lung,Potential Ciliated and Club Cell Doublets,.,unknown,.,8,NA,NA
+Lung,Potential Stromal Cell Type V and Endothelial Cell Type I Doublets,.,unknown,.,41,NA,NA
+Lung,Stromal Cell Type I,.,stromal,.,1586,stromal cell,http://purl.obolibrary.org/obo/CL_0000499
+Lung,Stromal Cell Type II,.,stromal,.,466,stromal cell,http://purl.obolibrary.org/obo/CL_0000499
+Lung,Stromal Cell Type IV,.,stromal,.,348,stromal cell,http://purl.obolibrary.org/obo/CL_0000499
+Lung,Stromal Cell Type V,.,stromal,.,134,stromal cell,http://purl.obolibrary.org/obo/CL_0000499
+Lung,T Cells,.,t_cells,.,246,T cell,http://purl.obolibrary.org/obo/CL_0000084
+Lung,Type II Alveolar Epithelial Cells,.,epithelial,alveolar_type_ii,89,type II pneumocyte,http://purl.obolibrary.org/obo/CL_0002063
+Lung,Unknown Immune I,.,immune,.,124,leukocyte,http://purl.obolibrary.org/obo/CL_0000738
+Lung,Unknown Immune II,.,immune,.,27,leukocyte,http://purl.obolibrary.org/obo/CL_0000738
+Mammary,B cells,.,b_cells,.,764,B cell,http://purl.obolibrary.org/obo/CL_0000236
+Mammary,Basal Epithelial cells,.,basal,.,393,basal cell,http://purl.obolibrary.org/obo/CL_0000646
+Mammary,Endothelial cells,.,endothelial,.,251,endothelial cell,http://purl.obolibrary.org/obo/CL_0000115
+Mammary,Hormone responsive luminal epithelial cells,.,luminal,hormone_responsive,190,luminal cell of lactiferous duct,http://purl.obolibrary.org/obo/CL_0002662
+Mammary,Luminal epithelial progenitors Cd14+,.,luminal,progenitors,240,luminal cell of lactiferous duct,http://purl.obolibrary.org/obo/CL_0002662
+Mammary,Macrophages,.,macrophages,.,186,macrophage,http://purl.obolibrary.org/obo/CL_0000235
+Mammary,S100a4+/Ccl5+ cells,.,stromal,s100a4+_and_ccl5+,57,stromal cell,http://purl.obolibrary.org/obo/CL_0000499
+Mammary,Stromal cells,.,stromal,.,581,stromal cell,http://purl.obolibrary.org/obo/CL_0000499
+Mammary,Stromal cells Mustn1+/Procr+,.,stromal,mustn1+_and_procr+,59,stromal cell,http://purl.obolibrary.org/obo/CL_0000499
+Mammary,T cells,.,t_cells,.,1467,T cell,http://purl.obolibrary.org/obo/CL_0000084
+Mammary,T cells Nkg7+,.,t_cells,nkg7+,293,T cell,http://purl.obolibrary.org/obo/CL_0000084
+Marrow,Erythrocytes,.,erythrocytes,.,142,erythrocyte,http://purl.obolibrary.org/obo/CL_0000232
+Marrow,Erythroid-progenitors_Erythroblasts,.,progenitors,erythroid,268,hematopoietic stem cell,http://purl.obolibrary.org/obo/CL_0000037
+Marrow,Granulocyte-progenitors,.,progenitors,granulocyte,330,hematopoietic stem cell,http://purl.obolibrary.org/obo/CL_0000037
+Marrow,Granulocytes,.,granulocytes,.,770,granulocyte,http://purl.obolibrary.org/obo/CL_0000094
+Marrow,Immature-B,.,b_cells,immature,299,B cell,http://purl.obolibrary.org/obo/CL_0000236
+Marrow,Macrophages,.,macrophages,.,222,macrophage,http://purl.obolibrary.org/obo/CL_0000235
+Marrow,Mature-B,.,b_cells,mature,91,B cell,http://purl.obolibrary.org/obo/CL_0000236
+Marrow,Megakaryocyte-progenitors,.,progenitors,megakaryocyte,62,hematopoietic stem cell,http://purl.obolibrary.org/obo/CL_0000037
+Marrow,Monocyte-progenitors,.,progenitors,mature,322,hematopoietic stem cell,http://purl.obolibrary.org/obo/CL_0000037
+Marrow,Monocytes,.,monocytes,.,522,monocyte,http://purl.obolibrary.org/obo/CL_0000576
+Marrow,PreproB,.,b_cells,prepro,63,Fraction A pre-pro B cell,http://purl.obolibrary.org/obo/CL_0002045
+Marrow,Stem_Progenitors,.,progenitors,.,399,hematopoietic stem cell,http://purl.obolibrary.org/obo/CL_0000037
+Marrow,T_NKT,.,t_cells,.,162,T cell,http://purl.obolibrary.org/obo/CL_0000084
+Muscle,.,.,unknown,.,312,NA,NA
+Muscle,B cells,.,b_cells,.,463,B cell,http://purl.obolibrary.org/obo/CL_0000236
+Muscle,T cells,.,t_cells,.,323,T cell,http://purl.obolibrary.org/obo/CL_0000084
+Muscle,chondrogenic cells,.,chondrogenic,.,380,chondroblast,http://purl.obolibrary.org/obo/CL_0000058
+Muscle,endothelial cells,.,endothelial,.,1290,endothelial cell,http://purl.obolibrary.org/obo/CL_0000115
+Muscle,fibro-/adipogenic progenitors,.,mesenchymal_stem,.,1111,mesenchymal stem cell,http://purl.obolibrary.org/obo/CL_0000134
+Muscle,macrophages,.,macrophages,.,308,macrophage,http://purl.obolibrary.org/obo/CL_0000235
+Muscle,satellite cells,.,satellite,.,349,skeletal muscle satellite cell,http://purl.obolibrary.org/obo/CL_0000594
+Spleen,10. Dendritic cells,.,dendritic,.,102,dendritic cell,http://purl.obolibrary.org/obo/CL_0000451
+Spleen,11. Proliferative B cells,.,b_cells,proliferative,98,B cell,http://purl.obolibrary.org/obo/CL_0000236
+Spleen,12. Macrophages 2,.,macrophages,.,96,macrophage,http://purl.obolibrary.org/obo/CL_0000235
+Spleen,13 T cells,.,t_cells,.,92,T cell,http://purl.obolibrary.org/obo/CL_0000084
+Spleen,14. Plasmocytoid Dendritic cells,.,dendritic,plasmocytoid,42,dendritic cell,http://purl.obolibrary.org/obo/CL_0000451
+Spleen,2. Marginal Zone B cells,.,b_cells,marginal_zone,1440,B cell,http://purl.obolibrary.org/obo/CL_0000236
+Spleen,3. CD8+ T Cells,.,t_cells,cd8+,946,T cell,http://purl.obolibrary.org/obo/CL_0000084
+Spleen,4. Cd4+ T cells,.,t_cells,cd4+,905,T cell,http://purl.obolibrary.org/obo/CL_0000084
+Spleen,6. Macrophages 1,.,macrophages,.,299,macrophage,http://purl.obolibrary.org/obo/CL_0000235
+Spleen,7. B cells,.,b_cells,.,282,B cell,http://purl.obolibrary.org/obo/CL_0000236
+Spleen,8. Natural Killer cells,.,t_cells,natural_killer_cells,224,T cell,http://purl.obolibrary.org/obo/CL_0000084
+Spleen,9. iNK cells,.,t_cells,invariant_natural_killer,120,T cell,http://purl.obolibrary.org/obo/CL_0000084
+Spleen,T1/T2/Follicular B cells,.,b_cells,follicular,4906,B cell,http://purl.obolibrary.org/obo/CL_0000236
+Thymus,DN-Stage 4c,.,t_cells,double_negative-stage4c,43,T cell,http://purl.obolibrary.org/obo/CL_0000084
+Thymus,DN-Stage3,.,t_cells,double_negative-stage3,35,T cell,http://purl.obolibrary.org/obo/CL_0000084
+Thymus,DN-Stage4b,.,t_cells,double_negative-stage4b,211,T cell,http://purl.obolibrary.org/obo/CL_0000084
+Thymus,immature SP Cd8,.,t_cells,immature_single_positive_cd8+,194,T cell,http://purl.obolibrary.org/obo/CL_0000084
+Thymus,mix of cells,"Single positive Cd8, possibly mature",t_cells,"single_positive_cd8+,_possibly_mature",117,T cell,http://purl.obolibrary.org/obo/CL_0000084
+Thymus,mix of cells,stromal_mesenchymal cells,stromal_mesenchymal,.,81,stromal cell,http://purl.obolibrary.org/obo/CL_0000499
+Thymus,stromal mesenchymal cell,.,stromal_mesenchymal,.,31,stromal cell,http://purl.obolibrary.org/obo/CL_0000499
+Thymus,thymocyte-DP,.,t_cells,double_positive,381,T cell,http://purl.obolibrary.org/obo/CL_0000084
+Thymus,thymocyte-DP-proliferating,.,t_cells,double_positive-proliferating,336,T cell,http://purl.obolibrary.org/obo/CL_0000084
+Tongue,Basal_cells,.,basal,basal,4242,basal cell of epidermis,http://purl.obolibrary.org/obo/CL_0002187
+Tongue,Maturing/nonkeratinized,.,keratinocytes,suprabasal,1454,keratinocyte,http://purl.obolibrary.org/obo/CL_0000312
+Tongue,Proliferating cells,.,basal,proliferating,843,basal cell of epidermis,http://purl.obolibrary.org/obo/CL_0002187
+Tongue,keratinocytes,.,basal,keratinocytes,962,keratinocyte,http://purl.obolibrary.org/obo/CL_0000312
+Tongue,unknown_cell,.,unknown,.,37,NA,NA
+Trachea,Epcam,.,epithelial,.,246,epithelial cell,http://purl.obolibrary.org/obo/CL_0000066
+Trachea,Epcam,Foxj1,epithelial,ciliated_cells,20,ciliated epithelial cell,http://purl.obolibrary.org/obo/CL_0000067
+Trachea,Epcam,Krt5,epithelial,basal_cells,36,basal cell of epithelium of trachea,http://purl.obolibrary.org/obo/CL_1000348
+Trachea,Epcam,Krt5/Krt14,epithelial,krt5/krt14,443,epithelial cell,http://purl.obolibrary.org/obo/CL_0000066
+Trachea,Epcam,Scgb1a1,epithelial,secretory_cells,140,epithelial cell,http://purl.obolibrary.org/obo/CL_0000066
+Trachea,Pdgfrb,.,stromal,.,7904,stromal cell,http://purl.obolibrary.org/obo/CL_0000499
+Trachea,Pdgfrb + Ptprc,.,neuroendocrine,.,543,neuroendocrine cell,http://purl.obolibrary.org/obo/CL_0000165
+Trachea,Pecam1,.,endothelial,.,1039,endothelial cell,http://purl.obolibrary.org/obo/CL_0000115
+Trachea,Ptprc,.,immune,.,898,leukocyte,http://purl.obolibrary.org/obo/CL_0000738
