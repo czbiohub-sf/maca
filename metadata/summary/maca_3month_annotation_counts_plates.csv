@@ -9,7 +9,8 @@ multipotent_progenitors,1924
 hair_follicle,1371
 stromal,1363
 progenitors,1291
-oligodendrocytes,1175
+oligodendrocytes,1186
+luminal,1084
 undifferentiated,904
 interfollicular_epidermis,892
 amplifying,889
@@ -20,14 +21,12 @@ enterocytes,782
 immune,718
 mesenchymal,656
 muscle_stem,546
-luminal,532
 myeloid,527
 mesenchymal_stem,486
-astrocytes,444
 satellite,442
+astrocytes,433
 beta,411
 hepatocytes,399
-luminal_progenitors,396
 monocytes,389
 keratinocytes,361
 natural_killer,336
@@ -36,11 +35,10 @@ epithelial,275
 tubule,261
 smooth_muscle,255
 unknown,227
-opcs,202
+oligodendrocyte_progenitor,202
 neurons,196
 acinar,177
 macrophages,176
-hormone_responsive_luminal,156
 cardiomyocytes,140
 pericytes,132
 ductal,131
@@ -52,7 +50,7 @@ dendritic,69
 kuppfer,51
 tuft,45
 collecting_duct,44
-npcs,36
+neural_progenitor,36
 stromal_stem,33
 stellate,29
 muscle,27
@@ -62,5 +60,5 @@ ciliated,14
 club,13
 erythrocytes,11
 remaining_epithelial,9
-neuroendocrine,2
 mesothelial,2
+neuroendocrine,2

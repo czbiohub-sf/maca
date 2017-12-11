@@ -16,14 +16,14 @@ Bladder,MesenchymalB1,.,mesenchymal,b,156
 Bladder,MesenchymalB2,.,mesenchymal,b,165
 Brain_Microglia,Macrophages,.,macrophages,.,36
 Brain_Microglia,Microglia,.,microglia,.,4329
-Brain_Neurons,NPCS,.,npcs,.,36
-Brain_Neurons,OPCs,.,opcs,.,202
-Brain_Neurons,astrocytes,Berg.Glia,astrocytes,berg_glia,30
+Brain_Neurons,NPCS,.,neural_progenitor,.,36
+Brain_Neurons,OPCs,.,oligodendrocyte_progenitor,.,202
+Brain_Neurons,astrocytes,Berg.Glia,astrocytes,bergmann_glia,30
 Brain_Neurons,astrocytes,cerebral_astrocytes,astrocytes,cerebral_astrocytes,403
-Brain_Neurons,astrocytes,myelinating_oligodendrocytes,astrocytes,myelinating_oligodendrocytes,11
-Brain_Neurons,endothelial,vSMCs,endothelial,vsmcs,14
+Brain_Neurons,astrocytes,myelinating_oligodendrocytes,oligodendrocytes,myelinating_oligodendrocytes,11
+Brain_Neurons,endothelial,vSMCs,endothelial,vascular_smooth_muscle_cells,14
 Brain_Neurons,endothelial,vascular,endothelial,vascular,625
-Brain_Neurons,neurons,doublet,neurons,doublet,2
+Brain_Neurons,neurons,doublet,neurons,undetermined,2
 Brain_Neurons,neurons,excitatory,neurons,excitatory,73
 Brain_Neurons,neurons,inhibitory,neurons,inhibitory,98
 Brain_Neurons,neurons,undetermined,neurons,undetermined,23
@@ -120,8 +120,8 @@ Mammary,basal cells,Fos+,basal,fos+,111
 Mammary,basal cells,Id1+Id2+Pdfgrl+Wnt10a,basal,id1+id2+pdfgrl+wnt10a,52
 Mammary,basal cells,Ifgbp2+Igfbp4,basal,ifgbp2+igfbp,77
 Mammary,endothelial cells,.,endothelial,.,49
-Mammary,hormone responsive luminal cells,.,hormone_responsive_luminal,.,156
-Mammary,luminal progenitors,.,luminal_progenitors,.,396
+Mammary,hormone responsive luminal cells,.,luminal,hormone_responsive,156
+Mammary,luminal progenitors,.,luminal,progenitors,396
 Mammary,stromal cells,.,stromal,.,428
 Marrow,Immature-B,.,b_cells,immature,285
 Marrow,Immature_Mature-B,B0,b_cells,immature_mature,207

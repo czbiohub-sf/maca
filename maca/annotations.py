@@ -86,17 +86,17 @@ def clean_annotation(df, tissue, debug=False):
         df[ANNOTATION] = df[ANNOTATION].map(lambda x: x + ' cells' if not x.endswith('cells') else x)
 
     # --- Brain_FACS_neurons ----
-    elif tissue == "Brain_neurons":
+    elif tissue == "Brain_Neurons":
         df[ANNOTATION] = df[ANNOTATION].str.replace(
             'endothelial', 'endothelial_cells')
         df[ANNOTATION] = df[ANNOTATION].str.replace(
             'npc', 'neural_progenitor_cell')
         df[SUBANNOTATION] = df[SUBANNOTATION].str.replace(
-            'berg.glia', 'bergmann_glia')
+            'berg_glia', 'bergmann_glia')
         df[SUBANNOTATION] = df[SUBANNOTATION].str.replace(
             'doublet', 'undetermined')
         df[ANNOTATION] = df[ANNOTATION].replace(
-            'opcs', 'OPCs')
+            'opcs', 'oligodendrocyte_progenitor_cells')
 
         df[SUBANNOTATION] = df[SUBANNOTATION].replace(
             'vsmcs', 'vascular_smooth_muscle_cells')
