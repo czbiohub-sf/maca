@@ -298,6 +298,62 @@ pct  %>% spread(key = method, value = value, fill = 0) %>%
 }
 ```
 
+```{r}
+FetchData(tissX, c('annotation', 'anno_tissue', 'channel')) %>% group_by(annotation, anno_tissue, channel) %>% count()
+```
+
+```{r}
+
+cells_tenx1 <- FetchData(tissX, c('annotation', 'anno_tissue', 'channel','cell')) %>% filter(annotation == 'basal_epithelial' & anno_tissue == 'Mammary' & channel == '10X_P7_12') %>% pull(cell)
+pct_tenx1 <- Matrix::rowMeans(tissX@raw.data[,cells_tenx1] > 0)
+
+pct1 = as_data_frame(pct_tenx1)
+pct1['gene'] <- names(pct_tenx1)
+pct1['channel'] <- 'channel1'
+pct1 <- filter(pct1, value > 0.01)
+
+
+cells_tenx2 <- FetchData(tissX, c('annotation', 'anno_tissue', 'channel','cell')) %>% filter(annotation == 'basal_epithelial' & anno_tissue == 'Mammary' & channel == '10X_P7_13') %>% pull(cell)
+pct_tenx2 <- Matrix::rowMeans(tissX@raw.data[,cells_tenx2] > 0)
+
+pct2 = as_data_frame(pct_tenx2)
+pct2['gene'] <- names(pct_tenx2)
+pct2['channel'] <- 'channel2'
+pct2 <- filter(pct2, value > 0.01)
+
+pct <- bind_rows(pct1, pct2)
+
+pct  %>% spread(key = channel, value = value, fill = 0) %>% 
+  ggplot(aes(x = channel1, y = channel2)) + geom_hex() + geom_abline(slope=1, intercept=0)  + scale_fill_continuous(trans = log10_trans())
+```
+
+```{r}
+pct  %>% spread(key = channel, value = value, fill = 0)
+```
+
+```{r}
+tenx_v_tenx <- function(tissue_var, annotation_var){
+
+cells_tenx <- FetchData(tissX) %>% filter(annotation == annotation_var & tissue == tissue_var) %>% pull(cell)
+pct_tenx <- Matrix::rowMeans(tissX@raw.data[,cells_tenx] > 0)
+
+pct1 = as_data_frame(pct_tenx)
+pct1['gene'] <- names(pct_tenx)
+pct1['method'] <- 'tenx'
+pct1 <- filter(pct1, value > 0.01)
+
+pct2 = as_data_frame(pct_plate)
+pct2['gene'] <- names(pct_plate)
+pct2['method'] <- 'plate'
+pct2 <- filter(pct2, value > 0.01)
+
+pct <- bind_rows(pct1, pct2)
+
+pct  %>% spread(key = method, value = value, fill = 0) %>% 
+  ggplot(aes(x = plate, y = tenx)) + geom_hex() + geom_abline(slope=1, intercept=0)  + scale_fill_continuous(trans = log10_trans())
+}
+```
+
 ## Examples
 
 ```{r}
@@ -376,6 +432,16 @@ for(tissue_name in unique(tiss@meta.data$anno_tissue)){
 ```
 
 ```{r}
+1+1
+```
+
+
+```{r}
+tissX@meta.data$channel
+```
+
+
+```{r}
 all_pct <- all_pct %>% mutate(anno_and_tissue = paste(annotation, tissue, sep='-'))
 
 common_anno_tissue <- all_pct %>% group_by(anno_and_tissue, method) %>% summarize(count = n()) %>%
@@ -418,23 +484,192 @@ pct_comparison %>% filter(pct_plate_larger < 0.5)
 
 ## Miscellaneous
 
+Before computing difference statistics, it would be helpful to know what the distribution of these genes are. In particular, to what extent is the percent of cells in which a gene appears a function of the expression level of that gene? For UMI especially, there may be a clean model in terms of capturing molecules.
+
+If there is some (typical) expression level for that gene in that cell type, and molecules are randomly captured, then we would have a multinomial distribution for expression.
+
+In the literature, people recommend using a negative binomial distribution. These an arise as a gamma-mixture of poissons. Poisson for the capture process (especially for UMI) and gamma for the biological variability upstream.
 
 
 
 ```{r}
-df %>% group_by(annotation.y, tissue, plate.barcode.x) %>% summarize(count = n()) %>% ungroup() %>% group_by(annotation.y, tissue) %>% summarize(n_plates = n()) %>% arrange(desc(n_plates))
+FetchData(tiss, c('Actb','tissue', 'annotation')) %>% filter(annotation == 't_cells' & tissue == 'Thymus') %>% ggplot(aes(Actb, ..density..)) + geom_histogram(binwidth = 0.2)
+```
 
-df %>% group_by(annotation.y, tissue) %>% summarize(count = n()) %>% ungroup() %>% group_by(annotation.y) %>% summarize(n_tissues = n()) %>% arrange(desc(n_tissues))
+```{r}
+FetchData(tissX, c('Actb','tissue', 'annotation')) %>% filter(annotation == 't_cells' & tissue == 'Thymus') %>% ggplot(aes(Actb, ..density..)) + geom_histogram(binwidth = 0.2)
+```
+
+Lore says that a negative binomial would be a good fit, though that only makes sense on raw count data.
+
+```{r}
+library(MASS)
+```
+
+
+```{r}
+cells <- FetchData(tissX, c('tissue', 'annotation', 'cell')) %>% 
+  filter(annotation == 't_cells' & tissue == 'Thymus') %>% 
+  pull(cell)
+
+umis <- tissX@raw.data[,cells]
+p <- umis/Matrix::colSums(umis)
+```
+
+```{r}
+fit <- fitdistr(umis['Cd8a',], densfun = "negative binomial")
+fit$estimate
+```
+
+```{r}
+nb_sample <- rnbinom(20000, mu = fit$estimate['mu'], size = fit$estimate['size'])
+```
+
+In the case when a gene has zero inflation due to not being present in all cells, the negative binomial fit will be off. A mixture model would be more appropriate.
+
+```{r}
+ggplot(as_data_frame(umis['Cd8a',]), aes(value)) + geom_histogram(aes(y = ..density..)) + geom_histogram(data = as_data_frame(nb_sample), aes(y = ..density..),fill = "red", alpha = 0.2)
+```
+
+
+### Expression vs abundance
+
+There should be a relationship between expression and abundance. Lowly expressed genes may fail to appear in a cell due to random chance, or because they weren't there after all.
+
+```{r}
+crazy_genes = c('Malat1', 'Rn45s')
+
+filtered_raw_expression <- function(sobj, annotation_str, anno_tissue_str, excluded_genes){
+  cells <- FetchData(sobj, c('annotation', 'anno_tissue', 'cell')) %>% filter(annotation == annotation_str & anno_tissue == anno_tissue_str) %>% pull(cell)
+  dat <- sobj@raw.data[!rownames(sobj@data) %in% excluded_genes,cells]
+  dat
+}
+
+filtered_expression <- function(sobj, annotation_str, anno_tissue_str, excluded_genes, rescale){
+  cells <- FetchData(sobj, c('annotation', 'anno_tissue', 'cell')) %>% filter(annotation == annotation_str & anno_tissue == anno_tissue_str) %>% pull(cell)
+  dat <- adjust_lognorm(sobj@data[!rownames(sobj@data) %in% excluded_genes,cells], rescale)
+  dat
+}
+
+pct_vs_avg <- function(sobj, annotation_str, anno_tissue_str, excluded_genes, rescale){
+  dat = filtered_expression(sobj, annotation_str, anno_tissue_str, excluded_genes, rescale)
+  pct = Matrix::rowMeans(dat > 0)
+  avg = Matrix::rowMeans(dat)
+  avg_nonzero = Matrix::rowSums(dat)/Matrix::rowSums(dat > 0)
+  df = data_frame(pct, avg, avg_nonzero)
+  df['gene'] = row.names(dat)
+  ggplot(data_frame(pct, avg), aes(avg, pct)) + geom_point(alpha = 0.1) + geom_point(data=df %>% filter(gene == 'Xist'), colour="red")
+  #ggplot(data_frame(pct, avg), aes(avg_nonzero, pct)) + geom_point(alpha = 0.1, color = 'blue')
+
+  #qplot(avg, pct, alpha=I(0.1))
+}
+
+plate_scale = 100
+
+pct_vs_avg(tissX, 'fibroblasts', 'Kidney', crazy_genes, 1)
+pct_vs_avg(tiss, 'fibroblasts', 'Kidney', crazy_genes, plate_scale)
+
+pct_vs_avg(tissX, 't_cells', 'Thymus', crazy_genes, 1)
+pct_vs_avg(tiss, 't_cells', 'Thymus', crazy_genes, plate_scale)
+
+pct_vs_avg(tissX, 'hepatocytes', 'Liver', crazy_genes, 1)
+pct_vs_avg(tiss, 'hepatocytes', 'Liver', crazy_genes, plate_scale)
+
+pct_vs_avg(tissX, 'b_cells', 'Spleen', crazy_genes, 1)
+pct_vs_avg(tiss, 'b_cells', 'Spleen', crazy_genes, plate_scale)
+```
+
+```{r}
+r = 
+
+curve(1-(r/(exp(x)-1 + r))^r, 0, 4)
+```
+
+```{r}
+FetchData(tissX, vars.all = c('nUMI')) %>% 
+  ggplot(aes(nUMI, ..density..)) + geom_histogram()
 ```
 
 
 
 ```{r}
-df %>% group_by(annotation.y, subannotation.y) %>% summarize(count = n()) %>% ungroup()
+dat <- filtered_expression(tissX, 'b_cells', 'Spleen', crazy_genes, 1)
+pct = Matrix::rowMeans(dat > 0)
+avg = Matrix::rowMeans(dat)
+avg_nonzero = Matrix::rowSums(dat)/Matrix::rowSums(dat > 0)
+df = data_frame(pct, avg, avg_nonzero) %>% mutate(rev_log = - log (1 - pct), exp_avg = exp(avg))
+df['gene'] = row.names(dat)
+df = df %>% filter(pct < 1.1)
+
+r = 1.2
+ggplot(df, aes(exp_avg, rev_log)) + geom_point(alpha = 0.1) + geom_point(data=df %>% filter(gene == 'Xist'), colour="red") + stat_function(fun = function(x) {r*log(r + x - 1) - r*log(r)})
+
+ggplot(df, aes(avg, pct)) + geom_point(alpha = 0.1) + geom_point(data=df %>% filter(gene == 'Xist'), colour="red") + stat_function(fun = function(x) {1-(r/(exp(x)-1 + r))^r})
+
 ```
 
+A simple null model: there is a big bag of all the UMIs from an experiment. Each cell is drawn with replacement from that bag. If we fix the number of UMI for each cell and shuffle all the rest around, we can ask how the distributions change. Mean will, of course, be the same, but the number of cells expressing that gene may go up or down.
 
 ```{r}
-df %>% group_by(annotation.y, tissue, plate.barcode.x) %>% summarize(count = n()) %>% ungroup() %>% group_by(annotation.y, tissue) %>% summarize(n_plates = n()) %>% arrange(desc(n_plates))
+dat = filtered_raw_expression(tissX, 'b_cells', 'Spleen', crazy_genes)
+
+dat = filtered_raw_expression(tissX, 'hepatocytes', 'Liver', crazy_genes)
+
+pct = Matrix::rowMeans(dat > 0)
+lambda = Matrix::rowSums(dat)/sum(dat)
+nUMIs = Matrix::colSums(dat)
+
+pred_pct = Matrix::rowMeans(1 - exp(-outer(lambda, nUMIs)))
+
+df = data_frame(pct, pred_pct, lambda)
+df['gene'] = row.names(dat)
+
+ggplot(df, aes(pred_pct, pct)) + geom_point(alpha = 0.1) + geom_abline(intercept = 0, slope = 1) + geom_point(data=df %>% filter(gene == 'Xist'), colour="red") + coord_fixed()
 ```
+
+We can use the distance from the diagonal as a measure of how specific a gene is to sub-populations in the dataset.
+
+```{r}
+df %>% mutate(difference = pred_pct - pct) %>% filter(pred_pct > pct + 0.2) %>% arrange(desc(difference))
+```
+
+```{r}
+FetchData(tissX, vars.all = c('mouse.sex', 'Tmsb4x', 'Xist','annotation')) %>% filter(annotation == 'hepatocytes') %>% 
+  ggplot(aes(fill = mouse.sex) )+ geom_histogram(aes(x = Tmsb4x, y = ..density..), alpha = 0.4)
+```
+
+This is a very, very bad fit for smartseq data, where after the molecules are sorted, they will be multiplied by some large random factors due to PCR. Perhaps if we turn the tables, the generative model will be easier. We have, for each gene, an expression level lambda. 
+
+```{r}
+dat = filtered_raw_expression(tiss, 'b_cells', 'Spleen', crazy_genes)
+
+pct = Matrix::rowMeans(dat > 0)
+lambda = Matrix::rowSums(dat)/sum(dat)
+nReads = Matrix::colSums(dat)
+
+pred_pct = Matrix::rowMeans(1 - exp(-outer(lambda, nUMIs)))
+
+df = data_frame(pct, pred_pct, lambda)
+df['gene'] = row.names(dat)
+
+ggplot(df, aes(pred_pct, pct)) + geom_point(alpha = 0.1) + geom_abline(intercept = 0, slope = 1) + geom_point(data=df %>% filter(gene == 'Xist'), colour="red") + coord_fixed()
+```
+
+Perhaps we can rescale to some effective number of reads. This amounts to assuming a constant factor increase in PCR.
+
+```{r}
+dat = filtered_raw_expression(tiss, 'b_cells', 'Spleen', crazy_genes)
+
+pct = Matrix::rowMeans(dat > 0)
+lambda = Matrix::rowSums(dat)/sum(dat)
+nUMIs = Matrix::colSums(dat)
+
+pred_pct = Matrix::rowMeans(1 - exp(-outer(lambda, nUMIs)))
+
+df = data_frame(pct, pred_pct, lambda)
+df['gene'] = row.names(dat)
+
+ggplot(df, aes(pred_pct, pct)) + geom_point(alpha = 0.1) + geom_abline(intercept = 0, slope = 1) + geom_point(data=df %>% filter(gene == 'Xist'), colour="red") + coord_fixed()
+```
+
 

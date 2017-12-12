@@ -17,7 +17,6 @@ tiss@meta.data['cluster'] <- tiss@ident
 tissX@meta.data['cluster'] <- tissX@ident
 ```
 
-
 Add in percent Rn54s.
 ```{r}
 percent.Rn45s <- Matrix::colSums(tiss@raw.data[c('Rn45s'), ])/Matrix::colSums(tiss@raw.data)

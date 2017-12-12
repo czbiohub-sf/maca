@@ -64,6 +64,35 @@ row.names(hmap_mat) <- hmap_df$anno_and_tissue
 gplots::heatmap.2(as.matrix(log10(hmap_mat+1)), col = viridis(100), trace = "none", margins=c(0,36), Colv=FALSE, dendrogram = "row", cexRow = 2.0, cexCol = 2.0, key = FALSE, keysize = 0.05)
 ```
 
+Clusters that only contain one cell type.
+
+```{r}
+library(igraph)
+
+graph 
+```
+
+
+```{r}
+hmap_df <- FetchData(tiss, vars.all = c('annotation','anno_tissue', 'cluster')) %>% 
+  drop_na(annotation) %>% 
+  mutate(anno_and_tissue = paste(annotation, anno_tissue, sep='-')) %>% 
+  drop_na(anno_and_tissue) %>% 
+  group_by(anno_and_tissue, cluster) %>% 
+  summarize(count = n()) %>% filter(count > 5) %>% 
+  spread(key=cluster, value = count, fill = 0)
+```
+
+
+```{r}
+FetchData(tiss, vars.all = c('annotation','anno_tissue', 'cluster')) %>% 
+  drop_na(annotation) %>% 
+  mutate(anno_and_tissue = paste(annotation, anno_tissue, sep='-')) %>% 
+  drop_na(anno_and_tissue) %>% 
+  group_by(anno_and_tissue, cluster)
+```
+
+
 ## Heatmap for tenx
 
 ```{r}
@@ -71,6 +100,11 @@ dfX <- drop_na(dfX, annotation)
 dfX <- dfX %>% mutate(anno_and_tissue = paste(annotation, anno_tissue, sep='-'),
               anno_and_sub = paste(annotation, subannotation, sep='-'))
 ```
+
+```{r}
+hmap_dfX <- dfX %>% drop_na(anno_and_tissue) %>% group_by(anno_and_tissue, cluster) %>% summarize(count = n()) %>% filter(count > 5) %>% ungroup() %>% group_by(cluster) %>% summarize(count = n())
+```
+
 
 ```{r, fig.width = 15, fig.height = 40}
 hmap_dfX <- dfX %>% drop_na(anno_and_tissue) %>% group_by(anno_and_tissue, cluster) %>% summarize(count = n()) %>% filter(count > 5) %>% spread(key=cluster, value = count, fill = 0)
