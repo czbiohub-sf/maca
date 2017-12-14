@@ -7,7 +7,6 @@ output: html_notebook
 library(tidyverse)
 library(stringr)
 library(Seurat)
-
 library(viridis)
 ```
 
@@ -21,9 +20,8 @@ FetchData(tiss, vars.all = c('tSNE_1','tSNE_2', 'color')) %>%
                         guide = "legend") + 
   guides(colour = guide_legend(override.aes = list(size=2)))
 
-ggsave('figures/tsne_by_tissue_plates.pdf', width = 14, height = 7, units = "in")
+#ggsave('figures/tsne_by_tissue_plates.pdf', width = 14, height = 7, units = "in")
 ```
-
 
 ```{r, fig.width = 8, fid.height = 6}
 FetchData(tissX, vars.all = c('tSNE_1','tSNE_2', 'color')) %>% 
@@ -36,82 +34,30 @@ FetchData(tissX, vars.all = c('tSNE_1','tSNE_2', 'color')) %>%
 ggsave('figures/tsne_by_tissue_tenx.pdf', width = 14, height = 7, units = "in")
 ```
 
-```{r}
-repeated_annotations <- anno_plate %>% group_by(annotation, anno_tissue) %>% summarize(count = n()) %>% ungroup() %>% group_by(annotation) %>% summarize(count = n()) %>% filter(count > 1) %>% pull(annotation)
-repeated_annotations
-```
-
 # Heatmaps for big clustering
 
 ```{r}
-hmap_df <- FetchData(tissX, vars.all = c('annotation','anno_tissue', 'cluster')) %>% 
-  drop_na(annotation) %>% 
-  mutate(anno_and_tissue = paste(annotation, anno_tissue, sep='-')) %>% 
+hmap_df <- FetchData(tiss, vars.all = c('cell_ontology_class','anno_tissue', 'cluster')) %>% 
+  drop_na(cell_ontology_class) %>% 
+  mutate(anno_and_tissue = paste0(cell_ontology_class, " (", anno_tissue, ")")) %>% 
   drop_na(anno_and_tissue) %>% 
   group_by(anno_and_tissue, cluster) %>% 
   summarize(count = n()) %>% filter(count > 5) %>% 
   spread(key=cluster, value = count, fill = 0)
 ```
+
+```{r}
+#save(hmap_df, file = 'save/hmap_df.Robj')
+```
+
 
 Do we see mixing of tissues and cell types in the top-level clustering?
 
-```{r, fig.width = 15, fig.height = 40}
-#hmap_df <- df %>% drop_na(anno_and_tissue) %>% group_by(anno_and_tissue, cluster) %>% summarize(count = n()) %>% filter(count > 5) %>% spread(key=cluster, value = count, fill = 0)
+
+```{r, fig.width = 15, fig.height = 45}
 hmap_mat <- as.data.frame(hmap_df %>% ungroup() %>% select(-anno_and_tissue))
 row.names(hmap_mat) <- hmap_df$anno_and_tissue
 
-#heatmaply(as.matrix(log10(hmap_mat+1)), distfun = 'pearson', width = 700, height = 1000, plot_method = 'ggplot')
-gplots::heatmap.2(as.matrix(log10(hmap_mat+1)), col = viridis(100), trace = "none", margins=c(0,36), Colv=FALSE, dendrogram = "row", cexRow = 2.0, cexCol = 2.0, key = FALSE, keysize = 0.05)
-```
-
-Clusters that only contain one cell type.
-
-```{r}
-library(igraph)
-
-graph 
-```
-
-
-```{r}
-hmap_df <- FetchData(tiss, vars.all = c('annotation','anno_tissue', 'cluster')) %>% 
-  drop_na(annotation) %>% 
-  mutate(anno_and_tissue = paste(annotation, anno_tissue, sep='-')) %>% 
-  drop_na(anno_and_tissue) %>% 
-  group_by(anno_and_tissue, cluster) %>% 
-  summarize(count = n()) %>% filter(count > 5) %>% 
-  spread(key=cluster, value = count, fill = 0)
-```
-
-
-```{r}
-FetchData(tiss, vars.all = c('annotation','anno_tissue', 'cluster')) %>% 
-  drop_na(annotation) %>% 
-  mutate(anno_and_tissue = paste(annotation, anno_tissue, sep='-')) %>% 
-  drop_na(anno_and_tissue) %>% 
-  group_by(anno_and_tissue, cluster)
-```
-
-
-## Heatmap for tenx
-
-```{r}
-dfX <- drop_na(dfX, annotation)
-dfX <- dfX %>% mutate(anno_and_tissue = paste(annotation, anno_tissue, sep='-'),
-              anno_and_sub = paste(annotation, subannotation, sep='-'))
-```
-
-```{r}
-hmap_dfX <- dfX %>% drop_na(anno_and_tissue) %>% group_by(anno_and_tissue, cluster) %>% summarize(count = n()) %>% filter(count > 5) %>% ungroup() %>% group_by(cluster) %>% summarize(count = n())
-```
-
-
-```{r, fig.width = 15, fig.height = 40}
-hmap_dfX <- dfX %>% drop_na(anno_and_tissue) %>% group_by(anno_and_tissue, cluster) %>% summarize(count = n()) %>% filter(count > 5) %>% spread(key=cluster, value = count, fill = 0)
-hmap_matX <- as.data.frame(hmap_dfX %>% ungroup() %>% select(-anno_and_tissue))
-row.names(hmap_matX) <- hmap_dfX$anno_and_tissue
-
-#heatmaply(as.matrix(log10(hmap_mat+1)), distfun = 'pearson', width = 700, height = 1000, plot_method = 'ggplot')
-gplots::heatmap.2(as.matrix(log10(hmap_matX+1)), col = viridis(100), trace = "none", margins=c(0,36), Colv=FALSE, dendrogram = "row", cexRow = 2.0, cexCol = 2.0, key = FALSE, keysize = 0.05)
+gplots::heatmap.2(as.matrix(log10(hmap_mat+1)), col = viridis(100), trace = "none", margins=c(10,36), Colv=TRUE, dendrogram = "row", cexRow = 2.0, cexCol = 2.0, key = FALSE, keysize = 0.05, distfun=function(x) as.dist(1-cor(t(x))))
 ```
 

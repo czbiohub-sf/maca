@@ -545,8 +545,26 @@ filtered_raw_expression <- function(sobj, annotation_str, anno_tissue_str, exclu
   dat
 }
 
+filtered_raw_expression_subanno <- function(sobj, annotation_str, anno_tissue_str, excluded_genes, rescale){
+  cells <- FetchData(sobj, c('subannotation', 'anno_tissue', 'cell')) %>% filter(subannotation == annotation_str & anno_tissue == anno_tissue_str) %>% pull(cell)
+  dat <- sobj@raw.data[!rownames(sobj@data) %in% excluded_genes,cells]
+  dat
+}
+
+filtered_raw_expression_tiss <- function(sobj, anno_tissue_str, excluded_genes){
+  cells <- FetchData(sobj, c('annotation', 'anno_tissue', 'cell')) %>% filter(anno_tissue == anno_tissue_str) %>% pull(cell)
+  dat <- sobj@raw.data[!rownames(sobj@data) %in% excluded_genes,cells]
+  dat
+}
+
 filtered_expression <- function(sobj, annotation_str, anno_tissue_str, excluded_genes, rescale){
   cells <- FetchData(sobj, c('annotation', 'anno_tissue', 'cell')) %>% filter(annotation == annotation_str & anno_tissue == anno_tissue_str) %>% pull(cell)
+  dat <- adjust_lognorm(sobj@data[!rownames(sobj@data) %in% excluded_genes,cells], rescale)
+  dat
+}
+
+filtered_expression_tiss <- function(sobj, anno_tissue_str, excluded_genes, rescale){
+  cells <- FetchData(sobj, c('annotation', 'anno_tissue', 'cell')) %>% filter(anno_tissue == anno_tissue_str) %>% pull(cell)
   dat <- adjust_lognorm(sobj@data[!rownames(sobj@data) %in% excluded_genes,cells], rescale)
   dat
 }
@@ -610,10 +628,51 @@ ggplot(df, aes(avg, pct)) + geom_point(alpha = 0.1) + geom_point(data=df %>% fil
 
 A simple null model: there is a big bag of all the UMIs from an experiment. Each cell is drawn with replacement from that bag. If we fix the number of UMI for each cell and shuffle all the rest around, we can ask how the distributions change. Mean will, of course, be the same, but the number of cells expressing that gene may go up or down.
 
-```{r}
-dat = filtered_raw_expression(tissX, 'b_cells', 'Spleen', crazy_genes)
+Even if some genes are correlated to one another, the shuffle profile for each will be correct. IE, this marginalizes. Of course, you can also infer the nonuniform correlations by using the null model too.
 
-dat = filtered_raw_expression(tissX, 'hepatocytes', 'Liver', crazy_genes)
+```{r}
+tiss@meta.data %>% filter(tissue == 'Thymus') %>% group_by(subannotation) %>% count()
+```
+
+
+```{r}
+dat = filtered_raw_expression(tissX, 't_cells', 'Thymus', crazy_genes)
+
+#dat = filtered_raw_expression_subanno(tissX, 'double_positive_favoring_cd8+	', 'Thymus', crazy_genes)
+
+#dat = filtered_raw_expression(tissX, 'hepatocytes', 'Liver', crazy_genes)
+
+#dat = filtered_raw_expression(tissX, 'fenestrated_capillary', 'Kidney', crazy_genes)
+
+#dat = filtered_raw_expression_tiss(tissX, 'Kidney', crazy_genes)
+
+#dat = filtered_raw_expression_tiss(tissX, 'Liver', crazy_genes)
+
+pct = Matrix::rowMeans(dat > 0)
+lambda = Matrix::rowSums(dat)/sum(dat)
+nUMIs = Matrix::colSums(dat)
+
+pred_pct = Matrix::rowMeans(1 - exp(-outer(lambda, nUMIs)))
+
+df = data_frame(pct, pred_pct, lambda)
+df['gene'] = row.names(dat)
+
+ggplot(df, aes(pred_pct, pct)) + geom_point(alpha = 0.1) + geom_abline(intercept = 0, slope = 1) + geom_point(data=df %>% filter(gene == 'Kif11'), colour="red") + coord_fixed()
+```
+
+
+```{r}
+df %>% mutate(difference = pred_pct - pct) %>% filter(pred_pct > pct + 0.2) %>% arrange(desc(difference))
+```
+
+```{r}
+#dat = filtered_raw_expression(tissX, 'b_cells', 'Spleen', crazy_genes)
+
+#dat = filtered_raw_expression(tissX, 'hepatocytes', 'Liver', crazy_genes)
+
+dat = filtered_raw_expression_tiss(tissX, 'Spleen', crazy_genes)
+
+#dat = filtered_raw_expression_tiss(tissX, 'Liver', crazy_genes)
 
 pct = Matrix::rowMeans(dat > 0)
 lambda = Matrix::rowSums(dat)/sum(dat)
@@ -672,4 +731,40 @@ df['gene'] = row.names(dat)
 ggplot(df, aes(pred_pct, pct)) + geom_point(alpha = 0.1) + geom_abline(intercept = 0, slope = 1) + geom_point(data=df %>% filter(gene == 'Xist'), colour="red") + coord_fixed()
 ```
 
+```{r}
+FetchData(tiss, vars.all = c('percent.ercc', 'nGene', 'nReads')) %>% ggplot(aes(x = nGene, y = log(nReads), color = percent.ercc)) + geom_point(alpha = 0.1)
+```
+```{r, fig.width = 8, fig.height = 8}
+FetchData(tiss, vars.all = c('percent.ercc', 'nGene', 'nReads', 'tissue')) %>% ggplot(aes(x = log(nReads), y = nGene, color = percent.ercc)) + 
+  geom_point(alpha = 0.1) + geom_smooth() + facet_wrap(~tissue)
+```
+
+```{r}
+FetchData(tiss, vars.all = c('percent.ercc', 'nReads')) %>% ggplot(aes(x = log2(percent.ercc))) + geom_histogram()
+FetchData(tiss, vars.all = c('percent.ercc', 'nReads')) %>% ggplot(aes(x = (percent.ercc*nReads))) + geom_histogram() + scale_x_log10() 
+
+```
+
+
+```{r}
+FetchData(tiss, vars.all = c('percent.ercc', 'nGene', 'nReads', 'tissue')) %>% ggplot(aes(x = nGene, y = log2(percent.ercc))) + geom_hex()
+
+```
+
+```{r, fig.width = 8, fig.height = 8}
+FetchData(tiss, vars.all = c('percent.ercc', 'nGene', 'nReads', 'tissue', 'annotation')) %>% ggplot(aes(x = nGene, y = log2(nReads * (1-percent.ercc))) + geom_hex() + facet_wrap(~tissue)
+```
+
+```{r, fig.width = 8, fig.height = 8}
+FetchData(tiss, vars.all = c('percent.ercc', 'nGene', 'nReads', 'tissue', 'annotation')) %>% ggplot(aes(x = nGene, y = log2(percent.ercc))) + geom_hex() + facet_wrap(~tissue)
+```
+
+```{r, fig.width = 8, fig.height = 8}
+FetchData(tiss, vars.all = c('percent.ercc', 'nGene', 'nReads', 'tissue', 'annotation')) %>% ggplot(aes(x = nGene, y = log2(percent.ercc))) + geom_hex() + facet_wrap(~annotation)
+```
+
+
+```{r}
+df = FetchData(tiss, vars.all = c('percent.ercc', 'nGene', 'nReads', 'tissue')) %>% lm(nGene ~ log(nReads) + percent.ercc)
+```
 

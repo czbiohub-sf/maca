@@ -28,15 +28,15 @@ tissX <- AddMetaData(object = tissX, metadata = percent.Rn45s, col.name = "perce
 
 Loading annotations
 ```{r}
-anno_plate = read_csv('~/maca/metadata/maca_3month_annotations_plates.csv')
+anno_plate = read_csv('~/maca/metadata/maca_3month_annotations_plates_ontology.csv')
 anno_plate <- rename(anno_plate, cell = X1)
 anno_plate <- rename(anno_plate, anno_tissue = tissue)
-anno_plate %>% group_by(anno_tissue, annotation, subannotation) %>% summarize(count = n())
+anno_plate %>% group_by(anno_tissue, annotation, subannotation, cell_ontology_class) %>% summarize(count = n())
 
-anno_tenx = read_csv('~/maca/metadata/maca_3month_annotations_10x.csv')
+anno_tenx = read_csv('~/maca/metadata/maca_3month_annotations_tenx_ontology.csv')
 anno_tenx <- rename(anno_tenx, cell = X1)
 anno_tenx <- rename(anno_tenx, anno_tissue = tissue)
-anno_tenx %>% group_by(anno_tissue, annotation, subannotation) %>% summarize(count = n())
+anno_tenx %>% group_by(anno_tissue, annotation, subannotation, cell_ontology_class) %>% summarize(count = n())
 ```
 
 ```{r}
@@ -60,6 +60,5 @@ tissX@meta.data <- tissX@meta.data %>% select(-(annotation:subannotation)) %>%
 
 rownames(tissX@meta.data) <- tissX@meta.data$cell
 ```
-
 
 
