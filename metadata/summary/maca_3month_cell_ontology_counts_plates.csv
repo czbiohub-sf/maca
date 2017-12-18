@@ -1,0 +1,112 @@
+tissue,cell_ontology_class,cell_ontology_id,cell_ontology_term_iri,n_cells
+Aorta,endothelial cell,CL:0000115,http://purl.obolibrary.org/obo/CL_0000115,131
+Aorta,epicardial adipocyte,CL:1000309,http://purl.obolibrary.org/obo/CL_1000309,93
+Aorta,fibroblast,CL:0000057,http://purl.obolibrary.org/obo/CL_0000057,35
+Aorta,hematopoietic cell,CL:0000988,http://purl.obolibrary.org/obo/CL_0000988,17
+Aorta,smooth muscle cell,CL:0000192,http://purl.obolibrary.org/obo/CL_0000192,37
+Bladder,basal cell of urothelium,CL:1000486,http://purl.obolibrary.org/obo/CL_1000486,99
+Bladder,bladder cell,CL:1001319,http://purl.obolibrary.org/obo/CL_1001319,532
+Bladder,mesenchymal cell,CL:0008019,http://purl.obolibrary.org/obo/CL_0008019,656
+Brain_(Microglia),macrophage,CL:0000235,http://purl.obolibrary.org/obo/CL_0000235,36
+Brain_(Microglia),microglial cell,CL:0000129,http://purl.obolibrary.org/obo/CL_0000129,4329
+Brain_(Non-microglia),astrocyte of the cerebral cortex,CL:0002605,http://purl.obolibrary.org/obo/CL_0002605,403
+Brain_(Non-microglia),brain pericyte,CL:2000043,http://purl.obolibrary.org/obo/CL_2000043,132
+Brain_(Non-microglia),endothelial cell,CL:0000115,http://purl.obolibrary.org/obo/CL_0000115,625
+Brain_(Non-microglia),neuron,CL:0000540,http://purl.obolibrary.org/obo/CL_0000540,194
+Brain_(Non-microglia),oligodendrocyte,CL:0000128,http://purl.obolibrary.org/obo/CL_0000128,1175
+Colon,Brush cell of epithelium proper of large intestine,CL:0002203,http://purl.obolibrary.org/obo/CL_0002203,45
+Colon,enterocyte of epithelium of large intestine,CL:0002071,http://purl.obolibrary.org/obo/CL_0002071,782
+Colon,enteroendocrine cell,CL:0000164,http://purl.obolibrary.org/obo/CL_0000164,25
+Colon,epithelial cell of large intestine,CL:0002253,http://purl.obolibrary.org/obo/CL_0002253,1793
+Colon,large intestine goblet cell,CL:1000320,http://purl.obolibrary.org/obo/CL_1000320,814
+Diaphragm,B cell,CL:0000236,http://purl.obolibrary.org/obo/CL_0000236,80
+Diaphragm,endothelial cell,CL:0000115,http://purl.obolibrary.org/obo/CL_0000115,77
+Diaphragm,macrophage,CL:0000235,http://purl.obolibrary.org/obo/CL_0000235,31
+Diaphragm,mesenchymal stem cell,CL:0000134,http://purl.obolibrary.org/obo/CL_0000134,240
+Diaphragm,skeletal muscle satellite stem cell,CL:0008011,http://purl.obolibrary.org/obo/CL_0008011,442
+Fat,B cell,CL:0000236,http://purl.obolibrary.org/obo/CL_0000236,513
+Fat,T cell,CL:0000084,http://purl.obolibrary.org/obo/CL_0000084,366
+Fat,endothelial cell,CL:0000115,http://purl.obolibrary.org/obo/CL_0000115,590
+Fat,epithelial cell,CL:0000066,http://purl.obolibrary.org/obo/CL_0000066,51
+Fat,granulocyte,CL:0000094,http://purl.obolibrary.org/obo/CL_0000094,409
+Fat,mesenchymal stem cell of adipose,CL:0002570,http://purl.obolibrary.org/obo/CL_0002570,1924
+Fat,myeloid cell,CL:0000763,http://purl.obolibrary.org/obo/CL_0000763,479
+Fat,natural killer cell,CL:0000623,http://purl.obolibrary.org/obo/CL_0000623,129
+Fat,neutrophil,CL:0000775,http://purl.obolibrary.org/obo/CL_0000775,221
+Fat,smooth muscle cell,CL:0000192,http://purl.obolibrary.org/obo/CL_0000192,27
+Heart,cardiac muscle cell,CL:0000746,http://purl.obolibrary.org/obo/CL_0000746,140
+Heart,endocardial cell,CL:0002350,http://purl.obolibrary.org/obo/CL_0002350,175
+Heart,endothelial cell,CL:0000115,http://purl.obolibrary.org/obo/CL_0000115,1137
+Heart,erythrocyte,CL:0000232,http://purl.obolibrary.org/obo/CL_0000232,11
+Heart,fibroblast,CL:0000057,http://purl.obolibrary.org/obo/CL_0000057,2052
+Heart,leukocyte,CL:0000738,http://purl.obolibrary.org/obo/CL_0000738,488
+Heart,smooth muscle cell,CL:0000192,http://purl.obolibrary.org/obo/CL_0000192,218
+Kidney,endothelial cell,CL:0000115,http://purl.obolibrary.org/obo/CL_0000115,40
+Kidney,fenestrated cell,CL:0000666,http://purl.obolibrary.org/obo/CL_0000666,69
+Kidney,fibroblast,CL:0000057,http://purl.obolibrary.org/obo/CL_0000057,65
+Kidney,kidney collecting duct cell,CL:1001225,http://purl.obolibrary.org/obo/CL_1001225,44
+Kidney,kidney tubule cell,CL:1000507,http://purl.obolibrary.org/obo/CL_1000507,261
+Kidney,leukocyte,CL:0000738,http://purl.obolibrary.org/obo/CL_0000738,38
+Liver,B cell,CL:0000236,http://purl.obolibrary.org/obo/CL_0000236,29
+Liver,Kupffer cell,CL:0000091,http://purl.obolibrary.org/obo/CL_0000091,51
+Liver,endothelial cell of hepatic sinusoid,CL:1000398,http://purl.obolibrary.org/obo/CL_1000398,196
+Liver,hepatocyte,CL:0000182,http://purl.obolibrary.org/obo/CL_0000182,399
+Liver,natural killer cell,CL:0000623,http://purl.obolibrary.org/obo/CL_0000623,35
+Lung,B cell,CL:0000236,http://purl.obolibrary.org/obo/CL_0000236,55
+Lung,Clara cell,CL:0000158,http://purl.obolibrary.org/obo/CL_0000158,13
+Lung,T cell,CL:0000084,http://purl.obolibrary.org/obo/CL_0000084,55
+Lung,ciliated cell,CL:0000064,http://purl.obolibrary.org/obo/CL_0000064,14
+Lung,dendritic cell,CL:0000451,http://purl.obolibrary.org/obo/CL_0000451,69
+Lung,endothelial cell,CL:0000115,http://purl.obolibrary.org/obo/CL_0000115,738
+Lung,epithelial cell,CL:0000066,http://purl.obolibrary.org/obo/CL_0000066,9
+Lung,leukocyte,CL:0000738,http://purl.obolibrary.org/obo/CL_0000738,31
+Lung,lung neuroendocrine cell,CL:1000223,http://purl.obolibrary.org/obo/CL_1000223,2
+Lung,macrophage,CL:0000235,http://purl.obolibrary.org/obo/CL_0000235,69
+Lung,mesothelial cell,CL:0000077,http://purl.obolibrary.org/obo/CL_0000077,2
+Lung,monocyte,CL:0000576,http://purl.obolibrary.org/obo/CL_0000576,65
+Lung,natural killer cell,CL:0000623,http://purl.obolibrary.org/obo/CL_0000623,36
+Lung,stromal cell,CL:0000499,http://purl.obolibrary.org/obo/CL_0000499,366
+Lung,type I pneumocyte,CL:0002062,http://purl.obolibrary.org/obo/CL_0002062,2
+Lung,type II pneumocyte,CL:0002063,http://purl.obolibrary.org/obo/CL_0002063,94
+Mammary,basal cell,CL:0000646,http://purl.obolibrary.org/obo/CL_0000646,1275
+Mammary,endothelial cell,CL:0000115,http://purl.obolibrary.org/obo/CL_0000115,49
+Mammary,luminal epithelial cell of mammary gland,CL:0002326,http://purl.obolibrary.org/obo/CL_0002326,552
+Mammary,stromal cell,CL:0000499,http://purl.obolibrary.org/obo/CL_0000499,428
+Marrow,B cell,CL:0000236,http://purl.obolibrary.org/obo/CL_0000236,1848
+Marrow,Fraction A pre-pro B cell,CL:0002045,http://purl.obolibrary.org/obo/CL_0002045,177
+Marrow,T cell,CL:0000084,http://purl.obolibrary.org/obo/CL_0000084,142
+Marrow,granulocyte,CL:0000094,http://purl.obolibrary.org/obo/CL_0000094,380
+Marrow,hematopoietic stem cell,CL:0000037,http://purl.obolibrary.org/obo/CL_0000037,1291
+Marrow,monocyte,CL:0000576,http://purl.obolibrary.org/obo/CL_0000576,324
+Marrow,natural killer cell,CL:0000623,http://purl.obolibrary.org/obo/CL_0000623,136
+Marrow,neutrophil,CL:0000775,http://purl.obolibrary.org/obo/CL_0000775,599
+Muscle,B cell,CL:0000236,http://purl.obolibrary.org/obo/CL_0000236,71
+Muscle,T cell,CL:0000084,http://purl.obolibrary.org/obo/CL_0000084,35
+Muscle,endothelial cell,CL:0000115,http://purl.obolibrary.org/obo/CL_0000115,129
+Muscle,macrophage,CL:0000235,http://purl.obolibrary.org/obo/CL_0000235,40
+Muscle,mesenchymal stem cell,CL:0000134,http://purl.obolibrary.org/obo/CL_0000134,246
+Muscle,skeletal muscle satellite cell,CL:0000594,http://purl.obolibrary.org/obo/CL_0000594,546
+Pancreas,endothelial cell,CL:0000115,http://purl.obolibrary.org/obo/CL_0000115,49
+Pancreas,leukocyte,CL:0000738,http://purl.obolibrary.org/obo/CL_0000738,45
+Pancreas,pancreatic A cell,CL:0000171,http://purl.obolibrary.org/obo/CL_0000171,287
+Pancreas,pancreatic D cell,CL:0000173,http://purl.obolibrary.org/obo/CL_0000173,91
+Pancreas,pancreatic PP cell,CL:0002275,http://purl.obolibrary.org/obo/CL_0002275,107
+Pancreas,pancreatic acinar cell,CL:0002064,http://purl.obolibrary.org/obo/CL_0002064,177
+Pancreas,pancreatic ductal cell,CL:0002079,http://purl.obolibrary.org/obo/CL_0002079,131
+Pancreas,pancreatic stellate cell,CL:0002410,http://purl.obolibrary.org/obo/CL_0002410,29
+Pancreas,type B pancreatic cell,CL:0000169,http://purl.obolibrary.org/obo/CL_0000169,411
+Skin,basal cell of epidermis,CL:0002187,http://purl.obolibrary.org/obo/CL_0002187,402
+Skin,epidermal cell,CL:0000362,http://purl.obolibrary.org/obo/CL_0000362,445
+Skin,keratinocyte stem cell,CL:0002337,http://purl.obolibrary.org/obo/CL_0002337,1371
+Skin,stem cell of epidermis,CL:1000428,http://purl.obolibrary.org/obo/CL_1000428,45
+Spleen,B cell,CL:0000236,http://purl.obolibrary.org/obo/CL_0000236,1238
+Spleen,T cell,CL:0000084,http://purl.obolibrary.org/obo/CL_0000084,403
+Spleen,myeloid cell,CL:0000763,http://purl.obolibrary.org/obo/CL_0000763,48
+Thymus,T cell,CL:0000084,http://purl.obolibrary.org/obo/CL_0000084,1250
+Thymus,mesenchymal stem cell,CL:0000134,http://purl.obolibrary.org/obo/CL_0000134,33
+Tongue,basal cell of epidermis,CL:0002187,http://purl.obolibrary.org/obo/CL_0002187,1033
+Tongue,keratinocyte,CL:0000312,http://purl.obolibrary.org/obo/CL_0000312,361
+Trachea,endothelial cell,CL:0000115,http://purl.obolibrary.org/obo/CL_0000115,33
+Trachea,epithelial cell,CL:0000066,http://purl.obolibrary.org/obo/CL_0000066,128
+Trachea,leukocyte,CL:0000738,http://purl.obolibrary.org/obo/CL_0000738,116
+Trachea,stromal cell,CL:0000499,http://purl.obolibrary.org/obo/CL_0000499,569

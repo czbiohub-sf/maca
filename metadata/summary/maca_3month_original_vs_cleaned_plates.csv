@@ -14,22 +14,22 @@ Bladder,MesenchymalA1,.,mesenchymal,a,170
 Bladder,MesenchymalA2,.,mesenchymal,a,165
 Bladder,MesenchymalB1,.,mesenchymal,b,156
 Bladder,MesenchymalB2,.,mesenchymal,b,165
-Brain_Microglia,Macrophages,.,macrophages,.,36
-Brain_Microglia,Microglia,.,microglia,.,4329
-Brain_Neurons,NPCS,.,neural_progenitor,.,36
-Brain_Neurons,OPCs,.,oligodendrocyte_progenitor,.,202
-Brain_Neurons,astrocytes,Berg.Glia,astrocytes,bergmann_glia,30
-Brain_Neurons,astrocytes,cerebral_astrocytes,astrocytes,cerebral_astrocytes,403
-Brain_Neurons,astrocytes,myelinating_oligodendrocytes,oligodendrocytes,myelinating_oligodendrocytes,11
-Brain_Neurons,endothelial,vSMCs,endothelial,vascular_smooth_muscle_cells,14
-Brain_Neurons,endothelial,vascular,endothelial,vascular,625
-Brain_Neurons,neurons,doublet,neurons,undetermined,2
-Brain_Neurons,neurons,excitatory,neurons,excitatory,73
-Brain_Neurons,neurons,inhibitory,neurons,inhibitory,98
-Brain_Neurons,neurons,undetermined,neurons,undetermined,23
-Brain_Neurons,oligodendrocytes,.,oligodendrocytes,.,1175
-Brain_Neurons,pericytes,.,pericytes,.,132
-Brain_Neurons,unknown,.,unknown,.,176
+Brain_(Microglia),Macrophages,.,macrophages,.,36
+Brain_(Microglia),Microglia,.,microglia,.,4329
+Brain_(Non-microglia),NPCS,.,npcs,.,36
+Brain_(Non-microglia),OPCs,.,opcs,.,202
+Brain_(Non-microglia),astrocytes,Berg.Glia,astrocytes,berg_glia,30
+Brain_(Non-microglia),astrocytes,cerebral_astrocytes,astrocytes,cerebral_astrocytes,403
+Brain_(Non-microglia),astrocytes,myelinating_oligodendrocytes,astrocytes,myelinating_oligodendrocytes,11
+Brain_(Non-microglia),endothelial,vSMCs,endothelial,vsmcs,14
+Brain_(Non-microglia),endothelial,vascular,endothelial,vascular,625
+Brain_(Non-microglia),neurons,doublet,neurons,doublet,2
+Brain_(Non-microglia),neurons,excitatory,neurons,excitatory,73
+Brain_(Non-microglia),neurons,inhibitory,neurons,inhibitory,98
+Brain_(Non-microglia),neurons,undetermined,neurons,undetermined,23
+Brain_(Non-microglia),oligodendrocytes,.,oligodendrocytes,.,1175
+Brain_(Non-microglia),pericytes,.,pericytes,.,132
+Brain_(Non-microglia),unknown,.,unknown,.,176
 Colon,Amplifying Cell,.,amplifying,.,889
 Colon,Chromaffin Cell,.,chromaffin,.,25
 Colon,Cycling Undiff. Cell,.,undifferentiated,proliferating,206
