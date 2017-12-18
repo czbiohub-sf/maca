@@ -8,8 +8,8 @@ library("RColorBrewer")
 
 objects = c('Aorta/Heart_seurat_tiss.Robj',
             'Bladder/Bladder_seurat_tiss.Robj',
-            'Brain_Neurons/ALL_BRAIN_seurat.Robj',
-            "Brain_Microglia/microglia_seurat_subtiss.Robj",
+            'Brain_(Non-microglia)/ALL_BRAIN_seurat.Robj',
+            "Brain_(Microglia)/microglia_seurat_subtiss.Robj",
             'Colon/Colon_seurat_tiss.Robj',
             "Diaphragm/Muscle_Diaphragm_seurat_tiss.Robj",
             "Fat/Fat_seurat_tiss.Robj",
@@ -47,12 +47,13 @@ extract_ngenes_ncells = function(tiss, object){
                    '_nreads_ngenes.csv'))
 }
 
-cleaned_annotations = read.csv('~/code/maca/metadata/maca_3month_annotations_plates.csv', row.names=1)
+cleaned_annotations = read.csv('~/code/maca/metadata/maca_3month_annotations_plates_ontology.csv', row.names=1)
 
-figure_folder = '~/Google Drive/MACA_3mo_manuscript/Main figures/figure2/plates/'
+figure_folder = '~/Google Drive/MACA_3mo_manuscript/Main figures/Fig2/plates/'
 
 plot_annotated_tsne = function(tiss, object_name, tissue_of_interest) {
-  n_annotations = dim(unique(tiss@meta.data['annotation']))[1]
+  title = sub("_", " ", tissue_of_interest)
+  n_annotations = dim(unique(tiss@meta.data['cell_ontology_class']))[1]
   if (n_annotations > 8){
     colors.use = c(brewer.pal(8, 'Set2'), brewer.pal(n_annotations-8, 'Dark2'))
   } else{
@@ -62,14 +63,14 @@ plot_annotated_tsne = function(tiss, object_name, tissue_of_interest) {
     object = tiss,
     do.label = FALSE,
     pt.size = 0.05,
-    group.by = 'annotation',
+    group.by = 'cell_ontology_class',
     no.legend = TRUE,
     no.axes = TRUE,
     alpha = 0.5,
     do.return = TRUE,
     colors.use=colors.use
   ) #+ geom_point(alpha = 0.1)
-  p + labs(title=tissue_of_interest)
+  p + labs(title=title)
   ggsave(
     paste0(
       figure_folder,

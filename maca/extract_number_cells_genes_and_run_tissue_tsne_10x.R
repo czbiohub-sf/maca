@@ -52,13 +52,14 @@ extract_ngenes_ncells = function(tiss, object) {
                    '_nreads_ngenes.csv'))
 }
 
-cleaned_annotations = read.csv('~/code/maca/metadata/maca_3month_annotations_10x.csv',
+cleaned_annotations = read.csv('~/code/maca/metadata/maca_3month_annotations_10x_ontology.csv',
                                row.names = 1)
 
-figure_folder = '~/Google Drive/MACA_3mo_manuscript/Main figures/figure2/10x/'
+figure_folder = '~/Google Drive/MACA_3mo_manuscript/Main figures/Fig2/10x/'
 
 plot_annotated_tsne = function(tiss, object_name, tissue_of_interest) {
-  n_annotations = dim(unique(tiss@meta.data['annotation']))[1]
+  title = sub("_", " ", tissue_of_interest)
+  n_annotations = dim(unique(tiss@meta.data['cell_ontology_class']))[1]
   if (n_annotations > 8){
     colors.use = c(brewer.pal(8, 'Set2'), brewer.pal(n_annotations-8, 'Dark2'))
   } else{
@@ -68,14 +69,14 @@ plot_annotated_tsne = function(tiss, object_name, tissue_of_interest) {
     object = tiss,
     do.label = FALSE,
     pt.size = 0.05,
-    group.by = 'annotation',
+    group.by = 'cell_ontology_class',
     no.legend = TRUE,
     no.axes = TRUE,
     alpha = 0.5,
     do.return = TRUE,
     colors.use=colors.use
   ) #+ geom_point(alpha = 0.1)
-  p + labs(title=tissue_of_interest)
+  p + labs(title=title)
   ggsave(
     paste0(
       figure_folder,
