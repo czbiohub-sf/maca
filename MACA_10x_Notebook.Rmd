@@ -35,7 +35,7 @@ save_dir = paste0(rootdir, '/save')
 dir.create(save_dir)
 ```
 
-Load the plate data.
+Load the 10x raw data.
 
 ```{r}
 selected_metadata = filter(tenx_metadata, tissue == tissue_of_interest & mouse.age == 3)[,c('channel','tissue','mouse.age','mouse.sex')]
